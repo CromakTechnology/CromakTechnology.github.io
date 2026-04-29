@@ -3,6 +3,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+	overflow-x: hidden;
 }
 
 * {
@@ -51,6 +52,7 @@ body {
     color: var(--text-light);
     margin: 0;
     line-height: 1.6;
+	overflow-x: hidden;
 }
 
 .container {
@@ -198,6 +200,7 @@ nav a:hover {
     text-align: center;
     position: relative;
     padding-top: 150px;
+	overflow-x: hidden;
 }
 
 .hero-content {
