@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak DeepClean Suite - Otimização Avançada para Windows</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #f8f9fa;
+            --text-dim: #b0b0b0;
+            --accent: #00d4ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #121212 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #00d4ff, #007bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            color: var(--accent);
+            margin-top: 0;
+        }
+
+        .about-content {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        footer {
+            background: #0a0a0a;
+            padding: 40px 10%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-dim);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; padding: 1rem; }
+            nav { margin-top: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Cromak Technology</a>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#suporte">Suporte</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Cromak DeepClean Suite</h1>
+        <p>A solução definitiva para acelerar o tempo de boot, gerir tarefas em segundo plano e recuperar o desempenho do seu PC.</p>
+        <div style="display: flex; gap: 15px;">
+            <a href="#compra" class="btn btn-primary">Adquirir Agora</a>
+            <a href="#recursos" class="btn" style="background: #333; color: white;">Saber Mais</a>
+        </div>
+    </section>
+
+    <section class="section" id="recursos">
+        <h2 class="section-title">Recursos Poderosos</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Bootup Shield</h3>
+                <p>Otimize a inicialização do Windows desativando itens desnecessários e reduzindo o tempo de carregamento drasticamente.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Monitor de Performance</h3>
+                <p>Acompanhe em tempo real a utilização do CPU e da RAM com uma interface moderna e intuitiva.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Recuperação de RAM</h3>
+                <p>Liberte memória instantaneamente e automatize a limpeza para garantir que o sistema nunca fique lento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="sobre" style="background: #161616;">
+        <h2 class="section-title">Sobre o Software</h2>
+        <div class="about-content">
+            <p>O Cromak Bootup Shield Service é uma ferramenta avançada e completa para otimização da inicialização do Windows. O software oferece recursos poderosos para acelerar o tempo de boot, gerenciar tarefas em segundo plano e recuperar memória RAM. Este serviço atua de forma nativa e silenciosa para garantir a máxima performance do seu sistema.</p>
+        </div>
+    </section>
+
+    <section class="section" id="suporte" style="text-align: center;">
+        <h2 class="section-title">Suporte e Vendas</h2>
+        <p>Pronto para transformar a performance do seu computador?</p>
+        <p style="margin-bottom: 2rem; color: var(--text-dim);">Entre em contacto para adquirir a sua licença ou obter suporte técnico especializado.</p>
+        <a href="mailto:suporte@cromaktechnology.com" class="btn btn-primary">Falar com o Suporte</a>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos de Utilização</a>
+            <a href="https://github.com/CromakTechnology/support">Repositório GitHub</a>
+        </div>
+        <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
