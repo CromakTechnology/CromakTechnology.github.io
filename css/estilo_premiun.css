@@ -1,5 +1,15 @@
 /* estilo_premiun.css - Premium Styles for Cromak DeepClean */
 
+
+html {
+    scroll-behavior: smooth; /* Faz a página deslizar suavemente em vez de pular */
+    scroll-padding-top: 100px; /* Impede que o menu fixo engula os títulos */
+}
+
+* {
+    box-sizing: border-box; /* Evita que o site crie barra de rolagem horizontal */
+}
+
 /* --- Variáveis Globais --- */
 :root {
     --primary-color: #007bff;
@@ -51,7 +61,7 @@ header {
     background: rgba(10, 10, 10, 0.95);
     padding: 1rem 5%;
     position: fixed;
-    width: 90%;
+    width: 100%; /* MUDAR AQUI PARA 100% */
     top: 0;
     z-index: 1000;
     display: flex;
