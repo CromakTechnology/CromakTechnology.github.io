@@ -13,7 +13,10 @@
     <header>
         <div class="container header-inner">
             <a href="#" class="logo"><img src="images/cromaklogob.png" alt="Cromak Technology"></a>
-            <nav>
+            
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            
+            <nav id="nav-menu">
                 <a href="#inicio">Início</a>
                 <a href="#produtos">Produtos</a>
                 <a href="#sobre">Sobre</a>
@@ -34,12 +37,23 @@
     </header>
 
     <section class="hero" id="inicio">
-        <div class="container">
+        <div class="container hero-content">
             <h1>Cromak DeepClean Suite</h1>
             <p>O nosso programa principal: a solução definitiva para acelerar o tempo de boot, gerenciar tarefas em segundo plano e recuperar a performance do seu PC.</p>
             <div style="display: flex; gap: 15px; justify-content: center;">
-                <a href="adquirir.html" class="btn btn-primary">Adquirir Agora</a>
+                <a href="adquirir_deepclean_pro.html" class="btn btn-primary">Adquirir Agora</a>
                 <a href="#produtos" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Ver Produtos</a>
+            </div>
+        </div>
+        
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-item"><img src="images/deepcleanpro_prev1.png" alt="Preview 1"></div>
+                <div class="carousel-item"><img src="images/deepcleanpro_prev2.png" alt="Preview 2"></div>
+                <div class="carousel-item"><img src="images/deepcleanpro_prev3.png" alt="Preview 3"></div>
+                <div class="carousel-item"><img src="images/deepcleanpro_prev4.png" alt="Preview 4"></div>
+                <div class="carousel-item"><img src="images/deepcleanpro_prev5.png" alt="Preview 5"></div>
+                <div class="carousel-item"><img src="images/deepcleanpro_prev6.png" alt="Preview 6"></div>
             </div>
         </div>
     </section>
@@ -92,5 +106,61 @@
         </div>
     </footer>
 
+    <script>
+        // Lógica do Menu Mobile
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileMenu.innerHTML = '✕';
+            } else {
+                mobileMenu.innerHTML = '☰';
+            }
+        });
+
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenu.innerHTML = '☰';
+            });
+        });
+
+        // Lógica do Carrossel 3D
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            carouselItems.forEach((item, index) => {
+                // Remove all classes first
+                item.className = 'carousel-item';
+                
+                // Calculate position relative to current index
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                } else if (index === (currentIndex - 1 + carouselItems.length) % carouselItems.length) {
+                    item.classList.add('prev');
+                } else if (index === (currentIndex + 1) % carouselItems.length) {
+                    item.classList.add('next');
+                } else if (index < currentIndex) {
+                    item.classList.add('hidden-left');
+                } else {
+                    item.classList.add('hidden-right');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            updateCarousel();
+        }
+
+        // Inicia o carrossel
+        updateCarousel();
+        // Troca de imagem a cada 3.5 segundos
+        setInterval(nextSlide, 3500);
+
+    </script>
 </body>
 </html>
