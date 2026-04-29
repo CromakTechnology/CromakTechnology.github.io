@@ -47,6 +47,7 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: bold;
+            text-transform: uppercase;
         }
         .price-value {
             font-size: 3rem;
@@ -55,6 +56,8 @@
             color: white;
         }
         .price-value span { font-size: 1rem; color: var(--text-dim); }
+        
+        /* Lista de recursos */
         .price-features {
             list-style: none;
             padding: 0;
@@ -66,13 +69,26 @@
             margin-bottom: 12px;
             color: var(--text-dim);
             font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
         }
         .price-features li::before {
             content: '✓';
             color: var(--accent);
             margin-right: 10px;
             font-weight: bold;
+            margin-top: 2px;
         }
+        
+        /* Itens desativados (plano grátis) */
+        .price-features li.disabled {
+            opacity: 0.4;
+        }
+        .price-features li.disabled::before {
+            content: '✕';
+            color: #ff4444;
+        }
+
         .secure-payment {
             margin-top: 60px;
             text-align: center;
@@ -94,10 +110,10 @@
                 <div class="dropdown">
                     <button class="dropbtn">Idiomas ▼</button>
                     <div class="dropdown-content">
-                        <a href="#">🇺🇸 Inglês</a>
-                        <a href="#">🇪🇸 Espanhol</a>
-                        <a href="#">🇫🇷 Francês</a>
-                        <a href="#">🇷🇺 Russo</a>
+                        <a href="en/index.html">🇺🇸 Inglês</a>
+                        <a href="es/index.html">🇪🇸 Espanhol</a>
+                        <a href="fr/index.html">🇫🇷 Francês</a>
+                        <a href="ru/index.html">🇷🇺 Russo</a>
                     </div>
                 </div>
             </nav>
@@ -106,60 +122,71 @@
 
     <section class="section" style="padding-top: 150px;">
         <div class="container">
-            <h2 class="section-title">Escolha o seu Plano</h2>
-            <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Potencialize o seu Windows com a tecnologia Cromak.</p>
+            <h2 class="section-title">Escolha o seu Nível de Performance</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Desbloqueie o acesso completo aos motores de baixo nível do Cromak DeepClean Suite.</p>
 
             <div class="pricing-grid">
+                
                 <div class="price-card">
-                    <h3>Pessoal Anual</h3>
-                    <div class="price-value">R$ 49<span>/ano</span></div>
+                    <h3>Edição Gratuita</h3>
+                    <div class="price-value">R$ 0<span>/sempre</span></div>
                     <ul class="price-features">
-                        <li>Licença para 1 PC</li>
-                        <li>Bootup Shield Completo</li>
-                        <li>Monitor de Performance</li>
-                        <li>Limpeza de RAM Automática</li>
-                        <li>Suporte por E-mail</li>
+                        <li>Limpeza Comum de Sistema</li>
+                        <li>Gestor de Inicialização Básico</li>
+                        <li>Desinstalador Padrão</li>
+                        <li class="disabled">Desinstalação Forçada "Sniper"</li>
+                        <li class="disabled">Game Booster (Kernel Mode)</li>
+                        <li class="disabled">Desfragmentação MFT / SSD TRIM</li>
+                        <li class="disabled">Destruidor de Dados Militar</li>
                     </ul>
-                    <a href="LINK_DO_CHECKOUT_AQUI" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Comprar Agora</a>
+                    <a href="LINK_DOWNLOAD_GRATIS" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Baixar Grátis</a>
                 </div>
 
                 <div class="price-card popular">
-                    <div class="popular-tag">MAIS VENDIDO</div>
-                    <h3>Pessoal Vitalício</h3>
-                    <div class="price-value">R$ 97<span>/único</span></div>
+                    <div class="popular-tag">Acesso Total</div>
+                    <h3>Pessoal Mensal</h3>
+                    <div class="price-value">R$ 19<span>,90/mês</span></div>
                     <ul class="price-features">
-                        <li>Licença Vitalícia (Sem mensalidades)</li>
-                        <li>Uso em até 3 PCs</li>
-                        <li>Todos os recursos do DeepClean</li>
-                        <li>Atualizações prioritárias</li>
-                        <li>Suporte VIP 24/7</li>
+                        <li>Licença para 1 PC (HWID)</li>
+                        <li>Desinstalador "Sniper" Implacável</li>
+                        <li>Game Booster & Alocação de RAM</li>
+                        <li>Limpador de Registro (Cura Atômica)</li>
+                        <li>Removedor de UWP (Microsoft Store)</li>
+                        <li>Desfragmentador Hives (Boot Execute)</li>
+                        <li>Suporte Prioritário</li>
                     </ul>
-                    <a href="LINK_DO_CHECKOUT_AQUI" class="btn btn-primary">Comprar Agora</a>
+                    <a href="LINK_DO_CHECKOUT_MENSAL" class="btn btn-primary">Assinar Mensal</a>
                 </div>
 
                 <div class="price-card">
-                    <h3>Empresarial</h3>
-                    <div class="price-value">R$ 199<span>/ano</span></div>
+                    <h3>Pessoal Vitalício</h3>
+                    <div class="price-value">R$ 147<span>/único</span></div>
                     <ul class="price-features">
-                        <li>Licença para até 10 PCs</li>
-                        <li>Painel de Gestão Centralizado</li>
-                        <li>Otimização em Massa</li>
-                        <li>Suporte Técnico Prioritário</li>
-                        <li>Nota Fiscal para Empresas</li>
+                        <li>Pagamento único, seu para sempre</li>
+                        <li>Licença para até 3 PCs</li>
+                        <li>Todos os recursos Premium desbloqueados</li>
+                        <li>Atualizações de software garantidas</li>
+                        <li>Backup Automático em .dcr</li>
+                        <li>Acesso antecipado a novos módulos</li>
+                        <li>Suporte Técnico VIP</li>
                     </ul>
-                    <a href="mailto:suporte@cromaktechnology.com" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Contactar Vendas</a>
+                    <a href="LINK_DO_CHECKOUT_VITALICIO" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Comprar Vitalício</a>
                 </div>
             </div>
 
             <div class="secure-payment">
-                <p>🔒 Pagamento 100% Seguro e Processamento Instantâneo</p>
-                <p style="font-size: 0.8rem;">Aceitamos PIX, Cartão de Crédito e Boleto.</p>
+                <p>🔒 Transação Criptografada e Licenciamento Imediato</p>
+                <p style="font-size: 0.8rem;">Após a aprovação, a sua chave de ativação HWID é gerada instantaneamente.</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
             <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
         </div>
     </footer>
