@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Cromak Technology</title>
+    
+    <link rel="icon" type="image/png" href="images/cromaklogosm.png">
+    <link rel="stylesheet" href="css/estilo_premiun.css">
+    
+    <style>
+        /* --- Estilo Exclusivo do Novo "Sobre" (Bento Box UI) --- */
+        .about-hero {
+            padding-top: 160px;
+            padding-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-hero h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #ffffff, #00d4ff, #007bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* A Grade Bento (Mágica do Layout) */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(250px, auto);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        /* Cartões Individuais */
+        .bento-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(18, 18, 18, 0.9));
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        /* Efeito de brilho de fundo nos cartões */
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bento-card > * {
+            z-index: 1;
+            position: relative;
+        }
+
+        .bento-card h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bento-card p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Tamanhos Específicos dos Cartões */
+        .span-2-col {
+            grid-column: span 2;
+        }
+        
+        .span-2-row {
+            grid-row: span 2;
+        }
+
+        /* --- Elementos Internos dos Cartões --- */
+        .logo-display {
+            text-align: center;
+        }
+        
+        .logo-display img {
+            width: 80%;
+            max-width: 250px;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tech-badge {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 6px 15px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        /* Botão do WhatsApp (Chamativo) */
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            color: white;
+        }
+
+        .email-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .email-link:hover {
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        /* Responsividade Extrema */
+        @media (max-width: 992px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .span-2-col {
+                grid-column: span 2;
+            }
+            .span-2-row {
+                grid-row: auto; /* Desativa altura dupla no tablet */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2.8rem; }
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .span-2-col {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="images/cromaklogob.png" alt="Cromak Technology"></a>
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Início</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Produtos ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepcleansuite.html">DeepClean Suite</a>
+                        <a href="404r.html">Install Compiler</a>
+                        <a href="404r.html">Password Guard</a>
+                        <a href="404r.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+                <a href="index.html#recursos">Recursos</a>
+                <a href="sobre.html" style="color: var(--accent);">Sobre</a>
+                <a href="suporte.html">Suporte</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Idiomas ▼</button>
+                    <div class="dropdown-content">
+                        <a href="404r.html">🇺🇸 Inglês</a>
+                        <a href="404r.html">🇪🇸 Espanhol</a>
+                        <a href="404r.html">🇫🇷 Francês</a>
+                        <a href="404r.html">🇷🇺 Russo</a>
+                        <a href="404r.html">🇨🇳 Chinês</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container">
+                <h1>O Motor Por Trás da Máquina</h1>
+                <p>Nós não criamos softwares. Nós arquitetamos performance.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="bento-grid">
+                
+                <div class="bento-card logo-display span-2-row" style="background: rgba(10,10,10,0.5);">
+                    <img src="images/cromaklogoa.png" alt="Cromak Logo Original">
+                </div>
+
+                <div class="bento-card span-2-col">
+                    <h3><span style="color: var(--accent);">//</span> Nossa Filosofia</h3>
+                    <p>A Cromak Technology nasceu da exaustão. Cansamos de utilitários que apenas "limpam o cache do navegador" e fingem otimizar o sistema. Decidimos construir soluções brutais, de baixo nível, que descem até o Kernel e a MFT (Master File Table) do Windows para arrancar a lentidão pela raiz. Se o seu hardware é potente, o nosso software garante que ele voe.</p>
+                </div>
+
+                <div class="bento-card">
+                    <h3>O Arquiteto</h3>
+                    <p>Fundada e liderada por <strong>Marcos Souza</strong>, a engenharia da Cromak é focada na precisão e na agressividade controlada. Cada linha de código do DeepClean Suite e do Password Guard é pensada para máxima eficiência e segurança absoluta na manipulação de dados sensíveis do sistema.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">C++</span>
+                        <span class="tech-badge">WinAPI</span>
+                        <span class="tech-badge">PyQt6</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <h3>Linha Direta</h3>
+                    <p>Licenças corporativas, dúvidas avançadas ou parcerias? O nosso laboratório está com as portas abertas.</p>
+                    
+                    <a href="https://wa.me/551699643xxxx?text=Olá!%20Estou%20no%20site%20da%20Cromak%20e%20gostaria%20de%20falar%20com%20vocês." target="_blank" class="btn-whatsapp">
+                        Falar no WhatsApp
+                    </a>
+                    
+                    <a href="mailto:cromaksupport@gmail.com" class="email-link">cromaksupport@gmail.com</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="404r.html">Privacidade</a>
+                <a href="404r.html">Termos de Uso</a>
+            </div>
+            <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+</body>
+</html>

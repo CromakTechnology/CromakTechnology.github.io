@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte Técnico - Cromak Technology</title>
+    
+    <link rel="icon" type="image/png" href="images/cromaklogosm.png">
+    <link rel="stylesheet" href="css/estilo_premiun.css">
+    
+    <style>
+        .support-hero {
+            padding-top: 180px;
+            padding-bottom: 60px;
+            text-align: center;
+            background: radial-gradient(circle at bottom, rgba(0, 164, 239, 0.1), transparent);
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        /* --- Estilo do FAQ --- */
+        .faq-container {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 15px;
+        }
+
+        .faq-item h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .faq-item p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- Barra Lateral de Contato --- */
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: linear-gradient(145deg, #1e1e1e, #121212);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-support {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp-support {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp-support:hover {
+            background-color: #1ebe57;
+            transform: scale(1.03);
+            color: white;
+        }
+
+        .btn-email-support {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Download Center --- */
+        .download-center {
+            margin-top: 60px;
+            background: rgba(0, 164, 239, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px dashed var(--accent);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .support-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="images/cromaklogob.png" alt="Cromak Technology"></a>
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Início</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Produtos ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepcleansuite.html">DeepClean Suite</a>
+                        <a href="404r.html">Install Compiler</a>
+                        <a href="404r.html">Password Guard</a>
+                        <a href="404r.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+                <a href="index.html#recursos">Recursos</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="suporte.html" style="color: var(--accent);">Suporte</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Idiomas ▼</button>
+                    <div class="dropdown-content">
+                        <a href="404r.html">🇺🇸 Inglês</a>
+                        <a href="404r.html">🇪🇸 Espanhol</a>
+                        <a href="404r.html">🇫🇷 Francês</a>
+                        <a href="404r.html">🇷🇺 Russo</a>
+                        <a href="404r.html">🇨🇳 Chinês</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="support-hero">
+            <div class="container">
+                <h1 style="font-size: 3rem;">Central de Suporte Cromak</h1>
+                <p style="color: var(--text-dim);">Como podemos ajudar a otimizar a sua experiência hoje?</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="support-grid">
+                    
+                    <div class="faq-container">
+                        <h2 style="text-align: left; margin-bottom: 40px;" class="section-title">Perguntas Frequentes</h2>
+                        
+                        <div class="faq-item">
+                            <h4>O DeepClean Suite é seguro para o meu Registro?</h4>
+                            <p>Sim. O nosso motor utiliza uma arquitetura de "Cura Atômica" que analisa apenas chaves órfãs e redundantes. Além disso, o sistema cria automaticamente um clone do Registro (.dcr) antes de qualquer alteração profunda.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4>Como recebo a minha licença após a compra?</h4>
+                            <p>O processamento é instantâneo. Assim que o pagamento é confirmado, a sua chave de ativação única e as instruções de instalação são enviadas diretamente para o seu e-mail cadastrado.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4>Posso utilizar a licença em mais de um computador?</h4>
+                            <p>Depende do seu plano. A licença Pessoal Vitalícia permite a ativação em até 3 computadores simultâneos. Já as licenças Mensais e Anuais são limitadas a 1 dispositivo.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h4>O software precisa de internet para funcionar?</h4>
+                            <p>A ativação inicial requer conexão, mas todos os módulos de limpeza, otimização de boot e destruição de dados funcionam de forma 100% offline para garantir a sua privacidade.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-sidebar">
+                        <div class="contact-card">
+                            <img src="images/cromaklogosm.png" alt="Cromak" style="width: 60px; margin-bottom: 15px;">
+                            <h3>Atendimento Humano</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-dim);">Fale diretamente com os nossos desenvolvedores e especialistas técnicos.</p>
+                            
+                            <a href="https://wa.me/551699643xxxx?text=Olá!%20Preciso%20de%20ajuda%20técnica%20com%20um%20software%20Cromak." target="_blank" class="btn-support btn-whatsapp-support">
+                                Suporte via WhatsApp
+                            </a>
+
+                            <a href="mailto:cromaksupport@gmail.com" class="btn-support btn-email-support">
+                                Abrir Ticket por E-mail
+                            </a>
+                        </div>
+
+                        <div class="contact-card" style="background: rgba(255,255,255,0.03);">
+                            <h4>Horário de Atendimento</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 10px;">
+                                Segunda a Sexta: 09:00 às 18:00<br>
+                                Sábado: 09:00 às 12:00
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="download-center">
+                    <h3 style="color: #fff; margin-bottom: 15px;">Centro de Downloads</h3>
+                    <p style="color: var(--text-dim); margin-bottom: 25px;">Precisa do manual do usuário ou das bibliotecas de driver mais recentes?</p>
+                    <a href="404r.html" class="btn btn-primary">Acessar Arquivos de Documentação</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="404r.html">Privacidade</a>
+                <a href="404r.html">Termos de Uso</a>
+            </div>
+            <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+</body>
+</html>

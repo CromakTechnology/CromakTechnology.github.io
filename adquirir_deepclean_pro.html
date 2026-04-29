@@ -9,94 +9,19 @@
     <link rel="stylesheet" href="css/estilo_premiun.css">
     
     <style>
-        .pricing-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .price-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            width: 320px;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-        .price-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
-        }
-        .price-card.popular {
-            border: 2px solid var(--primary-color);
-            position: relative;
-        }
-        .popular-tag {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-color);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-        .price-value {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 20px 0;
-            color: white;
-        }
+        .pricing-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .price-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; text-align: center; width: 320px; transition: var(--transition); display: flex; flex-direction: column; }
+        .price-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2); }
+        .price-card.popular { border: 2px solid var(--primary-color); position: relative; }
+        .popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
+        .price-value { font-size: 3rem; font-weight: bold; margin: 20px 0; color: white; }
         .price-value span { font-size: 1rem; color: var(--text-dim); }
-        
-        .price-features {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-            text-align: left;
-            flex-grow: 1;
-        }
-        .price-features li {
-            margin-bottom: 12px;
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: flex-start;
-        }
-        .price-features li::before {
-            content: '✓';
-            color: var(--accent);
-            margin-right: 10px;
-            font-weight: bold;
-            margin-top: 2px;
-        }
-        
-        .price-features li.disabled {
-            opacity: 0.4;
-        }
-        .price-features li.disabled::before {
-            content: '✕';
-            color: #ff4444;
-        }
-
-        .secure-payment {
-            margin-top: 60px;
-            text-align: center;
-            opacity: 0.7;
-            width: 100%;
-        }
+        .price-features { list-style: none; padding: 0; margin: 30px 0; text-align: left; flex-grow: 1; }
+        .price-features li { margin-bottom: 12px; color: var(--text-dim); font-size: 0.95rem; display: flex; align-items: flex-start; }
+        .price-features li::before { content: '✓'; color: var(--accent); margin-right: 10px; font-weight: bold; margin-top: 2px; }
+        .price-features li.disabled { opacity: 0.4; }
+        .price-features li.disabled::before { content: '✕'; color: #ff4444; }
+        .secure-payment { margin-top: 60px; text-align: center; opacity: 0.7; width: 100%; }
     </style>
 </head>
 <body>
@@ -104,19 +29,34 @@
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo"><img src="images/cromaklogob.png" alt="Cromak Technology"></a>
-            <nav>
+            
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            
+            <nav id="nav-menu">
                 <a href="index.html">Início</a>
-                <a href="index.html#produtos">Produtos</a>
-                <a href="index.html#sobre">Sobre</a>
-                <a href="index.html#suporte">Suporte</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Produtos ▼</button>
+                    <div class="dropdown-content">
+                        <a href="index.html#inicio" style="color: var(--accent);">DeepClean Suite</a>
+                        <a href="404r.html">Install Compiler</a>
+                        <a href="404r.html">Password Guard</a>
+                        <a href="404r.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+
+                <a href="index.html#recursos">Recursos</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="suporte.html">Suporte</a>
                 
                 <div class="dropdown">
                     <button class="dropbtn">Idiomas ▼</button>
                     <div class="dropdown-content">
-                        <a href="en/index.html">🇺🇸 Inglês</a>
-                        <a href="es/index.html">🇪🇸 Espanhol</a>
-                        <a href="fr/index.html">🇫🇷 Francês</a>
-                        <a href="ru/index.html">🇷🇺 Russo</a>
+                        <a href="404r.html">🇺🇸 Inglês</a>
+                        <a href="404r.html">🇪🇸 Espanhol</a>
+                        <a href="404r.html">🇫🇷 Francês</a>
+                        <a href="404r.html">🇷🇺 Russo</a>
+                        <a href="404r.html">🇨🇳 Chinês</a>
                     </div>
                 </div>
             </nav>
@@ -142,7 +82,7 @@
                         <li class="disabled">Desfragmentação MFT / SSD TRIM</li>
                         <li class="disabled">Destruidor de Dados Militar</li>
                     </ul>
-                    <a href="LINK_DOWNLOAD_GRATIS" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Baixar Grátis</a>
+                    <a href="404r.html" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Baixar Grátis</a>
                 </div>
 
                 <div class="price-card">
@@ -157,7 +97,7 @@
                         <li>Desfragmentador Hives (Boot Execute)</li>
                         <li>Suporte Básico</li>
                     </ul>
-                    <a href="LINK_DO_CHECKOUT_MENSAL" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Assinar Mensal</a>
+                    <a href="404r.html" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Assinar Mensal</a>
                 </div>
 
                 <div class="price-card">
@@ -171,7 +111,7 @@
                         <li>Equivale a apenas R$ 8,32/mês</li>
                         <li>Suporte Prioritário</li>
                     </ul>
-                    <a href="LINK_DO_CHECKOUT_ANUAL" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Assinar Anual</a>
+                    <a href="404r.html" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Assinar Anual</a>
                 </div>
 
                 <div class="price-card popular">
@@ -186,7 +126,7 @@
                         <li>Acesso antecipado a novos módulos</li>
                         <li>Suporte Técnico VIP</li>
                     </ul>
-                    <a href="LINK_DO_CHECKOUT_VITALICIO" class="btn btn-primary">Comprar Vitalício</a>
+                    <a href="404r.html" class="btn btn-primary">Comprar Vitalício</a>
                 </div>
 
                 <div class="price-card">
@@ -200,7 +140,7 @@
                         <li>Implementação Guiada</li>
                         <li>Suporte Corporativo 24/7</li>
                     </ul>
-                    <a href="mailto:suporte@cromaktechnology.com" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Contactar Vendas</a>
+                    <a href="mailto:cromaksupport@gmail.com" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Contactar Vendas</a>
                 </div>
 
             </div>
@@ -215,12 +155,26 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#">Privacidade</a>
-                <a href="#">Termos de Uso</a>
+                <a href="404r.html">Privacidade</a>
+                <a href="404r.html">Termos de Uso</a>
             </div>
             <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
         </div>
     </footer>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileMenu.innerHTML = '✕';
+            } else {
+                mobileMenu.innerHTML = '☰';
+            }
+        });
+    </script>
 
 </body>
 </html>

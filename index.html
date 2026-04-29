@@ -12,24 +12,35 @@
 
     <header>
         <div class="container header-inner">
-            <a href="#" class="logo"><img src="images/cromaklogob.png" alt="Cromak Technology"></a>
+            <a href="index.html" class="logo"><img src="images/cromaklogob.png" alt="Cromak Technology"></a>
             
             <button class="menu-toggle" id="mobile-menu">☰</button>
             
             <nav id="nav-menu">
                 <a href="#inicio">Início</a>
-                <a href="#produtos">Produtos</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#suporte">Suporte</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Produtos ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepcleansuite.html" style="color: var(--accent);">DeepClean Suite</a>
+                        <a href="404r.html">Install Compiler</a>
+                        <a href="404r.html">Password Guard</a>
+                        <a href="404r.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+
+                <a href="#recursos">Recursos</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="suporte.html">Suporte</a>
                 
                 <div class="dropdown">
                     <button class="dropbtn">Idiomas ▼</button>
                     <div class="dropdown-content">
-                        <a href="en/index.html">🇺🇸 Inglês</a>
-                        <a href="es/index.html">🇪🇸 Espanhol</a>
-                        <a href="fr/index.html">🇫🇷 Francês</a>
-                        <a href="ru/index.html">🇷🇺 Russo</a>
-                        <a href="zh/index.html">🇨🇳 Chinês</a>
+                        <a href="404r.html">🇺🇸 Inglês</a>
+                        <a href="404r.html">🇪🇸 Espanhol</a>
+                        <a href="404r.html">🇫🇷 Francês</a>
+                        <a href="404r.html">🇷🇺 Russo</a>
+                        <a href="404r.html">🇨🇳 Chinês</a>
                     </div>
                 </div>
             </nav>
@@ -42,11 +53,13 @@
             <p>O nosso programa principal: a solução definitiva para acelerar o tempo de boot, gerenciar tarefas em segundo plano e recuperar a performance do seu PC.</p>
             <div style="display: flex; gap: 15px; justify-content: center;">
                 <a href="adquirir_deepclean_pro.html" class="btn btn-primary">Adquirir Agora</a>
-                <a href="#produtos" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Ver Produtos</a>
+                <a href="#recursos" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Ver Recursos</a>
             </div>
         </div>
         
         <div class="carousel-container">
+            <button class="carousel-control prev" id="prevBtn">❮</button>
+            
             <div class="carousel" id="carousel">
                 <div class="carousel-item"><img src="images/deepcleanpro_prev1.png" alt="Preview 1"></div>
                 <div class="carousel-item"><img src="images/deepcleanpro_prev2.png" alt="Preview 2"></div>
@@ -55,24 +68,51 @@
                 <div class="carousel-item"><img src="images/deepcleanpro_prev5.png" alt="Preview 5"></div>
                 <div class="carousel-item"><img src="images/deepcleanpro_prev6.png" alt="Preview 6"></div>
             </div>
+
+            <button class="carousel-control next" id="nextBtn">❯</button>
         </div>
     </section>
 
-    <section class="section" id="produtos">
+    <section class="section" id="recursos">
         <div class="container">
-            <h2 class="section-title">Nossos Produtos</h2>
+            <h2 class="section-title">Recursos do Programa</h2>
+            
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>Bootup Shield</h3>
-                    <p>Otimize a inicialização do Windows desativando itens desnecessários e reduzindo o tempo de carregamento drasticamente.</p>
+                    <h3 style="font-size: 1.2rem;">Bootup Shield</h3>
+                    <p style="font-size: 0.9rem;">Otimize a inicialização do Windows desativando itens desnecessários e reduzindo o tempo de carregamento.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Monitor de Performance</h3>
-                    <p>Acompanhe em tempo real a utilização de CPU e RAM com uma interface moderna e intuitiva.</p>
+                    <h3 style="font-size: 1.2rem;">Monitor de Performance</h3>
+                    <p style="font-size: 0.9rem;">Acompanhe em tempo real a utilização de CPU e RAM com uma interface gráfica moderna e intuitiva.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>Recuperação de RAM</h3>
-                    <p>Libere memória instantaneamente e automatize a limpeza para garantir que o sistema nunca fique lento.</p>
+                    <h3 style="font-size: 1.2rem;">Recuperação de RAM</h3>
+                    <p style="font-size: 0.9rem;">Libere memória instantaneamente e automatize a limpeza para garantir que o sistema nunca trave.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.2rem;">Desinstalador "Sniper"</h3>
+                    <p style="font-size: 0.9rem;">Motor independente que caça e oblitera rastros e chaves de registro de programas teimosos do sistema.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.2rem;">Game Booster</h3>
+                    <p style="font-size: 0.9rem;">Controlador que estrangula processos em 2º plano e força o Game Mode no Kernel para jogos.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.2rem;">Limpador de Registro</h3>
+                    <p style="font-size: 0.9rem;">Motor estrutural que expurga chaves órfãs e reescreve colmeias do Windows de forma segura.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.2rem;">Destruidor de Dados</h3>
+                    <p style="font-size: 0.9rem;">Ferramenta "Shredder" nível militar que sobrescreve arquivos confidenciais impedindo a recuperação.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.2rem;">Desfragmentador MFT</h3>
+                    <p style="font-size: 0.9rem;">Motor C++ de baixo nível que aplica cura atômica em HDDs e dispara o TRIM nativo em SSDs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="font-size: 1.2rem;">Central de Atualizações</h3>
+                    <p style="font-size: 0.9rem;">Módulo unificado que rastreia e instala as últimas versões de drivers, softwares de terceiros e pacotes críticos do Windows Update.</p>
                 </div>
             </div>
         </div>
@@ -82,7 +122,8 @@
         <div class="container">
             <h2 class="section-title">Sobre a Empresa</h2>
             <div class="about-content">
-                <p>A Cromak Technology desenvolve soluções avançadas para otimização de sistemas. Nosso carro-chefe, o Cromak DeepClean Suite, oferece recursos poderosos para acelerar o tempo de boot, gerenciar tarefas em segundo plano e recuperar memória RAM. Atuamos de forma nativa e silenciosa para garantir a máxima performance da sua máquina.</p>
+                <p>A Cromak Technology desenvolve soluções avançadas para otimização de sistemas, focando sempre em arquiteturas de baixo nível e segurança máxima. Nosso carro-chefe, o Cromak DeepClean Suite, atua de forma nativa e silenciosa para garantir a máxima performance da sua máquina.</p>
+                <a href="404r.html" class="btn btn-primary" style="margin-top: 25px;">Ler a História Completa</a>
             </div>
         </div>
     </section>
@@ -92,22 +133,21 @@
             <h2 class="section-title">Suporte e Vendas</h2>
             <p>Pronto para transformar a performance do seu computador?</p>
             <p style="margin-bottom: 2.5rem; color: var(--text-dim);">Entre em contato para adquirir a sua licença ou obter suporte técnico especializado.</p>
-            <a href="mailto:cromaksupport@gmail.com" class="btn btn-primary">Falar com o Suporte</a>
+            <a href="404r.html" class="btn btn-primary">Acessar a Central de Suporte</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="#">Privacidade</a>
-                <a href="#">Termos de Uso</a>
+                <a href="404r.html">Privacidade</a>
+                <a href="404r.html">Termos de Uso</a>
             </div>
             <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Lógica do Menu Mobile
         const mobileMenu = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
 
@@ -127,16 +167,16 @@
             });
         });
 
-        // Lógica do Carrossel 3D
         const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
         let currentIndex = 0;
+        let autoPlayTimer;
 
         function updateCarousel() {
             carouselItems.forEach((item, index) => {
-                // Remove all classes first
                 item.className = 'carousel-item';
                 
-                // Calculate position relative to current index
                 if (index === currentIndex) {
                     item.classList.add('active');
                 } else if (index === (currentIndex - 1 + carouselItems.length) % carouselItems.length) {
@@ -156,10 +196,28 @@
             updateCarousel();
         }
 
-        // Inicia o carrossel
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            updateCarousel();
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(nextSlide, 3500);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoPlay();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoPlay();
+        });
+
         updateCarousel();
-        // Troca de imagem a cada 3.5 segundos
-        setInterval(nextSlide, 3500);
+        autoPlayTimer = setInterval(nextSlide, 3500);
 
     </script>
 </body>
