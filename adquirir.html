@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adquirir - Cromak Technology</title>
+    
+    <link rel="icon" type="image/png" href="images/deepclean.png">
+    <link rel="stylesheet" href="css/estilo_premiun.css">
+    
+    <style>
+        .pricing-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            width: 320px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .price-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+        }
+        .price-card.popular {
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+        .popular-tag {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .price-value {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: white;
+        }
+        .price-value span { font-size: 1rem; color: var(--text-dim); }
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .price-features li {
+            margin-bottom: 12px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+        .price-features li::before {
+            content: '✓';
+            color: var(--accent);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .secure-payment {
+            margin-top: 60px;
+            text-align: center;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="images/cromaklogob.png" alt="Cromak Technology"></a>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="index.html#produtos">Produtos</a>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#suporte">Suporte</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Idiomas ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#">🇺🇸 Inglês</a>
+                        <a href="#">🇪🇸 Espanhol</a>
+                        <a href="#">🇫🇷 Francês</a>
+                        <a href="#">🇷🇺 Russo</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 150px;">
+        <div class="container">
+            <h2 class="section-title">Escolha o seu Plano</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Potencialize o seu Windows com a tecnologia Cromak.</p>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Pessoal Anual</h3>
+                    <div class="price-value">R$ 49<span>/ano</span></div>
+                    <ul class="price-features">
+                        <li>Licença para 1 PC</li>
+                        <li>Bootup Shield Completo</li>
+                        <li>Monitor de Performance</li>
+                        <li>Limpeza de RAM Automática</li>
+                        <li>Suporte por E-mail</li>
+                    </ul>
+                    <a href="LINK_DO_CHECKOUT_AQUI" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Comprar Agora</a>
+                </div>
+
+                <div class="price-card popular">
+                    <div class="popular-tag">MAIS VENDIDO</div>
+                    <h3>Pessoal Vitalício</h3>
+                    <div class="price-value">R$ 97<span>/único</span></div>
+                    <ul class="price-features">
+                        <li>Licença Vitalícia (Sem mensalidades)</li>
+                        <li>Uso em até 3 PCs</li>
+                        <li>Todos os recursos do DeepClean</li>
+                        <li>Atualizações prioritárias</li>
+                        <li>Suporte VIP 24/7</li>
+                    </ul>
+                    <a href="LINK_DO_CHECKOUT_AQUI" class="btn btn-primary">Comprar Agora</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Empresarial</h3>
+                    <div class="price-value">R$ 199<span>/ano</span></div>
+                    <ul class="price-features">
+                        <li>Licença para até 10 PCs</li>
+                        <li>Painel de Gestão Centralizado</li>
+                        <li>Otimização em Massa</li>
+                        <li>Suporte Técnico Prioritário</li>
+                        <li>Nota Fiscal para Empresas</li>
+                    </ul>
+                    <a href="mailto:suporte@cromaktechnology.com" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Contactar Vendas</a>
+                </div>
+            </div>
+
+            <div class="secure-payment">
+                <p>🔒 Pagamento 100% Seguro e Processamento Instantâneo</p>
+                <p style="font-size: 0.8rem;">Aceitamos PIX, Cartão de Crédito e Boleto.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
