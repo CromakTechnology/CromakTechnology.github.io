@@ -20,7 +20,7 @@ Atualmente, sou o arquiteto e desenvolvedor principal do **Cromak DeepClean Suit
 * **Projetos KDP / E-books:** Autor na Amazon KDP com foco em desenvolvimento pessoal.
 
 ###
-* **Acesse o site: https://cromaktechnology.github.io
+* **Acesse o site:** https://cromaktechnology.github.io
   
 ---
 *"A performance de um sistema é o reflexo da arquitetura do seu código."*
