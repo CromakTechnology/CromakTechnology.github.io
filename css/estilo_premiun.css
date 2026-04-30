@@ -201,6 +201,55 @@ nav a:hover {
     position: relative;
     padding-top: 150px;
 	overflow-x: hidden;
+	animation: textGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    0% { 
+        text-shadow: 0 0 10px rgba(0, 212, 255, 0.1); 
+    }
+    100% { 
+        text-shadow: 0 0 25px rgba(0, 212, 255, 0.6), 0 0 10px rgba(0, 212, 255, 0.3); 
+    }
+}
+
+/* 2. BOTÃO PRINCIPAL COM NEON PULSANTE */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3); /* Brilho inicial leve */
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px); /* Levanta um pouquinho ao passar o mouse */
+    box-shadow: 0 5px 25px rgba(0, 212, 255, 0.7); /* O brilho "acende" de verdade */
+}
+
+/* 3. CARDS DE RECURSOS ILUMINADOS (Hover Dinâmico) */
+.feature-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação super suave e elástica */
+    border: 1px solid rgba(255, 255, 255, 0.03); /* Borda quase invisível no estado normal */
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.6) 0%, rgba(15, 15, 15, 0.8) 100%);
+    backdrop-filter: blur(10px); /* Efeito de vidro esfumaçado */
+}
+
+.feature-card:hover {
+    transform: translateY(-8px); /* O card flutua para cima */
+    border-color: rgba(0, 212, 255, 0.8); /* A borda acende em azul neon */
+    background: linear-gradient(145deg, rgba(40, 40, 40, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+    
+    /* Cria um brilho interno e externo no card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
+                0 0 20px rgba(0, 212, 255, 0.15) inset,
+                0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Deixa os ícones/títulos dos cards um pouco mais brilhantes ao passar o mouse */
+.feature-card:hover h3 {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    transition: all 0.3s ease;
 }
 
 .hero-content {
