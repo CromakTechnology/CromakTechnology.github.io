@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Install Compiler & Icon Converter - Cromak Technology</title>
+    <title>Web To Apk Compiler - Cromak Technology</title>
     
     <link rel="icon" type="image/png" href="images/cromaklogosm.png">
     <link rel="stylesheet" href="css/estilo_premiun.css">
@@ -25,6 +25,7 @@
             text-transform: uppercase;
             margin-bottom: 20px;
             display: inline-block;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
         }
 
         .tech-specs {
@@ -48,11 +49,10 @@
         }
 
         .spec-list li::before {
-            content: '➔';
+            content: '⚡';
             position: absolute;
             left: 0;
-            color: var(--accent);
-            font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .spec-list h4 {
@@ -65,6 +65,7 @@
             font-size: 0.9rem;
             color: var(--text-dim);
             margin: 0;
+            line-height: 1.5;
         }
 
         .screenshot-main {
@@ -78,6 +79,7 @@
         .screenshot-main:hover {
             transform: scale(1.02);
             border-color: var(--accent);
+            box-shadow: 0 25px 60px rgba(0, 212, 255, 0.15);
         }
 
         .requirements-table {
@@ -121,9 +123,9 @@
                     <button class="dropbtn">Produtos ▼</button>
                     <div class="dropdown-content">
                         <a href="deepcleansuite.html">DeepClean Suite</a>
-                        <a href="installcompiler.html" style="color: var(--accent);">Install Compiler</a>
+                        <a href="installcompiler.html">Install Compiler</a>
                         <a href="passwordguard.html">Password Guard</a>
-                        <a href="webtoapkcompiler.html">Web To Apk Compiler</a>
+                        <a href="webtoapkcompiler.html" style="color: var(--accent);">Web To Apk Compiler</a>
                     </div>
                 </div>
 
@@ -148,11 +150,12 @@
     <main>
         <section class="product-hero">
             <div class="container">
-                <span class="badge-pro">Pacote Dev 2-em-1</span>
-                <h1 style="font-size: 4rem; margin-bottom: 10px;">Install Compiler</h1>
-                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">Crie Instaladores Profissionais e Empacote seus Projetos</p>
+                <span class="badge-pro">App Builder Profissional</span>
+                <h1 style="font-size: 4rem; margin-bottom: 10px;">Web To Apk Compiler 2.0</h1>
+                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">Transforme Sites e Sistemas Web em Aplicativos Nativos sem Tocar no Android Studio.</p>
                 
-                <img src="images/installcompiler1.png" alt="Interface Install Compiler" class="screenshot-main" style="max-width: 900px;">
+                <!-- A imagem 1 é o assistente principal -->
+                <img src="images/webtoapkcompiler_prev1.png" alt="Interface Principal Web to Apk" class="screenshot-main" style="max-width: 900px;">
             </div>
         </section>
 
@@ -160,63 +163,69 @@
             <div class="container">
                 <div class="tech-specs">
                     <div>
-                        <h2 style="text-align: left;" class="section-title">O Ponto Final do seu Código</h2>
+                        <h2 style="text-align: left;" class="section-title">Engenharia Web-to-Native</h2>
                         <ul class="spec-list">
                             <li>
-                                <h4>Compilação Estrutural</h4>
-                                <p>Reúna executáveis, scripts e dependências em um único instalador .exe seguro e com a sua marca.</p>
+                                <h4>UI Nativas Injetáveis</h4>
+                                <p>Crie Splash Screens imersivas e Menus Laterais (Navigation Drawers) nativos diretamente pela interface visual, sem precisar escrever uma única linha de Java ou Kotlin.</p>
                             </li>
                             <li>
-                                <h4>Gestão de Diretórios Dinâmica</h4>
-                                <p>Configure caminhos de extração personalizados, atalhos na Área de Trabalho e registros no Menu Iniciar automaticamente.</p>
+                                <h4>Alta Performance de Renderização</h4>
+                                <p>Motor com suporte a Aceleração de Hardware (GPU), Cache Inteligente de páginas offline e manipulação avançada de permissões do sistema Android.</p>
                             </li>
                             <li>
-                                <h4>Icon Converter Integrado</h4>
-                                <p>Não perca tempo com ferramentas externas. O pacote inclui um conversor robusto para transformar PNGs/JPGs em arquivos .ico nativos para o Windows.</p>
+                                <h4>Monetização Integrada</h4>
+                                <p>Aba exclusiva para injeção de IDs de anúncios (AdMob) e integração com APIs de Notificações Push (OneSignal, Firebase), deixando o seu app pronto para gerar receita.</p>
                             </li>
                             <li>
-                                <h4>Logs de Execução em Tempo Real</h4>
-                                <p>Acompanhe cada etapa da compilação e extração através do console embutido para facilitar o debug (Terminal View).</p>
+                                <h4>Console de Compilação Autônomo</h4>
+                                <p>Esqueça instalações pesadas de gigabytes do Android SDK. Nosso compilador standalone processa, assina e gera o APK final diretamente na sua máquina de forma rápida e visual.</p>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <img src="images/Iconconverter1.png" alt="Icon Converter Integrado" class="screenshot-main">
-                        <p style="text-align: center; color: var(--accent); margin-top: 15px; font-weight: bold;">+ Icon Converter incluso nativamente</p>
+                        <!-- Destaque para o recurso de Menu Lateral Dinâmico -->
+                        <img src="images/webtoapkcompiler_prev5.png" alt="Menu Lateral Dinâmico" class="screenshot-main" style="margin-bottom: 25px;">
+                        <p style="text-align: center; color: var(--text-dim); font-size: 0.9rem;">Construtor visual para Menus de Navegação</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Galeria de Funcionalidades Técnicas -->
         <section class="section" style="background: rgba(255,255,255,0.02);">
             <div class="container">
-                <h2 class="section-title">Fluxo de Trabalho</h2>
-                <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
-                    <img src="images/installcompiler2.png" alt="Configuração de Compilação" class="screenshot-main">
-                    <img src="images/installcompiler3.png" alt="Terminal de Execução" class="screenshot-main">
+                <h2 class="section-title">Controle Absoluto de Build</h2>
+                <div class="features-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <!-- Metadados e Ícones -->
+                    <img src="images/webtoapkcompiler_prev3.png" alt="Customização de Ícones" class="screenshot-main">
+                    <!-- Monetização / Comportamento -->
+                    <img src="images/webtoapkcompiler_prev7.png" alt="Aba de Monetização" class="screenshot-main">
+                    <!-- Terminal de Compilação -->
+                    <img src="images/webtoapkcompiler_prev8.png" alt="Console de Compilação" class="screenshot-main">
                 </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Especificações de Compilação</h2>
+                <h2 class="section-title">Especificações do Compilador</h2>
                 <table class="requirements-table">
                     <tr>
-                        <td>Saída Suportada</td>
-                        <td>Instaladores auto-extraíveis (Formatos .exe e .msi)</td>
+                        <td>Saída Padrão</td>
+                        <td>Arquivo .APK (Android Application Package) pronto para distribuição.</td>
                     </tr>
                     <tr>
-                        <td>Icon Converter</td>
-                        <td>Suporte de entrada para PNG, JPG, JPEG e saída multi-resolução (.ico)</td>
+                        <td>Tipo de Projetos Suportados</td>
+                        <td>URLs Remotas (SaaS, Lojas, Blogs) ou Arquivos HTML locais (Offline).</td>
                     </tr>
                     <tr>
-                        <td>Sistema Operacional</td>
-                        <td>Compatível com Windows 10 e 11 (Otimizado para arquitetura x64)</td>
+                        <td>Assinatura de App (Keystore)</td>
+                        <td>Integrado nativamente ao processo final de compilação.</td>
                     </tr>
                     <tr>
-                        <td>Público-Alvo</td>
-                        <td>Desenvolvedores Python, C++, C# e engenheiros de software independentes</td>
+                        <td>Requisitos do Sistema (PC)</td>
+                        <td>Windows 10 ou 11 (x64). Nenhuma dependência externa necessária.</td>
                     </tr>
                 </table>
             </div>
@@ -224,8 +233,8 @@
 
         <section class="section" style="text-align: center;">
             <div class="container">
-                <h2 style="margin-bottom: 30px;">Dê um aspecto profissional ao seu software.</h2>
-                <a href="404r.html" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Adquirir o Compilador</a>
+                <h2 style="margin-bottom: 30px;">O seu sistema Web merece estar na tela inicial do cliente.</h2>
+                <a href="404r.html" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Adquirir Licença Vitalícia</a>
             </div>
         </section>
     </main>
