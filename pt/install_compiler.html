@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Compiler & Icon Converter - Cromak Technology</title>
+    <!-- METADADOS DE SEO -->
+    <meta name="description" content="Crie instaladores profissionais para seus softwares com o Install Compiler. Inclui configuração avançada de extração e um Icon Converter nativo.">
+    <meta name="keywords" content="criar instalador EXE, compilador de software, empacotar programa windows, conversor de ícone, png para ico, Install Compiler, setup creator">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow">
+
+    <!-- OPEN GRAPH (WhatsApp/Redes Sociais) -->
+    <meta property="og:title" content="Install Compiler & Icon Converter">
+    <meta property="og:description" content="Empacote seus códigos em instaladores .exe profissionais com poucos cliques.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/../images/installcompiler1.png">
+    <meta property="og:url" content="https://cromaktechnology.github.io/install_compiler.html">
+    <link rel="icon" type="image/png" href="../images/cromaklogosm.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    
+    <style>
+        .product-hero {
+            padding-top: 180px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(0, 164, 239, 0.15) 0%, transparent 70%);
+        }
+        
+        .badge-pro {
+            background: var(--accent);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .tech-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .spec-list li {
+            margin-bottom: 25px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .spec-list li::before {
+            content: '➔';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .spec-list h4 {
+            color: var(--accent);
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+
+        .spec-list p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin: 0;
+        }
+
+        .screenshot-main {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .screenshot-main:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+
+        .requirements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .requirements-table td {
+            padding: 15px 25px;
+            border-bottom: 1px solid var(--card-border);
+            font-size: 0.9rem;
+        }
+
+        .requirements-table td:first-child {
+            color: var(--accent);
+            font-weight: bold;
+            width: 30%;
+        }
+
+        @media (max-width: 768px) {
+            .tech-specs { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="../images/cromaklogob.png" alt="Cromak Technology"></a>
+            
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            
+            <nav id="nav-menu">
+                <a href="index.html">Início</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Produtos ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepclean_suite.html">DeepClean Suite</a>
+                        <a href="install_compiler.html" style="color: var(--accent);">Install Compiler</a>
+						<a href="metadata_remover.html">Metadata Remover</a>
+                        <a href="password_guard.html">Password Guard</a>
+						<a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+
+                <a href="index.html#recursos">Recursos</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="suporte.html">Suporte</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Idiomas ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="mudarIdioma('pt', event)">
+                            <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português
+                        </a>
+                        <a href="#" onclick="mudarIdioma('en', event)">
+                            <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <span class="badge-pro">Pacote Dev 2-em-1</span>
+                <h1 style="font-size: 4rem; margin-bottom: 10px;">Cromak Install Compiler</h1>
+                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">Crie Instaladores Profissionais e Empacote seus Projetos</p>
+                
+                <img src="../images/installcompiler1.png" alt="Interface Install Compiler" class="screenshot-main" style="max-width: 900px;">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="tech-specs">
+                    <div>
+                        <h2 style="text-align: left;" class="section-title">O Ponto Final do seu Código</h2>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>Compilação Estrutural</h4>
+                                <p>Reúna executáveis, scripts e dependências em um único instalador .exe seguro e com a sua marca.</p>
+                            </li>
+                            <li>
+                                <h4>Gestão de Diretórios Dinâmica</h4>
+                                <p>Configure caminhos de extração personalizados, atalhos na Área de Trabalho e registros no Menu Iniciar automaticamente.</p>
+                            </li>
+                            <li>
+                                <h4>Icon Converter Integrado</h4>
+                                <p>Não perca tempo com ferramentas externas. O pacote inclui um conversor robusto para transformar PNGs/JPGs em arquivos .ico nativos para o Windows.</p>
+                            </li>
+                            <li>
+                                <h4>Logs de Execução em Tempo Real</h4>
+                                <p>Acompanhe cada etapa da compilação e extração através do console embutido para facilitar o debug (Terminal View).</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="../images/Iconconverter1.png" alt="Icon Converter Integrado" class="screenshot-main">
+                        <p style="text-align: center; color: var(--accent); margin-top: 15px; font-weight: bold;">+ Icon Converter incluso nativamente</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title">Fluxo de Trabalho</h2>
+                <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <img src="../images/installcompiler2.png" alt="Configuração de Compilação" class="screenshot-main">
+                    <img src="../images/installcompiler3.png" alt="Terminal de Execução" class="screenshot-main">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Especificações de Compilação</h2>
+                <table class="requirements-table">
+                    <tr>
+                        <td>Saída Suportada</td>
+                        <td>Instaladores auto-extraíveis (Formato .exe)</td>
+                    </tr>
+                    <tr>
+                        <td>Icon Converter</td>
+                        <td>Suporte de entrada para PNG, JPG, JPEG e saída multi-resolução (.ico)</td>
+                    </tr>
+                    <tr>
+                        <td>Sistema Operacional</td>
+                        <td>Compatível com Windows 10 e 11 (Otimizado para arquitetura x64)</td>
+                    </tr>
+                    <tr>
+                        <td>Público-Alvo</td>
+                        <td>Desenvolvedores Python, C++, C# e engenheiros de software independentes</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" style="text-align: center;">
+            <div class="container">
+                <h2 style="margin-bottom: 30px;">Dê um aspecto profissional ao seu software.</h2>
+                <a href="404r.html" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Adquirir o Compilador</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacidade.html">Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+            </div>
+            <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+	<script>
+        function mudarIdioma(lang, event) {
+            event.preventDefault(); // Impede a página de pular para o topo
+            
+            // Salva a decisão no navegador para a próxima vez que ele entrar na raiz
+            localStorage.setItem('idioma_preferido', lang);
+            
+            // Pega o nome do arquivo atual (ex: web_to_apk_compiler.html)
+            var paginaAtual = window.location.pathname.split('/').pop(); 
+            if (!paginaAtual) paginaAtual = 'index.html';
+            
+            // Manda para a pasta correspondente mantendo o nome do arquivo
+            window.location.href = '../' + lang + '/' + paginaAtual;
+        }
+    </script>
+</body>
+</html>

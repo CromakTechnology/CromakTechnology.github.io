@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Cromak Technology</title>
+    
+    <link rel="icon" type="image/png" href="../images/cromaklogosm.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    
+    <style>
+        .legal-hero { padding-top: 180px; padding-bottom: 50px; text-align: center; background: linear-gradient(to bottom, rgba(0, 212, 255, 0.05), transparent); }
+        .legal-content { background: var(--card-bg); padding: 50px; border-radius: 20px; border: 1px solid var(--card-border); max-width: 900px; margin: 0 auto 80px auto; box-shadow: var(--shadow); color: var(--text-dim); line-height: 1.8; font-size: 1.05rem; }
+        .legal-content h2 { color: #fff; margin-top: 40px; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
+        .legal-content h2:first-child { margin-top: 0; }
+        .legal-content p { margin-bottom: 20px; text-align: justify; }
+        .legal-content ul { margin-bottom: 20px; padding-left: 20px; }
+        .legal-content li { margin-bottom: 10px; }
+        .legal-content strong { color: var(--accent); }
+        .lang-icon { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 3px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="../images/cromaklogob.png" alt="Cromak Technology"></a>
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Products ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepclean_suite.html">DeepClean Suite</a>
+                        <a href="install_compiler.html">Install Compiler</a>
+                        <a href="metadata_remover.html">Metadata Remover</a>
+                        <a href="password_guard.html">Password Guard</a>
+                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+                <a href="index.html#recursos">Features</a>
+                <a href="sobre.html">About</a>
+                <a href="suporte.html">Support</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Languages ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="mudarIdioma('pt', event)">
+                            <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português
+                        </a>
+                        <a href="#" onclick="mudarIdioma('en', event)">
+                            <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="legal-hero">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 15px;">Terms and Conditions of Use</h1>
+                <p style="color: var(--text-dim);">Last updated: April 29, 2026</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="legal-content">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By downloading, installing, or using any software developed by <strong>Cromak Technology</strong> (including DeepClean Suite, Install Compiler, Password Guard, and Web To Apk Compiler), you fully agree to these Terms of Use. If you do not agree with any part of these terms, do not install or use our software.</p>
+
+                    <h2>2. Software Licensing</h2>
+                    <p>Our software is licensed, not sold. Cromak Technology grants you a personal, non-exclusive, non-transferable license, tied to the purchased plan (Monthly, Annual, or Lifetime).</p>
+                    <ul>
+                        <li>It is strictly prohibited to reverse engineer, decompile, bypass DRM (Digital Rights Management) systems, or distribute modified versions of our software.</li>
+                        <li>The "Lifetime" license refers to the life cycle of the product in question, guaranteeing updates for the major version acquired.</li>
+                    </ul>
+
+                    <h2>3. Disclaimer (Important Notice)</h2>
+                    <p>Our software performs deep system optimizations, which include modifications to the Windows Registry (Hives) and manipulation of the Master File Table (MFT).</p>
+                    <p>Although our engines feature advanced safety mechanisms and generate automatic backups (.dcr), <strong>you acknowledge that the use of these tools is at your own risk.</strong> Cromak Technology is not responsible for data loss, operating system instability, hardware failures, or commercial downtime caused by misuse or interruption of processes during software execution.</p>
+
+                    <h2>4. Apps and Compilers (Web To Apk / Install Compiler)</h2>
+                    <p>By using our compilation tools, you are entirely responsible for the packaged content. Cromak Technology assumes no legal liability for user-generated applications that infringe copyright, contain malware, or violate the policies of the Google Play Store or local servers.</p>
+
+                    <h2>5. Refunds and Warranties</h2>
+                    <p>We offer a 7-day money-back guarantee from the date of the license purchase, in accordance with applicable laws, should the software not meet your operational expectations. After this period, activated licenses are strictly non-refundable.</p>
+
+                    <h2>6. Changes to Terms</h2>
+                    <p>Cromak Technology reserves the right to modify these terms at any time. Substantial changes will be communicated through our official website or via email.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacidade.html">Privacy Policy</a>
+                <a href="termos.html" style="color: var(--accent);">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 Cromak Technology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        function mudarIdioma(lang, event) {
+            event.preventDefault(); 
+            localStorage.setItem('idioma_preferido', lang);
+            var paginaAtual = window.location.pathname.split('/').pop(); 
+            if (!paginaAtual) paginaAtual = 'index.html';
+            window.location.href = '../' + lang + '/' + paginaAtual;
+        }
+    </script>
+</body>
+</html>

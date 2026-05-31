@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get License - Cromak Metadata Remover</title>
+    
+    <link rel="icon" type="image/png" href="../images/cromaklogosm.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    
+    <style>
+        .pricing-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .price-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; text-align: center; width: 320px; transition: var(--transition); display: flex; flex-direction: column; }
+        .price-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 164, 239, 0.2); }
+        .price-card.popular { border: 2px solid var(--accent); position: relative; }
+        .popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
+        .price-value { font-size: 3rem; font-weight: bold; margin: 20px 0; color: white; }
+        .price-value span { font-size: 1rem; color: var(--text-dim); }
+        .price-features { list-style: none; padding: 0; margin: 30px 0; text-align: left; flex-grow: 1; }
+        .price-features li { margin-bottom: 15px; color: var(--text-dim); font-size: 0.95rem; display: flex; align-items: flex-start; }
+        .price-features li::before { content: '✓'; color: var(--accent); margin-right: 10px; font-weight: bold; margin-top: 2px; }
+        .price-features li.disabled { opacity: 0.4; }
+        .price-features li.disabled::before { content: '✕'; color: #ff4444; }
+        .secure-payment { margin-top: 60px; text-align: center; opacity: 0.7; width: 100%; }
+        .btn-buy { background: var(--accent); color: #000; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; display: block; text-align: center; }
+        .btn-buy:hover { background: #0082c6; color: #FFF; }
+        .btn-outline { background: rgba(255,255,255,0.05); color: white; padding: 12px; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border); transition: 0.3s; display: block; text-align: center; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+        .lang-icon { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 3px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="../images/cromaklogob.png" alt="Cromak Technology"></a>
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Products ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepclean_suite.html">DeepClean Suite</a>
+                        <a href="install_compiler.html">Install Compiler</a>
+                        <a href="metadata_remover.html" style="color: var(--accent);">Metadata Remover</a>
+                        <a href="password_guard.html">Password Guard</a>
+                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+                <a href="index.html#recursos">Features</a>
+                <a href="sobre.html">About</a>
+                <a href="suporte.html">Support</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Languages ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="mudarIdioma('pt', event)">
+                            <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português
+                        </a>
+                        <a href="#" onclick="mudarIdioma('en', event)">
+                            <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 150px; padding-bottom: 80px;">
+        <div class="container">
+            <h2 class="section-title">Choose Your Security Level</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Unlock full access to Cromak Metadata Remover's forensic engines.</p>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Evaluation (Trial)</h3>
+                    <div class="price-value">$0<span>/free</span></div>
+                    <ul class="price-features">
+                        <li>Basic Audio & Video Cleaning</li>
+                        <li>Multilingual Interface</li>
+                        <li class="disabled">Document Scanning Locked</li>
+                        <li class="disabled">Image Cleaning Locked</li>
+                        <li class="disabled">Military Wiping Inactive</li>
+                        <li class="disabled">No Updates</li>
+                        <li class="disabled">No Technical Support</li>
+                    </ul>
+                    <a href="https://www.mediafire.com/file/f1dlvzpnrcsp7xa/Cromak_Metadata_Remover_v1.2.0-Setup.zip/file" target="_blank" class="btn-outline">Download Trial</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Personal Monthly</h3>
+                    <div class="price-value">$5<span>.90/mo</span></div>
+                    <ul class="price-features">
+                        <li><b>1 Machine License</b></li>
+                        <li>Deep PDF Cleaning (Invisible Ink)</li>
+                        <li>Active Office Matryoshka Engine</li>
+                        <li>Physical Destruction (Military Wiping)</li>
+                        <li>MAC Times Masking</li>
+                        <li>Basic Technical Support</li>
+                        <li class="disabled">No Version Updates</li>
+                    </ul>
+                    <a href="suporte.html" class="btn-outline">Subscribe Monthly</a>
+                </div>
+
+                <div class="price-card popular">
+                    <div class="popular-tag">Best Seller</div>
+                    <h3>Personal Annual</h3>
+                    <div class="price-value">$29<span>.90/yr</span></div>
+                    <ul class="price-features">
+                        <li><b>Up to 3 Machine Licenses</b></li>
+                        <li>All Forensic Engines Unlocked</li>
+                        <li>Guaranteed Software Updates</li>
+                        <li>Priority Technical Support</li>
+                        <li>Ideal for Small Offices</li>
+                        <li>Just $2.49/mo equivalent</li>
+                    </ul>
+                    <a href="suporte.html" class="btn-buy">Subscribe Annual</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Lifetime License</h3>
+                    <div class="price-value">$59<span>.90/one-time</span></div>
+                    <ul class="price-features">
+                        <li><b>Up to 5 Machine Licenses</b></li>
+                        <li>One-time payment, yours forever</li>
+                        <li>Lifetime Updates Included</li>
+                        <li>Early access to new modules</li>
+                        <li>Premium Tech Support (Direct to DEV)</li>
+                        <li>No monthly fees</li>
+                    </ul>
+                    <a href="suporte.html" class="btn-outline">Buy Lifetime</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price-value">$69<span>.90/yr</span></div>
+                    <ul class="price-features">
+                        <li><b>10+ Licenses</b></li>
+                        <li>Corporate Invoice</li>
+                        <li>Guided Implementation</li>
+                        <li>Corporate Updates</li>
+                        <li>VIP Support (Garanteed SLA)</li>
+                        <li>Batch Security Consulting</li>
+                    </ul>
+                    <a href="suporte.html" class="btn-outline">Contact Sales</a>
+                </div>
+            </div>
+
+            <div class="secure-payment">
+                <p>🔒 Encrypted Transaction & Immediate Licensing</p>
+                <p style="font-size: 0.8rem;">Your Hardware ID license will be generated immediately after payment confirmation with our support team.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacidade.html">Privacy Policy</a>
+                <a href="termos.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 Cromak Technology. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                mobileMenu.innerHTML = '✕';
+            } else {
+                mobileMenu.innerHTML = '☰';
+            }
+        });
+
+        function mudarIdioma(lang, event) {
+            event.preventDefault(); 
+            localStorage.setItem('idioma_preferido', lang);
+            var paginaAtual = window.location.pathname.split('/').pop(); 
+            if (!paginaAtual) paginaAtual = 'index.html';
+            window.location.href = '../' + lang + '/' + paginaAtual;
+        }
+    </script>
+</body>
+</html>

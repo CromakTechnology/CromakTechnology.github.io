@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Cromak Technology</title>
+    
+    <link rel="icon" type="image/png" href="../images/cromaklogosm.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    
+    <style>
+        .legal-hero { padding-top: 180px; padding-bottom: 50px; text-align: center; background: linear-gradient(to bottom, rgba(0, 212, 255, 0.05), transparent); }
+        .legal-content { background: var(--card-bg); padding: 50px; border-radius: 20px; border: 1px solid var(--card-border); max-width: 900px; margin: 0 auto 80px auto; box-shadow: var(--shadow); color: var(--text-dim); line-height: 1.8; font-size: 1.05rem; }
+        .legal-content h2 { color: #fff; margin-top: 40px; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
+        .legal-content h2:first-child { margin-top: 0; }
+        .legal-content p { margin-bottom: 20px; text-align: justify; }
+        .legal-content ul { margin-bottom: 20px; padding-left: 20px; }
+        .legal-content li { margin-bottom: 10px; }
+        .legal-content strong { color: var(--accent); }
+        .lang-icon { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 3px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="../images/cromaklogob.png" alt="Cromak Technology"></a>
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Products ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepclean_suite.html">DeepClean Suite</a>
+                        <a href="install_compiler.html">Install Compiler</a>
+                        <a href="metadata_remover.html">Metadata Remover</a>
+                        <a href="password_guard.html">Password Guard</a>
+                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
+                    </div>
+                </div>
+                <a href="index.html#recursos">Features</a>
+                <a href="sobre.html">About</a>
+                <a href="suporte.html">Support</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Languages ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="mudarIdioma('pt', event)">
+                            <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português
+                        </a>
+                        <a href="#" onclick="mudarIdioma('en', event)">
+                            <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="legal-hero">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 15px;">Privacy Policy</h1>
+                <p style="color: var(--text-dim);">Last updated: April 29, 2026</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="legal-content">
+                    <h2>1. Zero-Knowledge Philosophy & Local Processing</h2>
+                    <p>Cromak Technology develops software with an extreme focus on performance and security. As an engineering principle, most of our tools, including <strong>DeepClean Suite</strong> and <strong>Password Guard</strong>, operate on an <strong>Offline-First</strong> (local processing) basis.</p>
+                    <p>For Password Guard, we utilize a <strong>Zero-Knowledge</strong> architecture. Your Master Password and vault data are encrypted locally via AES-256 bits. We do not receive, intercept, or hold the keys to decrypt your data. If you lose your Master Password, Cromak cannot recover it.</p>
+
+                    <h2>2. Personal Data Collection</h2>
+                    <p>We collect the bare minimum of information required to operate our licenses and technical support:</p>
+                    <ul>
+                        <li><strong>Purchase Data:</strong> Name and Email used at the time of license acquisition to send the activation key.</li>
+                        <li><strong>Telemetry Data (Optional):</strong> Software crash logs, which are fully anonymized and contain no personal file data or user registry entries.</li>
+                        <li><strong>Financial Transactions:</strong> We do not store credit card data. Processing is handled entirely by third-party encrypted payment gateways.</li>
+                    </ul>
+
+                    <h2>3. How We Use Your Information</h2>
+                    <p>The information collected is used strictly to:</p>
+                    <ul>
+                        <li>Authenticate and validate your software license on our servers (Hardware ID).</li>
+                        <li>Provide human technical support when requested via WhatsApp or Email.</li>
+                        <li>Send critical security updates and notices regarding the end-of-life cycle of legacy versions.</li>
+                    </ul>
+
+                    <h2>4. Data Sharing</h2>
+                    <p>Cromak Technology <strong>does not sell, rent, or trade</strong> your data to third parties under any circumstances. We are software engineers, not data brokers.</p>
+
+                    <h2>5. Your Rights (GDPR / LGPD)</h2>
+                    <p>You have the right to request the complete deletion of your account and email data from our support database at any time by emailing <strong>cromaksupport@gmail.com</strong>. Note: Deleting your licensing email may make it impossible to recover lost activation keys.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacidade.html" style="color: var(--accent);">Privacy Policy</a>
+                <a href="termos.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 Cromak Technology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        function mudarIdioma(lang, event) {
+            event.preventDefault(); 
+            localStorage.setItem('idioma_preferido', lang);
+            var paginaAtual = window.location.pathname.split('/').pop(); 
+            if (!paginaAtual) paginaAtual = 'index.html';
+            window.location.href = '../' + lang + '/' + paginaAtual;
+        }
+    </script>
+</body>
+</html>

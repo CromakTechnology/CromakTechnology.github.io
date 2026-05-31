@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web To Apk Compiler - Cromak Technology</title>
+    <meta name="description" content="Transform websites and HTML systems into native Android apps. 100% local processing, clean AdMob monetization, and real reverse engineering.">
+    <meta name="keywords" content="website to app, web to apk, html to android, create android app without coding, add admob to app, app builder, Web To Apk Compiler">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Web To Apk Compiler 2.0 | The End of Cloud App Builders">
+    <meta property="og:description" content="No cloud, no monthly fees. Transform your website into a native Android app with real reverse engineering and total data sovereignty.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/../images/webtoapkcompiler_prev1.png">
+    <meta property="og:url" content="https://cromaktechnology.github.io/en/web_to_apk_compiler.html">
+    <link rel="icon" type="image/png" href="../images/cromaklogosm.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    
+    <style>
+        .product-hero { padding-top: 180px; padding-bottom: 60px; text-align: center; background: radial-gradient(circle at top, rgba(0, 164, 239, 0.15) 0%, transparent 70%); }
+        .badge-pro { background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); }
+        .badge-danger { background: #E67E22; color: #FFF; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; margin-bottom: 20px; display: inline-block; text-transform: uppercase; margin-right: 10px; }
+        .tech-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 60px; }
+        .spec-list { list-style: none; padding: 0; text-align: left; }
+        .spec-list li { margin-bottom: 35px; padding-left: 45px; position: relative; }
+        .spec-list li::before { content: '➔'; position: absolute; left: 0; color: var(--accent); font-size: 1.2rem; font-weight: bold; }
+        .spec-list h4 { color: var(--accent); margin: 0 0 10px 0; font-size: 1.3rem; }
+        .spec-list p { font-size: 1rem; color: var(--text-dim); margin: 0; line-height: 1.6; }
+        .screenshot-main { width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 1px solid var(--card-border); transition: var(--transition); cursor: pointer; }
+        .screenshot-main:hover { transform: scale(1.02); border-color: var(--accent); box-shadow: 0 25px 60px rgba(0, 212, 255, 0.15); }
+        .highlight-box { background: rgba(0, 164, 239, 0.05); border: 1px solid #00A4EF; border-left: 5px solid #00A4EF; padding: 40px; border-radius: 10px; margin-top: 40px; text-align: left; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .gallery-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
+        .gallery-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card-caption { padding: 20px; text-align: left; }
+        .card-caption h4 { color: #FFF; margin: 0 0 10px 0; font-size: 1.1rem; }
+        .card-caption p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+        .lightbox-modal { display: none; position: fixed; z-index: 9999; padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.95); }
+        .lightbox-content { margin: auto; display: block; max-width: 90%; max-height: 80vh; border: 2px solid var(--card-border); border-radius: 8px; box-shadow: 0 0 30px rgba(0,164,239,0.3); }
+        .lightbox-caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 15px 0; font-size: 1.1rem; }
+        .lightbox-close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+        .lightbox-close:hover { color: var(--accent); }
+        .pricing-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .price-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; text-align: center; width: 320px; transition: var(--transition); display: flex; flex-direction: column; }
+        .price-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 164, 239, 0.2); }
+        .price-card.popular { border: 2px solid var(--accent); position: relative; }
+        .popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
+        .price-value { font-size: 3rem; font-weight: bold; margin: 20px 0; color: white; }
+        .price-value span { font-size: 1rem; color: var(--text-dim); }
+        .price-features { list-style: none; padding: 0; margin: 30px 0; text-align: left; flex-grow: 1; }
+        .price-features li { margin-bottom: 15px; color: var(--text-dim); font-size: 0.95rem; display: flex; align-items: flex-start; }
+        .price-features li::before { content: '✓'; color: var(--accent); margin-right: 10px; font-weight: bold; margin-top: 2px; }
+        .price-features li.disabled { opacity: 0.4; }
+        .price-features li.disabled::before { content: '✕'; color: #ff4444; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 1000px; margin: 40px auto; border-radius: 15px; border: 1px solid var(--card-border); box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .btn-buy { background: var(--accent); color: #000; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; display: block; text-align: center; }
+        .btn-buy:hover { background: #0082c6; color: #FFF; }
+        .btn-outline { background: rgba(255,255,255,0.05); color: white; padding: 12px; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border); transition: 0.3s; display: block; text-align: center; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+        .lang-icon { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 3px rgba(0,0,0,0.5); }
+        @media (max-width: 768px) { .tech-specs { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo"><img src="../images/cromaklogob.png" alt="Cromak Technology"></a>
+            
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            
+            <nav id="nav-menu">
+                <a href="index.html">Home</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Products ▼</button>
+                    <div class="dropdown-content">
+                        <a href="deepclean_suite.html">DeepClean Suite</a>
+                        <a href="install_compiler.html">Install Compiler</a>
+                        <a href="metadata_remover.html">Metadata Remover</a>
+                        <a href="password_guard.html">Password Guard</a>
+                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="web_to_apk_compiler.html" style="color: var(--accent);">Web To Apk Compiler</a>
+                    </div>
+                </div>
+
+                <a href="index.html#recursos">Features</a>
+                <a href="sobre.html">About</a>
+                <a href="suporte.html">Support</a>
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Languages ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="mudarIdioma('pt', event)"><img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português</a>
+                        <a href="#" onclick="mudarIdioma('en', event)"><img src="../images/lang_en.png" alt="EN" class="lang-icon"> English</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <span class="badge-danger">Native Reverse Engineering</span>
+                <span class="badge-pro">Standalone Desktop Engine</span>
+                
+                <h1 style="font-size: 3.5rem; margin-bottom: 15px; line-height: 1.1;">Transform any website into a Native Android App.</h1>
+                <h2 style="font-size: 1.8rem; color: var(--text-dim); font-weight: normal; margin-bottom: 30px;">No cloud. No monthly fees. 100% Yours.</h2>
+                
+                <p style="font-size: 1.1rem; color: #FFF; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    Escape the platforms that hijack your app. Meet the ultimate desktop compilation engine that delivers real reverse engineering, direct monetization, and total sovereignty over your data.
+                </p>
+                
+                <div style="margin-bottom: 60px;">
+                    <a href="#precos" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Get PRO License</a>
+                    <a href="https://www.mediafire.com/file/yourlink/WebToApk_Setup.zip" target="_blank" class="btn" style="background: rgba(255,255,255,0.05); color: white; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border);">Download Trial</a>
+                </div>
+
+                <img src="../images/webtoapkcompiler_prev1.png" alt="Web to Apk Main Interface" class="screenshot-main" style="max-width: 1000px;">
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <div class="highlight-box">
+                    <h2 style="color: #FFF; font-size: 2rem; margin-top: 0; margin-bottom: 20px;">Stop being a hostage to online "App Builders".</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 15px;">
+                        The vast majority of web-based app creation platforms (SaaS) hide a silent trap: they charge endless monthly fees, insert their own ads into your app stealing your profits, and force you to upload your security passwords (Keystore) to third-party servers. <strong>If their site goes offline, your app dies with it and can no longer be updated.</strong>
+                    </p>
+                    <p style="font-size: 1.1rem; color: #FFF; font-weight: bold; line-height: 1.8;">
+                        Cromak Web To Apk Compiler changes the game. It is a studio software installed directly on your computer. We deliver the industrial engine; you are the absolute owner of the factory.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">The 4 Pillars of Our Architecture</h2>
+                
+                <div class="tech-specs">
+                    <div>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>🔒 100% Local Processing (Data Sovereignty)</h4>
+                                <p>Nothing is sent to the cloud. The entire process of decompiling, code injection, and final APK generation happens on your machine. Your passwords, URLs, and <em>.jks</em> files (Keystore) never leave your hard drive. Absolute end-to-end security.</p>
+                            </li>
+                            <li>
+                                <h4>💰 Clean & Direct Monetization (100% Profit)</h4>
+                                <p>We don't steal your impressions and we don't charge a percentage. Insert your Google AdMob Banner and Interstitial ad blocks directly into the dashboard. Our engine injects your keys deep into the native Android code. The profit goes straight to your account.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>⚙️ Reverse Engineering vs. Generic "Wrappers"</h4>
+                                <p>Forget internet shortcuts. Our software uses industrial-grade tools (Apktool, Zipalign, and Apksigner v1/v2). It dismantles a clean Android base, rewrites Java/Smali packages, injects native resources, and recompiles an optimized APK approved for the Play Store.</p>
+                            </li>
+                            <li>
+                                <h4>🔓 Total Independence & White-Label</h4>
+                                <p>Create as many apps as you want without paying extra fees per app. Change the Package Name (e.g., <code>com.yourcompany.app</code>), developer name, and hide traces. Your end client will never know the app was generated by an automated system.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Explore the Engine from the Inside</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Click on the images to expand and inspect the injection modules.</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="../images/webtoapkcompiler_prev5.png" alt="Dynamic Navigation Drawer — Native code injection for Drawer menus." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Dynamic Navigation Drawer</h4>
+                            <p>Create elegant side menus by injecting native links to WhatsApp, Instagram, or support pages with instant rendering.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="../images/webtoapkcompiler_prev3.png" alt="Animations and Images — Splash Screen and Loader customization." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Splash Screen & Animations</h4>
+                            <p>Inject your brand into the startup. Full-screen splash display and native loading spinner integrated into the Android visual engine.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="../images/webtoapkcompiler_prev7.png" alt="AdMob Monetization and Push Notifications Dashboard." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Monetization & Notifications</h4>
+                            <p>Precise control over ads and native integration for JSON-based Push Notifications (OneSignal/Firebase).</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="../images/webtoapkcompiler_prev6.png" alt="Advanced Security and Permissions." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Permissions & Hardware Security</h4>
+                            <p>Enable and disable GPS, Camera, File Uploads, block screenshots, and manage output cache with a single click.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="../images/webtoapkcompiler_prev4.png" alt="Integrated Offline Error Page." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Airbag 404 System (Offline)</h4>
+                            <p>If the user loses internet connection, the app doesn't show the ugly browser error. It intercepts the failure and loads a custom HTML natively.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="../images/webtoapkcompiler_prev8.png" alt="Standalone Compilation Terminal." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Standalone Compilation Terminal</h4>
+                            <p>Track the decompilation process, Smali rewriting, memory alignment, and cryptographic signing in real-time, 100% offline.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="precos" class="section" style="background: rgba(255,255,255,0.02); padding-bottom: 80px;">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Choose the Ideal License for Your Business</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Get rid of abusive monthly fees and take control of the compilation.</p>
+
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h3>Trial Evaluation</h3>
+                        <div class="price-value">15<span> days</span></div>
+                        <ul class="price-features">
+                            <li>Full Visual Dashboard</li>
+                            <li>Offline Compilation Enabled</li>
+                            <li>Layout Testing on Device</li>
+                            <li class="disabled">Package Name Editing Blocked</li>
+                            <li class="disabled">Side Menu Injection Disabled</li>
+                            <li class="disabled">No Engine Updates</li>
+                            <li class="disabled">App expires after trial</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/yourlink/WebToApk_Setup.zip" target="_blank" class="btn-outline">Download Trial</a>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Personal Annual</h3>
+                        <div class="price-value">$29<span>.90/yr</span></div>
+                        <ul class="price-features">
+                            <li><b>1 Machine License</b></li>
+                            <li>Free Package Name Editing</li>
+                            <li>Monetization Engines Unlocked</li>
+                            <li>Menu and Resource Injection</li>
+                            <li>Unlimited APK Generation</li>
+                            <li>Mandatory Updates (Target API)</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-outline">Subscribe Annually</a>
+                    </div>
+
+                    <div class="price-card popular">
+                        <div class="popular-tag">Top Choice</div>
+                        <h3>Lifetime License</h3>
+                        <div class="price-value">$49<span>.90/once</span></div>
+                        <ul class="price-features">
+                            <li><b>Up to 3 Machine Licenses</b></li>
+                            <li>One-time payment, zero monthly fees</li>
+                            <li>Lifetime Engine Updates</li>
+                            <li>Support for New Play Store APIs</li>
+                            <li>100% White-Label Apps</li>
+                            <li>Priority Technical Support</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy">Buy Lifetime</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+                
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">Do I need to know how to code in Java or Kotlin?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">Absolutely not. The visual dashboard does all the heavy lifting of XML and Smali editing for you. Just fill in the fields and click compile.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">Is the application accepted on the Google Play Store?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">Yes! The system performs memory alignment (Zipalign) and signs the APK with the strict V1 and V2 signatures required by Google, generating an app ready for production.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">What if Android updates its API requirements?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">Google requires Target API updates annually. Users with Annual or Lifetime licenses receive engine updates (new `base.apk`) for free to keep their apps always compliant.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacidade.html">Privacy Policy</a>
+                <a href="termos.html">Terms of Use</a>
+            </div>
+            <p>&copy; 2026 Cromak Technology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        const modal = document.getElementById("lightboxModal");
+        const modalImg = document.getElementById("lightboxImg");
+        const captionText = document.getElementById("lightboxCaption");
+        const closeBtn = document.getElementById("closeLightbox");
+
+        document.querySelectorAll('.screenshot-main').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt; 
+            });
+        });
+
+        closeBtn.addEventListener('click', () => { modal.style.display = "none"; });
+        modal.addEventListener('click', function(event) { if (event.target === modal) modal.style.display = "none"; });
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape") modal.style.display = "none"; });
+
+        function mudarIdioma(lang, event) {
+            event.preventDefault();
+            localStorage.setItem('idioma_preferido', lang);
+            var paginaAtual = window.location.pathname.split('/').pop(); 
+            if (!paginaAtual) paginaAtual = 'index.html';
+            window.location.href = '../' + lang + '/' + paginaAtual;
+        }
+    </script>
+</body>
+</html>

@@ -549,3 +549,13 @@ footer {
     .carousel-control.prev { left: 5px; }
     .carousel-control.next { right: 5px; }
 }
+/* Ícones de Idioma no Menu */
+        .lang-icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 3px rgba(0,0,0,0.5); /* Dá um leve destaque na bandeira */
+        }
