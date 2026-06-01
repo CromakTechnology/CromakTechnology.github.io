@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cromak Technology - Loading...</title>
+    <title>Cromak Technology</title>
     
     <!-- METADADOS DE SEO -->
     <meta name="description" content="Cromak Technology - High performance software engineering.">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="mOchE2IHxNII0qF9s1rImpwncvGEDO1-ZKyMFUHT6wc" />
+    <link rel="canonical" href="https://cromaktechnology.github.io/" />
+    <meta name="theme-color" content="#00d4ff">
 	
-	<meta property="og:image" content="https://cromaktechnology.github.io/images/cromaklogoa.png">
-	<meta property="og:url" content="https://cromaktechnology.github.io/index.html">
-	<link rel="icon" type="image/png" href="images/cromaklogosm.png">
+    <!-- OPEN GRAPH (WhatsApp, Facebook, LinkedIn, Discord) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cromak Technology - Alta Performance">
+    <meta property="og:description" content="Engenharia de software nativo, utilitários de sistema e segurança forense.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/cromaklogoa.png">
+    <meta property="og:url" content="https://cromaktechnology.github.io/">
+
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cromak Technology">
+    <meta name="twitter:description" content="Engenharia de software nativo e ferramentas de segurança forense.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/cromaklogoa.png">
+
+    <link rel="icon" type="image/png" href="images/cromaklogosm.png">
 
     <script>
         // 1. Lê a preferência salva pelo usuário (se houver)
@@ -31,7 +44,21 @@
         }
     </script>
 </head>
-<body style="background-color: #0c0c0c;">
-    <!-- Tela vazia para evitar que a tela pisque branco antes de redirecionar -->
+<body style="background-color: #0c0c0c; color: #ffffff; font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    
+    <!-- Tela preta padrão do JS redirecionador -->
+
+    <!-- FALLBACK: Salva-vidas caso o JavaScript esteja bloqueado -->
+    <noscript>
+        <div style="text-align: center;">
+            <img src="images/cromaklogoa.png" alt="Cromak Technology" style="max-width: 250px; margin-bottom: 30px;">
+            <h2 style="margin-bottom: 10px;">Cromak Technology</h2>
+            <p style="color: #888; margin-bottom: 30px;">Please select your language / Por favor, selecione seu idioma:</p>
+            
+            <a href="/en/index.html" style="background-color: #3b82f6; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 10px; display: inline-block;">English</a>
+            <a href="/pt/index.html" style="background-color: #3b82f6; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 10px; display: inline-block;">Português</a>
+        </div>
+    </noscript>
+
 </body>
 </html>
