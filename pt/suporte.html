@@ -21,6 +21,7 @@
             grid-template-columns: 2fr 1fr;
             gap: 40px;
             margin-top: 50px;
+            align-items: start;
         }
 
         /* --- Estilo do FAQ --- */
@@ -31,15 +32,47 @@
             border: 1px solid var(--card-border);
         }
 
+        .faq-search {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 12px;
+            background: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            outline: none;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .faq-search:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+            background: rgba(40, 40, 40, 0.9);
+        }
+
+        .faq-category {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-bottom: 5px;
+        }
+
         .faq-item {
             margin-bottom: 25px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             padding-bottom: 15px;
+            transition: opacity 0.3s ease;
         }
 
         .faq-item h4 {
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 10px;
             cursor: pointer;
         }
@@ -50,11 +83,13 @@
             line-height: 1.6;
         }
 
-        /* --- Barra Lateral de Contato --- */
+        /* --- Barra Lateral (Contatos + Documentação) --- */
         .contact-sidebar {
             display: flex;
             flex-direction: column;
             gap: 25px;
+            position: sticky;
+            top: 100px;
         }
 
         .contact-card {
@@ -70,7 +105,7 @@
             display: block;
             width: 100%;
             padding: 15px;
-            border-radius: 30px;
+            border-radius: 15px;
             font-weight: bold;
             text-decoration: none;
             margin-top: 20px;
@@ -89,23 +124,118 @@
         }
 
         .btn-email-support {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+            border: none;
+        }
+
+        .btn-email-support:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
             color: white;
         }
 
         /* --- Download Center --- */
         .download-center {
-            margin-top: 60px;
             background: rgba(0, 164, 239, 0.05);
-            padding: 40px;
+            padding: 30px;
             border-radius: 20px;
             border: 1px dashed var(--accent);
             text-align: center;
+            transition: var(--transition);
         }
 
-        @media (max-width: 768px) {
-            .support-grid { grid-template-columns: 1fr; }
+        .download-center:hover {
+            background: rgba(0, 164, 239, 0.1);
         }
+
+        .btn-doc {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 12px;
+            border-radius: 12px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-doc:hover {
+            background: var(--accent);
+            color: #000;
+        }
+
+        @media (max-width: 992px) {
+            .support-grid { grid-template-columns: 1fr; }
+            .contact-sidebar { position: static; }
+        }
+		.btn-instagram-support {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+            border: none;
+        }
+
+        .btn-instagram-support:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
+            color: white;
+        }
+		/* --- Efeito de TV Glitch na Imagem --- */
+        .tv-glitch-img {
+            animation: tv-glitch 3s infinite; /* A tremidinha acontece a cada 3 segundos */
+            display: inline-block;
+        }
+
+        @keyframes tv-glitch {
+            0%, 95%, 100% { 
+                transform: translate(0, 0) skew(0deg); 
+                filter: none;
+            }
+            96% { 
+                transform: translate(-3px, 2px) skew(2deg); 
+                filter: drop-shadow(-3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(3px 0 0 rgba(0, 212, 255, 0.6)); 
+            }
+            97% { 
+                transform: translate(3px, -2px) skew(-2deg); 
+                filter: none; 
+            }
+            98% { 
+                transform: translate(-2px, 1px) skew(1deg); 
+                filter: drop-shadow(3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(-3px 0 0 rgba(0, 212, 255, 0.6)); 
+            }
+            99% { 
+                transform: translate(1px, -1px) skew(0deg); 
+                filter: none;
+            }
+			/* --- Efeito de TV Glitch na Imagem --- */
+        .tv-glitch-img {
+            animation: tv-glitch 3s infinite; /* A tremidinha acontece a cada 3 segundos */
+            display: inline-block;
+        }
+
+        @keyframes tv-glitch {
+            0%, 95%, 100% { 
+                transform: translate(0, 0) skew(0deg); 
+                filter: none;
+            }
+            96% { 
+                transform: translate(-3px, 2px) skew(2deg); 
+                filter: drop-shadow(-3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(3px 0 0 rgba(0, 212, 255, 0.6)); 
+            }
+            97% { 
+                transform: translate(3px, -2px) skew(-2deg); 
+                filter: none; 
+            }
+            98% { 
+                transform: translate(-2px, 1px) skew(1deg); 
+                filter: drop-shadow(3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(-3px 0 0 rgba(0, 212, 255, 0.6)); 
+            }
+            99% { 
+                transform: translate(1px, -1px) skew(0deg); 
+                filter: none;
+            }
     </style>
 </head>
 <body>
@@ -121,9 +251,9 @@
                     <div class="dropdown-content">
                         <a href="deepclean_suite.html">DeepClean Suite</a>
                         <a href="install_compiler.html">Install Compiler</a>
-						<a href="metadata_remover.html">Metadata Remover</a>
+                        <a href="metadata_remover.html">Metadata Remover</a>
                         <a href="password_guard.html">Password Guard</a>
-						<a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                         <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
                     </div>
                 </div>
@@ -158,62 +288,192 @@
             <div class="container">
                 <div class="support-grid">
                     
+                    <!-- Coluna da Esquerda: FAQ e Busca -->
                     <div class="faq-container">
-                        <h2 style="text-align: left; margin-bottom: 40px;" class="section-title">Perguntas Frequentes</h2>
+                        <h2 style="text-align: left; margin-bottom: 20px;" class="section-title">Base de Conhecimento</h2>
                         
-                        <div class="faq-item">
-                            <h4>O DeepClean Suite é seguro para o meu Registro?</h4>
-                            <p>Sim. O nosso motor utiliza uma arquitetura de "Cura Atômica" que analisa apenas chaves órfãs e redundantes. Além disso, o sistema cria automaticamente um clone do Registro (.dcr) antes de qualquer alteração profunda.</p>
-                        </div>
+                        <input type="text" id="faqSearch" class="faq-search" placeholder="Busque sua dúvida aqui (ex: licença, senha, apk, limpeza)..." onkeyup="filtrarFAQ()">
+                        
+                        <div id="faq-list">
+                            
+                            <!-- PAGAMENTO E LICENÇAS -->
+                            <h5 class="faq-category">Pagamentos e Licenças</h5>
+                            
+                            <div class="faq-item">
+                                <h4>Como recebo a minha licença após a compra?</h4>
+                                <p>O processamento é instantâneo. Assim que o pagamento é confirmado, a sua chave de ativação única e as instruções de instalação são enviadas diretamente para o seu e-mail cadastrado.</p>
+                            </div>
 
-                        <div class="faq-item">
-                            <h4>Como recebo a minha licença após a compra?</h4>
-                            <p>O processamento é instantâneo. Assim que o pagamento é confirmado, a sua chave de ativação única e as instruções de instalação são enviadas diretamente para o seu e-mail cadastrado.</p>
-                        </div>
+                            <div class="faq-item">
+                                <h4>Posso utilizar a licença em mais de um computador?</h4>
+                                <p>Depende do seu plano. A licença Pessoal Vitalícia permite a ativação em até 3 computadores simultâneos. Já as licenças Mensais e Anuais são limitadas a 1 dispositivo ativo por vez.</p>
+                            </div>
 
-                        <div class="faq-item">
-                            <h4>Posso utilizar a licença em mais de um computador?</h4>
-                            <p>Depende do seu plano. A licença Pessoal Vitalícia permite a ativação em até 3 computadores simultâneos. Já as licenças Mensais e Anuais são limitadas a 1 dispositivo.</p>
-                        </div>
+                            <div class="faq-item">
+                                <h4>Os softwares precisam de internet para funcionar?</h4>
+                                <p>Apenas a ativação inicial da licença requer conexão com a internet. A vasta maioria das nossas ferramentas foi desenhada para operar de forma 100% offline, garantindo a privacidade absoluta dos seus dados locais.</p>
+                            </div>
 
-                        <div class="faq-item">
-                            <h4>O software precisa de internet para funcionar?</h4>
-                            <p>A ativação inicial requer conexão, mas todos os módulos de limpeza, otimização de boot e destruição de dados funcionam de forma 100% offline para garantir a sua privacidade.</p>
+                            <!-- DEEPCLEAN SUITE -->
+                            <h5 class="faq-category">DeepClean Suite</h5>
+
+                            <div class="faq-item">
+                                <h4>O DeepClean oferece proteção antes de limpezas profundas?</h4>
+                                <p>Sim. Como medida de segurança, o sistema recomenda fortemente criar um Clone do Registro (.dcr). Se uma modificação extrema quebrar a inicialização do Windows, você poderá utilizar a Tela de Restauração para restaurar este clone e reviver o PC na hora.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>O que o Cromak Sentinel faz no meu computador?</h4>
+                                <p>O componente nativo "cbsservice.exe" atua como um serviço guardião em segundo plano que orquestra o Cromak Sentinel, funcionando como um EDR de proteção em tempo real.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>Como o desinstalador garante que nenhum arquivo fique para trás?</h4>
+                                <p>A nossa ferramenta vai além dos desinstaladores comuns. O software utiliza o motor "Sniper", projetado para obliterar rastros de programas ocultos varrendo diretamente a partir do caminho do executável após a desinstalação padrão.</p>
+                            </div>
+
+                            <!-- PASSWORD GUARD -->
+                            <h5 class="faq-category">Password Guard</h5>
+
+                            <div class="faq-item">
+                                <h4>O Password Guard armazena minhas senhas na nuvem?</h4>
+                                <p>Não. O sistema é baseado na arquitetura Zero-Knowledge (Conhecimento Zero). Isso significa que nós não temos servidores em nuvem e não possuímos acesso à sua Chave Mestra ou banco de dados.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>O que acontece se eu perder a minha chave.key?</h4>
+                                <p>O seu sistema de cofre é composto pelo banco (`dados.db`) e pela sua Chave Criptográfica (`chave.key`). Se você formatar o computador e perder o arquivo "chave.key", nem mesmo o criador do software poderá recuperar as suas senhas. Você deve sempre criar um "Backup Blindado" em um Pen Drive.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>Existe defesa contra roubo de senhas por Força Bruta?</h4>
+                                <p>Sim. Errar a senha na tela de login 5 vezes ativa o protocolo de segurança do software, que destrói a "chave.key" local permanentemente para impedir que terceiros invadam o seu banco de dados via força bruta.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>O que é o Protocolo Shredder?</h4>
+                                <p>É uma ferramenta forense de nível militar disponível na versão PRO. Ao ativar o Protocolo Shredder, o programa irá sobrescrever o arquivo original (como PDFs ou fotos sensíveis) com zeros absolutos antes de apagá-lo do Windows, tornando-o imune a softwares forenses de recuperação.</p>
+                            </div>
+
+                            <!-- INSTALL COMPILER -->
+                            <h5 class="faq-category">Install Compiler</h5>
+
+                            <div class="faq-item">
+                                <h4>O compilador reduz o tamanho final do meu arquivo executável?</h4>
+                                <p>Com certeza. O sistema utiliza algoritmos de compressão pesados, permitindo o uso da compressão LZMA e do motor executável UPX (quando ativado) para minimizar a pegada em disco do seu pacote final.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>Ele gera um desinstalador automaticamente?</h4>
+                                <p>Sim. Durante a fase de build, o motor gera e compila automaticamente um "slim uninstaller" com interface gráfica (GUI), que será incluído de forma invisível no seu instalador.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>Posso assinar digitalmente meus instaladores?</h4>
+                                <p>Sim. O Install Compiler integra-se perfeitamente com a ferramenta oficial SignTool da Microsoft, permitindo injetar e aplicar o seu Certificado Digital (.pfx) com carimbo de data/hora (Timestamp) para evitar alertas de antivírus.</p>
+                            </div>
+
+                            <!-- METADATA REMOVER -->
+                            <h5 class="faq-category">Metadata Remover</h5>
+
+                            <div class="faq-item">
+                                <h4>Posso limpar vários arquivos de uma só vez?</h4>
+                                <p>Sim. O software opera através de processamento em lote (Batch), permitindo importar dezenas de arquivos soltos ou pastas inteiras para sanitização simultânea.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>O que acontece com os arquivos originais após a limpeza?</h4>
+                                <p>Você escolhe. O sistema permite exportar as versões limpas para uma pasta específica, compactá-las em um arquivo .ZIP, ou ativar o modo "Sobrescrever", que destrói o arquivo original de forma irreversível e o substitui pela versão limpa.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>O programa apaga o histórico de edições de PDFs ou Word?</h4>
+                                <p>Sim. O módulo PRO conta com higienização estrutural de documentos, que remove ativamente histórico de revisões, autores e comentários ocultos. Em arquivos PDF, o sistema pode até aplicar tinta invisível em rastreadores.</p>
+                            </div>
+
+                            <!-- PNG TO ICON CONVERTER -->
+                            <h5 class="faq-category">PNG To ICO Converter</h5>
+
+                            <div class="faq-item">
+                                <h4>É possível extrair ícones de programas instalados?</h4>
+                                <p>Sim. O sistema possui um motor forense de engenharia reversa capaz de analisar arquivos binários do Windows (EXE/DLL) e extrair matrizes de ícones originais de dentro deles.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>Quais matrizes de cor e resoluções o software suporta?</h4>
+                                <p>A ferramenta suporta a compilação completa para diversas arquiteturas. Ela gera resoluções desde 512px até 16px. Quanto à profundidade de cor, há suporte a matrizes de 32 bits (True Color + Alpha), 8 bits (256 cores legado) e até 4 bits (16 cores para sistemas muito antigos).</p>
+                            </div>
+
+                            <!-- WEB TO APK COMPILER -->
+                            <h5 class="faq-category">Web To Apk Compiler</h5>
+
+                            <div class="faq-item">
+                                <h4>O compilador funciona para sites locais (offline)?</h4>
+                                <p>Sim. O sistema suporta dois modos: o Modo Online (converte uma URL ativa em App) e o Modo Offline, que permite empacotar uma pasta inteira contendo arquivos HTML/CSS/JS localmente no APK, permitindo seu funcionamento sem internet.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>O que acontece se eu perder a minha Keystore ou a senha?</h4>
+                                <p>Atenção máxima: se você perder a Keystore ou as suas respectivas senhas, você NUNCA MAIS poderá enviar atualizações do seu app para a Google Play. O aplicativo antigo na loja ficará inacessível para edições, forçando você a criar um novo e perder seus downloads.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h4>Quais recursos exclusivos existem no motor PRO?</h4>
+                                <p>A versão 2.0 oferece monetização integrada (injeção nativa de blocos AdMob sem programar), Menu Lateral Dinâmico (Navigation Drawer) injetado diretamente na interface Android e um modo "Highly Cached" para carregamento ultrarrápido.</p>
+                            </div>
+
                         </div>
+                        
+                        <p id="sem-resultados" style="display: none; color: var(--accent); text-align: center; margin-top: 20px;">Nenhuma pergunta encontrada com esse termo. Tente buscar por outra palavra.</p>
                     </div>
 
+                    <!-- Coluna da Direita: Barra Lateral -->
                     <div class="contact-sidebar">
+                        
+                        <!-- Card de Atendimento -->
                         <div class="contact-card">
-                            <img src="../images/cromaklogosm.png" alt="Cromak" style="width: 60px; margin-bottom: 15px;">
-                            <h3>Atendimento Humano</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-dim);">Fale diretamente com os nossos desenvolvedores e especialistas técnicos.</p>
+							<img src="../images/cromaklogobg.png" alt="Cromak" class="tv-glitch-img" style="width: 256px; margin-bottom: 15px;">
+                            <h3>Suporte Direto</h3>
+                            <p style="font-size: 0.9rem; color: var(--text-dim);">Fale diretamente com a equipe de engenharia para resoluções complexas ou dúvidas comerciais.</p>
                             
-                            <a href="https://wa.me/5516996430525?text=Olá!%20Preciso%20de%20ajuda%20técnica%20com%20um%20software%20Cromak." target="_blank" class="btn-support btn-whatsapp-support">
-                                Suporte via WhatsApp
+                            <!-- BOTÃO DO INSTAGRAM -->
+                            <a href="https://instagram.com/cromak_technology" target="_blank" class="btn-support btn-instagram-support">
+                                Instagram
+                            </a>
+							
+							<!-- BOTÃO DO WHATSAPP -->
+							<a href="https://wa.me/5516996430525?text=Olá!%20Estou%20no%20site%20da%20Cromak%20e%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" class="btn-support btn-whatsapp-support">
+                                Falar no WhatsApp
+                            </a>
+							
+							<!-- BOTÃO DO EMAIL -->
+                            <a href="mailto:cromaksupport@gmail.com" class="btn-support btn-email-support">
+                                Enviar E-mail (Ticket)
                             </a>
 
-                            <a href="mailto:cromaksupport@gmail.com" class="btn-support btn-email-support">
-                                Abrir Ticket por E-mail
-                            </a>
+                            
                         </div>
 
+                        <!-- Card de Horário -->
                         <div class="contact-card" style="background: rgba(255,255,255,0.03);">
                             <h4>Horário de Atendimento</h4>
                             <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 10px;">
                                 Segunda a Sexta: 09:00 às 18:00<br>
-                                Sábado: 09:00 às 12:00
+                                Sábado: 09:00 às 12:00<br>
+                                <span style="color: var(--accent); font-size: 0.8rem; display: block; margin-top: 8px;">* Horário de Brasília (GMT-3)</span>
                             </p>
                         </div>
+
+                        <!-- Bloco de Documentação (Agora no final) -->
+                        <div class="download-center">
+                            <h3 style="color: #fff; margin-bottom: 10px; font-size: 1.3rem;">Documentação</h3>
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">Acesse os manuais detalhados do usuário, guias de arquitetura técnica e notas de atualização de compilação.</p>
+                            <a href="documentacao.html" class="btn-doc">Acessar Arquivos</a>
+                        </div>
+
                     </div>
 
                 </div>
-
-                <div class="download-center">
-                    <h3 style="color: #fff; margin-bottom: 15px;">Centro de Downloads</h3>
-                    <p style="color: var(--text-dim); margin-bottom: 25px;">Precisa do manual do usuário ou das bibliotecas de driver mais recentes?</p>
-                    <a href="documentacao.html" class="btn btn-primary">Acessar Arquivos de Documentação</a>
-                </div>
-
             </div>
         </section>
     </main>
@@ -224,10 +484,47 @@
                 <a href="privacidade.html">Privacidade</a>
                 <a href="termos.html">Termos de Uso</a>
             </div>
-            <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+            <p>&copy; <span id="ano-atual"></span> Cromak Technology. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- Script de Busca do FAQ -->
+    <script>
+        function filtrarFAQ() {
+            let input = document.getElementById('faqSearch').value.toLowerCase();
+            let faqItems = document.getElementsByClassName('faq-item');
+            let categorias = document.getElementsByClassName('faq-category');
+            let semResultados = document.getElementById('sem-resultados');
+            let temVisivelGlobal = false;
+
+            for (let i = 0; i < faqItems.length; i++) {
+                let texto = faqItems[i].innerText.toLowerCase();
+                if (texto.includes(input)) {
+                    faqItems[i].style.display = "block";
+                    temVisivelGlobal = true;
+                } else {
+                    faqItems[i].style.display = "none";
+                }
+            }
+
+            // Oculta os títulos de categoria se a pessoa estiver fazendo uma busca (para não deixar "títulos soltos")
+            for (let j = 0; j < categorias.length; j++) {
+                if (input.length > 0) {
+                    categorias[j].style.display = "none";
+                } else {
+                    categorias[j].style.display = "block";
+                }
+            }
+
+            if (!temVisivelGlobal) {
+                semResultados.style.display = "block";
+            } else {
+                semResultados.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Script do Menu Mobile e Idioma -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
@@ -235,21 +532,16 @@
             navMenu.classList.toggle('active');
             mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
         });
-    </script>
-	<script>
+
         function mudarIdioma(lang, event) {
-            event.preventDefault(); // Impede a página de pular para o topo
-            
-            // Salva a decisão no navegador para a próxima vez que ele entrar na raiz
+            event.preventDefault(); 
             localStorage.setItem('idioma_preferido', lang);
-            
-            // Pega o nome do arquivo atual (ex: web_to_apk_compiler.html)
             var paginaAtual = window.location.pathname.split('/').pop(); 
             if (!paginaAtual) paginaAtual = 'index.html';
-            
-            // Manda para a pasta correspondente mantendo o nome do arquivo
             window.location.href = '../' + lang + '/' + paginaAtual;
         }
+
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

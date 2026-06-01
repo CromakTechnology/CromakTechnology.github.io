@@ -96,7 +96,11 @@
             color: var(--text-dim);
             font-size: 1.05rem;
             line-height: 1.7;
-            margin: 0;
+            margin-bottom: 15px; /* Espaço entre parágrafos múltiplos */
+        }
+        
+        .bento-card p:last-of-type {
+            margin-bottom: 0;
         }
 
         /* Tamanhos Específicos dos Cartões */
@@ -142,9 +146,9 @@
             border: 1px solid rgba(0, 212, 255, 0.2);
         }
 
-        /* Botão do WhatsApp (Chamativo) */
-        .btn-whatsapp {
-            background-color: #25D366;
+        /* Botão de Suporte (Novo Estilo) */
+        .btn-support {
+            background: linear-gradient(135deg, #007bff, #00d4ff);
             color: #fff;
             padding: 16px 30px;
             border-radius: 15px;
@@ -158,28 +162,13 @@
             transition: var(--transition);
             margin-top: 20px;
             width: 100%;
+            border: none;
         }
 
-        .btn-whatsapp:hover {
-            background-color: #1ebe57;
+        .btn-support:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
             color: white;
-        }
-
-        .email-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-            transition: 0.3s;
-        }
-
-        .email-link:hover {
-            color: #fff;
-            text-shadow: 0 0 10px var(--accent);
         }
 
         /* Responsividade Extrema */
@@ -191,7 +180,7 @@
                 grid-column: span 2;
             }
             .span-2-row {
-                grid-row: auto; /* Desativa altura dupla no tablet */
+                grid-row: auto; 
             }
         }
 
@@ -248,42 +237,60 @@
         <section class="about-hero">
             <div class="container">
                 <h1>O Motor Por Trás da Máquina</h1>
-                <p>Nós não criamos softwares. Nós arquitetamos performance.</p>
+                <p>Nossa História: O Nascimento da Cromak Technology</p>
             </div>
         </section>
 
         <section>
             <div class="bento-grid">
                 
+                <!-- Logo Animation (Ocupa 2 linhas verticais na primeira coluna) -->
                 <div class="bento-card logo-display span-2-row" style="background: rgba(10,10,10,0.5);">
                     <img src="../images/cromaklogoa.png" alt="Cromak Logo Original">
                 </div>
 
+                <!-- A Faísca (Ocupa as 2 colunas restantes ao lado do logo) -->
                 <div class="bento-card span-2-col">
-                    <h3><span style="color: var(--accent);">//</span> Nossa Filosofia</h3>
-                    <p>A Cromak Technology nasceu da exaustão. Cansamos de utilitários que apenas "limpam o cache do navegador" e fingem otimizar o sistema. Decidimos construir soluções brutais, de baixo nível, que descem até o Kernel e a MFT (Master File Table) do Windows para arrancar a lentidão pela raiz. Se o seu hardware é potente, o nosso software garante que ele voe.</p>
+                    <h3>💡 A Faísca: Da Frustração ao Propósito</h3>
+                    <p>A Cromak Technology nasceu de um sonho claro: criar softwares de alta performance que realmente fizessem a diferença no dia a dia das pessoas, sem burocracia ou complicações.</p>
+                    <p>Como usuários, nós cansamos de ferramentas digitais fragmentadas, pesadas e cheias de limitações "freemium" que prometem resolver um problema, mas só entregam anúncios e telas poluídas. Sentimos na pele a necessidade de utilitários que fossem diretos ao ponto. Foi dessa inconformidade que nasceu a nossa primeira grande solução, a <em>DeepClean Suite</em>, e o desejo de ir além. Se o mercado não entregava o que precisávamos, nós mesmos construiríamos.</p>
                 </div>
 
+                <!-- Arquiteto (Fica abaixo da Faísca, na coluna do meio) -->
                 <div class="bento-card">
                     <h3>O Arquiteto</h3>
-                    <p>Fundada e liderada por <strong>Marcos Souza</strong>, a engenharia da Cromak é focada na precisão e na agressividade controlada. Cada linha de código do DeepClean Suite e do Password Guard é pensada para máxima eficiência e segurança absoluta na manipulação de dados sensíveis do sistema.</p>
+                    <p>Fundada por <strong>Marcos Souza</strong>, a engenharia da Cromak une arquitetura de software robusta com visão de produto e foco absoluto na experiência do usuário para resolver problemas reais.</p>
                     <div class="tech-stack">
                         <span class="tech-badge">Python</span>
-                        <span class="tech-badge">C++</span>
-                        <span class="tech-badge">WinAPI</span>
                         <span class="tech-badge">PyQt6</span>
+                        <span class="tech-badge">Automação</span>
+                        <span class="tech-badge">UI/UX</span>
                     </div>
                 </div>
 
+                <!-- Visão de Futuro (Fica abaixo da Faísca, na última coluna) -->
                 <div class="bento-card">
-                    <h3>Linha Direta</h3>
-                    <p>Licenças corporativas, dúvidas avançadas ou parcerias? O nosso laboratório está com as portas abertas.</p>
+                    <h3>🚀 O Futuro se Constrói Juntos</h3>
+                    <p>A nossa visão de futuro não é sobre números abstratos, é sobre evolução contínua. Sabemos que, para entregar o melhor, precisamos ouvir quem mais importa: você.</p>
+                    <p>A Cromak está apenas começando, e queremos que nossos primeiros usuários façam parte do nosso laboratório de inovação. Nosso compromisso está na excelência do atendimento, na escuta ativa dos seus feedbacks e na consistência das nossas atualizações e compilações.</p>
+                </div>
+
+                <!-- O DNA (Fica na última linha, ocupando as duas primeiras colunas) -->
+                <div class="bento-card span-2-col">
+                    <h3>🛠️ O DNA Cromak: Alta Performance e Design Premium</h3>
+                    <p>Nós não criamos apenas linhas de código; nós estruturamos soluções inteligentes. Acreditamos que a tecnologia moderna nos permite focar no que realmente importa: uma arquitetura robusta, utilidade real e uma interface Premium.</p>
+                    <p>Para nós, um software precisa ser fácil de usar, elegante e incrivelmente rápido. Unimos o que há de mais avançado em engenharia de software contemporânea a um design limpo e intuitivo. Na Cromak, o foco é a experiência do usuário. Nossas ferramentas nascem prontas para o trabalho pesado, sem travar o seu computador e sem fazer você perder tempo.</p>
+                </div>
+
+                <!-- Fale Conosco (Fica cirurgicamente posicionado por último, na última coluna) -->
+                <div class="bento-card">
+                    <h3>Fale Conosco</h3>
+                    <p>Se você busca ferramentas com utilidade real, praticidade e a velocidade que a sua rotina exige, você está no lugar certo.</p>
+                    <p><strong>Seja bem-vindo à Cromak Technology. Alta performance de verdade.</strong></p>
                     
-                    <a href="https://wa.me/5516996430525?text=Olá!%20Estou%20no%20site%20da%20Cromak%20e%20gostaria%20de%20falar%20com%20vocês." target="_blank" class="btn-whatsapp">
-                        Falar no WhatsApp
+                    <a href="suporte.html" class="btn-support">
+                        Acessar Suporte
                     </a>
-                    
-                    <a href="mailto:cromaksupport@gmail.com" class="email-link">cromaksupport@gmail.com</a>
                 </div>
 
             </div>
@@ -296,7 +303,7 @@
                 <a href="privacidade.html">Privacidade</a>
                 <a href="termos.html">Termos de Uso</a>
             </div>
-            <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+            <p>&copy; <span id="ano-atual"></span> Cromak Technology. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -322,6 +329,10 @@
             // Manda para a pasta correspondente mantendo o nome do arquivo
             window.location.href = '../' + lang + '/' + paginaAtual;
         }
+    </script>
+	<script>
+        // Atualiza o ano automaticamente no rodapé
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
