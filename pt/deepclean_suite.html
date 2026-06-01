@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeepClean Suite - Cromak Technology</title>
-    <!-- METADADOS DE SEO -->
     <meta name="description" content="Acelere seu PC ao máximo com o DeepClean Suite. Limpeza profunda de registro, otimização de boot e desfragmentação de baixo nível para Windows.">
     <meta name="keywords" content="limpar registro do windows, acelerar boot do pc, otimizar windows 10, melhorar fps, desfragmentar disco, DeepClean Suite, otimizador de pc">
     <meta name="author" content="Cromak Technology">
     <meta name="robots" content="index, follow">
 
-    <!-- OPEN GRAPH (WhatsApp/Redes Sociais) -->
     <meta property="og:title" content="DeepClean Suite - Acelere seu Sistema">
     <meta property="og:description" content="Limpeza de nível Kernel e otimização brutal para recuperar a performance original do seu PC.">
     <meta property="og:image" content="https://cromaktechnology.github.io/../images/deepcleanpro_prev1.png">
@@ -21,6 +19,7 @@
     <style>
         .product-hero {
             padding-top: 180px;
+            padding-bottom: 60px;
             text-align: center;
             background: radial-gradient(circle at top, rgba(0, 164, 239, 0.15) 0%, transparent 70%);
         }
@@ -35,85 +34,134 @@
             text-transform: uppercase;
             margin-bottom: 20px;
             display: inline-block;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
         }
 
-        .tech-specs {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin-top: 80px;
-        }
-
-        .spec-list {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .spec-list li {
-            margin-bottom: 25px;
-            padding-left: 40px;
-            position: relative;
-        }
-
-        .spec-list li::before {
-            content: '➔';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
+        .badge-danger {
+            background: #E67E22;
+            color: #FFF;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-weight: bold;
-        }
-
-        .spec-list h4 {
-            color: var(--accent);
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
-        }
-
-        .spec-list p {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-            margin: 0;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            margin-right: 10px;
         }
 
         .screenshot-main {
             width: 100%;
-            border-radius: 15px;
+            border-radius: 12px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             border: 1px solid var(--card-border);
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .screenshot-main:hover {
             transform: scale(1.02);
             border-color: var(--accent);
+            box-shadow: 0 25px 60px rgba(0, 212, 255, 0.15);
         }
 
-        .requirements-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
+        /* Galeria Lightbox */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-card {
             background: var(--card-bg);
-            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
             overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
-        .requirements-table td {
-            padding: 15px 25px;
-            border-bottom: 1px solid var(--card-border);
-            font-size: 0.9rem;
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
         }
 
-        .requirements-table td:first-child {
-            color: var(--accent);
+        .card-caption {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .card-caption h4 { color: #FFF; margin: 0 0 10px 0; font-size: 1.1rem; }
+        .card-caption p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 80px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid var(--card-border);
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,164,239,0.3);
+        }
+
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
             font-weight: bold;
-            width: 30%;
+            transition: 0.3s;
+            cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            .tech-specs { grid-template-columns: 1fr; }
+        .lightbox-close:hover { color: var(--accent); }
+		
+		.video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 40px auto;
+            border-radius: 15px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
     </style>
 </head>
 <body>
@@ -132,9 +180,9 @@
                     <div class="dropdown-content">
                         <a href="deepclean_suite.html" style="color: var(--accent);">DeepClean Suite</a>
                         <a href="install_compiler.html">Install Compiler</a>
-						<a href="metadata_remover.html">Metadata Remover</a>
+                        <a href="metadata_remover.html">Metadata Remover</a>
                         <a href="password_guard.html">Password Guard</a>
-						<a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                         <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
                     </div>
                 </div>
@@ -161,76 +209,232 @@
     <main>
         <section class="product-hero">
             <div class="container">
+                <span class="badge-danger">Limpeza de Nível Kernel</span>
                 <span class="badge-pro">Arquitetura x64 Nativa</span>
-                <h1 style="font-size: 4rem; margin-bottom: 10px;">DeepClean Suite</h1>
-                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">Alta Performance em Sistemas Windows 10 e 11</p>
                 
-                <img src="../images/deepcleanpro_prev1.png" alt="Interface Principal" class="screenshot-main">
+                <h1 style="font-size: 3.5rem; margin-bottom: 15px; line-height: 1.1;">Cromak DeepClean Suite</h1>
+                <h2 style="font-size: 1.8rem; color: var(--text-dim); font-weight: normal; margin-bottom: 30px;">Otimização brutal para recuperar a performance original do seu PC.</h2>
+                
+                <p style="font-size: 1.1rem; color: #FFF; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    A solução definitiva para acelerar o tempo de boot, gerenciar tarefas em segundo plano e expurgar falhas do registro. Um motor C++ robusto operando de forma invisível no seu Windows.
+                </p>
+                
+                <div style="margin-bottom: 60px;">
+                    <a href="adquirir_deepclean_pro.html" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Adquirir Licença PRO</a>
+                    <a href="404r.html" class="btn" style="background: rgba(255,255,255,0.05); color: white; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border);">Baixar Versão Trial</a>
+                </div>
+
+                <img src="../images/deepcleanpro_prev1.png" alt="Assistente Inteligente em Ação" class="screenshot-main" style="max-width: 1000px;">
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" style="background: rgba(255,255,255,0.02);">
             <div class="container">
-                <div class="tech-specs">
-                    <div>
-                        <h2 style="text-align: left;" class="section-title">Tecnologia Avançada</h2>
-                        <ul class="spec-list">
-                            <li>
-                                <h4>Motor de Auditoria Global</h4>
-                                <p>Centralização de logs e debug de nível empresarial para monitoramento completo do sistema.</p>
-                            </li>
-                            <li>
-                                <h4>Compactador de Hives</h4>
-                                <p>Análise e reescrita de colmeias do Registro do zero, eliminando blocos vazios e otimizando o boot.</p>
-                            </li>
-                            <li>
-                                <h4>Algoritmo de Prioridade</h4>
-                                <p>Estrangulamento inteligente de processos em segundo plano para alocação máxima de CPU/RAM.</p>
-                            </li>
-                            <li>
-                                <h4>Gerenciador Sniper</h4>
-                                <p>Localização e remoção cirúrgica de plugins e extensões indesejadas em todos os navegadores.</p>
-                            </li>
-                        </ul>
+                <h2 class="section-title" style="text-align: center;">Explore o Motor por Dentro</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Clique nas imagens para expandir e conhecer os painéis da nossa suíte.</p>
+                
+                <div class="gallery-grid">
+                    
+                    <div class="gallery-card">
+                        <img src="../images/deepcleanpro_prev1.png" alt="Assistente Inteligente — O computador está saudável! Verificação em 1 clique." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Assistente Inteligente</h4>
+                            <p>O coração do sistema. Execute uma verificação rápida de integridade e segurança do seu computador com apenas um clique.</p>
+                        </div>
                     </div>
-                    <div>
-                        <img src="../images/deepcleanpro_prev4.png" alt="Recursos Técnicos" class="screenshot-main">
+
+                    <div class="gallery-card">
+                        <img src="../images/deepcleanpro_prev2.png" alt="Desinstalador Avançado — Lista e remoção profunda de softwares." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Desinstalador "Sniper"</h4>
+                            <p>Lista todos os programas instalados. Nosso motor independente caça e oblitera rastros e chaves de registro esquecidas.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deepcleanpro_prev3.png" alt="Limpeza Avançada — Guia de Limpeza Mágica para Windows." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Limpeza Avançada</h4>
+                            <p>Expurgo cirúrgico de lixo eletrônico, chaves órfãs do Registro e arquivos temporários que sobrecarregam o sistema.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deepcleanpro_prev4.png" alt="Otimizador de Sistema — Acompanhamento do tempo de boot e processos." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Otimizador de Boot</h4>
+                            <p>Monitore o tempo do seu último boot. Oculte ou atrase serviços desnecessários para uma inicialização ultrarrápida.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deepcleanpro_prev5.png" alt="Monitor de Sistema — Resumo completo do Hardware (CPU, RAM, GPU)." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Monitor de Hardware</h4>
+                            <p>Acompanhe em tempo real o uso e as especificações da sua CPU, Memória RAM, GPU e Placa Mãe com leitura nativa.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deepcleanpro_prev6.png" alt="Central de Atualizações — Atualizador de drivers e softwares." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Central de Atualizações</h4>
+                            <p>Rastreia e permite instalar pacotes críticos e novas versões de drivers de hardware diretamente pelo painel.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="recursos">
+            <div class="container">
+                <h2 class="section-title">Módulos Estruturais</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Bootup Shield</h3>
+                        <p style="font-size: 0.9rem;">Otimize a inicialização desativando itens desnecessários e reduzindo o tempo de carregamento.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Recuperação de RAM</h3>
+                        <p style="font-size: 0.9rem;">Libere memória instantaneamente e automatize a purga ativa para evitar travamentos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Game Booster</h3>
+                        <p style="font-size: 0.9rem;">Estrangula processos em 2º plano e força prioridade total no Kernel para execução de jogos pesados.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Limpador de Registro</h3>
+                        <p style="font-size: 0.9rem;">Motor que expurga chaves órfãs, reescreve colmeias e gera Clones (.hiv) como backup de segurança.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Destruidor de Dados</h3>
+                        <p style="font-size: 0.9rem;">Ferramenta "Shredder" nível militar que sobrescreve arquivos confidenciais impedindo a recuperação.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Desfragmentador MFT</h3>
+                        <p style="font-size: 0.9rem;">Motor C++ de baixo nível que aplica cura atômica em HDDs e dispara o protocolo TRIM em SSDs.</p>
+                    </div>
+					
+					<!-- Módulos resgatados do Index original -->
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Monitor de Performance</h3>
+                        <p style="font-size: 0.9rem;">Acompanhe em tempo real a utilização de CPU e RAM com uma interface gráfica moderna e intuitiva.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Desinstalador "Sniper"</h3>
+                        <p style="font-size: 0.9rem;">Motor independente que caça e oblitera rastros e chaves de registro de programas teimosos do sistema.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Central de Atualizações</h3>
+                        <p style="font-size: 0.9rem;">Rastreia e instala as últimas versões de drivers, softwares de terceiros e pacotes do Windows Update.</p>
+                    </div>
+                    
+                    <!-- Módulos extras baseados no motor (main.py) -->
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Assistente Inteligente</h3>
+                        <p style="font-size: 0.9rem;">Realize um "One-Click Scan" para verificar a saúde geral do computador e engatilhar otimizações automáticas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Gerenciador de Backup</h3>
+                        <p style="font-size: 0.9rem;">Central de controle de segurança dedicada para criar Pontos de Restauração e Clones do Registro localmente.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Diagnóstico Inteligente</h3>
+                        <p style="font-size: 0.9rem;">Ferramenta de análise profunda projetada para auditar a saúde do núcleo e resolver conflitos estruturais do Windows.</p>
+                    </div>
+					
+                </div>
+            </div>
+        </section>
+
+		<!-- Video YouTube -->
+		<section class="section">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Veja o Motor em Ação</h2>
+                <p style="color: var(--text-dim); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    Acompanhe o DeepClean Suite operando em tempo real, expurgando falhas e liberando a verdadeira performance do Windows.
+                </p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requisitos do Sistema -->
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Requisitos do Sistema</h2>
+                
+                <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                        
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Sistema Operacional</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Windows 10/11 <span style="color: var(--text-dim); font-weight: normal;">(ou superior. x64)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Processador</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Dual Core <span style="color: var(--text-dim); font-weight: normal;">(2.0 GHz ou superior)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Memória RAM</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">4 GB Mínimo <span style="color: var(--text-dim); font-weight: normal;">(Recomendado 8 GB)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Armazenamento</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">100 MB <span style="color: var(--text-dim); font-weight: normal;">de espaço livre em disco</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Privilégios do Sistema</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">UAC Nativo <span style="color: var(--text-dim); font-weight: normal;">(Auto-Elevação Integrada)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Conexão com a Internet</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Necessária <span style="color: var(--text-dim); font-weight: normal;">apenas para validar a licença PRO</span></p>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Perguntas Frequentes -->
         <section class="section">
-            <div class="container">
-                <h2 class="section-title">Requisitos do Sistema</h2>
-                <table class="requirements-table">
-                    <tr>
-                        <td>Sistema Operacional</td>
-                        <td>Windows 10, Windows 11 ou superior (x64)</td>
-                    </tr>
-                    <tr>
-                        <td>Privilégios de Acesso</td>
-                        <td>Auto-Elevação de Privilégios (UAC) integrada nativamente ao software</td>
-                    </tr>
-                    <tr>
-                        <td>Hardware Suportado</td>
-                        <td>Otimização específica para SSDs (NVMe/SATA) e HDDs de alta densidade</td>
-                    </tr>
-                    <tr>
-                        <td>Dependências</td>
-                        <td>Bibliotecas WinAPI integradas (Sem necessidade de runtimes externos)</td>
-                    </tr>
-                </table>
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Perguntas Frequentes</h2>
+                
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">O DeepClean oferece proteção antes de limpezas profundas?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">Sim. Como medida de segurança, o sistema recomenda fortemente criar um Clone do Registro (.hiv). Se uma modificação extrema quebrar a inicialização do Windows, você poderá utilizar a Tela de Restauração para restaurar este clone e reviver o PC na hora (leia o manual).</p>
+                </div>
+
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">O que o Cromak Sentinel faz no meu computador?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">O componente nativo "cbsservice.exe" atua como um serviço guardião em segundo plano que orquestra o Cromak Sentinel, funcionando como um EDR de proteção em tempo real.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">Como o desinstalador garante que nenhum arquivo fique para trás?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">A nossa ferramenta vai além dos desinstaladores comuns. O software utiliza o motor "Sniper", projetado para obliterar rastros de programas ocultos varrendo diretamente a partir do caminho do executável após a desinstalação padrão.</p>
+                </div>
             </div>
         </section>
 
-        <section class="section" style="text-align: center;">
-            <div class="container">
-                <h2 style="margin-bottom: 30px;">Pronto para otimizar o seu sistema?</h2>
-                <a href="adquirir_deepclean_pro.html" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Adquirir Licença Pro</a>
-            </div>
-        </section>
     </main>
+
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
 
     <footer>
         <div class="container">
@@ -238,7 +442,7 @@
                 <a href="privacidade.html">Privacidade</a>
                 <a href="termos.html">Termos de Uso</a>
             </div>
-            <p>&copy; 2026 Cromak Technology. Todos os direitos reservados.</p>
+            <p>&copy; <span id="ano-atual"></span> Cromak Technology. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -249,21 +453,34 @@
             navMenu.classList.toggle('active');
             mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
         });
-    </script>
-	<script>
+
+        // Lógica do Lightbox
+        const modal = document.getElementById("lightboxModal");
+        const modalImg = document.getElementById("lightboxImg");
+        const captionText = document.getElementById("lightboxCaption");
+        const closeBtn = document.getElementById("closeLightbox");
+
+        document.querySelectorAll('.screenshot-main').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt; 
+            });
+        });
+
+        closeBtn.addEventListener('click', () => { modal.style.display = "none"; });
+        modal.addEventListener('click', function(event) { if (event.target === modal) modal.style.display = "none"; });
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape") modal.style.display = "none"; });
+
         function mudarIdioma(lang, event) {
-            event.preventDefault(); // Impede a página de pular para o topo
-            
-            // Salva a decisão no navegador para a próxima vez que ele entrar na raiz
+            event.preventDefault();
             localStorage.setItem('idioma_preferido', lang);
-            
-            // Pega o nome do arquivo atual (ex: web_to_apk_compiler.html)
             var paginaAtual = window.location.pathname.split('/').pop(); 
             if (!paginaAtual) paginaAtual = 'index.html';
-            
-            // Manda para a pasta correspondente mantendo o nome do arquivo
             window.location.href = '../' + lang + '/' + paginaAtual;
         }
+
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
