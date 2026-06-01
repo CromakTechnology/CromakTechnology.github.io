@@ -9,30 +9,190 @@
     <link rel="stylesheet" href="../css/estilo_premiun.css">
     
     <style>
-        .about-hero { padding-top: 160px; padding-bottom: 50px; text-align: center; position: relative; }
-        .about-hero h1 { font-size: 4rem; background: linear-gradient(135deg, #ffffff, #00d4ff, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 15px; letter-spacing: -1px; }
-        .about-hero p { font-size: 1.3rem; color: var(--text-dim); max-width: 600px; margin: 0 auto; }
-        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(250px, auto); gap: 20px; max-width: 1100px; margin: 0 auto 80px auto; padding: 0 20px; }
-        .bento-card { background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(18, 18, 18, 0.9)); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05); padding: 40px; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; justify-content: center; }
-        .bento-card:hover { transform: translateY(-5px); border-color: rgba(0, 212, 255, 0.3); box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15); }
-        .bento-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 212, 255, 0.03) 0%, transparent 60%); z-index: 0; pointer-events: none; }
-        .bento-card > * { z-index: 1; position: relative; }
-        .bento-card h3 { color: #fff; font-size: 1.8rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .bento-card p { color: var(--text-dim); font-size: 1.05rem; line-height: 1.7; margin: 0; }
-        .span-2-col { grid-column: span 2; }
-        .span-2-row { grid-row: span 2; }
-        .logo-display { text-align: center; }
-        .logo-display img { width: 80%; max-width: 250px; filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4)); animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-        .tech-stack { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-        .tech-badge { background: rgba(0, 212, 255, 0.1); color: var(--accent); padding: 6px 15px; border-radius: 12px; font-size: 0.85rem; font-weight: bold; border: 1px solid rgba(0, 212, 255, 0.2); }
-        .btn-whatsapp { background-color: #25D366; color: #fff; padding: 16px 30px; border-radius: 15px; font-size: 1.1rem; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: var(--transition); margin-top: 20px; width: 100%; }
-        .btn-whatsapp:hover { background-color: #1ebe57; transform: scale(1.02); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); color: white; }
-        .email-link { color: var(--accent); text-decoration: none; font-weight: bold; display: block; text-align: center; margin-top: 15px; transition: 0.3s; }
-        .email-link:hover { color: #fff; text-shadow: 0 0 10px var(--accent); }
-        .lang-icon { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 3px rgba(0,0,0,0.5); }
-        @media (max-width: 992px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } .span-2-col { grid-column: span 2; } .span-2-row { grid-row: auto; } }
-        @media (max-width: 768px) { .about-hero h1 { font-size: 2.8rem; } .bento-grid { grid-template-columns: 1fr; } .span-2-col { grid-column: span 1; } }
+        /* --- Exclusive Style for the New "About" (Bento Box UI) --- */
+        .about-hero {
+            padding-top: 160px;
+            padding-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-hero h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #ffffff, #00d4ff, #007bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* The Bento Grid (Layout Magic) */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(250px, auto);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+        }
+
+        /* Individual Cards */
+        .bento-card {
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(18, 18, 18, 0.9));
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
+        }
+
+        /* Card Background Glow Effect */
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bento-card > * {
+            z-index: 1;
+            position: relative;
+        }
+
+        .bento-card h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .bento-card p {
+            color: var(--text-dim);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .bento-card p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* Specific Card Sizes */
+        .span-2-col {
+            grid-column: span 2;
+        }
+        
+        .span-2-row {
+            grid-row: span 2;
+        }
+
+        /* --- Internal Card Elements --- */
+        .logo-display {
+            text-align: center;
+        }
+        
+        .logo-display img {
+            width: 80%;
+            max-width: 250px;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tech-badge {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 6px 15px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        /* Support Button (New Style) */
+        .btn-support {
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            margin-top: 20px;
+            width: 100%;
+            border: none;
+        }
+
+        .btn-support:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+            color: white;
+        }
+
+        /* Extreme Responsiveness */
+        @media (max-width: 992px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .span-2-col {
+                grid-column: span 2;
+            }
+            .span-2-row {
+                grid-row: auto; 
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 { font-size: 2.8rem; }
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+            .span-2-col {
+                grid-column: span 1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,9 +208,9 @@
                     <div class="dropdown-content">
                         <a href="deepclean_suite.html">DeepClean Suite</a>
                         <a href="install_compiler.html">Install Compiler</a>
-                        <a href="metadata_remover.html">Metadata Remover</a>
+						<a href="metadata_remover.html">Metadata Remover</a>
                         <a href="password_guard.html">Password Guard</a>
-                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+						<a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                         <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
                     </div>
                 </div>
@@ -61,8 +221,12 @@
                 <div class="dropdown">
                     <button class="dropbtn">Languages ▼</button>
                     <div class="dropdown-content">
-                        <a href="#" onclick="mudarIdioma('pt', event)"><img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português</a>
-                        <a href="#" onclick="mudarIdioma('en', event)"><img src="../images/lang_en.png" alt="EN" class="lang-icon"> English</a>
+                        <a href="#" onclick="mudarIdioma('pt', event)">
+                            <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português
+                        </a>
+                        <a href="#" onclick="mudarIdioma('en', event)">
+                            <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -73,42 +237,60 @@
         <section class="about-hero">
             <div class="container">
                 <h1>The Engine Behind the Machine</h1>
-                <p>We don't build software. We architect performance.</p>
+                <p>Our Story: The Birth of Cromak Technology</p>
             </div>
         </section>
 
         <section>
             <div class="bento-grid">
                 
+                <!-- Logo Animation -->
                 <div class="bento-card logo-display span-2-row" style="background: rgba(10,10,10,0.5);">
                     <img src="../images/cromaklogoa.png" alt="Cromak Original Logo">
                 </div>
 
+                <!-- The Spark -->
                 <div class="bento-card span-2-col">
-                    <h3><span style="color: var(--accent);">//</span> Our Philosophy</h3>
-                    <p>Cromak Technology was born out of exhaustion. We got tired of utilities that just "clear browser cache" and pretend to optimize the system. We decided to build brutal, low-level solutions that reach down to the Windows Kernel and MFT (Master File Table) to pull slowness out by the root. If your hardware is powerful, our software ensures it flies.</p>
+                    <h3>💡 The Spark: From Frustration to Purpose</h3>
+                    <p>Cromak Technology was born from a clear dream: to create high-performance software that truly makes a difference in people's daily lives, without bureaucracy or complications.</p>
+                    <p>As users, we grew tired of fragmented, heavy digital tools full of "freemium" limitations that promise to solve a problem but only deliver ads and cluttered screens. We felt firsthand the need for straightforward utilities. From this nonconformity, our first great solution, the <em>DeepClean Suite</em>, was born, along with the desire to go further. If the market didn't deliver what we needed, we would build it ourselves.</p>
                 </div>
 
+                <!-- The Architect -->
                 <div class="bento-card">
                     <h3>The Architect</h3>
-                    <p>Founded and led by <strong>Marcos Souza</strong>, Cromak's engineering focuses on precision and controlled aggression. Every line of code in DeepClean Suite and Password Guard is crafted for maximum efficiency and absolute security when handling sensitive system data.</p>
+                    <p>Founded by <strong>Marcos Souza</strong>, Cromak's engineering unites robust software architecture with a product vision and an absolute focus on user experience to solve real problems.</p>
                     <div class="tech-stack">
                         <span class="tech-badge">Python</span>
-                        <span class="tech-badge">C++</span>
-                        <span class="tech-badge">WinAPI</span>
                         <span class="tech-badge">PyQt6</span>
+                        <span class="tech-badge">Automation</span>
+                        <span class="tech-badge">UI/UX</span>
                     </div>
                 </div>
 
+                <!-- Vision of the Future -->
                 <div class="bento-card">
-                    <h3>Direct Line</h3>
-                    <p>Corporate licenses, advanced inquiries, or partnerships? Our laboratory doors are open.</p>
+                    <h3>🚀 The Future is Built Together</h3>
+                    <p>Our vision of the future isn't about abstract numbers; it's about continuous evolution. We know that to deliver the best, we need to listen to who matters most: you.</p>
+                    <p>Cromak is just getting started, and we want our first users to be part of our innovation lab. Our commitment lies in excellent customer service, active listening to your feedback, and the consistency of our updates and builds.</p>
+                </div>
+
+                <!-- The DNA -->
+                <div class="bento-card span-2-col">
+                    <h3>🛠️ The Cromak DNA: High Performance & Premium Design</h3>
+                    <p>We don't just write lines of code; we structure intelligent solutions. We believe modern technology allows us to focus on what truly matters: robust architecture, real utility, and a Premium interface.</p>
+                    <p>For us, software must be easy to use, elegant, and incredibly fast. We unite the most advanced contemporary software engineering with a clean and intuitive design. At Cromak, the focus is on the user experience. Our tools are born ready for heavy lifting, without freezing your computer and without making you waste time.</p>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="bento-card">
+                    <h3>Contact Us</h3>
+                    <p>If you're looking for tools with real utility, practicality, and the speed your routine demands, you're in the right place.</p>
+                    <p><strong>Welcome to Cromak Technology. True high performance.</strong></p>
                     
-                    <a href="https://wa.me/5516996430525?text=Hello!%20I'm%20visiting%20the%20Cromak%20site%20and%20would%20like%20to%20talk." target="_blank" class="btn-whatsapp">
-                        Chat on WhatsApp
+                    <a href="suporte.html" class="btn-support">
+                        Access Support
                     </a>
-                    
-                    <a href="mailto:cromaksupport@gmail.com" class="email-link">cromaksupport@gmail.com</a>
                 </div>
 
             </div>
@@ -121,7 +303,7 @@
                 <a href="privacidade.html">Privacy Policy</a>
                 <a href="termos.html">Terms of Use</a>
             </div>
-            <p>&copy; 2026 Cromak Technology. All rights reserved.</p>
+            <p>&copy; <span id="ano-atual"></span> Cromak Technology. All rights reserved.</p>
         </div>
     </footer>
 
@@ -132,14 +314,25 @@
             navMenu.classList.toggle('active');
             mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
         });
-
+    </script>
+	<script>
         function mudarIdioma(lang, event) {
-            event.preventDefault(); 
+            event.preventDefault(); // Impede a página de pular para o topo
+            
+            // Salva a decisão no navegador para a próxima vez que ele entrar na raiz
             localStorage.setItem('idioma_preferido', lang);
+            
+            // Pega o nome do arquivo atual (ex: web_to_apk_compiler.html)
             var paginaAtual = window.location.pathname.split('/').pop(); 
             if (!paginaAtual) paginaAtual = 'index.html';
+            
+            // Manda para a pasta correspondente mantendo o nome do arquivo
             window.location.href = '../' + lang + '/' + paginaAtual;
         }
+    </script>
+    <script>
+        // Atualiza o ano automaticamente no rodapé
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
