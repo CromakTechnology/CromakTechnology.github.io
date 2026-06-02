@@ -526,5 +526,61 @@
             window.location.href = '../' + lang + '/' + paginaAtual;
         }
     </script>
+<!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
+    <style>
+        #backToTopBtn {
+            display: none; 
+            position: fixed;
+            bottom: 120px; 
+            right: 30px; 
+            z-index: 999;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            background-color: var(--accent);
+            color: #000;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+        #backToTopBtn:hover {
+            background-color: #0082c6;
+            color: #FFF;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
+        }
+    </style>
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a1e392a9a52f51c317613e6/1jq30ujl9';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
