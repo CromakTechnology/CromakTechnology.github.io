@@ -1,180 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-<urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+  <!-- Raiz do site -->
   <url>
     <loc>https://cromaktechnology.github.io/</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
 
+  <!-- Index -->
   <url>
     <loc>https://cromaktechnology.github.io/en/index.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://cromaktechnology.github.io/en/index.html"/>
-
-    <xhtml:link rel="alternate" hreflang="pt-BR"
-      href="https://cromaktechnology.github.io/pt/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/index.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/index.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-
-    <xhtml:link rel="alternate" hreflang="pt-BR"
-      href="https://cromaktechnology.github.io/pt/index.html"/>
-
-    <xhtml:link rel="alternate" hreflang="en"
-      href="https://cromaktechnology.github.io/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/index.html"/>
   </url>
 
+  <!-- DeepClean Suite -->
   <url>
     <loc>https://cromaktechnology.github.io/en/deepclean_suite.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/deepclean_suite.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/deepclean_suite.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/deepclean_suite.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/deepclean_suite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/deepclean_suite.html"/>
   </url>
 
+  <!-- Install Compiler -->
   <url>
     <loc>https://cromaktechnology.github.io/en/install_compiler.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/install_compiler.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/install_compiler.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/install_compiler.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/install_compiler.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/install_compiler.html"/>
   </url>
 
+  <!-- Metadata Remover -->
   <url>
     <loc>https://cromaktechnology.github.io/en/metadata_remover.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/metadata_remover.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/metadata_remover.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/metadata_remover.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/metadata_remover.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/metadata_remover.html"/>
   </url>
 
+  <!-- Password Guard -->
   <url>
     <loc>https://cromaktechnology.github.io/en/password_guard.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/password_guard.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/password_guard.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/password_guard.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/password_guard.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/password_guard.html"/>
   </url>
 
+  <!-- PNG to ICO Converter -->
   <url>
     <loc>https://cromaktechnology.github.io/en/png_to_ico_converter.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/png_to_ico_converter.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/png_to_ico_converter.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/png_to_ico_converter.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/png_to_ico_converter.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/png_to_ico_converter.html"/>
   </url>
 
+  <!-- Web to APK Compiler -->
   <url>
     <loc>https://cromaktechnology.github.io/en/web_to_apk_compiler.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/web_to_apk_compiler.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/web_to_apk_compiler.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/web_to_apk_compiler.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/web_to_apk_compiler.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/web_to_apk_compiler.html"/>
   </url>
 
+  <!-- Documentação -->
   <url>
     <loc>https://cromaktechnology.github.io/en/documentacao.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/documentacao.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/documentacao.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/documentacao.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/documentacao.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/documentacao.html"/>
   </url>
 
+  <!-- Suporte -->
   <url>
     <loc>https://cromaktechnology.github.io/en/suporte.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/suporte.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/suporte.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/suporte.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/suporte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/suporte.html"/>
   </url>
 
+  <!-- Privacidade -->
   <url>
     <loc>https://cromaktechnology.github.io/en/privacidade.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/privacidade.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/privacidade.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/privacidade.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/privacidade.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/privacidade.html"/>
   </url>
 
+  <!-- Termos -->
   <url>
     <loc>https://cromaktechnology.github.io/en/termos.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/termos.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/termos.html"/>
   </url>
-
   <url>
     <loc>https://cromaktechnology.github.io/pt/termos.html</loc>
     <lastmod>2026-06-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/termos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/termos.html"/>
   </url>
 
 </urlset>
