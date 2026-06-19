@@ -1,0 +1,44 @@
+# Cromak Technology
+
+> Cromak Technology - High performance software engineering.
+
+The following sections list pages on Cromak Technology grouped by topic. The "Optional" section can be skipped when a shorter context is needed.
+
+## En
+- [404 | Connection Lost](https://cromaktechnology.github.io/en/404r.html)
+- [Get DeepClean Suite - Cromak Technology](https://cromaktechnology.github.io/en/adquirir_deepclean_pro.html)
+- [DeepClean Suite - Cromak Technology](https://cromaktechnology.github.io/en/deepclean_suite.html): Accelerate your PC to the max with DeepClean Suite. Deep registry cleaning, boot optimization, and low-level defragmentation for Windows.
+- [Documentation Center - Cromak Technology](https://cromaktechnology.github.io/en/documentacao.html)
+- [Cromak Technology - High Performance](https://cromaktechnology.github.io/en/index.html): Cromak Technology - High-performance software engineering. Discover the DeepClean Suite, native compilers, and forensic security tools.
+- [Install Compiler & Icon Converter - Cromak Technology](https://cromaktechnology.github.io/en/install_compiler.html): Create professional installers for your software with Cromak Install Compiler. Includes LZMA compression, registry injection, smart uninsta…
+- [Get License - Cromak Metadata Remover](https://cromaktechnology.github.io/en/metadata_remover_comprar.html)
+- [Cromak Metadata Remover - Forensic Sanitization](https://cromaktechnology.github.io/en/metadata_remover.html): Forensic Engine for Data Sanitization and Atomic Destruction. Protect your privacy offline by removing EXIF, ID3 metadata, and hidden histo…
+- [Cromak Password Guard - Extreme Security | Cromak Technology](https://cromaktechnology.github.io/en/password_guard.html): Protect your credentials with Cromak Password Guard. 100% offline password vault, military-grade AES-256 encryption, and Dark Web leak scan…
+- [Purchase License - Cromak PNG To ICO Converter](https://cromaktechnology.github.io/en/png_to_ico_converter_comprar.html)
+- [Cromak PNG To ICO Converter - Advanced Icon Compilation](https://cromaktechnology.github.io/en/png_to_ico_converter.html): Advanced system for compilation, extraction, and icon manipulation for Windows. Create multi-resolution matrices with studio algorithms.
+- [Privacy Policy - Cromak Technology](https://cromaktechnology.github.io/en/privacidade.html)
+- [About Us - Cromak Technology](https://cromaktechnology.github.io/en/sobre.html)
+- [Technical Support - Cromak Technology](https://cromaktechnology.github.io/en/suporte.html)
+- [Terms of Use - Cromak Technology](https://cromaktechnology.github.io/en/termos.html)
+- [Web To Apk Compiler - Cromak Technology](https://cromaktechnology.github.io/en/web_to_apk_compiler.html): Transform websites and HTML systems into native Android apps. 100% local processing, clean AdMob monetization, and real reverse engineering.
+
+## Pt
+- [404 | Conexão Perdida](https://cromaktechnology.github.io/pt/404r.html)
+- [Adquirir - Cromak Technology](https://cromaktechnology.github.io/pt/adquirir_deepclean_pro.html)
+- [DeepClean Suite - Cromak Technology](https://cromaktechnology.github.io/pt/deepclean_suite.html): Acelere seu PC ao máximo com o DeepClean Suite. Limpeza profunda de registro, otimização de boot e desfragmentação de baixo nível para Wind…
+- [Central de Documentação - Cromak Technology](https://cromaktechnology.github.io/pt/documentacao.html)
+- [Cromak Technology - Alta Performance](https://cromaktechnology.github.io/pt/index.html): Cromak Technology - Engenharia de software de alta performance. Conheça o DeepClean Suite, compiladores nativos e ferramentas de segurança…
+- [Install Compiler & Icon Converter - Cromak Technology](https://cromaktechnology.github.io/pt/install_compiler.html): Crie instaladores profissionais para seus softwares com o Cromak Install Compiler. Inclui compressão LZMA, injeção de registro, desinstalad…
+- [Adquirir Licença - Cromak Metadata Remover](https://cromaktechnology.github.io/pt/metadata_remover_comprar.html)
+- [Cromak Metadata Remover - Sanitização Forense](https://cromaktechnology.github.io/pt/metadata_remover.html): Motor Forense de Sanitização e Destruição Atômica de Dados. Proteja sua privacidade offline removendo metadados EXIF, ID3 e históricos ocul…
+- [Cromak Password Guard - Segurança Extrema | Cromak Technology](https://cromaktechnology.github.io/pt/password_guard.html): Proteja suas credenciais com o Cromak Password Guard. Cofre de senhas 100% offline, criptografia militar AES-256 e scanner de vazamentos na…
+- [Adquirir Licença - Cromak PNG To ICO Converter](https://cromaktechnology.github.io/pt/png_to_ico_converter_comprar.html)
+- [Cromak PNG To ICO Converter - Compilação Avançada de Ícones](https://cromaktechnology.github.io/pt/png_to_ico_converter.html): Sistema avançado de compilação, manipulação e extração de ícones para Windows. Crie matrizes multirresolução com algoritmos de estúdio.
+- [Política de Privacidade - Cromak Technology](https://cromaktechnology.github.io/pt/privacidade.html)
+- [Sobre Nós - Cromak Technology](https://cromaktechnology.github.io/pt/sobre.html)
+- [Suporte Técnico - Cromak Technology](https://cromaktechnology.github.io/pt/suporte.html)
+- [Termos de Uso - Cromak Technology](https://cromaktechnology.github.io/pt/termos.html)
+- [Web To Apk Compiler - Cromak Technology](https://cromaktechnology.github.io/pt/web_to_apk_compiler.html): Transforme sites e sistemas HTML em aplicativos Android nativos. Processamento 100% local, monetização limpa via AdMob e engenharia reversa…
+
+## Optional
+- [Mapa do Site - Cromak Technology](https://cromaktechnology.github.io/sitemap.html): Mapa do site - Cromak Technology
