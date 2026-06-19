@@ -1,207 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://cromaktechnology.github.io/</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/404r.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/adquirir_deepclean_pro.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/deepclean_suite.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/documentacao.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/index.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/install_compiler.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/metadata_remover_comprar.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/metadata_remover.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/password_guard.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/png_to_ico_converter_comprar.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/png_to_ico_converter.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/privacidade.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/sobre.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/suporte.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/termos.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/en/web_to_apk_compiler.html</loc>
-    <lastmod>2026-06-19T21:29:03.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/404r.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/adquirir_deepclean_pro.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/deepclean_suite.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/documentacao.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/index.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/install_compiler.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/metadata_remover_comprar.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/metadata_remover.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/password_guard.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/png_to_ico_converter_comprar.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/png_to_ico_converter.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/privacidade.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/sobre.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/suporte.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/termos.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/pt/web_to_apk_compiler.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cromaktechnology.github.io/sitemap.html</loc>
-    <lastmod>2026-06-19T21:29:02.000Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://cromaktechnology.github.io/</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/index.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/index.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/deepclean_suite.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/install_compiler.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/metadata_remover.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/password_guard.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/png_to_ico_converter.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/web_to_apk_compiler.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/sobre.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/suporte.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/privacidade.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/termos.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/deepclean_suite.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/install_compiler.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/metadata_remover.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/password_guard.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/png_to_ico_converter.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/web_to_apk_compiler.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/sobre.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/suporte.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/privacidade.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/termos.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/adquirir_deepclean_pro.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/404r.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/metadata_remover_comprar.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/png_to_ico_converter_comprar.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/en/documentacao.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/adquirir_deepclean_pro.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/404r.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/metadata_remover_comprar.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/png_to_ico_converter_comprar.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://cromaktechnology.github.io/pt/documentacao.html</loc>
+  <lastmod>2026-06-19T21:34:46+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
 </urlset>
