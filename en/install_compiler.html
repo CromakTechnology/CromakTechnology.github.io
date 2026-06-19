@@ -1,39 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Install Compiler & Icon Converter - Cromak Technology</title>
-    <!-- SEO METADATA -->
-    <meta name="description" content="Create professional installers for your software with Install Compiler. Includes advanced extraction configuration and a native Icon Converter.">
-    <meta name="keywords" content="create EXE installer, software compiler, package windows program, icon converter, png to ico, Install Compiler, setup creator">
+    <meta name="description" content="Create professional installers for your software with Install Compiler. Includes LZMA compression, registry injection, smart uninstaller, and a native Icon Converter.">
+    <meta name="keywords" content="create EXE installer, software compiler, package windows program, icon converter, png to ico, Install Compiler, setup creator, pyinstaller setup">
     <meta name="author" content="Cromak Technology">
     <meta name="robots" content="index, follow">
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:title" content="Install Compiler & Icon Converter">
-    <meta property="og:description" content="Package your code into professional .exe installers with just a few clicks.">
-    <meta property="og:image" content="https://cromaktechnology.github.io/../images/installcompiler1.png">
-    <meta property="og:url" content="https://cromaktechnology.github.io/en/install_compiler.html">
+    <meta property="og:title" content="Install Compiler & Icon Converter | Cromak Technology">
+    <meta property="og:description" content="Package your code into professional .exe installers with extreme compression and reverse engineering of icons.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/../images/installcompiler7.png">
+    <meta property="og:url" content="https://cromaktechnology.github.io/install_compiler.html">
     <link rel="icon" type="image/png" href="../images/cromaklogosm.png">
     <link rel="stylesheet" href="../css/estilo_premiun.css">
     
     <style>
-        .product-hero { padding-top: 180px; text-align: center; background: radial-gradient(circle at top, rgba(0, 164, 239, 0.15) 0%, transparent 70%); }
-        .badge-pro { background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
-        .tech-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 80px; }
-        .spec-list { list-style: none; padding: 0; text-align: left; }
-        .spec-list li { margin-bottom: 25px; padding-left: 40px; position: relative; }
-        .spec-list li::before { content: '➔'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-        .spec-list h4 { color: var(--accent); margin: 0 0 5px 0; font-size: 1.1rem; }
-        .spec-list p { font-size: 0.9rem; color: var(--text-dim); margin: 0; }
-        .screenshot-main { width: 100%; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); border: 1px solid var(--card-border); transition: var(--transition); }
-        .screenshot-main:hover { transform: scale(1.02); border-color: var(--accent); }
-        .requirements-table { width: 100%; border-collapse: collapse; margin-top: 30px; background: var(--card-bg); border-radius: 10px; overflow: hidden; }
-        .requirements-table td { padding: 15px 25px; border-bottom: 1px solid var(--card-border); font-size: 0.9rem; }
-        .requirements-table td:first-child { color: var(--accent); font-weight: bold; width: 30%; }
-        .lang-icon { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 3px rgba(0,0,0,0.5); }
-        @media (max-width: 768px) { .tech-specs { grid-template-columns: 1fr; } }
+        .product-hero {
+            padding-top: 180px;
+            padding-bottom: 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(0, 164, 239, 0.15) 0%, transparent 70%);
+        }
+        
+        .badge-pro {
+            background: var(--accent);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .badge-danger {
+            background: #E67E22;
+            color: #FFF;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+
+        .tech-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .spec-list li {
+            margin-bottom: 35px;
+            padding-left: 45px;
+            position: relative;
+        }
+
+        .spec-list li::before {
+            content: '➔';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .spec-list h4 {
+            color: var(--accent);
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+
+        .spec-list p {
+            font-size: 1rem;
+            color: var(--text-dim);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .screenshot-main {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .screenshot-main:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+            box-shadow: 0 25px 60px rgba(0, 212, 255, 0.15);
+        }
+
+        /* Destaque Copywriting */
+        .highlight-box {
+            background: rgba(0, 164, 239, 0.05);
+            border: 1px solid #00A4EF;
+            border-left: 5px solid #00A4EF;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        /* Galeria Lightbox */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .gallery-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card-caption {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .card-caption h4 { color: #FFF; margin: 0 0 10px 0; font-size: 1.1rem; }
+        .card-caption p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            padding-top: 80px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border: 2px solid var(--card-border);
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,164,239,0.3);
+        }
+
+        .lightbox-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover { color: var(--accent); }
+
+        /* Pricing Grid */
+        .pricing-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .price-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; text-align: center; width: 320px; transition: var(--transition); display: flex; flex-direction: column; }
+        .price-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 164, 239, 0.2); }
+        .price-card.popular { border: 2px solid var(--accent); position: relative; }
+        .popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
+        .price-value { font-size: 3rem; font-weight: bold; margin: 20px 0; color: white; }
+        .price-value span { font-size: 1rem; color: var(--text-dim); }
+        .price-features { list-style: none; padding: 0; margin: 30px 0; text-align: left; flex-grow: 1; }
+        .price-features li { margin-bottom: 15px; color: var(--text-dim); font-size: 0.95rem; display: flex; align-items: flex-start; }
+        .price-features li::before { content: '✓'; color: var(--accent); margin-right: 10px; font-weight: bold; margin-top: 2px; }
+        .price-features li.disabled { opacity: 0.4; }
+        .price-features li.disabled::before { content: '✕'; color: #ff4444; }
+        
+        /* Botões de Preço */
+        .btn-buy { background: var(--accent); color: #000; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; display: block; text-align: center; }
+        .btn-buy:hover { background: #0082c6; color: #FFF; }
+        .btn-outline { background: rgba(255,255,255,0.05); color: white; padding: 12px; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border); transition: 0.3s; display: block; text-align: center; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+        @media (max-width: 768px) {
+            .tech-specs { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -81,41 +266,71 @@
     <main>
         <section class="product-hero">
             <div class="container">
+                <span class="badge-danger">LZMA + UPX Compression</span>
                 <span class="badge-pro">2-in-1 Dev Package</span>
-                <h1 style="font-size: 4rem; margin-bottom: 10px;">Cromak Install Compiler</h1>
-                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">Create Professional Installers and Package Your Projects</p>
                 
-                <img src="../images/installcompiler1.png" alt="Install Compiler Interface" class="screenshot-main" style="max-width: 900px;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 15px; line-height: 1.1;">Cromak Install Compiler.</h1>
+                <h2 style="font-size: 1.8rem; color: var(--text-dim); font-weight: normal; margin-bottom: 30px;">Create Professional Installers and Package Your Projects.</h2>
+                
+                <p style="font-size: 1.0rem; color: var(--accent); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    Version: 1.4.2
+                </p>
+                
+                <p style="font-size: 1.1rem; color: #FFF; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    The endpoint of your code. Gather executables, scripts, and dependencies into a single secure .exe installer, with registry injection, smart uninstaller, and your brand's visual identity.
+                </p>
+                
+                <div style="margin-bottom: 60px;">
+                    <a href="#precos" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Get PRO License</a>
+                    <a href="https://www.mediafire.com/file/63p6y0p0gc2b8xz/Cromak_Install_Compiler_v1.4.2_Setup.zip/file" target="_blank" class="btn" style="background: rgba(255,255,255,0.05); color: white; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border);">Download Trial Version</a>
+                </div>
+
+                <img src="../images/installcompiler1.png" alt="Install Compiler Main Interface" class="screenshot-main" style="max-width: 1000px;">
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <div class="highlight-box">
+                    <h2 style="color: #FFF; font-size: 2rem; margin-top: 0; margin-bottom: 20px;">Give your software a professional look.</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 15px;">
+                        Forget makeshift <code>.zip</code> files or basic extractors that give an amateur impression to your final client. Install Compiler delivers a robust step-by-step wizard.
+                    </p>
+                    <p style="font-size: 1.1rem; color: #FFF; font-weight: bold; line-height: 1.8;">
+                        Configure custom extraction paths, inject variables and keys into the Windows Registry, automatically create Desktop shortcuts, and provide a full native uninstaller. All through a simple and powerful visual interface.
+                    </p>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">The 4 Pillars of Our Architecture</h2>
+                
                 <div class="tech-specs">
                     <div>
-                        <h2 style="text-align: left;" class="section-title">The Final Stop for Your Code</h2>
                         <ul class="spec-list">
                             <li>
-                                <h4>Structural Compilation</h4>
-                                <p>Bundle executables, scripts, and dependencies into a single, secure, and branded .exe installer.</p>
+                                <h4>⚙️ Advanced Injection and Registry</h4>
+                                <p>Create registry keys (Regedit), dynamically modify INI files, associate custom extensions to your program, and apply text patches directly to installed files using hexadecimal offsets.</p>
                             </li>
                             <li>
-                                <h4>Dynamic Directory Management</h4>
-                                <p>Configure custom extraction paths, Desktop shortcuts, and Start Menu registry entries automatically.</p>
-                            </li>
-                            <li>
-                                <h4>Integrated Icon Converter</h4>
-                                <p>Don't waste time with external tools. The package includes a robust converter to transform PNGs/JPGs into native .ico files for Windows.</p>
-                            </li>
-                            <li>
-                                <h4>Real-Time Execution Logs</h4>
-                                <p>Track every step of the compilation and extraction process through the embedded console for easier debugging (Terminal View).</p>
+                                <h4>📦 Extreme Compression (LZMA + UPX)</h4>
+                                <p>Don't waste your client's bandwidth. The engine features compression levels ranging from fast to 'Extreme', fusing LZMA and UPX algorithms to drastically reduce your final installer size.</p>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <img src="../images/Iconconverter1.png" alt="Integrated Icon Converter" class="screenshot-main">
-                        <p style="text-align: center; color: var(--accent); margin-top: 15px; font-weight: bold;">+ Icon Converter natively included</p>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>🧹 Smart and Hybrid Uninstaller</h4>
+                                <p>The package automatically generates an uninstaller for your software. Choose between the standard "Slim" native engine (Tkinter), extremely lightweight in the KB range, or the robust visual engine in PyQt6. Clean orphaned keys, auto-kill processes, and wipe AppData.</p>
+                            </li>
+                            <li>
+                                <h4>🎨 Integrated Icon Converter</h4>
+                                <p>Don't waste time with external tools. The package includes a robust studio to extract icons from third-party DLLs/EXEs, or transform your PNGs and JPGs into native .ico files for Windows with 32-bit (Alpha) resolution support.</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -123,50 +338,256 @@
 
         <section class="section" style="background: rgba(255,255,255,0.02);">
             <div class="container">
-                <h2 class="section-title">Workflow</h2>
-                <div class="features-grid" style="grid-template-columns: repeat(2, 1fr);">
-                    <img src="../images/installcompiler2.png" alt="Compilation Configuration" class="screenshot-main">
-                    <img src="../images/installcompiler3.png" alt="Execution Terminal" class="screenshot-main">
+                <h2 class="section-title" style="text-align: center;">Explore the Studio Inside</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Click the images to expand and explore all configuration modules.</p>
+                
+                <div class="gallery-grid">
+                    
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler1.png" alt="Files Tab: Drag and drop your binaries, set destination paths (e.g. AppData, Program Files) and configure execution parameters (Auto-Run, Re-boot)." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Directory and File Management</h4>
+                            <p>Absolute control over destination folders, Start Menu shortcuts, and dependency extraction.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler2.png" alt="Wizard Tab: Modify static texts, define License Agreements (EULA), enable dark mode, and select global fonts." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Texts and License Agreement</h4>
+                            <p>Edit each installer screen, add terms of use (EULA), and control the color palette (Dark/Light mode).</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler3.png" alt="Advanced Injection: Define installer variables, run silent processes before or after installation, and modify the registry." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Advanced Options and Execution</h4>
+                            <p>Set privilege levels (UAC Admin), invisible execution, and system dependencies.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler4.png" alt="Quick Preview: View your installer's design in real-time, testing side and top bitmaps." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Preview (WYSIWYG)</h4>
+                            <p>Test the wizard design, alignments, and bitmaps in real-time before starting the build process.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler6.png" alt="Background: Configure wallpapers, gradients, or background music (.mp3) that play during installation." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Window and Audio Customization</h4>
+                            <p>Design an immersive fullscreen installation with background gradients and an integrated installation soundtrack.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler7.png" alt="Final Installer: The professional result, running independently on your client's computer." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Final Installer in Action</h4>
+                            <p>The result is an elegant, fast, and optimized package, ready to impress your end user.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler5.png" alt="Integrated Icon Converter: Native studio to convert images and extract icons from executables." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Icon Studio (PNG To ICO)</h4>
+                            <p>Don't rely on external sites. Use the native converter to create multi-resolution icons (32-bit with Alpha), apply stamps (PRO/Admin), and extract matrices from other executables.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/installcompiler8.png" alt="Execution Console: Monitor the packaging log, LZMA decompression, and security HASH key generation." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Terminal and Build Logs</h4>
+                            <p>Monitor every critical step: from uninstaller injection to packaging and SHA-256 Checksum generation.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="section">
+
+        <section id="precos" class="section" style="padding-bottom: 80px;">
             <div class="container">
-                <h2 class="section-title">Compilation Specifications</h2>
-                <table class="requirements-table">
-                    <tr>
-                        <td>Supported Output</td>
-                        <td>Self-extracting installers (.exe format)</td>
-                    </tr>
-                    <tr>
-                        <td>Icon Converter</td>
-                        <td>Input support for PNG, JPG, JPEG and multi-resolution output (.ico)</td>
-                    </tr>
-                    <tr>
-                        <td>Operating System</td>
-                        <td>Compatible with Windows 10 and 11 (Optimized for x64 architecture)</td>
-                    </tr>
-                    <tr>
-                        <td>Target Audience</td>
-                        <td>Python, C++, C# developers and independent software engineers</td>
-                    </tr>
-                </table>
+                <h2 class="section-title" style="text-align: center;">Choose the Ideal License for Your Workflow</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Support the continuous development of this professional tool.</p>
+
+                <div class="pricing-grid">
+                    
+                    <div class="price-card">
+                        <h3>Trial Version</h3>
+                        <div class="price-value">30<span> days</span></div>
+                        <ul class="price-features">
+                            <li>Full Visual Dashboard</li>
+                            <li>Compilation Enabled</li>
+                            <li>Icon Converter Access</li>
+                            <li class="disabled">Shows Trial screen on software</li>
+                            <li class="disabled">No Engine Updates</li>
+                            <li class="disabled">No priority support</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/63p6y0p0gc2b8xz/Cromak_Install_Compiler_v1.4.2_Setup.zip/file" target="_blank" class="btn-outline">Download Trial Version</a>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Personal Annual</h3>
+                        <div class="price-value">$ 29<span>.90/year</span></div>
+                        <ul class="price-features">
+                            <li><b>1 Machine License</b></li>
+                            <li>Unlimited Builds</li>
+                            <li>Icon Converter PRO Unlocked</li>
+                            <li>No Trial screens or warnings</li>
+                            <li>White-Label Installer Projects</li>
+                            <li>Software Updates</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-outline">Subscribe Annually</a>
+                    </div>
+
+                    <div class="price-card popular">
+                        <div class="popular-tag">Most Popular</div>
+                        <h3>Lifetime License</h3>
+                        <div class="price-value">$ 69<span>.90/once</span></div>
+                        <ul class="price-features">
+                            <li><b>Up to 3 Machine Licenses</b></li>
+                            <li>One-time payment, no renewals</li>
+                            <li>Lifetime Updates</li>
+                            <li>LZMA + UPX Compression Enabled</li>
+                            <li>Hybrid Uninstaller Unlocked</li>
+                            <li>Priority Tech Support</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy">Buy Lifetime</a>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <section class="section" style="text-align: center;">
-            <div class="container">
-                <h2 style="margin-bottom: 30px;">Give your software a professional look.</h2>
-                <a href="404r.html" class="btn btn-primary" style="padding: 20px 50px; font-size: 1.2rem;">Get the Compiler</a>
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Multilingual Installers</h2>
+                <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Generate setups with multi-language support. The final installer you create can read and instantly adapt to your client's operating system language.
+                </p>
+                
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 40px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">BR</span> Português (Brasil)
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">US</span> English (US)
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">ES</span> Español
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">DE</span> Deutsch
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">FR</span> Français
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">IT</span> Italiano
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">JP</span> 日本語
+                    </div>
+
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">KR</span> 한국어
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">RU</span> Русский
+                    </div>
+
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">TH</span> ไทย
+                    </div>
+                    
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 20px; border-radius: 8px; color: #FFF; font-size: 0.95rem; font-weight: bold; transition: var(--transition);">
+                        <span style="font-size: 0.8rem; font-weight: 900; margin-right: 6px; text-transform: uppercase;">CN</span> 中文 (简体)
+                    </div>
+
+                </div>
             </div>
         </section>
+
+		<section class="section">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Build Environment Requirements</h2>
+                
+                <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                        
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Operating System</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Windows 10/11 <span style="color: var(--text-dim); font-weight: normal;">or higher (64-bit)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">RAM Memory</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">4 GB Minimum <span style="color: var(--text-dim); font-weight: normal;">(When compiling huge projects)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Storage</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">80 MB <span style="color: var(--text-dim); font-weight: normal;">of free space for installation</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Supported Files</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Executables from any language <span style="color: var(--text-dim); font-weight: normal;">(Python, C#, C++, etc.)</span></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+                
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">What dependencies will the setup I create need on the client's machine?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">None! The generated installer is a standalone binary. It doesn't require prior installation of Python, Java, or C++ Redistributable on your client's computer (unless you add those files to the installation package yourself).</p>
+                </div>
+
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">How does the built-in Icon Converter work?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">It acts in two ways: (1) Reverse engineering by extracting native icons from DLLs and EXEs on your computer. (2) Converting your PNG arts into multi-resolution .ICO files, preserving Alpha channels (32-bit) which are crucial for perfect Windows shortcuts.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">Does it work for software compiled with PyInstaller or cx_Freeze?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">Yes! In fact, it is highly recommended for Python applications. Since PyInstaller usually generates folders with dozens of libraries (DLLs and PYDs), Install Compiler merges all these loose files into a single, elegant, and compressed `Setup.exe` file.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
 
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="privacidade.html">Privacy Policy</a>
+                <a href="privacidade.html">Privacy</a>
                 <a href="termos.html">Terms of Use</a>
             </div>
             <p>&copy; 2026 Cromak Technology. All rights reserved.</p>
@@ -174,6 +595,7 @@
     </footer>
 
     <script>
+        // Mobile Menu
         const mobileMenu = document.getElementById('mobile-menu');
         const navMenu = document.getElementById('nav-menu');
         mobileMenu.addEventListener('click', () => {
@@ -181,6 +603,25 @@
             mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
         });
 
+        // Lightbox Config
+        const modal = document.getElementById("lightboxModal");
+        const modalImg = document.getElementById("lightboxImg");
+        const captionText = document.getElementById("lightboxCaption");
+        const closeBtn = document.getElementById("closeLightbox");
+
+        document.querySelectorAll('.screenshot-main').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt; 
+            });
+        });
+
+        closeBtn.addEventListener('click', () => { modal.style.display = "none"; });
+        modal.addEventListener('click', function(event) { if (event.target === modal) modal.style.display = "none"; });
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape") modal.style.display = "none"; });
+    </script>
+	<script>
         function mudarIdioma(lang, event) {
             event.preventDefault(); 
             localStorage.setItem('idioma_preferido', lang);
@@ -189,5 +630,59 @@
             window.location.href = '../' + lang + '/' + paginaAtual;
         }
     </script>
-</body>
+    
+    <button id="backToTopBtn" title="Back to top">↑</button>
+    <style>
+        #backToTopBtn {
+            display: none; 
+            position: fixed;
+            bottom: 120px; 
+            right: 30px; 
+            z-index: 999;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            background-color: var(--accent);
+            color: #000;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+        #backToTopBtn:hover {
+            background-color: #0082c6;
+            color: #FFF;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
+        }
+    </style>
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a1e392a9a52f51c317613e6/1jq30ujl9';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    </body>
 </html>
