@@ -4,47 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cromak Metadata Remover - Forensic Sanitization | Download</title>
-    <meta name="description" content="Forensic Engine for Data Sanitization and Atomic Destruction. Protect your privacy offline by removing EXIF, ID3 metadata, and hidden histories.">
-    <meta name="keywords" content="remove metadata, clear exif, delete pdf history, office matryoshka, information security, cromak technology">
+    <meta name="description" content="The primary forensic sanitization engine of the Matrix Core suite. Atomic destruction of metadata, EXIF, hidden traces, and Military Wiping.">
+    <meta name="keywords" content="remove metadata, clean exif, delete pdf history, office matryoshka, data shredder, information security, cromak technology">
     <meta name="author" content="Cromak Technology">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="Cromak Metadata Remover - Forensic Sanitization">
+    <meta property="og:title" content="Cromak Metadata Remover - Forensic Sanitization | Download">
     <meta property="og:description" content="Forensic Engine for Data Sanitization and Atomic Destruction. Protect your offline privacy.">
     <meta property="og:image" content="https://cromaktechnology.github.io/../images/cromakmetadataremove001.png">
-    <meta property="og:url" content="https://cromaktechnology.github.io/en/metadata_remover.html">
+    <meta property="og:url" content="https://cromaktechnology.github.io/metadata_remover.html">
     
     <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
     <link rel="stylesheet" href="../css/estilo_premiun.css">
     
     <style>
+        html { scroll-behavior: smooth; }
         .product-hero { padding-top: 180px; text-align: center; background: radial-gradient(circle at top, rgba(0, 164, 239, 0.15) 0%, transparent 70%); }
         .badge-pro { background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
         .badge-danger { background: #D32F2F; color: #FFF; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; margin-bottom: 20px; display: inline-block; text-transform: uppercase; }
+        
         .tech-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 80px; }
         .spec-list { list-style: none; padding: 0; text-align: left; }
         .spec-list li { margin-bottom: 25px; padding-left: 40px; position: relative; }
         .spec-list li::before { content: '➔'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
         .spec-list h4 { color: var(--accent); margin: 0 0 5px 0; font-size: 1.1rem; }
         .spec-list p { font-size: 0.9rem; color: var(--text-dim); margin: 0; line-height: 1.6; }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
         .gallery-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
-        .gallery-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .screenshot-main { width: 100%; border-bottom: 1px solid var(--card-border); cursor: pointer; transition: opacity 0.3s ease; }
-        .screenshot-main:hover { opacity: 0.9; }
-        .card-caption { padding: 20px; text-align: left; }
+        .gallery-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 20px rgba(0, 164, 239, 0.1); }
+        .screenshot-main { width: 100%; border-bottom: 1px solid var(--card-border); cursor: zoom-in; transition: opacity 0.3s ease; }
+        .screenshot-main:hover { opacity: 0.85; }
+        .card-caption { padding: 20px; text-align: left; flex-grow: 1; }
         .card-caption h4 { color: #FFF; margin: 0 0 10px 0; font-size: 1.1rem; }
         .card-caption p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; margin: 0; }
+        
         .highlight-box { background: rgba(211, 47, 47, 0.1); border: 1px solid #D32F2F; padding: 30px; border-radius: 10px; margin-top: 40px; text-align: left; }
-        .lang-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 30px; }
-        .lang-badge { background: var(--card-bg); border: 1px solid var(--card-border); padding: 12px 24px; border-radius: 8px; font-weight: bold; color: #FFF; font-size: 0.95rem; }
-        .lightbox-modal { display: none; position: fixed; z-index: 9999; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.9); }
-        .lightbox-content { margin: auto; display: block; max-width: 85%; max-height: 75vh; border: 2px solid var(--card-border); border-radius: 8px; box-shadow: 0 0 30px rgba(0,164,239,0.2); }
-        .lightbox-caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 15px 0; font-size: 1rem; }
-        .lightbox-close { position: absolute; top: 40px; right: 45px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
-        .lightbox-close:hover { color: var(--accent); text-decoration: none; }
-        .lang-icon { width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 3px rgba(0,0,0,0.5); }
-        @media (max-width: 768px) { .tech-specs { grid-template-columns: 1fr; } .lightbox-close { top: 15px; right: 25px; } }
+        
+        .lang-grid { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+        .lang-badge { background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 20px; border-radius: 8px; font-weight: bold; color: #FFF; font-size: 0.9rem; }
+
+        /* LIGHTBOX MODAL */
+        .lightbox-modal { display: none; position: fixed; z-index: 9999; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.95); }
+        .lightbox-content { margin: auto; display: block; max-width: 90%; max-height: 80vh; border: 1px solid var(--card-border); border-radius: 8px; box-shadow: 0 0 40px rgba(0,164,239,0.15); }
+        .lightbox-caption { margin: auto; display: block; width: 80%; max-width: 800px; text-align: center; color: #ccc; padding: 20px 0; font-size: 1.1rem; line-height: 1.5; }
+        .lightbox-close { position: absolute; top: 30px; right: 40px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+        .lightbox-close:hover, .lightbox-close:focus { color: var(--accent); text-decoration: none; }
+
+        /* PRICING PLANS CSS */
+        .pricing-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .price-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; text-align: center; width: 320px; transition: var(--transition); display: flex; flex-direction: column; }
+        .price-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 164, 239, 0.2); }
+        .price-card.popular { border: 2px solid var(--accent); position: relative; }
+        .popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
+        .price-value { font-size: 3rem; font-weight: bold; margin: 20px 0; color: white; }
+        .price-value span { font-size: 1rem; color: var(--text-dim); }
+        .price-features { list-style: none; padding: 0; margin: 30px 0; text-align: left; flex-grow: 1; }
+        .price-features li { margin-bottom: 15px; color: var(--text-dim); font-size: 0.95rem; display: flex; align-items: flex-start; }
+        .price-features li::before { content: '✓'; color: var(--accent); margin-right: 10px; font-weight: bold; margin-top: 2px; }
+        .price-features li.disabled { opacity: 0.4; }
+        .price-features li.disabled::before { content: '✕'; color: #ff4444; }
+        .secure-payment { margin-top: 60px; text-align: center; opacity: 0.7; width: 100%; }
+        
+        .btn-buy { background: var(--accent); color: #000; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s; display: block; text-align: center; }
+        .btn-buy:hover { background: #0082c6; color: #FFF; }
+        .btn-outline { background: rgba(255,255,255,0.05); color: white; padding: 12px; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border); transition: 0.3s; display: block; text-align: center; }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+        @media (max-width: 768px) {
+            .tech-specs { grid-template-columns: 1fr; }
+            .lightbox-close { top: 15px; right: 25px; }
+        }
     </style>
 </head>
 <body>
@@ -77,8 +107,12 @@
                 <div class="dropdown">
                     <button class="dropbtn">Languages ▼</button>
                     <div class="dropdown-content">
-                        <a href="#" onclick="mudarIdioma('pt', event)"><img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português</a>
-                        <a href="#" onclick="mudarIdioma('en', event)"><img src="../images/lang_en.png" alt="EN" class="lang-icon"> English</a>
+                        <a href="#" onclick="mudarIdioma('pt', event)">
+                            <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português
+                        </a>
+                        <a href="#" onclick="mudarIdioma('en', event)">
+                            <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -92,18 +126,18 @@
                 <span class="badge-pro">Matrix Core Engine</span>
                 <h1 style="font-size: 4rem; margin-bottom: 10px;">Cromak Metadata Remover</h1>
                 <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    Forensic Engine for Data Sanitization and Atomic Destruction
+                    The primary forensic sanitization engine for high-security environments.
                 </p>
-                
-                <p style="font-size: 1.0rem; color: var(--accent); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    Version: 1.2.0 (Build 2026.05)
+                <p style="font-size: 1.0rem; color: var(--text-dim); margin-bottom: 30px;">
+                    Version: 1.3.5 (build 2026.06) | Batch Processing and Atomic Destruction
                 </p>
-                
-                <div style="margin-bottom: 40px;">
-                    <a href="metadata_remover_comprar.html" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Get PRO License</a>
-                    <a href="https://www.mediafire.com/file/uimwpgkgkpolht1/Cromak_Metadata_Remover_v1.3.5-Setup.zip/file" target="_blank" class="btn" style="background: rgba(255,255,255,0.1); color: white; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border);">Download Trial</a>
-                </div>
-                <img src="../images/cromakmetadataremove001.png" alt="Central User Dashboard" class="screenshot-main" style="max-width: 900px; border-bottom: none; border-radius: 15px;">
+                <div style="margin-bottom: 50px;">
+					<a href="#planos" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px; transition: transform 0.2s;">Purchase PRO License</a>
+					
+					<a href="https://www.mediafire.com/file/uimwpgkgkpolht1/Cromak_Metadata_Remover_v1.3.5-Setup.zip/file" target="_blank" class="btn" style="background: rgba(255,255,255,0.05); color: white; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border); transition: background 0.2s;">Download Trial Version</a>
+				</div>
+								
+                <img src="../images/cromakmetadataremove001.png" alt="User Central Dashboard — Main interface displaying intelligent batch routing." class="screenshot-main" style="max-width: 950px; border-bottom: none; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
             </div>
         </section>
 
@@ -111,29 +145,40 @@
             <div class="container">
                 <div class="tech-specs">
                     <div>
-                        <h2 style="text-align: left;" class="section-title">Advanced Security (OS Level)</h2>
+                        <h2 style="text-align: left;" class="section-title">Forensic Engineering & I/O</h2>
+                        <p style="color: var(--text-dim); margin-bottom: 30px; font-size: 1rem; line-height: 1.6;">
+                            Matrix Core does not perform superficial deletions. It acts on the structural layer of files and direct hard drive I/O to obliterate any possibility of reverse forensics.
+                        </p>
                         <ul class="spec-list">
                             <li>
-                                <h4>PDF - Invisible Ink (Redaction)</h4>
-                                <p>PDF documents hide white watermarks and microscopic fonts to trace leaks. The engine hunts down texts smaller than 2.0pt or purely white and applies a definitive black redaction bar.</p>
+                                <h4>Invisible Ink Hunter (PyMuPDF)</h4>
+                                <p>PDF documents often hide corporate trackers. The engine visually scans the page and applies a definitive black bar over microscopic or camouflaged white texts on white backgrounds.</p>
                             </li>
                             <li>
-                                <h4>Office Matryoshka</h4>
-                                <p>The system searches inside Word, Excel, and PowerPoint files (like a Russian nesting doll) to sanitize the GPS data of photos pasted within the document.</p>
+                                <h4>Recursive Cleanup (Office Matryoshka)</h4>
+                                <p>The system extracts the XML tree from Word and Excel files, cleans the revision history, and wipes the EXIF (GPS) data from photographs previously pasted inside the document.</p>
                             </li>
                             <li>
-                                <h4>MAC Times Masking</h4>
-                                <p>The software freezes the Modification, Access, and Creation dates of the final file at the exact moment of operation, hiding the temporal trail of the sanitization.</p>
+                                <h4>Container Reconstruction (FFmpeg)</h4>
+                                <p>Bypasses superficial cleaning methods and forces the use of the FFmpeg engine to recreate audio and video files bit by bit, eliminating steganography injected into the 'padding' of MP3, M4A, or MP4.</p>
                             </li>
                             <li>
-                                <h4>Smart Batch Routing</h4>
-                                <p>Import entire folders. The algorithm automatically routes Images, Videos, Audio, and Data to their respective processing tabs based on format signatures.</p>
+                                <h4>Steganography Breaking (LSB Resampling)</h4>
+                                <p>Resamples the pixel matrix of graphic files invisibly. This micro-adjustment destroys steganographic data, texts, and malicious files hidden in the least significant bit (LSB) of images.</p>
+                            </li>
+                            <li>
+                                <h4>MAC Times Masking (OS Level)</h4>
+                                <p>The sanitization physically recreates the file to destroy Windows Alternate Data Streams (ADS) and forces the creation/modification dates to the exact moment of cleanup, camouflaging the intervention.</p>
+                            </li>
+                            <li>
+                                <h4>Shadow Copies Purge (VSS)</h4>
+                                <p>Injects elevated privilege commands into the operating system to locate and annihilate the Volume Shadow Copy Service. Ensures that older versions of metadata cannot be recovered through system restoration.</p>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <img src="../images/cromakmetadataremove006.png" alt="Document Cleaning Strategies — Deep management menu and anti-steganography routine injection" class="screenshot-main" style="margin-bottom: 25px;">
-                        <img src="../images/cromakmetadataremove007.png" alt="Document Forensic Mode — Deep inspection and dump of hidden metadata from PDF files" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove006.png" alt="Document Cleanup Strategy — PyMuPDF engine triggers and recursive Office XML extraction." class="screenshot-main" style="margin-bottom: 25px; border-radius: 8px;">
+                        <img src="../images/cromakmetadataremove007.png" alt="Advanced Batch Options — Physical engine configuration and raw authorship report export." class="screenshot-main" style="border-radius: 8px;">
                     </div>
                 </div>
             </div>
@@ -141,76 +186,107 @@
 
         <section class="section" style="background: rgba(255,255,255,0.02);">
             <div class="container" style="text-align: center;">
-                <h2 class="section-title">Native Internationalization</h2>
-                <p style="color: var(--text-dim); max-width: 700px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
-                    Designed for the global market. With a real-time i18n engine, the software dynamically adapts its entire interface, menus, logs, and alerts to the user's native system language automatically.
+                <h2 class="section-title">Native Support for 11 Languages</h2>
+                <p style="color: var(--text-dim); max-width: 750px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Designed for global high-security environments. With a real-time internationalization engine (JSON-based), the software dynamically adapts the entire interface, context menus, forensic logs, and operation terminals to the operator's exact language.
                 </p>
                 <div class="lang-grid">
-                    <span class="lang-badge">🇧🇷 Português (Brasil)</span>
-                    <span class="lang-badge">🇺🇸 English (US)</span>
-                    <span class="lang-badge">🇪🇸 Español</span>
-                    <span class="lang-badge">🇫🇷 Français</span>
-                    <span class="lang-badge">🇷🇺 Русский</span>
-                    <span class="lang-badge">🇨🇳 中文 (简体)</span>
+                    <span class="lang-badge">🇧🇷 Português (pt_BR)</span>
+                    <span class="lang-badge">🇺🇸 English (en_US)</span>
+                    <span class="lang-badge">🇪🇸 Español (es_ES)</span>
+                    <span class="lang-badge">🇫🇷 Français (fr_FR)</span>
+                    <span class="lang-badge">🇮🇹 Italiano (it_IT)</span>
+                    <span class="lang-badge">🇩🇪 Deutsch (de_DE)</span>
+                    <span class="lang-badge">🇯🇵 日本語 (ja_JP)</span>
+                    <span class="lang-badge">🇰🇷 한국어 (ko_KR)</span>
+                    <span class="lang-badge">🇷🇺 Русский (ru_RU)</span>
+                    <span class="lang-badge">🇹🇭 ไทย (th_TH)</span>
+                    <span class="lang-badge">🇨🇳 中文 (zh_CN)</span>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="galeria">
             <div class="container">
-                <h2 class="section-title" style="text-align: center;">Operation Gallery</h2>
-                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Click on any screenshot to expand and inspect the forensic engine's interface.</p>
+                <h2 class="section-title" style="text-align: center; font-size: 2.5rem;">Integrated Labs & Modules</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Explore the Matrix Core Engine interface. From MAC Times masking to video container reverse engineering, inspect each module of the forensic system.
+                </p>
                 
                 <div class="gallery-grid">
+                    
                     <div class="gallery-card">
-                        <img src="../images/cromakmetadataremove002.png" alt="General Image Information — View and controlled editing of basic logical image tags" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove002.png" alt="Image Inspector: Modify basic traces (Make, Model) before Wiping." class="screenshot-main">
                         <div class="card-caption">
-                            <h4>Image Editing</h4>
-                            <p>Simplified interface to change and verify basic manufacturer information, camera model, and file descriptions.</p>
+                            <h4>Image Inspector</h4>
+                            <p>Edit or inject logical data like Camera Manufacturer and Model. Control aggressiveness levels with options to maintain aspect ratio without deforming the image.</p>
                         </div>
                     </div>
+
                     <div class="gallery-card">
-                        <img src="../images/cromakmetadataremove003.png" alt="Advanced Forensic Analysis — Raw structural dump and full EXIF header decoding" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove003.png" alt="Forensic Mode (Raw EXIF): Structural dump and LSB visualization to break steganography." class="screenshot-main">
                         <div class="card-caption">
-                            <h4>EXIF Forensic Mode</h4>
-                            <p>Displays the actual structural dump of the file, allowing the operator to view hidden raw data before cryptographic pulverization.</p>
+                            <h4>Forensic Mode (Raw EXIF)</h4>
+                            <p>View the pure hexadecimal dump of the image header. The system reveals deeply rooted data before you authorize annihilation.</p>
                         </div>
                     </div>
+
                     <div class="gallery-card">
-                        <img src="../images/cromakmetadataremove004.png" alt="Batch Manager — Structured file queues with size calculation and physical integrity" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove004.png" alt="Batch Manager: Control matrix queues, calculate size, and define secure destination paths." class="screenshot-main">
                         <div class="card-caption">
-                            <h4>Mass Processing</h4>
-                            <p>Manage large volumes of data. Track size, extension, and source directories in a high-performance queue.</p>
+                            <h4>Matrix Routing</h4>
+                            <p>Heavy batch management. Filter files by extension or size and apply atomic cleanup across multiple directories simultaneously.</p>
                         </div>
                     </div>
+
                     <div class="gallery-card">
-                        <img src="../images/cromakmetadataremove005.png" alt="Audio and Cover Editor — Bidirectional mapping of logical tags and extraction of embedded images" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove005.png" alt="Audio Forensic: Completely erase ID3 tags, encoder comments, and remove embedded covers." class="screenshot-main">
                         <div class="card-caption">
-                            <h4>Audio Metadata</h4>
-                            <p>Full support for EasyID3 and MP4 tags. Change tracks, artists, and decide whether to preserve or purge the album cover.</p>
+                            <h4>Audio Sanitization</h4>
+                            <p>Complete destruction of ID3/Vorbis tags. Decide whether to preserve or purge embedded album covers that may carry GPS traces via EXIF.</p>
                         </div>
                     </div>
+
                     <div class="gallery-card">
-                        <img src="../images/cromakmetadataremove008.png" alt="Audio Flow Strategies — Settings for injection and isolation of the external FFmpeg engine" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove006.png" alt="Document Cleanup Strategy: Activate PyMuPDF engine for Invisible Ink or the Matryoshka module for Office." class="screenshot-main">
                         <div class="card-caption">
-                            <h4>Advanced Audio Settings</h4>
-                            <p>Control the FFmpeg engine for forced removal and atomic reconstruction of compromised audio streams.</p>
+                            <h4>Document Engines</h4>
+                            <p>Adjust advanced triggers. Activate the 'Invisible Ink Hunter' for PDFs or the Recursive Matryoshka Cleanup to scan the Word and Excel XML tree.</p>
                         </div>
                     </div>
+
                     <div class="gallery-card">
-                        <img src="../images/cromakmetadataremove009.png" alt="Batch Renaming Panel — Standardization of file strings with support for sequential indexing" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove007.png" alt="Advanced Options: Control immediate actions and export raw authorship reports." class="screenshot-main">
                         <div class="card-caption">
-                            <h4>Sequential Renamer</h4>
-                            <p>Integrated tool to sanitize physical file names in bulk, removing identifying data directly on the disk.</p>
+                            <h4>Authorship Reports</h4>
+                            <p>Access advanced options to extract and export complete dossiers on authorship, modification history, and keywords injected into corporate documents.</p>
                         </div>
                     </div>
+
                     <div class="gallery-card">
-                        <img src="../images/cromakmetadataremove010.png" alt="Licensing Module — Cryptographic validation system based on device Hardware ID" class="screenshot-main">
+                        <img src="../images/cromakmetadataremove008.png" alt="Media Processing Strategy: Force re-encoding via FFmpeg container." class="screenshot-main">
                         <div class="card-caption">
-                            <h4>PRO Modules Activation</h4>
-                            <p>Local validation of premium licenses to unlock military algorithms and remove evaluation vault locks.</p>
+                            <h4>Media Reconstruction</h4>
+                            <p>Enable forced FFmpeg engine injection to bypass standard libraries, destroying steganography by rebuilding media containers bit by bit.</p>
                         </div>
                     </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/cromakmetadataremove009.png" alt="Renaming Laboratory: Sanitize physical names using sequential prefixes and separators." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Renaming Laboratory</h4>
+                            <p>Don't let confidential data leak into file names. Physically rename entire batches on the disk by applying sequential patterns (E.g.: Evidence_001).</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/cromakmetadataremove010.png" alt="Operations Terminal: Data Shredder, Military Wiping, and Windows VSS purge." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Data Shredder (Wiping)</h4>
+                            <p>Real-time terminal. Track military injection (DoD 5220.22-M Algorithm), SHA-256 signature generation, and the purging of Windows Shadow Copies.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -218,23 +294,132 @@
         <section class="section">
             <div class="container">
                 <div class="highlight-box">
-                    <h3 style="color: #D32F2F; margin-top: 0; font-size: 1.3rem;">⚠️ Physical Destruction Alert (Military Wiping)</h3>
-                    <p style="color: #FFF; line-height: 1.6; margin-bottom: 10px; font-size: 0.95rem;">
-                        If the <strong>Military Wiping</strong> option is enabled in preferences and the output is set to "Overwrite", the old file will be completely encrypted with random bytes prior to its logical deletion. This makes the original file permanently unrecoverable, preventing reconstitution by government forensic software or hardware recovery labs.
+                    <h3 style="color: #D32F2F; margin-top: 0; font-size: 1.4rem;">⚠️ Military Wiping & Data Shredder</h3>
+                    <p style="color: #FFF; line-height: 1.6; margin-bottom: 15px; font-size: 1rem;">
+                        Cromak incorporates irreversible destruction algorithms <strong>(DoD 5220.22-M and Gutmann)</strong>. If <em>Military Wiping</em> is enabled in preferences, the original file is not just sent to the recycle bin or logically deleted; it undergoes random byte injection directly onto the hard drive before deletion.
                     </p>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;"><em>Creating backups before this operation is entirely your responsibility.</em></p>
+                    <p style="color: #FFF; line-height: 1.6; margin-bottom: 15px; font-size: 1rem;">
+                        This fragments the data at a magnetic/flash level, making physical reconstitution impossible even for corporate or governmental forensic software (such as Recuva or EnCase).
+                    </p>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; font-weight: bold;">
+                        WARNING: Atomic destruction is irreversible. Creating backups before batch processing is the operator's responsibility.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section class="section" style="padding-top: 20px;">
+        <!-- PRICING PLANS BLOCK (EN) -->
+        <section class="section" id="planos" style="padding-top: 80px; padding-bottom: 80px; background: rgba(255,255,255,0.02);">
             <div class="container">
-                <h2 class="section-title" style="text-align: center; font-size: 1.8rem; margin-bottom: 30px;">System Requirements</h2>
-                <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 10px 30px;">
+                <h2 class="section-title" style="text-align: center;">Choose Your Security Level</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Unlock full access to Cromak Metadata Remover's forensic engines.</p>
+
+                <div class="pricing-grid">
+                    
+                    <!-- Card: Trial -->
+                    <div class="price-card">
+                        <h3>Evaluation (Trial)</h3>
+                        <div class="price-value">$ 0<span>/free</span></div>
+                        <ul class="price-features">
+                            <li>Basic Audio and Video Cleanup</li>
+                            <li>Multilingual Interface</li>
+                            <li class="disabled">Document Scan Blocked</li>
+                            <li class="disabled">Image Cleanup Blocked</li>
+                            <li class="disabled">Military Wiping Inactive</li>
+                            <li class="disabled">No Updates</li>
+                            <li class="disabled">No Technical Support</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/uimwpgkgkpolht1/Cromak_Metadata_Remover_v1.3.5-Setup.zip/file" target="_blank" class="btn-outline">Download Trial Version</a>
+                    </div>
+
+                    <!-- Card: Monthly -->
+                    <div class="price-card">
+                        <h3>Personal Monthly</h3>
+                        <div class="price-value">$ 9<span>.90/mo</span></div>
+                        <ul class="price-features">
+                            <li><b>1 Machine License</b></li>
+                            <li>Deep PDF Cleanup (Invisible Ink)</li>
+                            <li>Active Office Matryoshka Engine</li>
+                            <li>Physical Destruction (Military Wiping)</li>
+                            <li>MAC Times Masking</li>
+                            <li>Minimal Technical Support</li>
+                            <li class="disabled">No Version Updates</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-outline">Subscribe Monthly</a>
+                    </div>
+
+                    <!-- Card: Annual (BEST SELLER) -->
+                    <div class="price-card popular">
+                        <div class="popular-tag">Best Seller</div>
+                        <h3>Personal Annual</h3>
+                        <div class="price-value">$ 39<span>.90/year</span></div>
+                        <ul class="price-features">
+                            <li><b>Up to 3 Machine Licenses</b></li>
+                            <li>All Forensic Engines Unlocked</li>
+                            <li>Guaranteed Software Updates</li>
+                            <li>Priority Tech Support</li>
+                            <li>Ideal for small offices</li>
+                            <li>Equals only $ 3.32/month</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy">Subscribe Annual</a>
+                    </div>
+
+                    <!-- Card: Lifetime with Discount -->
+                    <div class="price-card popular" style="border-color: #D32F2F;">
+                        <div class="popular-tag" style="background: #D32F2F; color: white;">30% OFF</div>
+                        <h3>Lifetime License</h3>
+                        <div class="price-value" style="margin-top: 10px;">
+                            <s style="font-size: 1.2rem; color: #888; font-weight: normal; display: block; margin-bottom: 5px;">From $ 79.90</s>
+                            $ 55<span>.90/once</span>
+                        </div>
+                        <ul class="price-features">
+                            <li><b>Up to 5 Machine Licenses</b></li>
+                            <li>One-time payment, yours forever</li>
+                            <li>Lifetime Updates Included</li>
+                            <li>Early access to new modules</li>
+                            <li>Premium Tech Support (Direct to DEV)</li>
+                            <li>Free of monthly fees</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy" style="background: #D32F2F; color: white;">Buy Lifetime</a>
+                    </div>
+
+                    <!-- Card: Enterprise with Discount -->
+                    <div class="price-card popular" style="border-color: #D32F2F;">
+                        <div class="popular-tag" style="background: #D32F2F; color: white;">30% OFF</div>
+                        <h3>Enterprise</h3>
+                        <div class="price-value" style="margin-top: 10px;">
+                            <s style="font-size: 1.2rem; color: #888; font-weight: normal; display: block; margin-bottom: 5px;">From $ 99.90</s>
+                            $ 69<span>.90/year</span>
+                        </div>
+                        <ul class="price-features">
+                            <li><b>Starting at 10 Licenses</b></li>
+                            <li>Corporate Invoice</li>
+                            <li>Guided Implementation</li>
+                            <li>Corporate Updates</li>
+                            <li>VIP Support (Guaranteed SLA)</li>
+                            <li>Batch Security Consulting</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy" style="background: #D32F2F; color: white;">Contact Sales</a>
+                    </div>
+
+                </div>
+
+                <div class="secure-payment">
+                    <p>🔒 Encrypted Transaction & Immediate Licensing</p>
+                    <p style="font-size: 0.8rem;">Your Hardware ID license will be generated immediately after payment confirmation with support.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 30px; padding-bottom: 60px;">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; font-size: 1.8rem; margin-bottom: 40px;">System Specifications</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 20px 40px;">
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <li style="display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
                             <strong style="color: var(--accent); font-size: 1rem;">Operating System</strong>
-                            <span style="color: var(--text-dim); text-align: right;">Windows 10, Windows 11 or higher (64-bit only)</span>
+                            <span style="color: var(--text-dim); text-align: right;">Windows 10 / Windows 11 (64-bit architecture only)</span>
                         </li>
                         <li style="display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
                             <strong style="color: var(--accent); font-size: 1rem;">Processor</strong>
@@ -242,15 +427,15 @@
                         </li>
                         <li style="display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
                             <strong style="color: var(--accent); font-size: 1rem;">RAM Memory</strong>
-                            <span style="color: var(--text-dim); text-align: right;">4 GB (8 GB recommended for heavy batch processing)</span>
+                            <span style="color: var(--text-dim); text-align: right;">4 GB (8 GB recommended for heavy video batches)</span>
                         </li>
                         <li style="display: flex; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <strong style="color: var(--accent); font-size: 1rem;">Storage</strong>
-                            <span style="color: var(--text-dim); text-align: right;">200 MB free disk space (SSD recommended)</span>
+                            <strong style="color: var(--accent); font-size: 1rem;">I/O Storage</strong>
+                            <span style="color: var(--text-dim); text-align: right;">NVMe SSD recommended for maximum Wiping speed</span>
                         </li>
                         <li style="display: flex; justify-content: space-between; padding: 20px 0;">
-                            <strong style="color: var(--accent); font-size: 1rem;">Connectivity</strong>
-                            <span style="color: var(--text-dim); text-align: right;">No internet access required (100% Offline Engine)</span>
+                            <strong style="color: var(--accent); font-size: 1rem;">Privacy</strong>
+                            <span style="color: var(--text-dim); text-align: right;">100% Local Processing. No data is sent to the cloud.</span>
                         </li>
                     </ul>
                 </div>
@@ -269,11 +454,41 @@
             <div class="footer-links">
                 <a href="privacidade.html">Privacy Policy</a>
                 <a href="termos.html">Terms of Use</a>
-				<a href="..\sitemap.html">Site Map</a>
+                <a href="..\sitemap.html">Sitemap</a>
             </div>
             <p>&copy; 2026 Cromak Technology. All rights reserved.</p>
         </div>
     </footer>
+
+    <button id="backToTopBtn" title="Back to top">↑</button>
+    
+    <style>
+        #backToTopBtn {
+            display: none; 
+            position: fixed;
+            bottom: 40px; 
+            right: 40px; 
+            z-index: 999;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            background-color: var(--accent);
+            color: #000;
+            cursor: pointer;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 164, 239, 0.3);
+        }
+        #backToTopBtn:hover {
+            background-color: #0082c6;
+            color: #FFF;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 164, 239, 0.6);
+        }
+    </style>
 
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
@@ -292,21 +507,38 @@
             img.addEventListener('click', function() {
                 modal.style.display = "block";
                 modalImg.src = this.src;
-                captionText.innerHTML = this.alt; 
+                captionText.innerHTML = this.alt;
+                document.body.style.overflow = "hidden"; 
             });
         });
 
-        closeBtn.addEventListener('click', () => { modal.style.display = "none"; });
-        modal.addEventListener('click', function(event) { if (event.target === modal) modal.style.display = "none"; });
-        document.addEventListener('keydown', function(event) { if (event.key === "Escape") modal.style.display = "none"; });
+        const closeModal = () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === "Escape") closeModal(); });
 
         function mudarIdioma(lang, event) {
             event.preventDefault();
             localStorage.setItem('idioma_preferido', lang);
-            var paginaAtual = window.location.pathname.split('/').pop(); 
-            if (!paginaAtual) paginaAtual = 'index.html';
-            window.location.href = '../' + lang + '/' + paginaAtual;
+            var paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
+            window.location.href = '../' + lang.split('_')[0] + '/' + paginaAtual;
         }
+
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     </script>
 </body>
 </html>
