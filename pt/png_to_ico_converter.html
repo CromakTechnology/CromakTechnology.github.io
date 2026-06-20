@@ -530,14 +530,15 @@
             window.location.href = '../' + lang + '/' + paginaAtual;
         }
     </script>
-<!-- BOTÃO VOLTAR AO TOPO -->
+	
+	<!-- BOTÃO VOLTAR AO TOPO -->
     <button id="backToTopBtn" title="Voltar ao topo">↑</button>
     <style>
         #backToTopBtn {
             display: none; 
             position: fixed;
-            bottom: 120px; 
-            right: 30px; 
+            bottom: 30px; /* ALINHADO ABAIXO: Quanto menor o número, mais perto do fim da tela */
+            left: 30px;  /* LADO ESQUERDO: Substituiu o "right" */
             z-index: 999;
             font-size: 22px;
             font-weight: bold;
@@ -559,6 +560,8 @@
             box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
         }
     </style>
+	
+	<!-- Back to top -->
     <script>
         const backToTopBtn = document.getElementById("backToTopBtn");
         window.addEventListener('scroll', () => {

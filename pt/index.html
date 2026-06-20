@@ -370,26 +370,37 @@
         </div>
     </section>
 
-    <!-- SOBRE A EMPRESA (Estilo Dark Box) -->
+    <!-- SOBRE A EMPRESA (Estilo Dark Box - Atualizado) -->
     <section class="section" style="padding-bottom: 40px; margin-top: 20px;">
         <div class="container">
-            <div class="about-box">
-                <p style="font-size: 1.1rem; color: #e0e0e0; line-height: 1.6; margin-bottom: 30px;">
-                    A Cromak Technology desenvolve soluções avançadas para otimização de sistemas, focando sempre em arquiteturas de baixo nível e segurança máxima. Nosso carro-chefe, o Cromak DeepClean Suite, atua de forma nativa e silenciosa para garantir a máxima performance da sua máquina.
-                </p>
-                <a href="sobre.html" class="btn-blue-glow">Ler a História Completa</a>
+            <div class="about-box" style="position: relative; overflow: hidden;">
+                <!-- Efeito de brilho de fundo opcional para destacar o laboratório -->
+                <div style="position: absolute; top: -50px; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: rgba(0, 212, 255, 0.1); filter: blur(70px); z-index: 0;"></div>
+                
+                <div style="position: relative; z-index: 1;">
+                    <h2 style="color: #fff; margin-bottom: 20px; font-size: 2.2rem; font-weight: bold;">O Padrão Ouro em Performance e Privacidade</h2>
+                    <p style="font-size: 1.15rem; color: #e0e0e0; line-height: 1.7; margin-bottom: 30px;">
+                        O laboratório da Cromak Technology é especializado em soluções cirúrgicas para quem exige o máximo da sua infraestrutura de TI. Nosso ecossistema não faz concessões: entregamos desde cofres com criptografia militar e motores de destruição de metadados, até compiladores nativos e otimizadores de alta performance. Desenvolvemos softwares puros, rápidos e 100% locais. Entregamos as ferramentas exatas para aniquilar a lentidão do sistema e blindar seus dados contra qualquer tipo de perícia.
+                    </p>
+                    <a href="sobre.html" class="btn-blue-glow">Conhecer o Laboratório Cromak</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SUPORTE E VENDAS -->
+    <!-- SUPORTE E VENDAS (Atualizado) -->
     <section class="support-section">
         <div class="container">
-            <h2 class="support-title">Suporte e Vendas</h2>
+            <h2 class="support-title">Pronto para a Soberania Digital?</h2>
             <div class="cyan-line"></div>
-            <p style="font-size: 1.1rem; color: #ffffff; margin-bottom: 10px;">Pronto para transformar a performance do seu computador?</p>
-            <p style="font-size: 1rem; color: var(--text-dim); margin-bottom: 40px;">Entre em contato para adquirir a sua licença ou obter suporte técnico especializado.</p>
-            <a href="suporte.html" class="btn-blue-glow">Acessar a Central de Suporte</a>
+            <p style="font-size: 1.15rem; color: #ffffff; margin-bottom: 15px;">Blinde seus dados e extraia a performance máxima da sua infraestrutura.</p>
+            <p style="font-size: 1rem; color: var(--text-dim); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Nossos especialistas estão a postos. Entre em contato para licenciamento corporativo (SLA), pacotes vitalícios para usuários avançados ou suporte técnico com acesso direto aos nossos engenheiros.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="suporte.html" class="btn-blue-glow" style="background: rgba(255,255,255,0.05); border: 1px solid var(--accent); color: var(--accent); box-shadow: none;">Falar com Especialistas</a>
+                <a href="#arsenal" class="btn-blue-glow">Explorar Licenças</a>
+            </div>
         </div>
     </section>
 
@@ -499,21 +510,20 @@
 		
     </script>
 	
-	<button id="backToTopBtn" title="Voltar ao topo">↑</button>
-
+	<!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
     <style>
-        /* Estilo do Botão Voltar ao Topo */
         #backToTopBtn {
-            display: none; /* Escondido até rolar a página */
+            display: none; 
             position: fixed;
-            bottom: 120px;
-            right: 30px;  
+            bottom: 30px; /* ALINHADO ABAIXO: Quanto menor o número, mais perto do fim da tela */
+            left: 30px;  /* LADO ESQUERDO: Substituiu o "right" */
             z-index: 999;
             font-size: 22px;
             font-weight: bold;
             border: none;
             outline: none;
-            background-color: var(--accent); /* Puxa o ciano/azul do seu CSS */
+            background-color: var(--accent);
             color: #000;
             cursor: pointer;
             width: 50px;
@@ -522,20 +532,17 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
         }
-
         #backToTopBtn:hover {
-            background-color: #0082c6; /* Fica mais escuro no hover */
+            background-color: #0082c6;
             color: #FFF;
-            transform: translateY(-5px); /* Dá um pulinho pra cima */
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7); /* Aumenta o brilho */
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
         }
     </style>
-
+	
+	<!-- Back to top -->
     <script>
-        // Lógica do botão Voltar ao Topo
         const backToTopBtn = document.getElementById("backToTopBtn");
-
-        // Quando o usuário rolar 300px para baixo, o botão aparece
         window.addEventListener('scroll', () => {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 backToTopBtn.style.display = "block";
@@ -543,20 +550,10 @@
                 backToTopBtn.style.display = "none";
             }
         });
-
-        // Quando o usuário clicar, sobe suavemente (smooth)
         backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
-	
-	    <!-- BOTÃO VOLTAR AO TOPO (Que já estava aqui) -->
-    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
-    <style> /* ... CSS do botão ... */ </style>
-    <script> /* ... JS do botão ... */ </script>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -571,6 +568,5 @@
     })();
     </script>
     <!--End of Tawk.to Script-->
-	
 </body>
 </html>

@@ -370,26 +370,37 @@
         </div>
     </section>
 
-    <!-- SOBRE A EMPRESA (Estilo Dark Box) -->
+    <!-- SOBRE A EMPRESA (Estilo Dark Box - English Version) -->
     <section class="section" style="padding-bottom: 40px; margin-top: 20px;">
         <div class="container">
-            <div class="about-box">
-                <p style="font-size: 1.1rem; color: #e0e0e0; line-height: 1.6; margin-bottom: 30px;">
-                    Cromak Technology develops advanced solutions for system optimization, always focusing on low-level architectures and maximum security. Our flagship product, the Cromak DeepClean Suite, acts natively and silently to ensure your machine's peak performance.
-                </p>
-                <a href="sobre.html" class="btn-blue-glow">Read Full Story</a>
+            <div class="about-box" style="position: relative; overflow: hidden;">
+                <!-- Efeito de brilho de fundo opcional para destacar o laboratório -->
+                <div style="position: absolute; top: -50px; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: rgba(0, 212, 255, 0.1); filter: blur(70px); z-index: 0;"></div>
+                
+                <div style="position: relative; z-index: 1;">
+                    <h2 style="color: #fff; margin-bottom: 20px; font-size: 2.2rem; font-weight: bold;">The Gold Standard in Performance and Privacy</h2>
+                    <p style="font-size: 1.15rem; color: #e0e0e0; line-height: 1.7; margin-bottom: 30px;">
+                        The Cromak Technology laboratory specializes in surgical solutions for those who demand the absolute maximum from their IT infrastructure. Our ecosystem makes no compromises: we deliver everything from military-grade encrypted vaults and metadata destruction engines, to native compilers and high-performance optimizers. We develop pure, fast, and 100% local software. We provide the exact tools to annihilate system slowdowns and shield your data against any type of forensics.
+                    </p>
+                    <a href="sobre.html" class="btn-blue-glow">Discover the Cromak Laboratory</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SUPORTE E VENDAS -->
+    <!-- SUPORTE E VENDAS (English Version) -->
     <section class="support-section">
         <div class="container">
-            <h2 class="support-title">Support & Sales</h2>
+            <h2 class="support-title">Ready for Digital Sovereignty?</h2>
             <div class="cyan-line"></div>
-            <p style="font-size: 1.1rem; color: #ffffff; margin-bottom: 10px;">Ready to transform your computer's performance?</p>
-            <p style="font-size: 1rem; color: var(--text-dim); margin-bottom: 40px;">Contact us to purchase your license or get specialized technical support.</p>
-            <a href="suporte.html" class="btn-blue-glow">Access Support Center</a>
+            <p style="font-size: 1.15rem; color: #ffffff; margin-bottom: 15px;">Shield your data and extract maximum performance from your infrastructure.</p>
+            <p style="font-size: 1rem; color: var(--text-dim); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Our experts are on standby. Contact us for corporate licensing (SLA), lifetime packages for power users, or technical support with direct access to our engineers.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="suporte.html" class="btn-blue-glow" style="background: rgba(255,255,255,0.05); border: 1px solid var(--accent); color: var(--accent); box-shadow: none;">Contact Our Experts</a>
+                <a href="#arsenal" class="btn-blue-glow">Explore Licenses</a>
+            </div>
         </div>
     </section>
 
@@ -499,7 +510,52 @@
 		
     </script>
 	
-	    <!--Start of Tawk.to Script-->
+	<!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
+    <style>
+        #backToTopBtn {
+            display: none; 
+            position: fixed;
+            bottom: 30px; /* ALINHADO ABAIXO: Quanto menor o número, mais perto do fim da tela */
+            left: 30px;  /* LADO ESQUERDO: Substituiu o "right" */
+            z-index: 999;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            background-color: var(--accent);
+            color: #000;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+        #backToTopBtn:hover {
+            background-color: #0082c6;
+            color: #FFF;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
+        }
+    </style>
+	
+	<!-- Back to top -->
+    <script>
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){

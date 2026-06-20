@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/estilo_premiun.css">
     
     <style>
-        /* --- Exclusive Style for the New "About" (Bento Box UI) --- */
+        /* --- Estilo Exclusivo do Novo "Sobre" (Bento Box UI) --- */
         .about-hero {
             padding-top: 160px;
             padding-bottom: 50px;
@@ -33,7 +33,7 @@
             margin: 0 auto;
         }
 
-        /* The Bento Grid (Layout Magic) */
+        /* A Grade Bento (Mágica do Layout) */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -44,7 +44,7 @@
             padding: 0 20px;
         }
 
-        /* Individual Cards */
+        /* Cartões Individuais */
         .bento-card {
             background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(18, 18, 18, 0.9));
             border-radius: 24px;
@@ -65,7 +65,7 @@
             box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
         }
 
-        /* Card Background Glow Effect */
+        /* Efeito de brilho de fundo nos cartões */
         .bento-card::before {
             content: '';
             position: absolute;
@@ -96,14 +96,14 @@
             color: var(--text-dim);
             font-size: 1.05rem;
             line-height: 1.7;
-            margin-bottom: 15px;
+            margin-bottom: 15px; /* Espaço entre parágrafos múltiplos */
         }
         
         .bento-card p:last-of-type {
             margin-bottom: 0;
         }
 
-        /* Specific Card Sizes */
+        /* Tamanhos Específicos dos Cartões */
         .span-2-col {
             grid-column: span 2;
         }
@@ -112,7 +112,7 @@
             grid-row: span 2;
         }
 
-        /* --- Internal Card Elements --- */
+        /* --- Elementos Internos dos Cartões --- */
         .logo-display {
             text-align: center;
         }
@@ -146,7 +146,7 @@
             border: 1px solid rgba(0, 212, 255, 0.2);
         }
 
-        /* Support Button (New Style) */
+        /* Botão de Suporte (Novo Estilo) */
         .btn-support {
             background: linear-gradient(135deg, #007bff, #00d4ff);
             color: #fff;
@@ -171,7 +171,7 @@
             color: white;
         }
 
-        /* Extreme Responsiveness */
+        /* Responsividade Extrema */
         @media (max-width: 992px) {
             .bento-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -208,9 +208,9 @@
                     <div class="dropdown-content">
                         <a href="deepclean_suite.html">DeepClean Suite</a>
                         <a href="install_compiler.html">Install Compiler</a>
-						<a href="metadata_remover.html">Metadata Remover</a>
+                        <a href="metadata_remover.html">Metadata Remover</a>
                         <a href="password_guard.html">Password Guard</a>
-						<a href="png_to_ico_converter.html">PNG To ICO Converter</a>
+                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                         <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
                     </div>
                 </div>
@@ -244,23 +244,26 @@
         <section>
             <div class="bento-grid">
                 
-                <!-- Logo Animation -->
+                <!-- Logo Animation (Ocupa 2 linhas verticais na primeira coluna) -->
                 <div class="bento-card logo-display span-2-row" style="background: rgba(10,10,10,0.5);">
                     <img src="../images/cromaklogoa.png" alt="Cromak Original Logo">
                 </div>
 
-                <!-- The Spark -->
+                <!-- A Faísca (Ocupa as 2 colunas restantes ao lado do logo) -->
                 <div class="bento-card span-2-col">
-                    <h3>💡 The Spark: From Frustration to Purpose</h3>
-                    <p>Cromak Technology was born from a clear dream: to create high-performance software that truly makes a difference in people's daily lives, without bureaucracy or complications.</p>
-                    <p>As users, we grew tired of fragmented, heavy digital tools full of "freemium" limitations that promise to solve a problem but only deliver ads and cluttered screens. We felt firsthand the need for straightforward utilities. From this nonconformity, our first great solution, the <em>DeepClean Suite</em>, was born, along with the desire to go further. If the market didn't deliver what we needed, we would build it ourselves.</p>
+                    <h3>💡 The Genesis: Straight-to-the-Point Engineering</h3>
+                    <p>Cromak Technology was founded with a well-defined technical objective: to fill the market's gap for high-performance software that is truly focused on problem-solving, without the overhead of unnecessary features.</p>
+                    <p>We observed that professionals and power users constantly dealt with fragmented tools, bloated by corporate telemetry or limited by inefficient architectures. The response to this operational gap was the development of our first native solution, the <em>DeepClean Suite</em>. Our purpose became clear: to replace generic utilities with robust, objective software ecosystems developed under the strictest efficiency standards.</p>
                 </div>
 
-                <!-- The Architect -->
-                <div class="bento-card">
-                    <h3>The Architect</h3>
-                    <p>Founded by <strong>Marcos Souza</strong>, Cromak's engineering unites robust software architecture with a product vision and an absolute focus on user experience to solve real problems.</p>
-                    <div class="tech-stack">
+                <!-- Arquiteto (Fica abaixo da Faísca, na coluna do meio) -->
+                <div class="bento-card" style="text-align: center;">
+                    <img src="../images/colaboradores/marcos_souza.png" alt="Marcos Souza - Software Architect" style="width: 140px; height: 140px; border-radius: 16px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto 20px auto; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);">
+                    
+                    <h3 style="justify-content: center; margin-bottom: 15px;">The Architect</h3>
+                    <p style="text-align: left;">Founded in 2026 by <strong>Marcos Souza</strong>, Cromak's engineering combines robust software architecture with product vision and an absolute focus on user experience to solve real problems.</p>
+                    
+                    <div class="tech-stack" style="justify-content: center;">
                         <span class="tech-badge">Python</span>
                         <span class="tech-badge">PyQt6</span>
                         <span class="tech-badge">Automation</span>
@@ -268,24 +271,42 @@
                     </div>
                 </div>
 
-                <!-- Vision of the Future -->
+                <!-- Visão de Futuro (Fica abaixo da Faísca, na última coluna) -->
                 <div class="bento-card">
                     <h3>🚀 The Future is Built Together</h3>
-                    <p>Our vision of the future isn't about abstract numbers; it's about continuous evolution. We know that to deliver the best, we need to listen to who matters most: you.</p>
-                    <p>Cromak is just getting started, and we want our first users to be part of our innovation lab. Our commitment lies in excellent customer service, active listening to your feedback, and the consistency of our updates and builds.</p>
+                    <p>Our vision of the future is not about abstract numbers, it is about continuous evolution. We know that to deliver the best, we need to listen to those who matter most: you.</p>
+                    <p>We want our users to be part of our innovation laboratory. Our commitment lies in the excellence of our support, active listening to your feedback, and the consistency of our updates and builds.</p>
                 </div>
 
-                <!-- The DNA -->
+                <!-- O DNA (Fica na última linha, ocupando as duas primeiras colunas) -->
                 <div class="bento-card span-2-col">
-                    <h3>🛠️ The Cromak DNA: High Performance & Premium Design</h3>
-                    <p>We don't just write lines of code; we structure intelligent solutions. We believe modern technology allows us to focus on what truly matters: robust architecture, real utility, and a Premium interface.</p>
-                    <p>For us, software must be easy to use, elegant, and incredibly fast. We unite the most advanced contemporary software engineering with a clean and intuitive design. At Cromak, the focus is on the user experience. Our tools are born ready for heavy lifting, without freezing your computer and without making you waste time.</p>
+                    <h3>🛠️ The Cromak DNA: High Performance and Premium Design</h3>
+                    <p>We don't just write lines of code; we structure intelligent solutions. We believe that modern technology allows us to focus on what truly matters: robust architecture, real utility, and a Premium interface.</p>
+                    <p>For us, software needs to be easy to use, elegant, and incredibly fast. We unite the most advanced contemporary software engineering with a clean and intuitive design. At Cromak, the focus is on user experience. Our tools are born ready for heavy lifting, without slowing down your computer and without wasting your time.</p>
                 </div>
 
-                <!-- Contact Us -->
+				<!-- Manifesto de Privacidade -->
+                <div class="bento-card span-2-col" style="border-color: rgba(211, 47, 47, 0.4);">
+                    <h3 style="color: #fff;">🔒 Absolute Commitment to Privacy</h3>
+                    <p>In the information security market, trust is non-negotiable. We develop software to protect your data, not to collect it.</p>
+                    <p>Cromak Technology operates under a strict <strong>Zero Telemetry</strong> policy. Our forensic engines, password vaults, and compilers work 100% offline. We do not send usage reports to the cloud, we do not track your clicks, and we do not require an internet connection for invasive validations. Your machine, your rules.</p>
+                </div>
+
+                <!-- Estatísticas e Sede -->
+                <div class="bento-card">
+                    <h3>The Laboratory</h3>
+                    <p>Based in the state of São Paulo, Brazil, we develop native technology for global operations.</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 15px; color: var(--accent); font-weight: bold;">
+                        <li style="margin-bottom: 10px;">✓ 100% Native Code</li>
+                        <li style="margin-bottom: 10px;">✓ Zero-Cloud Operations</li>
+                        <li style="margin-bottom: 10px;">✓ International Support (11 Languages)</li>
+                    </ul>
+                </div>
+
+                <!-- Fale Conosco (Fica cirurgicamente posicionado por último, na última coluna) -->
                 <div class="bento-card">
                     <h3>Contact Us</h3>
-                    <p>If you're looking for tools with real utility, practicality, and the speed your routine demands, you're in the right place.</p>
+                    <p>If you are looking for tools with real utility, practicality, and the speed that your routine demands, you are in the right place.</p>
                     <p><strong>Welcome to Cromak Technology. True high performance.</strong></p>
                     
                     <a href="suporte.html" class="btn-support">
@@ -302,38 +323,69 @@
             <div class="footer-links">
                 <a href="privacidade.html">Privacy Policy</a>
                 <a href="termos.html">Terms of Use</a>
-				<a href="..\sitemap.html">Site Map</a>
+				<a href="..\sitemap.html"> Sitemap</a>
             </div>
             <p>&copy; <span id="ano-atual"></span> Cromak Technology. All rights reserved.</p>
         </div>
     </footer>
 
+    	<!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
+    <style>
+        #backToTopBtn {
+            display: none; 
+            position: fixed;
+            bottom: 30px; /* ALINHADO ABAIXO: Quanto menor o número, mais perto do fim da tela */
+            left: 30px;  /* LADO ESQUERDO: Substituiu o "right" */
+            z-index: 999;
+            font-size: 22px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            background-color: var(--accent);
+            color: #000;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+        #backToTopBtn:hover {
+            background-color: #0082c6;
+            color: #FFF;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
+        }
+    </style>
+	
+	<!-- Back to top -->
     <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.getElementById('nav-menu');
-        mobileMenu.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     </script>
-	<script>
-        function mudarIdioma(lang, event) {
-            event.preventDefault(); // Impede a página de pular para o topo
-            
-            // Salva a decisão no navegador para a próxima vez que ele entrar na raiz
-            localStorage.setItem('idioma_preferido', lang);
-            
-            // Pega o nome do arquivo atual (ex: web_to_apk_compiler.html)
-            var paginaAtual = window.location.pathname.split('/').pop(); 
-            if (!paginaAtual) paginaAtual = 'index.html';
-            
-            // Manda para a pasta correspondente mantendo o nome do arquivo
-            window.location.href = '../' + lang + '/' + paginaAtual;
-        }
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a1e392a9a52f51c317613e6/1jq30ujl9';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
     </script>
-    <script>
-        // Atualiza o ano automaticamente no rodapé
-        document.getElementById('ano-atual').textContent = new Date().getFullYear();
-    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
