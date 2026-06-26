@@ -329,7 +329,36 @@
         </div>
     </footer>
 
-    	<!-- BOTÃO VOLTAR AO TOPO -->
+        <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+	<script>
+        function mudarIdioma(lang, event) {
+            event.preventDefault(); // Impede a página de pular para o topo
+            
+            // Salva a decisão no navegador para a próxima vez que ele entrar na raiz
+            localStorage.setItem('idioma_preferido', lang);
+            
+            // Pega o nome do arquivo atual (ex: web_to_apk_compiler.html)
+            var paginaAtual = window.location.pathname.split('/').pop(); 
+            if (!paginaAtual) paginaAtual = 'index.html';
+            
+            // Manda para a pasta correspondente mantendo o nome do arquivo
+            window.location.href = '../' + lang + '/' + paginaAtual;
+        }
+    </script>
+	<script>
+        // Atualiza o ano automaticamente no rodapé
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
+    </script>
+	
+	
+	<!-- BOTÃO VOLTAR AO TOPO -->
     <button id="backToTopBtn" title="Voltar ao topo">↑</button>
     <style>
         #backToTopBtn {
