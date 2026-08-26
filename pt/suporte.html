@@ -209,33 +209,7 @@
                 transform: translate(1px, -1px) skew(0deg); 
                 filter: none;
             }
-			/* --- Efeito de TV Glitch na Imagem --- */
-        .tv-glitch-img {
-            animation: tv-glitch 3s infinite; /* A tremidinha acontece a cada 3 segundos */
-            display: inline-block;
         }
-
-        @keyframes tv-glitch {
-            0%, 95%, 100% { 
-                transform: translate(0, 0) skew(0deg); 
-                filter: none;
-            }
-            96% { 
-                transform: translate(-3px, 2px) skew(2deg); 
-                filter: drop-shadow(-3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(3px 0 0 rgba(0, 212, 255, 0.6)); 
-            }
-            97% { 
-                transform: translate(3px, -2px) skew(-2deg); 
-                filter: none; 
-            }
-            98% { 
-                transform: translate(-2px, 1px) skew(1deg); 
-                filter: drop-shadow(3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(-3px 0 0 rgba(0, 212, 255, 0.6)); 
-            }
-            99% { 
-                transform: translate(1px, -1px) skew(0deg); 
-                filter: none;
-            }
     </style>
 </head>
 <body>
@@ -446,11 +420,10 @@
                                 Falar no WhatsApp
                             </a>
 							
-							<!-- BOTÃO DO EMAIL -->
-                            <a href="mailto:cromaksupport@gmail.com" class="btn-support btn-email-support">
+							<!-- BOTÃO DO EMAIL / TICKET (Modificado com Âncora) -->
+                            <a href="#formulario-ticket" class="btn-support btn-email-support">
                                 Enviar E-mail (Ticket)
                             </a>
-
                             
                         </div>
 
@@ -473,7 +446,50 @@
 
                     </div>
 
+                </div> <!-- Fim da support-grid -->
+
+                <!-- FORMULÁRIO DE TICKET DE SUPORTE -->
+                <div id="formulario-ticket" style="margin-top: 80px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 60px;">
+                    <h2 class="section-title" style="margin-bottom: 15px;">Ainda precisa de ajuda?</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 40px;">Abra um ticket de suporte e nossa equipe técnica entrará em contato.</p>
+                    
+                    <style>
+                        .ticket-form { max-width: 700px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left; }
+                        .ticket-label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: bold; color: var(--text-dim); }
+                        .ticket-input { width: 100%; padding: 15px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #fff; font-family: inherit; font-size: 1rem; margin-bottom: 25px; transition: all 0.3s; }
+                        .ticket-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); background: rgba(0,0,0,0.6); }
+                        .btn-ticket { width: 100%; background: linear-gradient(135deg, #007bff, #00d4ff); color: #fff; font-weight: bold; padding: 16px; border-radius: 12px; border: none; cursor: pointer; transition: all 0.3s; font-size: 1.05rem; display: flex; justify-content: center; align-items: center; gap: 10px; }
+                        .btn-ticket:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4); }
+                    </style>
+
+                    <form class="ticket-form" action="https://formspree.io/f/xwlkeezg" method="POST">
+                        <div>
+                            <label class="ticket-label">Nome Completo</label>
+                            <input type="text" name="nome" required placeholder="Seu nome" class="ticket-input">
+                        </div>
+                        <div>
+                            <label class="ticket-label">E-mail</label>
+                            <input type="email" name="email" required placeholder="seu@email.com" class="ticket-input">
+                        </div>
+                        <div>
+                            <label class="ticket-label">Assunto</label>
+                            <input type="text" name="assunto" required placeholder="Ex: Licença, Bug no Install Compiler..." class="ticket-input">
+                        </div>
+                        <div>
+                            <label class="ticket-label">Mensagem</label>
+                            <textarea name="mensagem" required placeholder="Detalhe o seu problema o máximo possível para agilizarmos a solução..." class="ticket-input" style="min-height: 150px; resize: vertical; margin-bottom: 15px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn-ticket">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Enviar Ticket de Suporte
+                        </button>
+                    </form>
                 </div>
+                <!-- FIM DO FORMULÁRIO -->
+
             </div>
         </section>
     </main>
