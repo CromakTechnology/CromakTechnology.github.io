@@ -210,6 +210,7 @@
                 transform: translate(1px, -1px) skew(0deg); 
                 filter: none;
             }
+        }
     </style>
 </head>
 <body>
@@ -420,8 +421,8 @@
                                 Talk on WhatsApp
                             </a>
                             
-                            <!-- EMAIL BUTTON -->
-                            <a href="mailto:cromaksupport@gmail.com" class="btn-support btn-email-support">
+                            <!-- EMAIL BUTTON (Updated with Anchor) -->
+                            <a href="#ticket-form" class="btn-support btn-email-support">
                                 Send E-mail (Ticket)
                             </a>
 
@@ -447,7 +448,50 @@
 
                     </div>
 
+                </div> <!-- End of support-grid -->
+
+                <!-- SUPPORT TICKET FORM -->
+                <div id="ticket-form" style="margin-top: 80px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 60px;">
+                    <h2 class="section-title" style="margin-bottom: 15px;">Still need help?</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 40px;">Open a support ticket and our technical team will get in touch.</p>
+                    
+                    <style>
+                        .ticket-form { max-width: 700px; margin: 0 auto; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left; }
+                        .ticket-label { display: block; margin-bottom: 8px; font-size: 0.9rem; font-weight: bold; color: var(--text-dim); }
+                        .ticket-input { width: 100%; padding: 15px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: #fff; font-family: inherit; font-size: 1rem; margin-bottom: 25px; transition: all 0.3s; }
+                        .ticket-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 15px rgba(0, 212, 255, 0.2); background: rgba(0,0,0,0.6); }
+                        .btn-ticket { width: 100%; background: linear-gradient(135deg, #007bff, #00d4ff); color: #fff; font-weight: bold; padding: 16px; border-radius: 12px; border: none; cursor: pointer; transition: all 0.3s; font-size: 1.05rem; display: flex; justify-content: center; align-items: center; gap: 10px; }
+                        .btn-ticket:hover { transform: translateY(-3px); box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4); }
+                    </style>
+
+                    <form class="ticket-form" action="https://formspree.io/f/xwlkeezg" method="POST">
+                        <div>
+                            <label class="ticket-label">Full Name</label>
+                            <input type="text" name="nome" required placeholder="Your name" class="ticket-input">
+                        </div>
+                        <div>
+                            <label class="ticket-label">Email</label>
+                            <input type="email" name="email" required placeholder="your@email.com" class="ticket-input">
+                        </div>
+                        <div>
+                            <label class="ticket-label">Subject</label>
+                            <input type="text" name="assunto" required placeholder="E.g.: License, Bug in Install Compiler..." class="ticket-input">
+                        </div>
+                        <div>
+                            <label class="ticket-label">Message</label>
+                            <textarea name="mensagem" required placeholder="Detail your issue as much as possible to speed up the resolution..." class="ticket-input" style="min-height: 150px; resize: vertical; margin-bottom: 15px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn-ticket">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Submit Support Ticket
+                        </button>
+                    </form>
                 </div>
+                <!-- END OF FORM -->
+
             </div>
         </section>
     </main>
