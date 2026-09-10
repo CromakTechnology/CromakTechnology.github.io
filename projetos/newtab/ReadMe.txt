@@ -3,7 +3,7 @@
                         Manual do Usuário
 ================================================================================
 
-Versão: 1.0
+Versão: 1.1
 Desenvolvido por: Cromak Technology
 Website Oficial: https://cromaktechnology.github.io
 
@@ -187,29 +187,33 @@ NovaAba/
 
 
 ================================================================================
-9. LICENÇA E DIREITOS AUTORAIS
+9. LICENÇA, DIREITOS AUTORAIS E AVISO LEGAL (OPEN SOURCE)
 ================================================================================
 
-Copyright (c) 2026 Cromak Technology. Todos os direitos reservados.
+Copyright (c) 2026 Cromak Technology.
 Website Oficial: https://cromaktechnology.github.io
 
-Este código-fonte, design, layout e todos os elementos visuais contidos
-neste projeto são de propriedade exclusiva da Cromak Technology.
+ESTE PROJETO É 100% GRATUITO E OPEN SOURCE.
+Você tem total liberdade para usar, modificar, distribuir, compartilhar e 
+adaptar este projeto para uso pessoal, educacional ou comercial, sem a 
+necessidade de pagar qualquer tipo de licença. A única exigência é que 
+este aviso de direitos autorais e os créditos ao desenvolvedor original 
+sejam mantidos.
 
-É ESTRITAMENTE PROIBIDO:
-1. O uso, cópia, modificação ou distribuição deste projeto por qualquer
-   empresa, organização ou entidade corporativa sem a devida licença
-   comercial prévia e por escrito.
-2. A remoção ou alteração deste aviso de direitos autorais.
-3. O uso deste código para fins comerciais, corporativos ou lucrativos.
+AVISO DE MARCAS DE TERCEIROS (DISCLAIMER):
+Este é um projeto de código aberto e sem fins lucrativos. Todas as logomarcas, 
+ícones e marcas comerciais (trademarks) utilizadas como atalhos neste projeto 
+(presentes nas pastas lib/thumbs e lib/buttons) pertencem exclusivamente aos 
+seus respectivos proprietários e detentores de direitos.
 
-O uso pessoal e não comercial é permitido, desde que este aviso seja
-mantido intacto. Violações destes termos estão sujeitas às penalidades
-civis e criminais previstas na legislação de direitos autorais.
+O uso dessas imagens tem propósito estritamente nominativo (identificação 
+visual para facilitar a navegação do usuário final), não implicando qualquer 
+tipo de afiliação, patrocínio, parceria ou endosso por parte dessas empresas 
+à Cromak Technology. 
 
-Para solicitar licença comercial ou parcerias, entre em contato através
-do site oficial: https://cromaktechnology.github.io
-
+Caso você seja o representante legal ou detentor dos direitos de alguma imagem 
+e deseje a sua remoção do pacote padrão, por favor, abra uma "Issue" no 
+repositório do GitHub ou entre em contato, e a remoção será feita imediatamente.
 
 ================================================================================
 Desenvolvido com dedicação por Cromak Technology
