@@ -1,0 +1,754 @@
+/* CSS NEW TAB (CSS/STYLE.CSS)*/
+
+:root {
+    --bg-color: #1a1a2e;
+    --text-color: #ffffff;
+    --transition-speed: 0.5s;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --ui-zoom: 1; /* Nova variável de zoom */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    /* background-image: url('../lib/background/1788816542.png'); */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* ========================================================
+TÍTULOS DAS TELAS (Segoe UI Light) - ALINHADO À ESQUERDA
+======================================================== */
+.board-title {
+    position: absolute;
+    top: calc(50vh - 320px); /* Acima do metro-wrapper */
+    left: calc(50% - 497px); /* Alinha com a borda esquerda do bloco */
+    font-family: 'Segoe UI Light', 'Segoe UI', sans-serif;
+    font-weight: 200;
+    font-size: 42px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    pointer-events: none; /* Não interfere nos cliques */
+}
+
+/* ========================================================
+   NAVEGAÇÃO E CENTRALIZAÇÃO PERFEITA
+======================================================== */
+.slider-viewport {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    height: 100%;
+    width: 400vw;
+    transition: transform var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.board {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transform: scale(var(--ui-zoom)); /* Aplica o zoom na tela inteira */
+    transition: transform 0.3s ease;
+}
+
+/* ========================================================
+   BOTÕES DE SETA
+======================================================== */
+.nav-btn {
+    position: absolute;
+    top: calc(50vh - 240px);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 20;
+    transition: 0.2s;
+}
+
+#btn-prev {
+    left: calc(50vw - 560px);
+    background: url('../lib/buttons/arrow-back.png') center no-repeat;
+    display: none;
+}
+
+#btn-next {
+    left: calc(50vw + 520px);
+    background: url('../lib/buttons/arrow.png') center no-repeat;
+}
+
+#btn-next:hover { 
+	background: url('../lib/buttons/arrow-hover.png') center no-repeat; 
+	transform: rotate(360deg);
+}
+#btn-prev:hover {
+    background: url('../lib/buttons/arrow-hover.png') center no-repeat;
+    transform: rotate(180deg);
+}
+
+/* ========================================================
+   LAYOUT ABSOLUTO
+======================================================== */
+.metro-wrapper {
+    /* background: url('../lib/background/bg_padrao.png'); background foi removido daqui para o JS controlar a cor */
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.metro-inner {
+    position: relative;
+    width: 965px;
+    height: 470px;
+}
+
+/* Estilo Base dos Botões */
+.tile {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tile img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.tile:hover {
+    transform: scale(0.97);
+    outline: 1px solid #fff;
+    z-index: 5;
+}
+
+/* Coordenadas Exatas */
+.pos-1  { left: 0px;   top: 0px;   width: 215px; height: 103px; }
+.pos-2  { left: 0px;   top: 113px; width: 215px; height: 102px; }
+.pos-3  { left: 225px; top: 0px;   width: 140px; height: 65px; }
+.pos-4  { left: 375px; top: 0px;   width: 140px; height: 65px; }
+.pos-5  { left: 225px; top: 75px;  width: 290px; height: 140px; }
+.pos-6  { left: 525px; top: 0px;   width: 440px; height: 215px; }
+.pos-7  { left: 0px;   top: 225px; width: 330px; height: 160px; }
+.pos-8  { left: 0px;   top: 395px; width: 160px; height: 75px; }
+.pos-9  { left: 170px; top: 395px; width: 160px; height: 75px; }
+.pos-10 { left: 340px; top: 265px; width: 420px; height: 205px; }
+.pos-11 { left: 770px; top: 265px; width: 195px; height: 98px; }
+.pos-12 { left: 770px; top: 373px; width: 195px; height: 97px; }
+
+/* ========================================================
+   BARRA DE PESQUISA CENTRAL (Layout Original)
+======================================================== */
+.search-metro-box {
+    position: absolute;
+    left: 340px;
+    top: 225px;
+    width: 585px;
+    height: 34px;
+    z-index: 10;
+}
+
+/* Aplica o estilo a qualquer form que comece com "search-form" */
+form[id^="search-form"] {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    height: 100%;
+    padding: 0 10px;
+    position: relative; /* Necessário para posicionar o botão fora */
+}
+
+form[id^="search-form"]:focus-within {
+    outline: 2px solid #00aef0;
+}
+
+/* Aplica o estilo a qualquer input que comece com "search-input" */
+input[id^="search-input"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #333;
+    background: transparent;
+    height: 24px;
+    width: 100%; /* Força o input a ocupar o espaço */
+}
+
+/* Controles DENTRO da caixa (motor + engrenagem) */
+.search-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 5px;
+}
+
+/* --- LÓGICA DE CORES (GRAYSCALE) --- */
+
+/* O ícone principal sempre fica colorido e visível */
+.current-engine { 
+    width: 20px; 
+    height: 20px; 
+    opacity: 1; 
+    filter: grayscale(0%);
+    transition: 0.2s;
+}
+
+/* 1. Motores de busca do menu (mantém o efeito cinza via CSS) */
+.quick-engine { 
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer; 
+    opacity: 0.4; 
+    filter: grayscale(100%);
+    transition: 0.2s;
+}
+
+.quick-engine:hover, .quick-engine.active { 
+    opacity: 1; 
+    filter: grayscale(0%);
+}
+
+/* 2. Botão de configurações (engrenagem limpa, sem filtros css para o js tratar) */
+.icon-btn {
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer; 
+}
+
+/* Botão "Ir" FORA da caixa */
+.submit-btn {
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('../lib/buttons/pesquisar.png') center no-repeat;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 11;
+}
+
+.submit-btn:hover { background: url('../lib/buttons/pesquisar-hover.png') center no-repeat; }
+
+/* ========================================================
+   MENU DROP-DOWN DA ENGRENAGEM
+======================================================== */
+.engines-menu {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 8px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease;
+    z-index: 100;
+}
+
+.engines-menu.show { opacity: 1; visibility: visible; }
+
+/* ========================================================
+MENU DE HISTÓRICO DE PESQUISAS
+======================================================== */
+.search-history {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 100%;
+    background: rgba(26, 26, 46, 0.95);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease;
+    z-index: 9;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+    color: #ccc;
+}
+
+.clear-history {
+    background: none;
+    border: none;
+    color: #00aef0;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 2px 6px;
+}
+
+.clear-history:hover {
+    text-decoration: underline;
+}
+
+.history-list {
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.history-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.15s;
+}
+
+.history-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.history-item .delete-item {
+    color: #999;
+    font-size: 16px;
+    padding: 0 4px;
+    opacity: 0;
+    transition: 0.15s;
+}
+
+.history-item:hover .delete-item {
+    opacity: 1;
+}
+
+.history-item .delete-item:hover {
+    color: #ff4444;
+}
+
+/* 3. Botão X para limpar pesquisa (agora sem filtros para o js tratar) */
+.clear-search {
+    display: none; /* Escondido por padrão */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Mostra o botão quando o input tem texto */
+#search-input:not(:placeholder-shown) + .search-controls .clear-search {
+    display: block;
+}
+
+/* Fallback para browsers que não suportam :placeholder-shown */
+.search-controls.has-text .clear-search {
+    display: block;
+}
+
+/* ========================================================
+   BOTÃO FLUTUANTE E JANELA DE CONFIGURAÇÕES
+======================================================== */
+#floating-config-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+#floating-config-btn:hover {
+    opacity: 1;
+    transform: rotate(90deg); /* Faz a engrenagem girar ao passar o mouse */
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* Escondido por padrão */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    display: flex; /* Exibe a janela quando a classe .show é ativada pelo JS */
+}
+
+.modal-content {
+    background: #1a1a2e;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.modal-header h2 { font-size: 18px; font-weight: 300; }
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.2s;
+}
+.close-btn:hover { color: #fff; }
+
+.modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.config-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: right;
+}
+
+.save-btn {
+    background: #0071b9;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+.save-btn:hover { background: #00aef0; }
+
+/* Melhorias Visuais do Modal de Configurações */
+.settings-window {
+    width: 600px; /* Janela mais larga */
+}
+
+.input-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.browse-btn {
+    background: #444;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.2s;
+}
+
+.browse-btn:hover {
+    background: #555;
+    border-color: #fff;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Moldura bonita para o selecionador de cores */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: 2px solid #ffffff; /* Borda branca grossa */
+    border-radius: 4px;
+    width: 50px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+}
+
+/* ========================================================
+   MENU SUSPENSO DA ENGRENAGEM E SOBRE
+======================================================== */
+.config-menu {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    background: #1a1a2e;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    display: none; /* Escondido por padrão */
+    flex-direction: column;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.config-menu.show { display: flex; }
+
+.config-menu-item {
+    padding: 12px 25px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.config-menu-item:last-child { border-bottom: none; }
+.config-menu-item:hover { background: rgba(255,255,255,0.1); color: #00aef0; }
+
+/* Interação com Títulos Editáveis */
+.board-title {
+    pointer-events: auto !important; /* Libera o clique no título */
+    outline: none;
+    border: 1px dashed transparent;
+    border-radius: 4px;
+    padding: 0 10px;
+    transition: 0.2s;
+    left: calc(50% - 507px); /* Ajusta margem por causa do padding */
+}
+
+.board-title:focus, .board-title:hover {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.2);
+}
+
+/* ========================================================
+   MODAL SOBRE (DESIGN EXCLUSIVO CROMAK)
+======================================================== */
+.about-window {
+    width: 420px;
+    text-align: center;
+}
+
+.about-body {
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-icon {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+.about-title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.about-subtitle {
+    font-size: 12px;
+    color: #00aef0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-desc {
+    color: #bbb;
+    line-height: 1.6;
+    font-size: 13.5px;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.about-brand {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 12px 15px;
+    width: 100%;
+    font-size: 13px;
+    color: #ddd;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.about-brand strong {
+    color: #fff;
+    font-size: 14px;
+}
+
+.support-btn {
+    background: #0071b9;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+    width: 100%;
+    display: block;
+}
+
+.support-btn:hover {
+    background: #00aef0;
+    box-shadow: 0 0 12px rgba(0, 174, 240, 0.4);
+}
+
+.about-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: #666;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================================
+   RELÓGIO METRO UI (COM HOT CORNER E FUNDO ESCURO)
+======================================================== */
+
+/* 1. Zona invisível (Canto Quente) */
+.clock-trigger-zone {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 180px;
+    z-index: 1000;
+}
+
+/* 2. O Ícone do Relógio */
+.clock-indicator {
+    position: absolute;
+    bottom: 20px; /* Mesma distância do chão que a engrenagem */
+    left: 20px;   /* Mesma distância da borda que a engrenagem tem na direita */
+    width: 40px;  /* O tamanho que você ajustou e ficou perfeito */
+    height: auto;
+    opacity: 0.5; 
+    transition: opacity 0.5s ease;
+    pointer-events: none; 
+}
+
+.clock-indicator.hidden {
+    opacity: 0;
+}
+
+/* 3. A Caixa do Relógio (Fundo escuro e layout harmônico) */
+.metro-clock {
+    position: absolute;
+    bottom: 40px;
+    left: 45px;
+    display: flex;
+    align-items: center; /* Centraliza a hora com o bloco de data */
+    gap: 20px; /* Distância exata entre a hora e a data */
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.65); /* 65% para contraste perfeito igual ao original */
+    padding: 15px 35px 15px 25px; /* Espaço interno balanceado */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+    pointer-events: none;
+    white-space: nowrap; /* Impede quebra de linha */
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+}
+
+/* 4. Animação de esconder */
+.metro-clock.hidden {
+    transform: translateY(60px);
+    opacity: 0;
+}
+
+/* 5. Estilo da Hora (Fina e Grande) */
+.clock-time {
+    font-size: 78px;
+    font-weight: 300;
+    line-height: 1; /* Altura de linha normal para não achatar a caixa preta */
+    letter-spacing: -2px;
+    margin-bottom: 5px; /* Ajuste visual fino */
+}
+
+/* 6. Estilo do Container da Data */
+.clock-date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 7. Estilo do Dia e Data (Proporção Menor) */
+.clock-day {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.clock-date {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.3;
+    color: #cccccc; /* Cinza claro autêntico do Win8 */
+}

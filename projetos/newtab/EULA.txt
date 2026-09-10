@@ -1,0 +1,129 @@
+========================================================================
+CONTRATO DE LICENÇA DE USUÁRIO FINAL (EULA) E TERMOS DE USO
+========================================================================
+
+Última atualização: 2026
+Projeto: Cromak NewTab 1.0 (Interface Metro UI)
+Proprietário: Cromak Technology
+Website Oficial: https://cromaktechnology.github.io
+
+------------------------------------------------------------------------
+1. ACEITAÇÃO DOS TERMOS
+------------------------------------------------------------------------
+Ao acessar, visualizar, baixar ou utilizar qualquer parte do código-fonte, 
+design, interface ou funcionalidades deste projeto (doravante denominado 
+"SOFTWARE" ou "WEBSITE"), você (doravante denominado "USUÁRIO") concorda 
+integralmente com os termos e condições estabelecidos neste Contrato de 
+Licença de Usuário Final (EULA). Se você não concordar com qualquer parte 
+destes termos, você não está autorizado a utilizar o SOFTWARE.
+
+------------------------------------------------------------------------
+2. PROPRIEDADE INTELECTUAL E DIREITOS AUTORAIS
+------------------------------------------------------------------------
+© 2026 Cromak Technology. Todos os direitos reservados.
+
+O SOFTWARE, incluindo, mas não se limitando a, seu código-fonte (HTML, CSS, 
+JavaScript), layout, design visual (UI/UX), imagens, ícones, logotipos, 
+textos e estrutura de banco de dados, é de propriedade exclusiva da 
+Cromak Technology e é protegido pelas leis de direitos autorais e 
+propriedade intelectual do Brasil e tratados internacionais.
+
+A marca "Cromak Technology" e seus respectivos logotipos são marcas 
+registradas ou de uso exclusivo de seu proprietário.
+
+------------------------------------------------------------------------
+3. CONCESSÃO DE LICENÇA (USO PESSOAL)
+------------------------------------------------------------------------
+A Cromak Technology concede ao USUÁRIO uma licença limitada, não exclusiva, 
+intransferível e revogável para utilizar o SOFTWARE estritamente para fins 
+pessoais, educacionais ou de estudo, sem fins lucrativos.
+
+É permitido ao USUÁRIO:
+a) Visualizar e interagir com o SOFTWARE em seu navegador.
+b) Estudar o código-fonte para fins de aprendizado pessoal.
+
+------------------------------------------------------------------------
+4. RESTRIÇÕES E PROIBIÇÕES
+------------------------------------------------------------------------
+É estritamente PROIBIDO ao USUÁRIO, sem a prévia autorização expressa e 
+por escrito da Cromak Technology:
+
+a) USO COMERCIAL OU CORPORATIVO: Utilizar, implementar, modificar ou 
+distribuir o SOFTWARE para qualquer empresa, organização, entidade 
+governamental ou para qualquer finalidade que gere lucro direto ou 
+indireto.
+b) REMOÇÃO DE CRÉDITOS: Remover, ocultar ou alterar qualquer aviso de 
+direitos autorais, marca d'água, créditos ou links de atribuição à 
+Cromak Technology presentes no SOFTWARE.
+c) ENGENHARIA REVERSA: Descompilar, fazer engenharia reversa ou tentar 
+extrair o código-fonte original de quaisquer partes compiladas do projeto.
+d) REVENDA: Vender, sublicenciar, alugar ou distribuir o SOFTWARE, 
+seja na sua forma original ou modificada.
+e) PLÁGIO: Copiar o design, layout ou funcionalidades exclusivas deste 
+projeto para criar produtos concorrentes ou claimar a autoria do mesmo.
+
+------------------------------------------------------------------------
+5. LICENCIAMENTO COMERCIAL E CORPORATIVO
+------------------------------------------------------------------------
+Empresas, agências, desenvolvedores freelancers (em projetos pagos) ou 
+qualquer entidade que deseje utilizar o SOFTWARE, total ou parcialmente, 
+em ambientes comerciais, intranets corporativas ou produtos vendidos a 
+terceiros, DEVE adquirir uma Licença Comercial válida.
+
+Para solicitar uma cotação, adquirir uma licença ou estabelecer uma 
+parceria comercial, entre em contato através do site oficial:
+https://cromaktechnology.github.io
+
+O uso do SOFTWARE por empresas sem a devida licença comercial constitui 
+violação grave deste contrato e das leis de propriedade intelectual, 
+sujeitando o infrator às penalidades civis e criminais cabíveis.
+
+------------------------------------------------------------------------
+6. ISENÇÃO DE GARANTIAS
+------------------------------------------------------------------------
+O SOFTWARE é fornecido "NO ESTADO EM QUE SE ENCONTRA" (AS IS), sem 
+garantias de qualquer tipo, expressas ou implícitas, incluindo, mas não 
+se limitando a, garantias de comercialização, adequação a um fim 
+específico e não violação. A Cromak Technology não garante que o 
+SOFTWARE funcionará ininterruptamente ou livre de erros.
+
+------------------------------------------------------------------------
+7. LIMITAÇÃO DE RESPONSABILIDADE
+------------------------------------------------------------------------
+Em nenhuma circunstância a Cromak Technology será responsável por quaisquer 
+danos diretos, indiretos, incidentais, especiais ou consequentes (incluindo, 
+mas não se limitando a, perda de dados, perda de lucros ou interrupção de 
+negócios) resultantes do uso ou da impossibilidade de uso do SOFTWARE, 
+mesmo que a Cromak Technology tenha sido avisada da possibilidade de 
+tais danos.
+
+------------------------------------------------------------------------
+8. RESCISÃO
+------------------------------------------------------------------------
+Este EULA é efetivo até ser rescindido. Ele será automaticamente rescindido 
+sem aviso prévio da Cromak Technology se o USUÁRIO falhar em cumprir 
+qualquer disposição deste contrato. Após a rescisão, o USUÁRIO deve 
+cessar imediatamente o uso do SOFTWARE e destruir todas as cópias em 
+sua posse.
+
+------------------------------------------------------------------------
+9. LEGISLAÇÃO APLICÁVEL E FORO
+------------------------------------------------------------------------
+Este contrato será regido e interpretado de acordo com as leis da 
+República Federativa do Brasil. Fica eleito o foro da comarca de domicílio 
+da Cromak Technology para dirimir quaisquer litígios ou controvérsias 
+oriundas deste instrumento, com renúncia a qualquer outro, por mais 
+privilegiado que seja.
+
+------------------------------------------------------------------------
+10. CONTATO
+------------------------------------------------------------------------
+Para dúvidas sobre este EULA, solicitações de licença comercial ou 
+reportar violações de direitos autorais, utilize os canais oficiais:
+
+Website: https://cromaktechnology.github.io
+
+========================================================================
+Fim do Contrato de Licença de Usuário Final (EULA)
+© 2026 Cromak Technology.
+========================================================================

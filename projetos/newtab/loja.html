@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojas Online - Cromak NewTab</title>
+    <link rel="stylesheet" href="lib/style.css">
+    <link rel="shortcut icon" href="lib/icon/index.ico"/>
+</head>
+<body>
+
+    <div class="slider-viewport" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        
+        <div class="board" style="position: relative;">
+            <h1 class="board-title" id="title-store" contenteditable="true" spellcheck="false">Lojas Online</h1>
+            <div class="metro-wrapper">
+                <div class="metro-inner" id="grid-store">
+
+                    <div class="search-metro-box">
+                        <form id="search-form" action="https://www.google.com/search" method="get" target="_blank">
+                            <input type="text" name="q" id="search-input" autofocus autocomplete="off" placeholder="Pesquisar no Google...">
+                            
+                            <div class="search-controls">
+                                <img src="lib/buttons/clear.png" id="clear-search" class="clear-search" title="Limpar pesquisa" alt="Limpar" style="display: none;">
+                                <img src="lib/buttons/google.png" id="current-engine-icon" class="current-engine" title="Google" alt="Google">
+                                <img src="lib/buttons/search-config.png" id="btn-config" class="icon-btn" title="Configurações" alt="Config">
+                                <button type="submit" class="submit-btn" title="Pesquisar"></button>
+                            </div>
+                        </form>
+
+                        <div id="search-history" class="search-history">
+                            <div class="history-header">
+                                <span>Pesquisas Recentes</span>
+                                <button id="clear-history" class="clear-history">Limpar</button>
+                            </div>
+                            <div id="history-list" class="history-list"></div>
+                        </div>
+
+                        <div id="engines-menu" class="engines-menu" style="flex-wrap: wrap; width: 340px;">
+                            <img src="lib/buttons/google.png" class="quick-engine active" title="Google" data-url="https://www.google.com/search" data-param="q" data-name="Google">
+                            <img src="lib/buttons/bing.png" class="quick-engine" title="Bing" data-url="https://www.bing.com/search" data-param="q" data-name="Bing">
+                            <img src="lib/buttons/yahoo.png" class="quick-engine" title="Yahoo" data-url="https://search.yahoo.com/search" data-param="p" data-name="Yahoo">
+                            <img src="lib/buttons/duckduckgo.png" class="quick-engine" title="DuckDuckGo" data-url="https://duckduckgo.com/" data-param="q" data-name="DuckDuckGo">
+                            <img src="lib/buttons/qwant.png" class="quick-engine" title="Qwant" data-url="https://www.qwant.com/" data-param="q" data-name="Qwant">
+                            <img src="lib/buttons/amazon.png" class="quick-engine" title="Amazon" data-url="https://www.amazon.com.br/s" data-param="k" data-name="Amazon">
+                            <img src="lib/buttons/wikipedia.png" class="quick-engine" title="Wikipedia" data-url="https://pt.wikipedia.org/wiki/Special:Search" data-param="search" data-name="Wikipedia">
+                            <img src="lib/buttons/youtube.png" class="quick-engine" title="YouTube" data-url="https://www.youtube.com/results" data-param="search_query" data-name="YouTube">
+                            <img src="lib/buttons/piratebay.png" class="quick-engine" title="PirateBay" data-url="https://thepiratebay.org/search.php" data-param="q" data-name="PirateBay">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DO PAINEL DE LOJA -->
+    <script src="lib/grid-store.js"></script>
+    <script src="lib/app.js"></script>
+    <script src="lib/config.js"></script>
+	
+	<!-- ========================================== -->
+    <!-- WIDGET DE RELÓGIO (COM HOT CORNER)         -->
+    <!-- ========================================== -->
+    <div id="clock-trigger-zone" class="clock-trigger-zone">
+        
+        <!-- O indicador sutil (Aparece quando o relógio esconde) -->
+        <img src="lib/buttons/clock.png" id="clock-indicator" class="clock-indicator hidden" alt="Mostrar Relógio">
+
+        <!-- A Caixa do Relógio -->
+        <div id="metro-clock-container" class="metro-clock">
+            <div id="clock-time" class="clock-time">00:00</div>
+            <div class="clock-date-container">
+                <div id="clock-day" class="clock-day">Terça-feira</div>
+                <div id="clock-date" class="clock-date">8 de setembro</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Script do Relógio (Coloque junto com seus outros scripts) -->
+    <script src="lib/clock.js"></script>
+	
+	<!-- ========================================== -->
+    <!-- 1. MODAL DE CONFIGURAÇÕES GERAIS           -->
+    <!-- ========================================== -->
+    
+    <!-- Botão da Engrenagem -->
+    <img src="lib/buttons/config.png" id="floating-config-btn" title="Menu" alt="Menu">
+
+    <!-- Menu Suspenso (Configuração e Sobre) -->
+    <div id="config-dropdown" class="config-menu">
+        <div id="open-prefs" class="config-menu-item">Preferências</div>
+        <div id="open-about" class="config-menu-item">Sobre</div>
+    </div>
+
+    <!-- Janela de Preferências -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content settings-window">
+            <div class="modal-header">
+                <h2>Preferências</h2>
+                <span id="close-modal" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="config-group">
+                    <label>Imagem de Fundo:</label>
+                    <div class="input-row">
+                        <input type="text" id="bg-image-url" placeholder="URL ou base64..." style="width: 200px;">
+                        <label for="bg-image-file" class="browse-btn">Procurar</label>
+                        <input type="file" id="bg-image-file" accept="image/*" style="display: none;">
+                        <button id="clear-bg-btn" class="browse-btn" style="background: #a00;">Limpar</button>
+                    </div>
+                </div>
+                <div class="config-group">
+                    <label for="bg-color-picker">Cor de Fundo Base:</label>
+                    <input type="color" id="bg-color-picker" value="#1a1a2e">
+                </div>
+                <div class="config-group">
+                    <label for="panel-color-picker">Cor dos Painéis (Fundo):</label>
+                    <input type="color" id="panel-color-picker" value="#000000">
+                </div>
+                <div class="config-group">
+                    <label for="panel-opacity">Transparência dos Painéis:</label>
+                    <input type="range" id="panel-opacity" min="0" max="1" step="0.1" value="0.2">
+                </div>
+                <div class="config-group">
+                    <label for="ui-zoom">Zoom da Interface:</label>
+                    <input type="range" id="ui-zoom" min="0.5" max="1.5" step="0.05" value="1.0">
+                </div>
+                
+                <!-- Área de Backup -->
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; gap: 10px;">
+                    <button id="export-backup-btn" class="browse-btn" style="background: #0071b9;">Exportar Backup</button>
+                    <label for="import-backup-file" class="browse-btn" style="background: #0071b9;">Importar Backup</label>
+                    <input type="file" id="import-backup-file" accept=".json" style="display: none;">
+					<button id="reset-settings-btn" class="browse-btn" style="background: #cc0000;">Redefinir Padrões</button>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="copyright">&copy; 2026 - Cromak Technology. Todos os direitos reservados.</span>
+                <button id="save-settings-btn" class="save-btn">Salvar e Aplicar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. MODAL DE EDIÇÃO DE BLOCO (TILE)         -->
+    <!-- ========================================== -->
+    <div id="tile-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Bloco</h2>
+                <span id="close-tile-modal" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="config-group">
+                    <label for="tile-edit-title">Título:</label>
+                    <input type="text" id="tile-edit-title">
+                </div>
+                <div class="config-group">
+                    <label for="tile-edit-url">Link (URL):</label>
+                    <input type="text" id="tile-edit-url">
+                </div>
+                <div class="config-group">
+                    <label>Imagem do Bloco:</label>
+                    <div class="input-row">
+                        <input type="text" id="tile-edit-img" style="width: 150px;">
+                        <label for="tile-image-file" class="browse-btn">Procurar</label>
+                        <input type="file" id="tile-image-file" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <div class="config-group">
+                    <label for="tile-edit-bg">Cor de Fundo:</label>
+                    <input type="color" id="tile-edit-bg">
+                </div>
+                <input type="hidden" id="tile-edit-grid">
+                <input type="hidden" id="tile-edit-index">
+            </div>
+            <div class="modal-footer">
+                <button id="save-tile-btn" class="save-btn">Salvar Bloco</button>
+            </div>
+        </div>
+    </div>
+	
+	<!-- ========================================== -->
+    <!-- 3. NOVA JANELA SOBRE (CROMAK TECHNOLOGY)   -->
+    <!-- ========================================== -->
+    <div id="about-modal" class="modal-overlay">
+        <div class="modal-content about-window">
+            <div class="modal-header">
+                <h2>Sobre o Software</h2>
+                <span id="close-about-modal" class="close-btn">&times;</span>
+            </div>
+            
+            <div class="modal-body about-body">
+                <!-- Ícone do Software -->
+                <img src="lib/icon/index.ico" alt="Cromak NewTab Icon" class="about-icon">
+                
+                <!-- Títulos -->
+                <h3 class="about-title">Cromak NewTab v1.1</h3>
+                <span class="about-subtitle">Interface Metro UI</span>
+
+                <!-- Descrição -->
+                <p class="about-desc">
+                    Um painel de atalhos inteligente e totalmente customizável, projetado para otimizar seu fluxo de trabalho diário com um design modular e fluido.
+                </p>
+
+                <!-- Informações do Proprietário -->
+                <div class="about-brand">
+                    <strong>Desenvolvedor:</strong> Cromak Technology<br>
+                    <span style="color: #aaa;">Forjando Ferramentas de Alta Performance.</span>
+                </div>
+
+                <!-- Botão de Suporte -->
+                <a href="https://cromaktechnology.github.io" target="_blank" class="support-btn">Atualização e Suporte</a>
+            </div>
+            
+            <!-- Rodapé / Copyright -->
+            <div class="modal-footer about-footer">
+                &copy; 2026 - Cromak Technology. Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+	
+</body>
+</html>
