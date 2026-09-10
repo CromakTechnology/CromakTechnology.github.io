@@ -4,7 +4,7 @@ window.defaultTiles = window.defaultTiles || {};
 // Adiciona os dados da Tela 4 (Produtividade e Desenvolvimento)
 window.defaultTiles['grid-4'] = [
 	{ pos: 'pos-1', url: 'https://notion.so/', bg: '#000000', img: 'lib/thumbs/notion.png', title: 'Notion' },
-	{ pos: 'pos-2', url: 'https://github.com/', bg: '#24292e', img: 'lib/thumbs/gitHub.png', title: 'GitHub' },
+	{ pos: 'pos-2', url: 'https://github.com/', bg: '#24292e', img: 'lib/thumbs/github.png', title: 'GitHub' },
 	{ pos: 'pos-3', url: 'https://trello.com/', bg: '#0079bf', img: 'lib/thumbs/trello.png', title: 'Trello' },
 	{ pos: 'pos-4', url: 'https://stackoverflow.com/', bg: '#f48024', img: 'lib/thumbs/stack-overflow.png', title: 'Stack Overflow' },
 	{ pos: 'pos-5', url: 'https://todoist.com/', bg: '#e44332', img: 'lib/thumbs/todoist.png', title: 'Todoist' },
