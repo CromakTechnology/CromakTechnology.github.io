@@ -1,9 +1,13 @@
+// ==========================================
+// PAINEL 1: MAIS USADOS
+// ==========================================
+
 // Inicia o objeto global se ele não existir
 window.defaultTiles = window.defaultTiles || {};
 
-// Adiciona os dados da Tela 1
+// Adiciona os dados exclusivos desta tela extraídos do backup 
 window.defaultTiles['grid-1'] = [
-    { pos: 'pos-1', url: 'https://youtube.com/', bg: '#c4302b', img: 'lib/thumbs/youtube.png', title: 'YouTube' },
+    { pos: 'pos-1', url: 'https://youtube.com/@dj_noct6', bg: '#c4302b', img: 'lib/thumbs/youtube.png', title: 'YouTube' },
     { pos: 'pos-2', url: 'https://instagram.com/', bg: '#833ab4', img: 'lib/thumbs/instagram.png', title: 'Instagram' },
     { pos: 'pos-3', url: 'games.html', bg: '#11454d', img: 'lib/thumbs/games.png', title: 'Games' },
     { pos: 'pos-4', url: 'ia.html', bg: '#45423e', img: 'lib/thumbs/ia.png', title: 'Artificial Intelligence' },

@@ -1,7 +1,11 @@
+// ==========================================
+// PAINEL 4: PRODUTIVIDADE E DESENVOLVIMENTO
+// ==========================================
+
 // Inicia o objeto global se ele não existir
 window.defaultTiles = window.defaultTiles || {};
 
-// Adiciona os dados da Tela 4 (Produtividade e Desenvolvimento)
+// Adiciona os dados exclusivos desta tela extraídos do backup 
 window.defaultTiles['grid-4'] = [
 	{ pos: 'pos-1', url: 'https://notion.so/', bg: '#000000', img: 'lib/thumbs/notion.png', title: 'Notion' },
 	{ pos: 'pos-2', url: 'https://github.com/', bg: '#24292e', img: 'lib/thumbs/github.png', title: 'GitHub' },

@@ -1,7 +1,11 @@
-// Inicia o objeto global se ele não existir 1a5276
+// ==========================================
+// PAINEL 2: UTILITÁRIOS
+// ==========================================
+
+// Inicia o objeto global se ele não existir
 window.defaultTiles = window.defaultTiles || {};
 
-// Adiciona os dados da Tela 2
+// Adiciona os dados exclusivos desta tela extraídos do backup 
 window.defaultTiles['grid-2'] = [
     { pos: 'pos-1', url: 'https://mega.co.nz/', bg: '#d9242d', img: 'lib/thumbs/mega.png', title: 'MEGA' },
     { pos: 'pos-2', url: 'https://mediafire.com/', bg: '#0070f0', img: 'lib/thumbs/media-fire.png', title: 'MediaFire' },

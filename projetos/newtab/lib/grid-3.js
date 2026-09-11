@@ -1,7 +1,11 @@
+// ==========================================
+// PAINEL 3: NOTÍCIAS, TEMPO E CONCURSOS
+// ==========================================
+
 // Inicia o objeto global se ele não existir
 window.defaultTiles = window.defaultTiles || {};
 
-// Adiciona os dados da Tela 3 (Notícias, Tempo e Concursos) - EXATAMENTE COMO NO HTML
+// Adiciona os dados exclusivos desta tela extraídos do backup 
 window.defaultTiles['grid-3'] = [
 	{ pos: 'pos-1', url: 'https://g1.globo.com/previsao-do-tempo/', bg: '#f39c12', img: 'lib/thumbs/tempo-clima.png', title: 'Tempo' },
 	{ pos: 'pos-2', url: 'https://gov.br/receitafederal/', bg: '#2c3e50', img: 'lib/thumbs/receita-federal.png', title: 'Receita Federal' },
