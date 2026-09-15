@@ -335,6 +335,7 @@ Para adquirir a licença comercial, visite nosso site oficial.
     <!-- Menu Suspenso (Configuração e Sobre) -->
     <div id="config-dropdown" class="config-menu">
         <div id="open-prefs" class="config-menu-item">Preferências</div>
+        <div id="open-help" class="config-menu-item">Ajuda</div>
         <div id="open-about" class="config-menu-item">Sobre</div>
     </div>
 
@@ -441,7 +442,7 @@ Para adquirir a licença comercial, visite nosso site oficial.
                 <img src="lib/icon/index.ico" alt="Cromak NewTab Icon" class="about-icon">
                 
                 <!-- Títulos -->
-                <h3 class="about-title">Cromak NewTab v1.1</h3>
+                <h3 class="about-title">Cromak NewTab v1.1.1</h3>
                 <span class="about-subtitle">Interface Metro UI</span>
 
                 <!-- Descrição -->
@@ -462,6 +463,36 @@ Para adquirir a licença comercial, visite nosso site oficial.
             <!-- Rodapé / Copyright -->
             <div class="modal-footer about-footer">
                 &copy; 2026 - Cromak Technology. Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========================================== -->
+    <!-- 4. MODAL DE BEM-VINDO (ONBOARDING)         -->
+    <!-- ========================================== -->
+    <div id="welcome-modal" class="modal-overlay">
+        <div class="modal-content settings-window" style="max-width: 500px;">
+            <div class="modal-header" style="background: rgba(0, 174, 240, 0.2);">
+                <h2>Bem-vindo ao Cromak NewTab!</h2>
+                <span id="close-welcome-btn" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p style="color: #ddd; font-size: 15px; margin-bottom: 15px; line-height: 1.5;">
+                    Sua nova central de produtividade está pronta! Aqui estão algumas dicas rápidas para você personalizar sua página:
+                </p>
+                <ul style="color: #aaa; padding-left: 20px; line-height: 1.6; margin-bottom: 20px; font-size: 14px;">
+                    <li style="margin-bottom: 8px;"><strong>Editar Blocos:</strong> Segure a tecla <kbd>ALT</kbd> e dê um Clique em qualquer bloco.</li>
+                    <li style="margin-bottom: 8px;"><strong>Mudar Nomes:</strong> Clique diretamente nos títulos (ex: "Mais Usados") para digitar.</li>
+                    <li style="margin-bottom: 8px;"><strong>Mudar Fundo e Cores:</strong> Clique no botão de Configurações no canto da tela.</li>
+                    <li><strong>Dúvidas?</strong> Clique no botão <strong style="color:#00aef0;">Ajuda</strong> no menu de configurações!</li>
+                </ul>
+                <div style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                    <input type="checkbox" id="dont-show-welcome" style="width: 16px; height: 16px; cursor: pointer;">
+                    <label for="dont-show-welcome" style="color: #bbb; cursor: pointer; font-size: 14px;">Não mostrar novamente na próxima utilização</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="start-welcome-btn" class="save-btn" style="width: 100%; font-size: 16px; padding: 10px;">Começar!</button>
             </div>
         </div>
     </div>

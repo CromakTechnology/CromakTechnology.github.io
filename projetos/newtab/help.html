@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda - Cromak NewTab</title>
+    <link rel="stylesheet" href="lib/style.css">
+    <link rel="shortcut icon" href="lib/icon/index.ico"/>
+    
+    <!-- Pequeno estilo embutido para garantir o layout correto do fundo escuro na página separada -->
+    <style>
+        body {
+            background-color: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: auto;
+        }
+        .help-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="help-container">
+        <!-- Reutilizando as classes de Preferências (modal-content e settings-window) -->
+        <div class="modal-content settings-window" style="position: relative; max-width: 600px;">
+            <div class="modal-header">
+                <h2>Central de Ajuda</h2>
+                <a href="newtab.html" style="text-decoration: none;"><span class="close-btn">&times;</span></a>
+            </div>
+            
+            <div class="modal-body" style="gap: 20px;">
+                <h3 style="color: #00aef0; margin-bottom: 5px; font-weight: 400;">Como personalizar sua página</h3>
+                
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">1. Modificar Blocos (Atalhos)</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Segure a tecla <strong>ALT</strong> e dê um <strong>Clique</strong> sobre qualquer bloco para abrir o editor. Lá você pode trocar o nome, a imagem, o link e a cor de fundo do bloco.</p>
+                </div>
+
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">2. Alterar Nomes (Títulos Principais)</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Basta clicar diretamente sobre qualquer título grande (ex: "Mais Usados") para editar o texto. Aperte Enter para salvar.</p>
+                </div>
+
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">3. Alterar Imagem e Cor de Fundo</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Clique no botão de <strong>Configurações (Engrenagem)</strong> no canto inferior direito e acesse <strong>Preferências</strong>. Você pode enviar uma imagem do seu computador ou colar a URL de uma imagem da internet.</p>
+                </div>
+                
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">4. Mudar o Mecanismo de Busca</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Na barra de pesquisa, clique no pequeno ícone de engrenagem para revelar o menu e escolher entre Google, Bing, YouTube e muitos outros.</p>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 5px 0;">
+
+                <h3 style="color: #00aef0; margin-bottom: 5px; font-weight: 400;">Suporte e Contato</h3>
+                <p style="color: #aaa; line-height: 1.5; margin-bottom: 10px;">Para relatar problemas, solicitar novos recursos ou obter suporte técnico avançado, visite nossa página oficial.</p>
+                
+                <a href="https://cromaktechnology.github.io/pt/new-tab-service.html" target="_blank" class="save-btn" style="text-decoration: none; display: inline-block; text-align: center; width: 100%; padding: 12px 0; font-size: 15px; background: #d83b01;">Acessar Suporte Técnico</a>
+            </div>
+            
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="copyright">&copy; 2026 - Cromak Technology.</span>
+                <a href="newtab.html" class="save-btn" style="text-decoration: none; background: #444;">Voltar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recupera o fundo escolhido pelo usuário -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedBgColor = localStorage.getItem('prefBgColor');
+            const savedBgImage = localStorage.getItem('prefBgImage');
+            if (savedBgColor) document.body.style.backgroundColor = savedBgColor;
+            if (savedBgImage) document.body.style.backgroundImage = `url('${savedBgImage}')`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+        });
+    </script>
+</body>
+</html>
