@@ -95,6 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Abre Ajuda pelo Menu
+    const openHelpBtn = document.getElementById('open-help');
+    if (openHelpBtn) {
+        openHelpBtn.addEventListener('click', () => {
+            window.location.href = 'help.html';
+        });
+    }
+
     // Abre Sobre pelo Menu
     if (openAboutBtn) {
         openAboutBtn.addEventListener('click', () => {
@@ -113,6 +121,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (aboutModal) {
         aboutModal.addEventListener('click', (e) => {
             if (e.target === aboutModal) aboutModal.classList.remove('show');
+        });
+    }
+
+    // --- 3.5 MODAL DE BEM-VINDO (ONBOARDING) ---
+    const welcomeModal = document.getElementById('welcome-modal');
+    const closeWelcomeBtn = document.getElementById('close-welcome-btn');
+    const startWelcomeBtn = document.getElementById('start-welcome-btn');
+    const dontShowWelcome = document.getElementById('dont-show-welcome');
+
+    if (welcomeModal) {
+        const hideWelcome = localStorage.getItem('hideWelcome');
+        if (!hideWelcome) {
+            setTimeout(() => welcomeModal.classList.add('show'), 500); // Exibe com leve atraso
+        }
+
+        function closeWelcome() {
+            if (dontShowWelcome && dontShowWelcome.checked) {
+                localStorage.setItem('hideWelcome', 'true');
+            }
+            welcomeModal.classList.remove('show');
+        }
+
+        if (closeWelcomeBtn) closeWelcomeBtn.addEventListener('click', closeWelcome);
+        if (startWelcomeBtn) startWelcomeBtn.addEventListener('click', closeWelcome);
+        
+        welcomeModal.addEventListener('click', (e) => {
+            if (e.target === welcomeModal) closeWelcome();
         });
     }
 
