@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             configDropdown.classList.remove('show'); // Esconde o menu
             
             if (window.innerWidth <= 768) {
-                alert("As configurações gerais só estão disponíveis na versão para computadores.");
+                alert("Ops! Essas configurações só funcionam no PC. 💻\n\nAcesse pelo computador para personalizar sua página.\n\nPrecisa de ajuda? Vá em 'Configurações > Ajuda' ou conheça o desenvolvedor em 'Sobre'.");
                 return;
             }
             
