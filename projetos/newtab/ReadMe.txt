@@ -166,7 +166,17 @@ A BARRA DE PESQUISA NÃO FUNCIONA?
 
 
 ================================================================================
-8. ESTRUTURA DE PASTAS
+8. NOTAS DE ATUALIZAÇÃO (CHANGELOG)
+================================================================================
+
+Versão 1.1.1 (Hotfix & Mobile Update):
+- Correção de Persistência: Resolvido o bug que apagava os atalhos da tela principal ao retornar das subpáginas (Games, Músicas, etc.). A memória (localStorage) agora funciona perfeitamente em todas as telas.
+- Interface Mobile Responsiva: Injetado CSS (@media queries) para reorganizar perfeitamente os painéis em telas de celular. O design original de desktop não foi alterado.
+- Refinamento Mobile: Relógio realinhado à esquerda, zona de ativação corrigida para não bloquear cliques e botão de Configurações agora exibe um aviso amigável de que é exclusivo para desktop. Correção do scroll em páginas únicas (como Google e Games).
+
+
+================================================================================
+9. ESTRUTURA DE PASTAS
 ================================================================================
 
 NovaAba/
@@ -187,7 +197,7 @@ NovaAba/
 
 
 ================================================================================
-9. LICENÇA, DIREITOS AUTORAIS E AVISO LEGAL (OPEN SOURCE)
+10. LICENÇA, DIREITOS AUTORAIS E AVISO LEGAL (OPEN SOURCE)
 ================================================================================
 
 Copyright (c) 2026 Cromak Technology.
