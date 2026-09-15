@@ -20,3 +20,12 @@ window.defaultTiles['grid-1'] = [
     { pos: 'pos-11', url: 'https://twitter.com/', bg: '#000', img: 'lib/thumbs/twitter.png', title: 'Twitter' },
     { pos: 'pos-12', url: 'loja.html', bg: '#226f7a', img: 'lib/thumbs/loja.png', title: 'Shopping' }
 ];
+
+// INJEÇÃO NA MEMÓRIA:
+{
+    let currentMemory = JSON.parse(localStorage.getItem('customTiles')) || {};
+    if (!currentMemory['grid-1']) {
+        currentMemory['grid-1'] = window.defaultTiles['grid-1'];
+        localStorage.setItem('customTiles', JSON.stringify(currentMemory));
+    }
+}

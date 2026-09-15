@@ -20,3 +20,12 @@ window.defaultTiles['grid-2'] = [
     { pos: 'pos-11', url: 'https://pixlr.com/', bg: '#45423e', img: 'lib/thumbs/pixlr.png', title: 'Pixlr' },
     { pos: 'pos-12', url: 'https://booking.com/', bg: '#1a5276', img: 'lib/thumbs/booking.png', title: 'Booking' }
 ];
+
+// INJEÇÃO NA MEMÓRIA:
+{
+    let currentMemory = JSON.parse(localStorage.getItem('customTiles')) || {};
+    if (!currentMemory['grid-2']) {
+        currentMemory['grid-2'] = window.defaultTiles['grid-2'];
+        localStorage.setItem('customTiles', JSON.stringify(currentMemory));
+    }
+}

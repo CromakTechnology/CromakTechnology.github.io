@@ -5,20 +5,20 @@
 // Inicia o objeto global se ele não existir
 window.defaultTiles = window.defaultTiles || {};
 
-// Adiciona os dados exclusivos desta tela
+// Adiciona os dados exclusivos desta tela extraídos do backup 
 window.defaultTiles['grid-videos'] = [
     { pos: 'pos-1', url: 'https://netflix.com.br/', bg: '#b1000e', img: 'lib/thumbs/netflix.png', title: 'Netflix' },
     { pos: 'pos-2', url: 'https://dailymotion.com/', bg: '#4849a6', img: 'lib/thumbs/dailymotion.png', title: 'dailymotion' },
-    { pos: 'pos-3', url: 'https://gupifilm.com/', bg: '#cd432d', img: 'lib/thumbs/topflix.png', title: 'TopFlix' },
-    { pos: 'pos-4', url: 'https://vizer.autos/', bg: '#438143', img: 'lib/thumbs/vizer-tv.png', title: 'Vizer TV' },
-    { pos: 'pos-5', url: 'https://vidks.net/', bg: '#972453', img: 'lib/thumbs/assistir-tv-online.png', title: 'Assistir TV Online Gratis' },
+    { pos: 'pos-3', url: '#', bg: '#cd432d', img: 'lib/thumbs/personalize.png', title: 'Personalizar' },
+    { pos: 'pos-4', url: '#', bg: '#438143', img: 'lib/thumbs/personalize.png', title: 'Personalizar' },
+    { pos: 'pos-5', url: '#', bg: '#972453', img: 'lib/thumbs/personalize.png', title: 'Personalizar' },
     { pos: 'pos-6', url: 'https://primevideo.com', bg: '#303030', img: 'lib/thumbs/amazon-prime-video.png', title: 'Prime Video' },
-    { pos: 'pos-7', url: 'https://animefire.plus', bg: '#400b39', img: 'lib/thumbs/anime-fire.png', title: 'AnimeFire' },
+    { pos: 'pos-7', url: '#', bg: '#400b39', img: 'lib/thumbs/personalize.png', title: 'Personalizar' },
     { pos: 'pos-8', url: 'newtab.html', bg: '#f57c00', img: 'lib/thumbs/voltar.png', title: 'Voltar' },
-    { pos: 'pos-9', url: 'https://pluto.tv', bg: '#486806', img: 'lib/thumbs/assistir-tv-online2.png', title: 'Assistir TV Online' },
-    { pos: 'pos-10', url: 'https://br.justwatch.com', bg: '#193f79', img: 'lib/thumbs/filmes-online-gratis.png', title: 'Filmes e Séries Online' },
-    { pos: 'pos-11', url: 'https://filmeseriesonline.net/', bg: '#5e151a', img: 'lib/thumbs/mega-filmes-hd.png', title: 'Mega Blog Filmes' },
-    { pos: 'pos-12', url: 'https://xvideos.com/', bg: '#1a1a1a', img: 'lib/thumbs/adult-content.png', title: 'XVideos' }
+    { pos: 'pos-9', url: '#', bg: '#486806', img: 'lib/thumbs/personalize.png', title: 'Personalizar' },
+    { pos: 'pos-10', url: '#', bg: '#193f79', img: 'lib/thumbs/personalize.png', title: 'Personalizar' },
+    { pos: 'pos-11', url: '#', bg: '#5e151a', img: 'lib/thumbs/personalize.png', title: 'Personalizar' },
+    { pos: 'pos-12', url: '#', bg: '#1a1a1a', img: 'lib/thumbs/personalize.png', title: 'Personalizar' }
 ];
 
 // O SEGREDO DA INJEÇÃO NA MEMÓRIA:

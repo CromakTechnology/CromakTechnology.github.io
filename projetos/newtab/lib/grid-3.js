@@ -20,3 +20,12 @@ window.defaultTiles['grid-3'] = [
 	{ pos: 'pos-11', url: 'https://gov.br/pt-br/servicos/buscar-trabalhador-no-sistema-nacional-de-emprego-sine', bg: '#27ae60', img: 'lib/thumbs/sine.png', title: 'SINE' },
 	{ pos: 'pos-12', url: 'https://gestaodeconcursos.com.br', bg: '#8e44ad', img: 'lib/thumbs/gestao-concursos.png', title: 'Gestão De Concursos' }
 ];
+
+// INJEÇÃO NA MEMÓRIA:
+{
+    let currentMemory = JSON.parse(localStorage.getItem('customTiles')) || {};
+    if (!currentMemory['grid-3']) {
+        currentMemory['grid-3'] = window.defaultTiles['grid-3'];
+        localStorage.setItem('customTiles', JSON.stringify(currentMemory));
+    }
+}

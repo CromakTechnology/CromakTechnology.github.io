@@ -20,3 +20,12 @@ window.defaultTiles['grid-4'] = [
 	{ pos: 'pos-11', url: 'https://evernote.com/', bg: '#00c853', img: 'lib/thumbs/evernote.png', title: 'Evernote' },
 	{ pos: 'pos-12', url: 'https://w3schools.com/', bg: '#04aa6d', img: 'lib/thumbs/w3-schools.png', title: 'W3Schools' }
 ];
+
+// INJEÇÃO NA MEMÓRIA:
+{
+    let currentMemory = JSON.parse(localStorage.getItem('customTiles')) || {};
+    if (!currentMemory['grid-4']) {
+        currentMemory['grid-4'] = window.defaultTiles['grid-4'];
+        localStorage.setItem('customTiles', JSON.stringify(currentMemory));
+    }
+}
