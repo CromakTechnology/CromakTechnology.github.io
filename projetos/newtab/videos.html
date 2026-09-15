@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,11 @@
 </head>
 <body>
 
-    <!-- CONTAINER ÚNICO (Sem slider) -->
+    <!-- CONTAINER ÃšNICO (Sem slider) -->
     <div class="slider-viewport" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
         
         <!-- ========================================== -->
-        <!-- TELA ÚNICA: VÍDEOS E SÉRIES                -->
+        <!-- TELA ÃšNICA: VÃDEOS E SÃ‰RIES                -->
         <!-- ========================================== -->
         <div class="board" style="position: relative;">
             <h1 class="board-title" id="title-videos" contenteditable="true" spellcheck="false">Vídeos e Séries</h1>
@@ -61,14 +61,14 @@
         </div>
     </div>
 
-    <!-- SCRIPT DO PAINEL DE VÍDEOS -->
+    <!-- SCRIPT DO PAINEL DE VÃDEOS -->
     <script src="lib/grid-videos.js"></script>
     <!-- SCRIPTS GERAIS -->
     <script src="lib/app.js"></script>
     <script src="lib/config.js"></script>
 
 	<!-- ========================================== -->
-    <!-- WIDGET DE RELÓGIO (COM HOT CORNER)         -->
+    <!-- WIDGET DE RELÃ“GIO (COM HOT CORNER)         -->
     <!-- ========================================== -->
     <div id="clock-trigger-zone" class="clock-trigger-zone">
         
@@ -90,7 +90,7 @@
     <script src="lib/clock.js"></script>
 	
 	<!-- ========================================== -->
-    <!-- 1. MODAL DE CONFIGURAÇÕES GERAIS           -->
+    <!-- 1. MODAL DE CONFIGURAÃ‡Ã•ES GERAIS           -->
     <!-- ========================================== -->
     
     <!-- Botão da Engrenagem -->
@@ -137,7 +137,7 @@
                     <input type="range" id="ui-zoom" min="0.5" max="1.5" step="0.05" value="1.0">
                 </div>
                 
-                <!-- Área de Backup -->
+                <!-- Ãrea de Backup -->
                 <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; gap: 10px;">
                     <button id="export-backup-btn" class="browse-btn" style="background: #0071b9;">Exportar Backup</button>
                     <label for="import-backup-file" class="browse-btn" style="background: #0071b9;">Importar Backup</label>
@@ -153,7 +153,7 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- 2. MODAL DE EDIÇÃO DE BLOCO (TILE)         -->
+    <!-- 2. MODAL DE EDIÃ‡ÃƒO DE BLOCO (TILE)         -->
     <!-- ========================================== -->
     <div id="tile-modal" class="modal-overlay">
         <div class="modal-content">
@@ -202,7 +202,7 @@
             </div>
             
             <div class="modal-body about-body">
-                <!-- Ícone do Software -->
+                <!-- Ãcone do Software -->
                 <img src="lib/icon/index.ico" alt="Cromak NewTab Icon" class="about-icon">
                 
                 <!-- Títulos -->
@@ -231,5 +231,42 @@
         </div>
     </div>
 	
+    <!-- ========================================== -->
+    <!-- 5. MODAL DE AJUDA                          -->
+    <!-- ========================================== -->
+    <div id="help-modal" class="modal-overlay">
+        <div class="modal-content settings-window" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>Central de Ajuda</h2>
+                <span id="close-help-modal" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body" style="gap: 20px;">
+                <h3 style="color: #00aef0; margin-bottom: 5px; font-weight: 400;">Como personalizar sua página</h3>
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">1. Modificar Blocos (Atalhos)</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Segure a tecla <strong>ALT</strong> e dê um <strong>Clique</strong> sobre qualquer bloco para abrir o editor. Lá você pode trocar o nome, a imagem, o link e a cor de fundo do bloco.</p>
+                </div>
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">2. Alterar Nomes (Títulos Principais)</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Basta clicar diretamente sobre qualquer título grande (ex: "Mais Usados") para editar o texto. Aperte Enter para salvar.</p>
+                </div>
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">3. Alterar Imagem e Cor de Fundo</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Clique no botão de <strong>Configurações (Engrenagem)</strong> no canto inferior direito e acesse <strong>Preferências</strong>. Você pode enviar uma imagem do seu computador ou colar a URL de uma imagem da internet.</p>
+                </div>
+                <div class="config-group" style="flex-direction: column; align-items: flex-start;">
+                    <strong style="color: #fff; font-size: 15px;">4. Mudar o Mecanismo de Busca</strong>
+                    <p style="color: #aaa; margin-top: 5px; line-height: 1.5;">Na barra de pesquisa, clique no pequeno ícone de engrenagem para revelar o menu e escolher entre Google, Bing, YouTube e muitos outros.</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 5px 0;">
+                <h3 style="color: #00aef0; margin-bottom: 5px; font-weight: 400;">Suporte e Contato</h3>
+                <p style="color: #aaa; line-height: 1.5; margin-bottom: 10px;">Para relatar problemas, solicitar novos recursos ou obter suporte técnico avançado, visite nossa página oficial.</p>
+                <a href="https://cromaktechnology.github.io/pt/new-tab-service.html" target="_blank" class="save-btn" style="text-decoration: none; display: inline-block; text-align: center; width: 100%; padding: 12px 0; font-size: 15px; background: #d83b01;">Acessar Suporte Técnico</a>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="copyright">&copy; 2026 - Cromak Technology. Todos os direitos reservados.</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
