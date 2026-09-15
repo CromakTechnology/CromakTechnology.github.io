@@ -10,10 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Modais
     const modalOverlay = document.getElementById('settings-modal'); // Modal de Preferências
     const aboutModal = document.getElementById('about-modal');      // Modal Sobre
+    const helpModal = document.getElementById('help-modal');        // Modal Ajuda
     
     // Botões de Fechar
     const closeModalBtn = document.getElementById('close-modal');
     const closeAboutModal = document.getElementById('close-about-modal');
+    const closeHelpModal = document.getElementById('close-help-modal');
     
     // Botões e Campos de Preferências
     const saveSettingsBtn = document.getElementById('save-settings-btn');
@@ -101,7 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const openHelpBtn = document.getElementById('open-help');
     if (openHelpBtn) {
         openHelpBtn.addEventListener('click', () => {
-            window.location.href = 'help.html';
+            configDropdown.classList.remove('show');
+            if (helpModal) helpModal.classList.add('show');
         });
     }
 
@@ -116,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fechar Modais (no X ou clicando fora)
     if (closeModalBtn) closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('show'));
     if (closeAboutModal) closeAboutModal.addEventListener('click', () => aboutModal.classList.remove('show'));
+    if (closeHelpModal) closeHelpModal.addEventListener('click', () => helpModal.classList.remove('show'));
     
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) modalOverlay.classList.remove('show');
@@ -123,6 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (aboutModal) {
         aboutModal.addEventListener('click', (e) => {
             if (e.target === aboutModal) aboutModal.classList.remove('show');
+        });
+    }
+    if (helpModal) {
+        helpModal.addEventListener('click', (e) => {
+            if (e.target === helpModal) helpModal.classList.remove('show');
         });
     }
 

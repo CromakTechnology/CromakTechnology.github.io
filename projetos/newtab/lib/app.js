@@ -391,12 +391,9 @@ function renderAllTiles() {
                 }
             });
             
-            const searchBox = gridContainer.querySelector('.search-metro-box');
-            if (searchBox) {
-                gridContainer.insertBefore(a, searchBox.nextSibling);
-            } else {
-                gridContainer.appendChild(a);
-            }
+            // Insere o tile no final do container
+            // Como a barra de pesquisa já foi preservada e está no topo, os tiles ficarão na ordem correta abaixo dela.
+            gridContainer.appendChild(a);
         });
     });
 }
