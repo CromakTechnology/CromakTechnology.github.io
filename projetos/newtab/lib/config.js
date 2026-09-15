@@ -72,6 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (floatingBtn && configDropdown) {
         floatingBtn.addEventListener('click', (e) => {
             e.stopPropagation();
+            if (window.innerWidth <= 768) {
+                alert("As configurações gerais só estão disponíveis na versão para computadores.");
+                return;
+            }
             configDropdown.classList.toggle('show');
         });
 

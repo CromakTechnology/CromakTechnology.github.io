@@ -338,7 +338,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (floatingBtn && modalOverlay) {
         // Abre o modal
-        floatingBtn.addEventListener('click', () => modalOverlay.classList.add('show'));
+        floatingBtn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+            }
+            modalOverlay.classList.add('show');
+        });
 
         // Fecha no 'X'
         closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('show'));

@@ -1,11 +1,11 @@
-/* CSS NEW TAB (CSS/STYLE.CSS)*/
+﻿/* CSS NEW TAB (CSS/STYLE.CSS)*/
 
 :root {
     --bg-color: #1a1a2e;
     --text-color: #ffffff;
     --transition-speed: 0.5s;
     --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --ui-zoom: 1; /* Nova variável de zoom */
+    --ui-zoom: 1; /* Nova variÃ¡vel de zoom */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,7 +22,7 @@ body {
 }
 
 /* ========================================================
-TÍTULOS DAS TELAS (Segoe UI Light) - ALINHADO À ESQUERDA
+TÃTULOS DAS TELAS (Segoe UI Light) - ALINHADO Ã€ ESQUERDA
 ======================================================== */
 .board-title {
     position: absolute;
@@ -38,11 +38,11 @@ TÍTULOS DAS TELAS (Segoe UI Light) - ALINHADO À ESQUERDA
     letter-spacing: 0.5px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     z-index: 5;
-    pointer-events: none; /* Não interfere nos cliques */
+    pointer-events: none; /* NÃ£o interfere nos cliques */
 }
 
 /* ========================================================
-   NAVEGAÇÃO E CENTRALIZAÇÃO PERFEITA
+   NAVEGAÃ‡ÃƒO E CENTRALIZAÃ‡ÃƒO PERFEITA
 ======================================================== */
 .slider-viewport {
     position: relative;
@@ -71,7 +71,7 @@ TÍTULOS DAS TELAS (Segoe UI Light) - ALINHADO À ESQUERDA
 }
 
 /* ========================================================
-   BOTÕES DE SETA
+   BOTÃ•ES DE SETA
 ======================================================== */
 .nav-btn {
     position: absolute;
@@ -120,7 +120,7 @@ TÍTULOS DAS TELAS (Segoe UI Light) - ALINHADO À ESQUERDA
     height: 470px;
 }
 
-/* Estilo Base dos Botões */
+/* Estilo Base dos BotÃµes */
 .tile {
     position: absolute;
     display: flex;
@@ -180,7 +180,7 @@ form[id^="search-form"] {
     background: #ffffff;
     height: 100%;
     padding: 0 10px;
-    position: relative; /* Necessário para posicionar o botão fora */
+    position: relative; /* NecessÃ¡rio para posicionar o botÃ£o fora */
 }
 
 form[id^="search-form"]:focus-within {
@@ -197,7 +197,7 @@ input[id^="search-input"] {
     color: #333;
     background: transparent;
     height: 24px;
-    width: 100%; /* Força o input a ocupar o espaço */
+    width: 100%; /* ForÃ§a o input a ocupar o espaÃ§o */
 }
 
 /* Controles DENTRO da caixa (motor + engrenagem) */
@@ -208,9 +208,9 @@ input[id^="search-input"] {
     margin-left: 5px;
 }
 
-/* --- LÓGICA DE CORES (GRAYSCALE) --- */
+/* --- LÃ“GICA DE CORES (GRAYSCALE) --- */
 
-/* O ícone principal sempre fica colorido e visível */
+/* O Ã­cone principal sempre fica colorido e visÃ­vel */
 .current-engine { 
     width: 20px; 
     height: 20px; 
@@ -219,7 +219,7 @@ input[id^="search-input"] {
     transition: 0.2s;
 }
 
-/* 1. Motores de busca do menu (mantém o efeito cinza via CSS) */
+/* 1. Motores de busca do menu (mantÃ©m o efeito cinza via CSS) */
 .quick-engine { 
     width: 20px; 
     height: 20px; 
@@ -234,14 +234,14 @@ input[id^="search-input"] {
     filter: grayscale(0%);
 }
 
-/* 2. Botão de configurações (engrenagem limpa, sem filtros css para o js tratar) */
+/* 2. BotÃ£o de configuraÃ§Ãµes (engrenagem limpa, sem filtros css para o js tratar) */
 .icon-btn {
     width: 20px; 
     height: 20px; 
     cursor: pointer; 
 }
 
-/* Botão "Ir" FORA da caixa */
+/* BotÃ£o "Ir" FORA da caixa */
 .submit-btn {
     position: absolute;
     left: calc(100% + 10px);
@@ -279,7 +279,7 @@ input[id^="search-input"] {
 .engines-menu.show { opacity: 1; visibility: visible; }
 
 /* ========================================================
-MENU DE HISTÓRICO DE PESQUISAS
+MENU DE HISTÃ“RICO DE PESQUISAS
 ======================================================== */
 .search-history {
     position: absolute;
@@ -357,27 +357,27 @@ MENU DE HISTÓRICO DE PESQUISAS
     color: #ff4444;
 }
 
-/* 3. Botão X para limpar pesquisa (agora sem filtros para o js tratar) */
+/* 3. BotÃ£o X para limpar pesquisa (agora sem filtros para o js tratar) */
 .clear-search {
-    display: none; /* Escondido por padrão */
+    display: none; /* Escondido por padrÃ£o */
     width: 20px;
     height: 20px;
     cursor: pointer;
     margin-right: 5px;
 }
 
-/* Mostra o botão quando o input tem texto */
+/* Mostra o botÃ£o quando o input tem texto */
 #search-input:not(:placeholder-shown) + .search-controls .clear-search {
     display: block;
 }
 
-/* Fallback para browsers que não suportam :placeholder-shown */
+/* Fallback para browsers que nÃ£o suportam :placeholder-shown */
 .search-controls.has-text .clear-search {
     display: block;
 }
 
 /* ========================================================
-   BOTÃO FLUTUANTE E JANELA DE CONFIGURAÇÕES
+   BOTÃƒO FLUTUANTE E JANELA DE CONFIGURAÃ‡Ã•ES
 ======================================================== */
 #floating-config-btn {
     position: fixed;
@@ -403,14 +403,14 @@ MENU DE HISTÓRICO DE PESQUISAS
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.7);
-    display: none; /* Escondido por padrão */
+    display: none; /* Escondido por padrÃ£o */
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
 .modal-overlay.show {
-    display: flex; /* Exibe a janela quando a classe .show é ativada pelo JS */
+    display: flex; /* Exibe a janela quando a classe .show Ã© ativada pelo JS */
 }
 
 .modal-content {
@@ -476,7 +476,7 @@ MENU DE HISTÓRICO DE PESQUISAS
 }
 .save-btn:hover { background: #00aef0; }
 
-/* Melhorias Visuais do Modal de Configurações */
+/* Melhorias Visuais do Modal de ConfiguraÃ§Ãµes */
 .settings-window {
     width: 600px; /* Janela mais larga */
 }
@@ -541,7 +541,7 @@ input[type="color"]::-webkit-color-swatch {
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    display: none; /* Escondido por padrão */
+    display: none; /* Escondido por padrÃ£o */
     flex-direction: column;
     z-index: 999;
     overflow: hidden;
@@ -561,9 +561,9 @@ input[type="color"]::-webkit-color-swatch {
 .config-menu-item:last-child { border-bottom: none; }
 .config-menu-item:hover { background: rgba(255,255,255,0.1); color: #00aef0; }
 
-/* Interação com Títulos Editáveis */
+/* InteraÃ§Ã£o com TÃ­tulos EditÃ¡veis */
 .board-title {
-    pointer-events: auto !important; /* Libera o clique no título */
+    pointer-events: auto !important; /* Libera o clique no tÃ­tulo */
     outline: none;
     border: 1px dashed transparent;
     border-radius: 4px;
@@ -671,10 +671,10 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 /* ========================================================
-   RELÓGIO METRO UI (COM HOT CORNER E FUNDO ESCURO)
+   RELÃ“GIO METRO UI (COM HOT CORNER E FUNDO ESCURO)
 ======================================================== */
 
-/* 1. Zona invisível (Canto Quente) */
+/* 1. Zona invisÃ­vel (Canto Quente) */
 .clock-trigger-zone {
     position: fixed;
     bottom: 0;
@@ -684,12 +684,12 @@ input[type="color"]::-webkit-color-swatch {
     z-index: 1000;
 }
 
-/* 2. O Ícone do Relógio */
+/* 2. O Ãcone do RelÃ³gio */
 .clock-indicator {
     position: absolute;
-    bottom: 20px; /* Mesma distância do chão que a engrenagem */
-    left: 20px;   /* Mesma distância da borda que a engrenagem tem na direita */
-    width: 40px;  /* O tamanho que você ajustou e ficou perfeito */
+    bottom: 20px; /* Mesma distÃ¢ncia do chÃ£o que a engrenagem */
+    left: 20px;   /* Mesma distÃ¢ncia da borda que a engrenagem tem na direita */
+    width: 40px;  /* O tamanho que vocÃª ajustou e ficou perfeito */
     height: auto;
     opacity: 0.5; 
     transition: opacity 0.5s ease;
@@ -700,24 +700,24 @@ input[type="color"]::-webkit-color-swatch {
     opacity: 0;
 }
 
-/* 3. A Caixa do Relógio (Fundo escuro e layout harmônico) */
+/* 3. A Caixa do RelÃ³gio (Fundo escuro e layout harmÃ´nico) */
 .metro-clock {
     position: absolute;
     bottom: 40px;
     left: 45px;
     display: flex;
     align-items: center; /* Centraliza a hora com o bloco de data */
-    gap: 20px; /* Distância exata entre a hora e a data */
+    gap: 20px; /* DistÃ¢ncia exata entre a hora e a data */
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.65); /* 65% para contraste perfeito igual ao original */
-    padding: 15px 35px 15px 25px; /* Espaço interno balanceado */
+    padding: 15px 35px 15px 25px; /* EspaÃ§o interno balanceado */
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
     pointer-events: none;
     white-space: nowrap; /* Impede quebra de linha */
     font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
 }
 
-/* 4. Animação de esconder */
+/* 4. AnimaÃ§Ã£o de esconder */
 .metro-clock.hidden {
     transform: translateY(60px);
     opacity: 0;
@@ -727,7 +727,7 @@ input[type="color"]::-webkit-color-swatch {
 .clock-time {
     font-size: 78px;
     font-weight: 300;
-    line-height: 1; /* Altura de linha normal para não achatar a caixa preta */
+    line-height: 1; /* Altura de linha normal para nÃ£o achatar a caixa preta */
     letter-spacing: -2px;
     margin-bottom: 5px; /* Ajuste visual fino */
 }
@@ -739,7 +739,7 @@ input[type="color"]::-webkit-color-swatch {
     justify-content: center;
 }
 
-/* 7. Estilo do Dia e Data (Proporção Menor) */
+/* 7. Estilo do Dia e Data (ProporÃ§Ã£o Menor) */
 .clock-day {
     font-size: 22px;
     font-weight: 400;
@@ -750,11 +750,11 @@ input[type="color"]::-webkit-color-swatch {
     font-size: 22px;
     font-weight: 300;
     line-height: 1.3;
-    color: #cccccc; /* Cinza claro autêntico do Win8 */
+    color: #cccccc; /* Cinza claro autÃªntico do Win8 */
 }
 
 /* ========================================================
-   VERS�O MOBILE (Apenas para telas menores que 768px)
+   VERSÃO MOBILE (Apenas para telas menores que 768px)
 ======================================================== */
 @media (max-width: 768px) {
     body {
@@ -762,10 +762,11 @@ input[type="color"]::-webkit-color-swatch {
     }
 
     .slider-viewport {
-        height: 100%; 
-        min-height: 100vh;
-        overflow-x: hidden;
-        overflow-y: auto;
+        display: block !important;
+        height: 100% !important;
+        min-height: 100vh !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
     }
 
     .board {
@@ -797,7 +798,7 @@ input[type="color"]::-webkit-color-swatch {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
-        padding-bottom: 100px; /* Espa�o para o rel�gio */
+        padding-bottom: 100px; /* Espaço para o relógio */
     }
 
     .tile {
@@ -840,8 +841,7 @@ input[type="color"]::-webkit-color-swatch {
     #btn-next { left: auto !important; right: 10px !important; }
 
     .metro-clock {
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        left: 15px !important; transform: none !important;
         bottom: 15px !important;
         padding: 10px 20px !important;
         gap: 10px !important;
@@ -851,7 +851,7 @@ input[type="color"]::-webkit-color-swatch {
     .clock-day, .clock-date { font-size: 14px; }
     
     .clock-trigger-zone {
-        width: 100% !important;
+        width: 60% !important;
     }
     
     #floating-config-btn {
@@ -859,6 +859,7 @@ input[type="color"]::-webkit-color-swatch {
         right: 15px;
         width: 35px;
         height: 35px;
+        z-index: 1001 !important;
     }
     
     .modal-content {
