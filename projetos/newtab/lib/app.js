@@ -337,15 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (floatingBtn && modalOverlay) {
-        // Abre o modal
-        floatingBtn.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                return;
-            }
-            modalOverlay.classList.add('show');
-        });
+        // Abertura do modal agora é gerenciada pelo config.js (via menu suspenso)
 
         // Fecha no 'X'
         closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('show'));

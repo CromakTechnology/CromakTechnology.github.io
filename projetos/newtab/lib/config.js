@@ -72,10 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (floatingBtn && configDropdown) {
         floatingBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (window.innerWidth <= 768) {
-                alert("As configurações gerais só estão disponíveis na versão para computadores.");
-                return;
-            }
             configDropdown.classList.toggle('show');
         });
 
@@ -91,6 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (openPrefsBtn) {
         openPrefsBtn.addEventListener('click', () => {
             configDropdown.classList.remove('show'); // Esconde o menu
+            
+            if (window.innerWidth <= 768) {
+                alert("As configurações gerais só estão disponíveis na versão para computadores.");
+                return;
+            }
+            
             modalOverlay.classList.add('show');      // Mostra a janela
         });
     }
