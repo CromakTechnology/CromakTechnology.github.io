@@ -2,7 +2,6 @@
 
 <img src="https://cromaktechnology.github.io/images/cromaklogob.png" alt="Cromak Technology Logo" width="350">
 
-# ⚡ CROMAK TECHNOLOGY
 ### *Engenharia de software de alta performance.*
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
