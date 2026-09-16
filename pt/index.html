@@ -229,7 +229,7 @@
         <div class="container header-inner">
             <a href="index.html" class="logo"><img src="../images/cromaklogob.png" alt="Cromak Technology"></a>
             
-            <button class="menu-toggle" id="mobile-menu"></button>
+            <button class="menu-toggle" id="mobile-menu">☰</button>
             
             <nav id="nav-menu">
                 <a href="#inicio" style="color: var(--accent);">Incio</a>
@@ -455,7 +455,7 @@
 
         mobileMenu.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '' : '';
+            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
         });
 
         function mudarIdioma(lang, event) {
@@ -537,7 +537,7 @@
     </script>
 	
 	<!-- BOTO VOLTAR AO TOPO -->
-    <button id="backToTopBtn" title="Voltar ao topo"></button>
+    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
     <style>
         #backToTopBtn {
             display: none; 
