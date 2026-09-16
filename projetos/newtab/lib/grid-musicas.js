@@ -8,7 +8,7 @@ window.defaultTiles = window.defaultTiles || {};
 // Adiciona os dados exclusivos desta tela
 window.defaultTiles['grid-musicas'] = [
     { pos: 'pos-1', url: 'https://palcomp3.com/', bg: '#c00820', img: 'lib/thumbs/palco-mp3.png', title: 'Palco MP3' },
-    { pos: 'pos-2', url: 'https://.deezer.com/artist/408913312', bg: '#4849a6', img: 'lib/thumbs/deezer.png', title: 'Deezer' },
+    { pos: 'pos-2', url: 'https://deezer.com/artist/408913312', bg: '#4849a6', img: 'lib/thumbs/deezer.png', title: 'Deezer' },
     { pos: 'pos-3', url: 'https://kboing.com.br', bg: '#9d0033', img: 'lib/thumbs/kboing.png', title: 'Kboing' },
     { pos: 'pos-4', url: 'https://music.youtube.com/channel/UC-WBjX0CbBhPfLAHL5CMiuA', bg: '#6c1c12', img: 'lib/thumbs/youtube-music.png', title: 'YouTube Music' },
     { pos: 'pos-5', url: 'https://open.spotify.com/artist/5Bw51rdRdT0kdIx4iwkwm1', bg: '#115910', img: 'lib/thumbs/spotify.png', title: 'Spotify' },

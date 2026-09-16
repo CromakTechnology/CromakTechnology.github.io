@@ -9,7 +9,7 @@ window.defaultTiles['grid-ia'] = [
     { pos: 'pos-1', url: 'https://chat.qwenlm.ai/', bg: '#10a37f', img: 'lib/thumbs/qwen.png', title: 'Qwen' },
     { pos: 'pos-2', url: 'https://copilot.microsoft.com/', bg: '#0067b8', img: 'lib/thumbs/copilot.png', title: 'Copilot' },
     { pos: 'pos-3', url: 'https://midjourney.com/', bg: '#672c9b', img: 'lib/thumbs/midjourney.png', title: 'Midjourney' },
-    { pos: 'pos-4', url: 'https://heydola.com/', bg: '#da8515', img: 'lib/thumbs/dola-ia.png', title: 'Dola' },
+    { pos: 'pos-4', url: 'https://dola.com/', bg: '#da8515', img: 'lib/thumbs/dola-ia.png', title: 'Dola' },
     { pos: 'pos-5', url: 'https://perplexity.ai/', bg: '#03417a', img: 'lib/thumbs/perplexity.png', title: 'Perplexity' },
     { pos: 'pos-6', url: 'https://gemini.google.com/', bg: '#409da5', img: 'lib/thumbs/gemini.png', title: 'Gemini' },
     { pos: 'pos-7', url: 'https://chatgpt.com/', bg: '#2b2b2b', img: 'lib/thumbs/chat-gpt.png', title: 'ChatGPT' },

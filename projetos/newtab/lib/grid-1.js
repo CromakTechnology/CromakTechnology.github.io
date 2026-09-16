@@ -17,7 +17,7 @@ window.defaultTiles['grid-1'] = [
     { pos: 'pos-8', url: 'videos.html', bg: '#f57c00', img: 'lib/thumbs/videos.png', title: 'Vídeos' },
     { pos: 'pos-9', url: 'musicas.html', bg: '#c2185b', img: 'lib/thumbs/music.png', title: 'Músicas' },
     { pos: 'pos-10', url: 'https://outlook.live.com/', bg: '#ffb308', img: 'lib/thumbs/outlook.png', title: 'Outlook' },
-    { pos: 'pos-11', url: 'https://twitter.com/', bg: '#000', img: 'lib/thumbs/twitter.png', title: 'Twitter' },
+    { pos: 'pos-11', url: 'https://x.com/', bg: '#000', img: 'lib/thumbs/twitter.png', title: 'Twitter' },
     { pos: 'pos-12', url: 'loja.html', bg: '#226f7a', img: 'lib/thumbs/loja.png', title: 'Shopping' }
 ];
 
