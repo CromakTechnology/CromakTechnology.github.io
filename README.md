@@ -1,26 +1,45 @@
-# Olá, eu sou o Marcos Souza! 👋
+<div align="center">
 
-Sou Técnico em TI e Desenvolvedor de Software focado em criar ferramentas de alta performance, segurança e otimização extrema para sistemas operacionais. Direto de São Paulo, Brasil, dedico minhas linhas de código para resolver problemas complexos com interfaces limpas e arquiteturas robustas.
+# ⚡ CROMAK TECHNOLOGY
+### *Low-Level System Optimization & High-Performance Architecture*
 
-### 🔭 O que estou construindo
-Atualmente, sou o arquiteto e desenvolvedor principal do **Cromak DeepClean Suite**, uma ferramenta avançada de otimização de Windows que interage com o sistema em baixo nível (Kernel, Hives de Registro, MFT).
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)]()
+[![C++](https://img.shields.io/badge/C++-WinAPI-00599C?style=for-the-badge&logo=c%2B%+&logoColor=white)]()
+[![PyQt6](https://img.shields.io/badge/PyQt6-UI%2FUX-41CD52?style=for-the-badge&logo=qt&logoColor=white)]()
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white)]()
 
-### 💻 Minha Stack & Habilidades
-* **Linguagens:** Python, C++
-* **Frameworks & UI:** PyQt6 (Desenvolvimento de interfaces de desktop modernas)
-* **Especialidades Tech:** Automação de scripts, WinAPI, Otimização de Boot, Limpeza de baixo nível.
-* **Extras:** Pós-graduado em Gestão de Pessoas, criador de conteúdo digital e entusiasta na criação de *Master Prompts* para Inteligências Artificiais.
+</div>
 
-### 🚀 Destaques dos Meus Projetos
-* **Cromak DeepClean:** Motores de varredura profunda, "Sniper" para desinstalação forçada e gerenciadores de boot.
-* **Password Guard:** Sistema de segurança de desktop focado na proteção e gestão de credenciais.
-
-### 📫 Como me encontrar
-* **E-mail:** cromaksupport@gmail.com
-* **Projetos KDP / E-books:** Autor na Amazon KDP com foco em desenvolvimento pessoal.
-
-###
-* **Acesse o site:** https://cromaktechnology.github.io
-  
 ---
-*"A performance de um sistema é o reflexo da arquitetura do seu código."*
+
+## 🔭 O que está em desenvolvimento
+
+* **Cromak DeepClean Suite** — Suíte avançada de otimização para Windows com interação em baixo nível (Kernel, Hives de Registro e MFT), varredura profunda, módulo *Sniper* para desinstalações forçadas e gerenciamento de boot.
+* **Password Guard PRO** — Cofre de senhas desktop criptografado, focado em segurança de dados e gestão local de credenciais.
+
+---
+
+## 🛠️ Stack & Core Skills
+
+| Camada | Tecnologias & Especialidades |
+| :--- | :--- |
+| **Linguagens** | Python, C++ |
+| **Desktop / UI** | PyQt6 (Interfaces modernas e responsivas) |
+| **Sistemas / WinAPI** | Interação com Kernel, MFT, Registro do Windows, Otimização de Boot |
+| **Engenharia** | Automação de scripts, Limpeza de baixo nível, Arquitetura de Software |
+
+---
+
+## 🚀 Projetos em Destaque
+
+* **[Cromak DeepClean Suite](https://cromaktechnology.github.io)** — Precisão cirúrgica para recuperar performance do sistema operacional eliminando gargalos ocultos.
+* **Password Guard PRO** — Controle absoluto de senhas com arquitetura local e segura.
+
+---
+
+## 📬 Conecte-se
+
+* **Web:** [cromaktechnology.github.io](https://cromaktechnology.github.io)
+* **Contato:** `cromaksupport@gmail.com`
+
+> *"A performance de um sistema é o reflexo da arquitetura do seu código."*
