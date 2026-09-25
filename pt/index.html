@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cromak Technology - Alta Performance</title>
-    <meta name="description" content="Cromak Technology - Engenharia de software de alta performance. Conhea o DeepClean Suite, compiladores nativos e ferramentas de segurana forense.">
-    <meta name="keywords" content="otimizao de pc, web to apk, compilador android, gerenciador de senhas, limpar metadados, DeepClean Suite, Cromak Technology">
+    <meta name="description" content="Cromak Technology - Engenharia de software de alta performance. Conheça o DeepClean Suite, compiladores nativos e ferramentas de segurança forense.">
+    <meta name="keywords" content="otimização de pc, web to apk, compilador android, gerenciador de senhas, limpar metadados, DeepClean Suite, Cromak Technology">
     <meta name="author" content="Cromak Technology">
     <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="Cromak Technology - Performance de Baixo Nvel">
-    <meta property="og:description" content="Utilitrios de sistema, segurana e compiladores para quem no abre mo de eficincia extrema.">
+    <meta property="og:title" content="Cromak Technology - Performance de Baixo Nível">
+    <meta property="og:description" content="Utilitrios de sistema, segurança e compiladores para quem não abre mão de eficiência extrema.">
     <meta property="og:image" content="https://cromaktechnology.github.io/../images/cromak_technology_logo.png">
     <meta property="og:url" content="https://cromaktechnology.github.io/">
     <meta property="og:type" content="website">
@@ -18,261 +18,18 @@
     <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
     <link rel="stylesheet" href="../css/estilo_premiun.css">
     
-    <style>
-        .hero {
-            padding-top: 160px;
-            padding-bottom: 80px;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(0, 164, 239, 0.1) 0%, transparent 60%);
-        }
-
-        /* --- Grid do Arsenal de Produtos --- */
-        .arsenal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .arsenal-card {
-            background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(18, 18, 18, 0.9));
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .arsenal-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.15);
-        }
-
-        .arsenal-img-container {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            border-bottom: 1px solid var(--card-border);
-            background: #0a0a0a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .arsenal-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-            transition: 0.5s ease;
-        }
-
-        .arsenal-card:hover .arsenal-img-container img {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
-        .arsenal-content {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .arsenal-content h3 {
-            color: #FFF;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .arsenal-content p {
-            color: var(--text-dim);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            flex-grow: 1;
-        }
-
-        .btn-arsenal {
-            background: rgba(0, 164, 239, 0.1);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 10px 0;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
-            display: block;
-        }
-
-        .btn-arsenal:hover {
-            background: var(--accent);
-            color: #000;
-        }
-
-        /* --- Estilo dos Blocos Finais (Sobre e Suporte) --- */
-        .about-box {
-            background: #1c1c1c; 
-            border-radius: 20px;
-            padding: 50px;
-            text-align: center;
-            max-width: 950px;
-            margin: 0 auto;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .btn-blue-glow {
-            background-color: #3b82f6; 
-            color: #ffffff;
-            padding: 14px 35px;
-            border-radius: 30px; 
-            font-weight: bold;
-            font-size: 1.05rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-            border: none;
-        }
-
-        .btn-blue-glow:hover {
-            background-color: #2563eb;
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.7);
-            transform: translateY(-2px);
-            color: #ffffff;
-        }
-
-        .support-section {
-            background: #121212;
-            padding: 80px 0 60px 0;
-            text-align: center;
-        }
-
-        .support-title {
-            font-size: 2.8rem;
-            color: #ffffff;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .cyan-line {
-            width: 60px;
-            height: 4px;
-            background-color: #00d4ff; 
-            margin: 0 auto 30px auto;
-            border-radius: 2px;
-        }
-
-        /* --- Lightbox Modal para o Carrossel --- */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            padding-top: 80px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.95);
-        }
-
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80vh;
-            border: 2px solid var(--card-border);
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0,164,239,0.3);
-        }
-
-        .lightbox-caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            color: #ccc;
-            padding: 15px 0;
-            font-size: 1.1rem;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .lightbox-close:hover { color: var(--accent); }
-
-        .lightbox-trigger {
-            cursor: pointer;
-        }
-
-    </style>
+    
 </head>
 <body>
 
-    <header>
-        <div class="container header-inner">
-            <a href="index.html" class="logo"><img src="../images/cromaklogob.png" alt="Cromak Technology"></a>
-            
-            <button class="menu-toggle" id="mobile-menu">☰</button>
-            
-            <nav id="nav-menu">
-                <a href="#inicio" style="color: var(--accent);">Incio</a>
-                
-                <div class="dropdown">
-                    <button class="dropbtn">Produtos </button>
-                    <div class="dropdown-content">
-                        <a href="deepclean_suite.html">DeepClean Suite</a>
-                        <a href="install_compiler.html">Install Compiler</a>
-                        <a href="install-protector.html">Install Protector</a>
-                        <a href="metadata_remover.html">Metadata Remover</a>
-                        <a href="new-tab-service.html">NewTab</a>
-                        <a href="password_guard.html">Password Guard</a>
-                        <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
-                        <a href="photoviewer.html">Photo Viewer</a>
-                        <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
-                    </div>
-                </div>
-
-                <a href="#arsenal">Recursos</a>
-                <a href="sobre.html">Sobre</a>
-                <a href="suporte.html">Suporte</a>
-                
-                <div class="dropdown">
-                    <button class="dropbtn">Idiomas </button>
-                    <div class="dropdown-content">
-                        <a href="#" onclick="mudarIdioma('pt', event)">
-                            <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Portugus
-                        </a>
-                        <a href="#" onclick="mudarIdioma('en', event)">
-                            <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
-                        </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
 
     <section class="hero" id="inicio">
         <div class="container hero-content">
             <h1 style="font-size: 3.5rem; margin-bottom: 15px;">Forjando Ferramentas de Alta Performance.</h1>
             <p style="font-size: 1.25rem; color: var(--text-dim); max-width: 800px; margin: 0 auto 40px auto; line-height: 1.6;">
-                A soberania digital que voc perdeu, devolvida. Softwares de arquitetura slida criados para quem exige segurana absoluta e velocidade inegocivel, pensados para quem valoriza performance e praticidade.
+                A soberania digital que você perdeu, devolvida. Softwares de arquitetura sólida criados para quem exige segurança absoluta e velocidade inegociável, pensados para quem valoriza performance e praticidade.
             </p>
             <div style="display: flex; gap: 15px; justify-content: center;">
                 <a href="#arsenal" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Ver o Arsenal de Softwares</a>
@@ -301,8 +58,8 @@
 
     <section class="section" id="arsenal" style="background: rgba(10, 10, 10, 0.5);">
         <div class="container">
-            <h2 class="section-title" style="text-align: center;">Nossas Solues Nativas</h2>
-            <p style="text-align: center; color: var(--text-dim); margin-bottom: 20px;">Conhea a sute completa de utilitrios e compiladores.</p>
+            <h2 class="section-title" style="text-align: center;">Nossas Soluções Nativas</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 20px;">Conheça a suíte completa de utilitários e compiladores.</p>
             
             <div class="arsenal-grid">
                 
@@ -312,7 +69,7 @@
                     </div>
                     <div class="arsenal-content">
                         <h3>DeepClean Suite</h3>
-                        <p>Otimizao brutal para recuperar a performance do seu PC. Limpeza de nvel Kernel, desfragmentao de baixo nvel e otimizador de boot.</p>
+                        <p>Otimização brutal para recuperar a performance do seu PC. Limpeza de nível Kernel, desfragmentação de baixo nível e otimizador de boot.</p>
                         <a href="deepclean_suite.html" class="btn-arsenal">Acessar Produto</a>
                     </div>
                 </div>
@@ -334,7 +91,7 @@
                     </div>
                     <div class="arsenal-content">
                         <h3>Password Guard</h3>
-                        <p>A fortaleza digital inquebrvel. Cofre de senhas 100% offline com criptografia militar AES-256 e monitor de vazamentos na Dark Web.</p>
+                        <p>A fortaleza digital inquebrável. Cofre de senhas 100% offline com criptografia militar AES-256 e monitor de vazamentos na Dark Web.</p>
                         <a href="password_guard.html" class="btn-arsenal">Acessar Produto</a>
                     </div>
                 </div>
@@ -345,7 +102,7 @@
                     </div>
                     <div class="arsenal-content">
                         <h3>Metadata Remover</h3>
-                        <p>Motor forense para proteger sua privacidade. Remova metadados EXIF ocultos de fotos, udios e expurgue rastreadores em PDFs.</p>
+                        <p>Motor forense para proteger sua privacidade. Remova metadados EXIF ocultos de fotos, áudios e expurgue rastreadores em PDFs.</p>
                         <a href="metadata_remover.html" class="btn-arsenal">Acessar Produto</a>
                     </div>
                 </div>
@@ -356,7 +113,7 @@
                     </div>
                     <div class="arsenal-content">
                         <h3>Install Compiler</h3>
-                        <p>O ponto final do seu cdigo. Rena seus projetos, scripts e executveis em instaladores profissionais .exe personalizados e seguros.</p>
+                        <p>O ponto final do seu código. Reúna seus projetos, scripts e executáveis em instaladores profissionais .exe personalizados e seguros.</p>
                         <a href="install_compiler.html" class="btn-arsenal">Acessar Produto</a>
                     </div>
                 </div>
@@ -367,7 +124,7 @@
                     </div>
                     <div class="arsenal-content">
                         <h3>PNG To ICO Converter</h3>
-                        <p>Compilao precisa de cones. Suporte a matrizes legado, engenharia reversa para extrao e redimensionamento em lote de alta qualidade.</p>
+                        <p>Compilação precisa de ícones. Suporte a matrizes legado, engenharia reversa para extração e redimensionamento em lote de alta qualidade.</p>
                         <a href="png_to_ico_converter.html" class="btn-arsenal">Acessar Produto</a>
                     </div>
                 </div>
@@ -389,7 +146,7 @@
                     </div>
                     <div class="arsenal-content">
                         <h3>Visualizador de Fotos</h3>
-                        <p>O melhor e mais rpido visualizador de imagens. A experincia clssica e nostlgica do Windows 7 resgatada em um motor moderno, leve e 100% gratuito.</p>
+                        <p>O melhor e mais rápido visualizador de imagens. A experiência clássica e nostálgica do Windows 7 resgatada em um motor moderno, leve e 100% gratuito.</p>
                         <a href="photoviewer.html" class="btn-arsenal">Acessar Produto</a>
                     </div>
                 </div>
@@ -417,11 +174,11 @@
                 <div style="position: absolute; top: -50px; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: rgba(0, 212, 255, 0.1); filter: blur(70px); z-index: 0;"></div>
                 
                 <div style="position: relative; z-index: 1;">
-                    <h2 style="color: #fff; margin-bottom: 20px; font-size: 2.2rem; font-weight: bold;">O Padro Ouro em Performance e Privacidade</h2>
+                    <h2 style="color: #fff; margin-bottom: 20px; font-size: 2.2rem; font-weight: bold;">O Padrão Ouro em Performance e Privacidade</h2>
                     <p style="font-size: 1.15rem; color: #e0e0e0; line-height: 1.7; margin-bottom: 30px;">
-                        O laboratrio da Cromak Technology  especializado em solues cirrgicas para quem exige o mximo da sua infraestrutura de TI. Nosso ecossistema no faz concesses: entregamos desde cofres com criptografia militar e motores de destruio de metadados, at compiladores nativos e otimizadores de alta performance. Desenvolvemos softwares puros, rpidos e 100% locais. Entregamos as ferramentas exatas para aniquilar a lentido do sistema e blindar seus dados contra qualquer tipo de percia.
+                        O laboratório da Cromak Technology  especializado em soluções cirúrgicas para quem exige o máximo da sua infraestrutura de TI. Nosso ecossistema no faz concessões: entregamos desde cofres com criptografia militar e motores de destruição de metadados, at compiladores nativos e otimizadores de alta performance. Desenvolvemos softwares puros, rápidos e 100% locais. Entregamos as ferramentas exatas para aniquilar a lentidão do sistema e blindar seus dados contra qualquer tipo de perícia.
                     </p>
-                    <a href="sobre.html" class="btn-blue-glow">Conhecer o Laboratrio Cromak</a>
+                    <a href="sobre.html" class="btn-blue-glow">Conhecer o Laboratório Cromak</a>
                 </div>
             </div>
         </div>
@@ -432,13 +189,13 @@
         <div class="container">
             <h2 class="support-title">Pronto para a Soberania Digital?</h2>
             <div class="cyan-line"></div>
-            <p style="font-size: 1.15rem; color: #ffffff; margin-bottom: 15px;">Blinde seus dados e extraia a performance mxima da sua infraestrutura.</p>
+            <p style="font-size: 1.15rem; color: #ffffff; margin-bottom: 15px;">Blinde seus dados e extraia a performance máxima da sua infraestrutura.</p>
             <p style="font-size: 1rem; color: var(--text-dim); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                Nossos especialistas esto a postos. Entre em contato para licenciamento corporativo (SLA), pacotes vitalcios para usurios avanados ou suporte tcnico com acesso direto aos nossos engenheiros.
+                Nossos especialistas estão a postos. Entre em contato para licenciamento corporativo (SLA), pacotes vitalícios para usuários avançados ou suporte técnico com acesso direto aos nossos engenheiros.
             </p>
             <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
                 <a href="suporte.html" class="btn-blue-glow" style="background: rgba(255,255,255,0.05); border: 1px solid var(--accent); color: var(--accent); box-shadow: none;">Falar com Especialistas</a>
-                <a href="#arsenal" class="btn-blue-glow">Explorar Licenas</a>
+                <a href="#arsenal" class="btn-blue-glow">Explorar Licenças</a>
             </div>
         </div>
     </section>
@@ -450,162 +207,11 @@
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="privacidade.html">Privacidade</a>
-                <a href="termos.html">Termos de Uso</a>
-                <a href="..\sitemap.html"> Mapa do Site</a>
-            </div>
-            <p>&copy; <span id="ano-atual"></span> Cromak Technology. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
 
-    <script>
-        // Menu Mobile e Idioma
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.getElementById('nav-menu');
-
-        mobileMenu.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
-        });
-
-        function mudarIdioma(lang, event) {
-            event.preventDefault();
-            localStorage.setItem('idioma_preferido', lang);
-            var paginaAtual = window.location.pathname.split('/').pop(); 
-            if (!paginaAtual) paginaAtual = 'index.html';
-            window.location.href = '../' + lang + '/' + paginaAtual;
-        }
-
-        document.getElementById('ano-atual').textContent = new Date().getFullYear();
-		
-        // Lgica do Carrossel da Home
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentIndex = 0;
-        let autoPlayTimer;
-
-        if (carouselItems.length > 0) {
-            function updateCarousel() {
-                carouselItems.forEach((item, index) => {
-                    item.className = 'carousel-item';
-                    
-                    if (index === currentIndex) {
-                        item.classList.add('active');
-                    } else if (index === (currentIndex - 1 + carouselItems.length) % carouselItems.length) {
-                        item.classList.add('prev');
-                    } else if (index === (currentIndex + 1) % carouselItems.length) {
-                        item.classList.add('next');
-                    } else if (index < currentIndex) {
-                        item.classList.add('hidden-left');
-                    } else {
-                        item.classList.add('hidden-right');
-                    }
-                });
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % carouselItems.length;
-                updateCarousel();
-            }
-
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-                updateCarousel();
-            }
-
-            function resetAutoPlay() {
-                clearInterval(autoPlayTimer);
-                autoPlayTimer = setInterval(nextSlide, 3500);
-            }
-
-            nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
-            prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
-
-            updateCarousel();
-            autoPlayTimer = setInterval(nextSlide, 3500);
-        }
-
-        // Lgica do Lightbox para as Imagens do Carrossel
-        const modal = document.getElementById("lightboxModal");
-        const modalImg = document.getElementById("lightboxImg");
-        const captionText = document.getElementById("lightboxCaption");
-        const closeBtn = document.getElementById("closeLightbox");
-
-        document.querySelectorAll('.lightbox-trigger').forEach(img => {
-            img.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt; 
-            });
-        });
-
-        closeBtn.addEventListener('click', () => { modal.style.display = "none"; });
-        modal.addEventListener('click', function(event) { if (event.target === modal) modal.style.display = "none"; });
-        document.addEventListener('keydown', function(event) { if (event.key === "Escape") modal.style.display = "none"; });
-		
-    </script>
-	
-	<!-- BOTO VOLTAR AO TOPO -->
-    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
-    <style>
-        #backToTopBtn {
-            display: none; 
-            position: fixed;
-            bottom: 30px; /* ALINHADO ABAIXO: Quanto menor o nmero, mais perto do fim da tela */
-            left: 30px;  /* LADO ESQUERDO: Substituiu o "right" */
-            z-index: 999;
-            font-size: 22px;
-            font-weight: bold;
-            border: none;
-            outline: none;
-            background-color: var(--accent);
-            color: #000;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
-        }
-        #backToTopBtn:hover {
-            background-color: #0082c6;
-            color: #FFF;
-            transform: translateY(-5px);
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
-        }
-    </style>
-	
-	<!-- Back to top -->
-    <script>
-        const backToTopBtn = document.getElementById("backToTopBtn");
-        window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6a1e392a9a52f51c317613e6/1jq30ujl9';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
