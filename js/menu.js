@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a href="#" class="submenu-btn">${t.cat_utils} <span>▶</span></a>
                                 <div class="submenu-content">
                                     <a href="deepclean_suite.html">DeepClean Suite</a>
+									<a href="new-tab-service.html">NewTab</a>
                                     <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                                     <a href="photoviewer.html">Photo Viewer</a>
                                 </div>
