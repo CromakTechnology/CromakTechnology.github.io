@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     <a href="password_guard.html">Password Guard</a>
                                     <a href="metadata_remover.html">Metadata Remover</a>
                                     <a href="network-fix.html">Network Fix</a>
+                                    <a href="syslock.html">SysLock</a>
                                 </div>
                             </div>
                             
