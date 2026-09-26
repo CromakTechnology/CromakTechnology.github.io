@@ -103,10 +103,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         <button class="dropbtn">${t.languages}</button>
                         <div class="dropdown-content">
                             <a href="#" onclick="mudarIdioma('pt', event)">
-                                <img src="../images/lang_pt.png" alt="PT" class="lang-icon"> Português
+                                <img src="../images/locales/lang_pt.png" alt="PT" class="lang-icon"> Português
                             </a>
                             <a href="#" onclick="mudarIdioma('en', event)">
-                                <img src="../images/lang_en.png" alt="EN" class="lang-icon"> English
+                                <img src="../images/locales/lang_en.png" alt="EN" class="lang-icon"> English
                             </a>
                         </div>
                     </div>
