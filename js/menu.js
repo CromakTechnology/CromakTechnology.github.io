@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
             // Categorias de Produtos
             'cat_security': 'Segurança & Rede',
             'cat_dev': 'Desenvolvimento',
-            'cat_utils': 'Utilitários'
+            'cat_utils': 'Utilitários',
+            'cat_accessibility': 'Acessibilidade',
+            'cat_optimization': 'Otimização'
         },
         'en': {
             'home': 'Home',
@@ -39,7 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
             // Categorias de Produtos
             'cat_security': 'Security & Network',
             'cat_dev': 'Development',
-            'cat_utils': 'Utilities'
+            'cat_utils': 'Utilities',
+            'cat_accessibility': 'Accessibility',
+            'cat_optimization': 'Optimization'
         }
     };
 
@@ -64,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             
                             <!-- Submenu: Segurança & Rede -->
                             <div class="dropdown-submenu">
-                                <a href="#" class="submenu-btn">${t.cat_security} <span>▶</span></a>
+                                <a href="#" class="submenu-btn">${t.cat_security} <span>▸</span></a>
                                 <div class="submenu-content">
                                     <a href="install-protector.html">Install Protector</a>
                                     <a href="connection-blackout.html">Connection Blackout</a>
@@ -77,19 +81,34 @@ document.addEventListener("DOMContentLoaded", function() {
                             
                             <!-- Submenu: Desenvolvimento -->
                             <div class="dropdown-submenu">
-                                <a href="#" class="submenu-btn">${t.cat_dev} <span>▶</span></a>
+                                <a href="#" class="submenu-btn">${t.cat_dev} <span>▸</span></a>
                                 <div class="submenu-content">
                                     <a href="install_compiler.html">Install Compiler</a>
                                     <a href="web_to_apk_compiler.html">Web To Apk Compiler</a>
                                 </div>
                             </div>
                             
-                            <!-- Submenu: Utilitários -->
+                                                        <!-- Submenu: Acessibilidade -->
                             <div class="dropdown-submenu">
-                                <a href="#" class="submenu-btn">${t.cat_utils} <span>▶</span></a>
+                                <a href="#" class="submenu-btn">${t.cat_accessibility} <span>▸</span></a>
+                                <div class="submenu-content">
+                                    <a href="bridge-vox.html">Bridge Vox</a>
+                                </div>
+                            </div>
+
+                            <!-- Submenu: Otimização -->
+                            <div class="dropdown-submenu">
+                                <a href="#" class="submenu-btn">${t.cat_optimization} <span>▸</span></a>
                                 <div class="submenu-content">
                                     <a href="deepclean_suite.html">DeepClean Suite</a>
-									<a href="new-tab-service.html">NewTab</a>
+                                </div>
+                            </div>
+
+                            <!-- Submenu: Utilitários -->
+                            <div class="dropdown-submenu">
+                                <a href="#" class="submenu-btn">${t.cat_utils} <span>▸</span></a>
+                                <div class="submenu-content">
+                                    <a href="new-tab-service.html">NewTab</a>
                                     <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                                     <a href="photoviewer.html">Photo Viewer</a>
                                 </div>
