@@ -45,7 +45,7 @@
     // --- 2. CARREGAR PREFERÊNCIAS SALVAS ---
     const savedBgColor = localStorage.getItem('prefBgColor') || '#1a1a2e';
     const savedBgImage = localStorage.getItem('prefBgImage') || '';
-    const savedPanelColor = localStorage.getItem('prefPanelColor') || '#000000';
+    const savedPanelColor = localStorage.getItem('prefPanelColor') || '#ffffff';
     const savedPanelOpacity = localStorage.getItem('prefPanelOpacity') || '0.2';
 	
 	const savedZoom = localStorage.getItem('prefZoom') || '1';

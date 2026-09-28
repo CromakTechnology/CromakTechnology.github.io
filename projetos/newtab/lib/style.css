@@ -295,7 +295,7 @@ MENU DE HISTÃ“RICO DE PESQUISAS
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.4);
 }
 
 .history-header {
@@ -421,7 +421,7 @@ MENU DE HISTÃ“RICO DE PESQUISAS
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.4);
 }
 
 .modal-header {
@@ -538,7 +538,7 @@ input[type="color"]::-webkit-color-swatch {
     bottom: 70px;
     right: 20px;
     background: #1a1a2e;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.4);
     border-radius: 6px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     display: none; /* Escondido por padrÃ£o */
@@ -586,7 +586,10 @@ input[type="color"]::-webkit-color-swatch {
 }
 
 .about-body {
-    padding: 35px 30px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 35px 30px 35px 30px;
+    padding-right: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
