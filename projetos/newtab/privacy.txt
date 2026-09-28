@@ -1,0 +1,32 @@
+﻿========================================================================
+POLÍTICA DE PRIVACIDADE - CROMAK NEWTAB
+========================================================================
+
+Última atualização: Setembro de 2026
+
+1. INTRODUÇÃO
+A Cromak Technology respeita a sua privacidade. Esta Política de Privacidade explica como o aplicativo Cromak NewTab funciona em relação aos seus dados pessoais e de navegação.
+
+2. ARMAZENAMENTO 100% LOCAL E OFFLINE
+O Cromak NewTab foi desenvolvido com a privacidade como pilar central. Todo o funcionamento da extensão/página ocorre estritamente dentro do seu navegador. 
+- Não coletamos, não processamos e não enviamos nenhum dado seu para nossos servidores ou para servidores de terceiros.
+- Todas as suas configurações, atalhos, nomes de blocos, cores e imagens de fundo são salvos exclusivamente no armazenamento local (Local Storage) do seu próprio navegador.
+
+3. DADOS DE NAVEGAÇÃO E RASTREAMENTO
+Não utilizamos cookies de rastreamento, scripts de analytics, telemetria ou qualquer outro mecanismo oculto para monitorar seu uso. O que você faz na sua página inicial pertence apenas a você.
+
+4. SERVIÇOS DE TERCEIROS (MECANISMOS DE BUSCA)
+A barra de pesquisa integrada ao Cromak NewTab serve como um atalho que redireciona suas consultas para motores de busca externos (como Google, Bing, Yahoo, YouTube, etc.). 
+Ao realizar uma busca e ser redirecionado, você estará sujeito às políticas de privacidade específicas de cada um desses provedores. A Cromak Technology não tem controle sobre os dados coletados por eles.
+
+5. IMAGENS VIA URL
+Se você personalizar os blocos ou o fundo utilizando URLs de imagens hospedadas na internet, seu navegador fará uma solicitação direta a esses servidores externos para baixar a imagem. 
+
+6. EXCLUSÃO DOS DADOS
+Como os dados estão armazenados localmente, você tem controle total sobre eles. Para excluir permanentemente todas as suas preferências, basta usar a opção "Redefinir Padrões" nas configurações do Cromak NewTab ou limpar os dados/cache do seu próprio navegador.
+
+7. CONTATO
+Se você tiver alguma dúvida sobre esta Política de Privacidade ou sobre as práticas do Cromak NewTab, entre em contato através da nossa página oficial de suporte:
+https://cromaktechnology.github.io/pt/suporte.html
+
+Cromak Technology - Forjando Ferramentas de Alta Performance.
