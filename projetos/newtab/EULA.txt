@@ -2,7 +2,7 @@
 LICENÇA DE CÓDIGO ABERTO E TERMOS DE USO
 ========================================================================
 
-Projeto: Cromak NewTab 1.1 (Interface Metro UI)
+Projeto: Cromak NewTab 1.1.2 (Interface Metro UI)
 Proprietário: Cromak Technology
 Website Oficial: https://cromaktechnology.github.io
 
