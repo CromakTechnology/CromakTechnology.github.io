@@ -1,4 +1,4 @@
-================================================================================
+﻿================================================================================
                     NOVA ABA - CROMAK TECHNOLOGY
                         Manual do Usuário
 ================================================================================
@@ -168,6 +168,13 @@ A BARRA DE PESQUISA NÃO FUNCIONA?
 ================================================================================
 8. NOTAS DE ATUALIZAÇÃO (CHANGELOG)
 ================================================================================
+
+Versão 1.1.2 (Feature Update & Safari Fix):
+- Correção de Layout no Safari: Implementado fix exclusivo em JavaScript e CSS Webkit para resolver o deslocamento de imagens e quebra de grid (position: absolute + scale) no navegador da Apple.
+- Central de Ajuda Interativa: O menu Ajuda foi refeito com um layout mais fluido, limitador de altura, tutoriais visuais e uma barra de pesquisa inteligente integrada para buscas instantâneas.
+- Tela de Boas-Vindas Atualizada: Adicionada tag dinâmica de versão (v1.1.2) e box de "Notas de Lançamento" na tela inicial para informar rapidamente os usuários sobre as novidades do patch.
+- Novo Modal de Texto (Leitor Nativo): Adicionado um novo modal (in-app) para leitura dinâmica de arquivos .txt (Termos de Privacidade, EULA e Leia-Me) sem sair da interface.
+- Melhoria no "Sobre": A aba Sobre o Software recebeu uma barra de rolagem (scrollbar), bordas nítidas corrigidas, layout de botões otimizado (Doar, Atualizar, Suporte) e links diretos para a documentação legal.
 
 Versão 1.1.1 (Hotfix & Mobile Update):
 - Correção de Persistência: Resolvido o bug que apagava os atalhos da tela principal ao retornar das subpáginas (Games, Músicas, etc.). A memória (localStorage) agora funciona perfeitamente em todas as telas.
