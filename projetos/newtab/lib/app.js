@@ -465,3 +465,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+// ==========================================
+// FIX EXCLUSIVO PARA SAFARI (DESKTOP E MOBILE)
+// ==========================================
+(function() {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (isSafari) {
+        console.log('Safari Browser detectado: Aplicando correções de layout.');
+        document.documentElement.classList.add('safari-browser');
+        
+        // Injeta CSS corretivo direto no cabeçalho
+        const style = document.createElement('style');
+        style.innerHTML = `
+            /* O Safari se perde ao calcular position: absolute dentro de containers com scale().
+               O translateZ(0) força um novo contexto de empilhamento renderizado via hardware. */
+            .safari-browser .metro-inner {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+            }
+            
+            /* Correção para o Flexbox do Safari que desloca as imagens dentro da grade */
+            .safari-browser .tile {
+                display: -webkit-box !important;
+                display: -webkit-flex !important;
+                display: flex !important;
+                -webkit-box-align: center !important;
+                -webkit-align-items: center !important;
+                align-items: center !important;
+                -webkit-box-pack: center !important;
+                -webkit-justify-content: center !important;
+                justify-content: center !important;
+            }
+            
+            /* Força a imagem a respeitar a caixa flex no motor do WebKit */
+            .safari-browser .tile img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                -webkit-object-fit: contain;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Hack de Repintura: Safari muitas vezes renderiza a grade antes de processar o Zoom
+        // Isso força o motor do navegador a recalcular as posições absolutas após carregar
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.style.display = 'none';
+                document.body.offsetHeight; // Gatilho de Reflow (força o recálculo)
+                document.body.style.display = '';
+            }, 50);
+        });
+    }
+})();

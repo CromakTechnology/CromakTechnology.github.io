@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // --- 1. ELEMENTOS DA INTERFACE ---
     const floatingBtn = document.getElementById('floating-config-btn');
     const configDropdown = document.getElementById('config-dropdown');
@@ -132,6 +132,64 @@ document.addEventListener('DOMContentLoaded', () => {
     if (helpModal) {
         helpModal.addEventListener('click', (e) => {
             if (e.target === helpModal) helpModal.classList.remove('show');
+        });
+    }
+
+    
+    // Lógica da Caixa de Pesquisa da Ajuda
+    const helpSearchInput = document.getElementById('help-search');
+    if (helpSearchInput) {
+        helpSearchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const topics = document.querySelectorAll('#help-modal .help-topic');
+            
+            topics.forEach(topic => {
+                const text = topic.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    topic.style.display = '';
+                } else {
+                    topic.style.display = 'none';
+                }
+            });
+            
+            // Oculta os títulos das seções se estiver pesquisando
+            const sectionTitles = document.querySelectorAll('#help-modal .help-section-title');
+            sectionTitles.forEach(title => {
+                title.style.display = query.length > 0 ? 'none' : '';
+            });
+        });
+    }
+
+    
+    // --- LÓGICA DO MODAL DE TEXTO (EULA/PRIVACIDADE) ---
+    const textModal = document.getElementById('text-modal');
+    const closeTextModal = document.getElementById('close-text-modal');
+    const textModalTitle = document.getElementById('text-modal-title');
+    const textModalBody = document.getElementById('text-modal-body');
+
+    if (textModal) {
+        document.querySelectorAll('.open-text-modal').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const file = link.getAttribute('data-file');
+                textModalTitle.innerText = file;
+                textModalBody.innerText = 'Carregando...';
+                textModal.classList.add('show');
+                
+                fetch(file)
+                    .then(res => res.text())
+                    .then(text => {
+                        textModalBody.innerText = text;
+                    })
+                    .catch(err => {
+                        textModalBody.innerText = 'Erro ao carregar o arquivo: ' + file;
+                    });
+            });
+        });
+
+        if (closeTextModal) closeTextModal.addEventListener('click', () => textModal.classList.remove('show'));
+        textModal.addEventListener('click', (e) => {
+            if (e.target === textModal) textModal.classList.remove('show');
         });
     }
 
