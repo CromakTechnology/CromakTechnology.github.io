@@ -3,7 +3,7 @@
                         Manual do Usuário
 ================================================================================
 
-Versão: 1.1.2
+Versão: 1.1.3
 Desenvolvido por: Cromak Technology
 Website Oficial: https://cromaktechnology.github.io
 

@@ -96,48 +96,124 @@
     </div>
 
     <!-- Janela de Preferências -->
+        <!-- MODAL DA GALERIA -->
+    <div id="gallery-modal" class="modal-overlay" style="z-index: 2000;">
+        <div class="modal-content settings-window" style="width: 80% !important; max-width: 800px; padding: 0;">
+            <div class="modal-header">
+                <h2>Galeria de Wallpapers</h2>
+                <span id="close-gallery-modal" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body" style="padding: 20px; overflow-y: auto; max-height: 70vh;">
+                <div id="wallpaper-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                    <!-- Preenchido via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div id="settings-modal" class="modal-overlay">
-        <div class="modal-content settings-window">
+        <div class="modal-content settings-window" style="width: 620px !important; height: 550px;">
             <div class="modal-header">
                 <h2>Preferências</h2>
                 <span id="close-modal" class="close-btn">&times;</span>
             </div>
-            <div class="modal-body">
-                <div class="config-group">
-                    <label>Imagem de Fundo:</label>
-                    <div class="input-row">
-                        <input type="text" id="bg-image-url" placeholder="URL ou base64..." style="width: 200px;">
-                        <label for="bg-image-file" class="browse-btn">Procurar</label>
-                        <input type="file" id="bg-image-file" accept="image/*" style="display: none;">
-                        <button id="clear-bg-btn" class="browse-btn" style="background: #a00;">Limpar</button>
-                    </div>
+            
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="tab-geral">Geral</button>
+                <button class="tab-btn" data-tab="tab-aparencia">Aparência</button>
+                <button class="tab-btn" data-tab="tab-widget">Widgets</button>
+            </div>
+
+            <div class="modal-body" style="padding: 15px; flex: 1; overflow-y: auto;">
+                <!-- ABA GERAL -->
+                <div id="tab-geral" class="tab-content active">
+                    <fieldset class="settings-groupbox">
+                        <legend class="settings-legend">Sistema</legend>
+                        <div class="config-group">
+                            <label>Idioma:</label>
+                            <select style="width: 200px; padding: 5px; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px;">
+                                <option>Português (Brasil)</option>
+                            </select>
+                        </div>
+                        <div class="config-group" style="margin-top: 15px; text-align: center;">
+                            <button id="btn-how-to-homepage" class="browse-btn" style="background: #2b2b3c; width: 100%; max-width: 300px; padding: 8px;">Como definir como página inicial</button>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="settings-groupbox">
+                        <legend class="settings-legend">Backup e Restauração</legend>
+                        <div style="display: flex; justify-content: center; gap: 10px;">
+                            <button id="export-backup-btn" class="browse-btn" style="background: #0071b9;">Exportar Backup</button>
+                            <label for="import-backup-file" class="browse-btn" style="background: #0071b9;">Importar Backup</label>
+                            <input type="file" id="import-backup-file" accept=".json" style="display: none;">
+                            <button id="reset-settings-btn" class="browse-btn" style="background: #cc0000;">Redefinir Padrões</button>
+                        </div>
+                    </fieldset>
                 </div>
-                <div class="config-group">
-                    <label for="bg-color-picker">Cor de Fundo Base:</label>
-                    <input type="color" id="bg-color-picker" value="#1a1a2e">
+
+                <!-- ABA APARÊNCIA -->
+                <div id="tab-aparencia" class="tab-content">
+                    <fieldset class="settings-groupbox">
+                        <legend class="settings-legend">Fundo</legend>
+                        <div class="config-group" style="margin-bottom: 15px;">
+                            <label for="bg-color-picker">Cor do plano de fundo:</label>
+                            <input type="color" id="bg-color-picker" value="#1a1a2e">
+                        </div>
+                        <div class="config-group" style="align-items: flex-start; margin-bottom: 15px;">
+                            <label style="margin-top: 8px; white-space: nowrap;">Imagem de fundo:</label>
+                            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1; margin-left: 20px;">
+                                <input type="text" id="bg-image-url" placeholder="URL ou base64..." style="width: 100%; box-sizing: border-box; padding: 7px; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; outline: none; font-size: 13px;">
+                                <div style="display: flex; gap: 8px;">
+                                    <button id="open-gallery-btn" class="browse-btn" style="background: #0071b9; flex: 1; padding: 6px 0;">Abrir Galeria</button>
+                                    <label for="bg-image-file" class="browse-btn" style="background: #4a4a5a; flex: 1; text-align: center; padding: 6px 0; border: 1px solid rgba(255,255,255,0.2);">Computador</label>
+                                    <input type="file" id="bg-image-file" accept="image/*" style="display: none;">
+                                    <button id="clear-bg-btn" class="browse-btn" style="background: #a00; flex: 1; padding: 6px 0;">Remover</button>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="settings-groupbox">
+                        <legend class="settings-legend">Painéis</legend>
+                        <div class="config-group" style="margin-bottom: 15px;">
+                            <label for="panel-color-picker">Cor dos painéis:</label>
+                            <input type="color" id="panel-color-picker" value="#ffffff">
+                        </div>
+                        <div class="config-group" style="margin-bottom: 15px;">
+                            <label for="panel-opacity">Transparência da interface:</label>
+                            <input type="range" id="panel-opacity" min="0" max="1" step="0.1" value="0.2">
+                        </div>
+                        <div class="config-group">
+                            <label for="ui-zoom">Zoom da interface:</label>
+                            <input type="range" id="ui-zoom" min="0.5" max="1.5" step="0.05" value="1.0">
+                        </div>
+                    </fieldset>
                 </div>
-                <div class="config-group">
-                    <label for="panel-color-picker">Cor dos Painéis (Fundo):</label>
-                    <input type="color" id="panel-color-picker" value="#ffffff">
-                </div>
-                <div class="config-group">
-                    <label for="panel-opacity">Transparência dos Painéis:</label>
-                    <input type="range" id="panel-opacity" min="0" max="1" step="0.1" value="0.2">
-                </div>
-                <div class="config-group">
-                    <label for="ui-zoom">Zoom da Interface:</label>
-                    <input type="range" id="ui-zoom" min="0.5" max="1.5" step="0.05" value="1.0">
-                </div>
-                
-                <!-- Ãrea de Backup -->
-                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: center; gap: 10px;">
-                    <button id="export-backup-btn" class="browse-btn" style="background: #0071b9;">Exportar Backup</button>
-                    <label for="import-backup-file" class="browse-btn" style="background: #0071b9;">Importar Backup</label>
-                    <input type="file" id="import-backup-file" accept=".json" style="display: none;">
-					<button id="reset-settings-btn" class="browse-btn" style="background: #cc0000;">Redefinir Padrões</button>
+
+                <!-- ABA WIDGETS -->
+                <div id="tab-widget" class="tab-content">
+                    <fieldset class="settings-groupbox">
+                        <legend class="settings-legend">Relógio & Clima</legend>
+                        <div class="config-group">
+                            <label for="clock-timeout">Ocultar Relógio após:</label>
+                            <select id="clock-timeout" style="width: 150px; padding: 5px; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; outline: none;">
+                                <option value="5000">5 segundos</option>
+                                <option value="10000">10 segundos</option>
+                                <option value="15000">15 segundos</option>
+                                <option value="never">Nunca ocultar</option>
+                            </select>
+                        </div>
+                        <div class="config-group">
+                            <label for="weather-city">Cidade (Clima):</label>
+                            <input type="text" id="weather-city" placeholder="Ex: São Paulo" style="width: 150px; padding: 5px; background: rgba(0,0,0,0.3); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; outline: none;">
+                        </div>
+                    </fieldset>
                 </div>
             </div>
-            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+
+            <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
                 <span class="copyright">&copy; 2026 - Cromak Technology. Todos os direitos reservados.</span>
                 <button id="save-settings-btn" class="save-btn">Salvar e Aplicar</button>
             </div>
@@ -145,7 +221,7 @@
     </div>
 
     <!-- ========================================== -->
-    <!-- 2. MODAL DE EDIÃ‡ÃƒO DE BLOCO (TILE)         -->
+    <!-- 2. MODAL DE EDIÇÃO DE BLOCO (TILE)         -->
     <!-- ========================================== -->
     <div id="tile-modal" class="modal-overlay">
         <div class="modal-content">
@@ -198,7 +274,7 @@
                 <img src="lib/icon/index.ico" alt="Cromak NewTab Icon" class="about-icon">
                 
                 <!-- Títulos -->
-                <h3 class="about-title">Cromak NewTab v1.1.2</h3>
+                <h3 class="about-title">Cromak NewTab v1.1.3</h3>
                 <span class="about-subtitle">Interface Metro UI</span>
 
                 <!-- Descrição -->
