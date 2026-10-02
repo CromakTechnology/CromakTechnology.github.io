@@ -25,6 +25,8 @@
     const clearBgBtn = document.getElementById('clear-bg-btn');
     const panelColorPicker = document.getElementById('panel-color-picker');
     const panelOpacity = document.getElementById('panel-opacity');
+    const clockTimeoutEl = document.getElementById('clock-timeout');
+    const weatherCityEl = document.getElementById('weather-city');
 	
 	const uiZoom = document.getElementById('ui-zoom');
     const exportBackupBtn = document.getElementById('export-backup-btn');
@@ -49,6 +51,8 @@
     const savedPanelOpacity = localStorage.getItem('prefPanelOpacity') || '0.2';
 	
 	const savedZoom = localStorage.getItem('prefZoom') || '1';
+    const savedClockTimeout = localStorage.getItem('prefClockTimeout') || '15000';
+    const savedWeatherCity = localStorage.getItem('prefWeatherCity') || '';
     document.documentElement.style.setProperty('--ui-zoom', savedZoom);
     if (uiZoom) uiZoom.value = savedZoom;
 
@@ -66,7 +70,88 @@
     if (bgImageUrl) bgImageUrl.value = savedBgImage;
     if (panelColorPicker) panelColorPicker.value = savedPanelColor;
     if (panelOpacity) panelOpacity.value = savedPanelOpacity;
+    if (clockTimeoutEl) clockTimeoutEl.value = savedClockTimeout;
+    if (weatherCityEl) weatherCityEl.value = savedWeatherCity;
 
+
+        // ==========================================
+    // GALERIA DE WALLPAPERS (CARREGAMENTO PREGUIÇOSO)
+    // ==========================================
+    const openGalleryBtn = document.getElementById('open-gallery-btn');
+    const galleryModal = document.getElementById('gallery-modal');
+    const closeGalleryModal = document.getElementById('close-gallery-modal');
+    const wallpaperGrid = document.getElementById('wallpaper-grid');
+
+    const wallpapers = [
+        { name: 'alpes', title: 'Montanhas & Lagos' },
+        { name: 'lago-barco', title: 'Montanhas & Lagos' },
+        { name: 'fiorde', title: 'Montanhas & Lagos' },
+        { name: 'aurora', title: 'Noite & Céu' },
+        { name: 'himalaia-noite', title: 'Noite & Céu' },
+        { name: 'praia-rosa', title: 'Praias & Costas' },
+        { name: 'islandia-praia', title: 'Praias & Costas' },
+        { name: 'floresta-luz', title: 'Natureza & Água' },
+        { name: 'cachoeira-arcoiris', title: 'Natureza & Água' },
+        { name: 'lavandas', title: 'Campos & Savanas' },
+        { name: 'savana', title: 'Campos & Savanas' },
+        { name: 'deserto-dunas', title: 'Deserto' },
+        { name: 'floresta-outono', title: 'Outono & Inverno' },
+        { name: 'lago-glacial', title: 'Outono & Inverno' },
+        { name: 'dolomitas-italianas', title: 'Montanhas & Formações' },
+        { name: 'montanhas-arco-iris', title: 'Montanhas & Formações' },
+        { name: 'turquia-capadocia', title: 'Montanhas & Formações' },
+        { name: 'terraco-arroz', title: 'Campos & Vinhedos' },
+        { name: 'colinas-toscana-vinhedos', title: 'Campos & Vinhedos' },
+        { name: 'floresta-pinheiros', title: 'Florestas Místicas' },
+        { name: 'pantano-ciprestes', title: 'Florestas Místicas' },
+        { name: 'floresta-bambu', title: 'Florestas Místicas' }
+    ];
+
+    let galleryLoaded = false;
+
+    if (openGalleryBtn && galleryModal) {
+        openGalleryBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            galleryModal.classList.add('show');
+            
+            if (!galleryLoaded) {
+                wallpaperGrid.innerHTML = '';
+                wallpapers.forEach(wp => {
+                    const item = document.createElement('div');
+                    item.style.cursor = 'pointer';
+                    item.style.borderRadius = '6px';
+                    item.style.overflow = 'hidden';
+                    item.style.border = '2px solid transparent';
+                    item.style.transition = '0.2s';
+                    
+                    item.onmouseover = () => item.style.border = '2px solid #00aef0';
+                    item.onmouseout = () => item.style.border = '2px solid transparent';
+                    
+                    item.innerHTML = `
+                        <img src="lib/wallpaper/${wp.name}_thumb.jpg" alt="${wp.title}" style="width: 100%; height: 112px; object-fit: cover; display: block;">
+                        <div style="background: rgba(0,0,0,0.6); padding: 5px; text-align: center; font-size: 12px; color: #fff;">${wp.title}</div>
+                    `;
+                    
+                    item.addEventListener('click', () => {
+                        const url = `lib/wallpaper/${wp.name}.jpg`;
+                        const bgImageUrl = document.getElementById('bg-image-url');
+                        if (bgImageUrl) bgImageUrl.value = url;
+                        document.body.style.backgroundImage = `url('${url}')`;
+                        galleryModal.classList.remove('show');
+                    });
+                    
+                    wallpaperGrid.appendChild(item);
+                });
+                galleryLoaded = true;
+            }
+        });
+        
+        if (closeGalleryModal) {
+            closeGalleryModal.addEventListener('click', () => {
+                galleryModal.classList.remove('show');
+            });
+        }
+    }
 
     // --- 3. LÓGICA DO MENU SUSPENSO E MODAIS ---
     
@@ -248,6 +333,8 @@
             const newPanelColor = panelColorPicker.value;
             const newOpacity = panelOpacity.value;
 			const newZoom = uiZoom.value;
+            const newClockTimeout = clockTimeoutEl ? clockTimeoutEl.value : '15000';
+            const newWeatherCity = weatherCityEl ? weatherCityEl.value.trim() : '';
 
             // Salva no Navegador
             localStorage.setItem('prefBgColor', newColor);
@@ -255,6 +342,8 @@
             localStorage.setItem('prefPanelColor', newPanelColor);
             localStorage.setItem('prefPanelOpacity', newOpacity);
 			localStorage.setItem('prefZoom', newZoom);
+            localStorage.setItem('prefClockTimeout', newClockTimeout);
+            localStorage.setItem('prefWeatherCity', newWeatherCity);
 
             // Aplica instantaneamente
             document.body.style.backgroundColor = newColor;
@@ -329,6 +418,38 @@
 	// ==========================================
     // SISTEMA DE REDEFINIÇÃO (FACTORY RESET)
     // ==========================================
+    // ==========================================
+    // SISTEMA DE ABAS (PREFERÊNCIAS) E HELP
+    // ==========================================
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabBtns.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                const targetTab = document.getElementById(btn.getAttribute('data-tab'));
+                if (targetTab) targetTab.classList.add('active');
+            });
+        });
+    }
+
+    const btnHowToHomepage = document.getElementById('btn-how-to-homepage');
+    if (btnHowToHomepage) {
+        btnHowToHomepage.addEventListener('click', (e) => {
+            e.preventDefault();
+            const settingsModal = document.getElementById('settings-modal');
+            const helpModal = document.getElementById('help-modal');
+            
+            if (settingsModal) settingsModal.classList.remove('show');
+            if (helpModal) helpModal.classList.add('show');
+        });
+    }
+
     const resetBtn = document.getElementById('reset-settings-btn');
     
     if (resetBtn) {
