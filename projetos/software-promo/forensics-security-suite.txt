@@ -1,2 +1,2 @@
-https://raw.githubusercontent.com/CromakTechnology/CromakTechnology.github.io/main/images/promo/banner-promo.jpg
+https://raw.githubusercontent.com/CromakTechnology/CromakTechnology.github.io/main/images/promo/forensics-security-suite.png
 https://cromaktechnology.github.io/
