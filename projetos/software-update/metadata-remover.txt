@@ -1,0 +1,2 @@
+1.4.0 (Build 2026.11)
+https://cromaktechnology.github.io/pt/metadata-remover.html
