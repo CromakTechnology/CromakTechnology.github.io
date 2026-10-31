@@ -3,12 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte Técnico - Cromak Technology</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
+    <!-- TÍTULO E INDEXAÇÃO PRINCIPAL -->
+    <title>Central de Suporte Técnico & Base de Conhecimento | Cromak Technology</title>
+    <meta name="title" content="Central de Suporte Técnico & Base de Conhecimento | Cromak Technology">
+    <meta name="description" content="Base de conhecimento oficial e suporte técnico da Cromak Technology. Soluções, manuais, licenças e resolução de problemas para DeepClean Suite, Connection Blackout, Install Protector, Password Guard, Bridge Vox e compiladores.">
+    <meta name="keywords" content="Cromak Technology, suporte técnico, base de conhecimento, DeepClean Suite, Connection Blackout, Install Protector, Password Guard, Bridge Vox, Web to APK, Install Compiler, Metadata Remover, PNG to ICO, NewTab, Photo Viewer, licença Cromak, ativar licença, suporte software Windows">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://cromaktechnology.github.io/pt/suporte.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/suporte.html">
+    <link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/suporte.html">
+
+    <!-- OPEN GRAPH (FACEBOOK, LINKEDIN, WHATSAPP, DISCORD) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://cromaktechnology.github.io/pt/suporte.html">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:title" content="Central de Suporte Técnico & Base de Conhecimento | Cromak Technology">
+    <meta property="og:description" content="Tire dúvidas sobre licenças, configuração, arquitetura offline e resolução de problemas de toda a suíte de ferramentas da Cromak Technology.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/cromaklogobg.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logotipo Oficial Cromak Technology">
+
+    <!-- TWITTER / X CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cromaktechnology.github.io/pt/suporte.html">
+    <meta name="twitter:title" content="Central de Suporte Técnico | Cromak Technology">
+    <meta name="twitter:description" content="Documentação técnica, manuais de recuperação, ativação de licenças e atendimento direto da Cromak Technology.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/cromaklogobg.png">
+
+    <!-- CORES DE NAVEGADOR E IDENTIDADE VISUAL -->
+    <meta name="theme-color" content="#121212">
+    <meta name="msapplication-TileColor" content="#121212">
     <link rel="icon" type="image/png" href="../images/cromaklogosm.png">
     <link rel="stylesheet" href="../css/estilo_premiun.css">
-    
 
+    <!-- DADOS ESTRUTURADOS JSON-LD (RICH SNIPPETS GOOGLE FAQ + SERVIÇO TÉCNICO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cromaktechnology.github.io/#organization",
+          "name": "Cromak Technology",
+          "url": "https://cromaktechnology.github.io",
+          "logo": "https://cromaktechnology.github.io/images/cromaklogosm.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "technical support",
+            "email": "cromaksupport@gmail.com",
+            "availableLanguage": ["Portuguese", "English"]
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://cromaktechnology.github.io/pt/suporte.html#webpage",
+          "url": "https://cromaktechnology.github.io/pt/suporte.html",
+          "name": "Central de Suporte Técnico & Base de Conhecimento | Cromak Technology",
+          "description": "Base de conhecimento e suporte para os softwares de segurança, otimização e desenvolvimento da Cromak Technology.",
+          "isPartOf": {
+            "@id": "https://cromaktechnology.github.io/#website"
+          },
+          "inLanguage": "pt-BR"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cromaktechnology.github.io/pt/suporte.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Como recebo a minha licença após a compra?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O processamento é instantâneo. Assim que o pagamento é confirmado, a sua chave de ativação única e as instruções de instalação são enviadas diretamente para o seu e-mail cadastrado."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Os softwares da Cromak Technology precisam de internet para funcionar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Apenas a ativação inicial da licença requer conexão com a internet. A vasta maioria das ferramentas foi desenhada para operar de forma 100% offline (Local-First), garantindo a privacidade dos dados locais."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que fazer se o Windows apresentar tela azul ou erro após limpezas extremas no DeepClean?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O DeepClean mantém um clone íntegro do registro em C:\\DEEPCLEANSUITE\\SOFTWARE_CLONE.hiv. Na tela de Reparo do Windows, abra o Prompt de Comando e execute: copy /y C:\\DEEPCLEANSUITE\\SOFTWARE_CLONE.hiv C:\\Windows\\System32\\config\\SOFTWARE para reviver o sistema imediatamente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que é o Total Lockdown no Cromak Connection Blackout?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "É uma contenção emergencial tipo Kill Switch que interrompe 100% das conexões externas da rede em menos de 50ms contra infecções ativas e ransomware, mantendo unicamente o loopback 127.0.0.1 em operação."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona o bloqueio Zero-Trust no Cromak Install Protector?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O sistema encerra executáveis instaladores (.exe, .msi, scripts ofuscados e instalações silenciosas) em menos de 100ms, barrando instalações não autorizadas sem depender de assinaturas de antivírus tradicionais."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O que acontece se eu perder o arquivo chave.key no Password Guard?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O cofre opera com arquitetura Zero-Knowledge. Se você perder o arquivo chave.key, a recuperação é matematicamente impossível, pois nós não possuímos acesso nem cópias em nuvem. Mantenha sempre um Backup Blindado em pen drive."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -29,142 +147,17 @@
                     
                     <!-- Coluna da Esquerda: FAQ e Busca -->
                     <div class="faq-container">
-                        <h2 style="text-align: left; margin-bottom: 20px;" class="section-title">Base de Conhecimento</h2>
-                        
-                        <input type="text" id="faqSearch" class="faq-search" placeholder="Busque sua dúvida aqui (ex: licença, senha, apk, limpeza)..." onkeyup="filtrarFAQ()">
-                        
-                        <div id="faq-list">
-                            
-                            <!-- PAGAMENTO E LICENÇAS -->
-                            <h5 class="faq-category">Pagamentos e Licenças</h5>
-                            
-                            <div class="faq-item">
-                                <h4>Como recebo a minha licença após a compra?</h4>
-                                <p>O processamento é instantâneo. Assim que o pagamento é confirmado, a sua chave de ativação única e as instruções de instalação são enviadas diretamente para o seu e-mail cadastrado.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Posso utilizar a licença em mais de um computador?</h4>
-                                <p>Depende do seu plano. A licença Pessoal Vitalícia permite a ativação em até 3 computadores simultâneos. Já as licenças Mensais e Anuais são limitadas a 1 dispositivo ativo por vez.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Os softwares precisam de internet para funcionar?</h4>
-                                <p>Apenas a ativação inicial da licença requer conexão com a internet. A vasta maioria das nossas ferramentas foi desenhada para operar de forma 100% offline, garantindo a privacidade absoluta dos seus dados locais.</p>
-                            </div>
-
-                            <!-- DEEPCLEAN SUITE -->
-                            <h5 class="faq-category">DeepClean Suite</h5>
-
-                            <div class="faq-item">
-                                <h4>O DeepClean oferece proteção antes de limpezas profundas?</h4>
-                                <p>Sim. Como medida de segurança, o sistema recomenda fortemente criar um Clone do Registro (.dcr). Se uma modificação extrema quebrar a inicialização do Windows, você poderá utilizar a Tela de Restauração para restaurar este clone e reviver o PC na hora.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>O que o Cromak Sentinel faz no meu computador?</h4>
-                                <p>O componente nativo "cbsservice.exe" atua como um serviço guardião em segundo plano que orquestra o Cromak Sentinel, funcionando como um EDR de proteção em tempo real.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Como o desinstalador garante que nenhum arquivo fique para trás?</h4>
-                                <p>A nossa ferramenta vai além dos desinstaladores comuns. O software utiliza o motor "Sniper", projetado para obliterar rastros de programas ocultos varrendo diretamente a partir do caminho do executável após a desinstalação padrão.</p>
-                            </div>
-
-                            <!-- PASSWORD GUARD -->
-                            <h5 class="faq-category">Password Guard</h5>
-
-                            <div class="faq-item">
-                                <h4>O Password Guard armazena minhas senhas na nuvem?</h4>
-                                <p>Não. O sistema é baseado na arquitetura Zero-Knowledge (Conhecimento Zero). Isso significa que nós não temos servidores em nuvem e não possuímos acesso à sua Chave Mestra ou banco de dados.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>O que acontece se eu perder a minha chave.key?</h4>
-                                <p>O seu sistema de cofre é composto pelo banco (`dados.db`) e pela sua Chave Criptográfica (`chave.key`). Se você formatar o computador e perder o arquivo "chave.key", nem mesmo o criador do software poderá recuperar as suas senhas. Você deve sempre criar um "Backup Blindado" em um Pen Drive.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Existe defesa contra roubo de senhas por Força Bruta?</h4>
-                                <p>Sim. Errar a senha na tela de login 5 vezes ativa o protocolo de segurança do software, que destrói a "chave.key" local permanentemente para impedir que terceiros invadam o seu banco de dados via força bruta.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>O que é o Protocolo Shredder?</h4>
-                                <p>É uma ferramenta forense de nível militar disponível na versão PRO. Ao ativar o Protocolo Shredder, o programa irá sobrescrever o arquivo original (como PDFs ou fotos sensíveis) com zeros absolutos antes de apagá-lo do Windows, tornando-o imune a softwares forenses de recuperação.</p>
-                            </div>
-
-                            <!-- INSTALL COMPILER -->
-                            <h5 class="faq-category">Install Compiler</h5>
-
-                            <div class="faq-item">
-                                <h4>O compilador reduz o tamanho final do meu arquivo executável?</h4>
-                                <p>Com certeza. O sistema utiliza algoritmos de compressão pesados, permitindo o uso da compressão LZMA e do motor executável UPX (quando ativado) para minimizar a pegada em disco do seu pacote final.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Ele gera um desinstalador automaticamente?</h4>
-                                <p>Sim. Durante a fase de build, o motor gera e compila automaticamente um "slim uninstaller" com interface gráfica (GUI), que será incluído de forma invisível no seu instalador.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Posso assinar digitalmente meus instaladores?</h4>
-                                <p>Sim. O Install Compiler integra-se perfeitamente com a ferramenta oficial SignTool da Microsoft, permitindo injetar e aplicar o seu Certificado Digital (.pfx) com carimbo de data/hora (Timestamp) para evitar alertas de antivírus.</p>
-                            </div>
-
-                            <!-- METADATA REMOVER -->
-                            <h5 class="faq-category">Metadata Remover</h5>
-
-                            <div class="faq-item">
-                                <h4>Posso limpar vários arquivos de uma só vez?</h4>
-                                <p>Sim. O software opera através de processamento em lote (Batch), permitindo importar dezenas de arquivos soltos ou pastas inteiras para sanitização simultânea.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>O que acontece com os arquivos originais após a limpeza?</h4>
-                                <p>Você escolhe. O sistema permite exportar as versões limpas para uma pasta específica, compactá-las em um arquivo .ZIP, ou ativar o modo "Sobrescrever", que destrói o arquivo original de forma irreversível e o substitui pela versão limpa.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>O programa apaga o histórico de edições de PDFs ou Word?</h4>
-                                <p>Sim. O módulo PRO conta com higienização estrutural de documentos, que remove ativamente histórico de revisões, autores e comentários ocultos. Em arquivos PDF, o sistema pode até aplicar tinta invisível em rastreadores.</p>
-                            </div>
-
-                            <!-- PNG TO ICON CONVERTER -->
-                            <h5 class="faq-category">PNG To ICO Converter</h5>
-
-                            <div class="faq-item">
-                                <h4>É possível extrair ícones de programas instalados?</h4>
-                                <p>Sim. O sistema possui um motor forense de engenharia reversa capaz de analisar arquivos binários do Windows (EXE/DLL) e extrair matrizes de ícones originais de dentro deles.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Quais matrizes de cor e resoluções o software suporta?</h4>
-                                <p>A ferramenta suporta a compilação completa para diversas arquiteturas. Ela gera resoluções desde 512px até 16px. Quanto à profundidade de cor, há suporte a matrizes de 32 bits (True Color + Alpha), 8 bits (256 cores legado) e até 4 bits (16 cores para sistemas muito antigos).</p>
-                            </div>
-
-                            <!-- WEB TO APK COMPILER -->
-                            <h5 class="faq-category">Web To Apk Compiler</h5>
-
-                            <div class="faq-item">
-                                <h4>O compilador funciona para sites locais (offline)?</h4>
-                                <p>Sim. O sistema suporta dois modos: o Modo Online (converte uma URL ativa em App) e o Modo Offline, que permite empacotar uma pasta inteira contendo arquivos HTML/CSS/JS localmente no APK, permitindo seu funcionamento sem internet.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>O que acontece se eu perder a minha Keystore ou a senha?</h4>
-                                <p>Atenção máxima: se você perder a Keystore ou as suas respectivas senhas, você NUNCA MAIS poderá enviar atualizações do seu app para a Google Play. O aplicativo antigo na loja ficará inacessível para edições, forçando você a criar um novo e perder seus downloads.</p>
-                            </div>
-
-                            <div class="faq-item">
-                                <h4>Quais recursos exclusivos existem no motor PRO?</h4>
-                                <p>A versão 2.0 oferece monetização integrada (injeção nativa de blocos AdMob sem programar), Menu Lateral Dinâmico (Navigation Drawer) injetado diretamente na interface Android e um modo "Highly Cached" para carregamento ultrarrápido.</p>
-                            </div>
-
-                        </div>
-                        
-                        <p id="sem-resultados" style="display: none; color: var(--accent); text-align: center; margin-top: 20px;">Nenhuma pergunta encontrada com esse termo. Tente buscar por outra palavra.</p>
-                    </div>
+    <h2 style="text-align: left; margin-bottom: 20px;" class="section-title">Base de Conhecimento</h2>
+    
+    <input type="text" id="faqSearch" class="faq-search" placeholder="Busque sua dúvida aqui (ex: licença, bridge, atalhos, senha, apk, limpeza)...">
+    
+    <!-- O script preenche dinamicamente aqui -->
+    <div id="faq-list"></div>
+    
+    <p id="sem-resultados" style="display: none; color: var(--accent); text-align: center; margin-top: 20px;">
+        Nenhuma dúvida encontrada com esse termo. Tente palavras como "atalhos", "licença", "backup", ou envie um ticket.
+    </p>
+</div>
 
                     <!-- Coluna da Direita: Barra Lateral -->
                     <div class="contact-sidebar">
@@ -258,5 +251,7 @@
     <!-- SCRIPTS GLOBAIS -->
     <script src="../js/menu.js"></script>
     <script src="../js/main.js"></script>
+	<script src="../js/faq-data_pt.js"></script>
+    <script src="../js/suporte.js"></script>
 </body>
 </html>

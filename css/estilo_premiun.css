@@ -1545,4 +1545,95 @@ footer {
             cursor: pointer;
         }
 
-    
+/* ========================================================
+   ESTILOS DO ACORDEÃO E DA BASE DE CONHECIMENTO (SUPORTE)
+   ======================================================== */
+.faq-accordion-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.faq-accordion-item:hover {
+    border-color: rgba(0, 212, 255, 0.35);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.faq-accordion-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    color: #e6e6e6;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.faq-accordion-header.active {
+    color: var(--accent, #00d4ff);
+}
+
+.faq-question-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 15px;
+}
+
+.faq-badge {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--accent, #00d4ff);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.faq-accordion-icon {
+    font-size: 1.4rem;
+    color: var(--text-dim, #b0b0b0);
+    transition: transform 0.2s ease, color 0.2s ease;
+    line-height: 1;
+}
+
+.faq-accordion-header.active .faq-accordion-icon {
+    color: var(--accent, #00d4ff);
+}
+
+.faq-accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease;
+}
+
+.faq-answer-inner {
+    padding: 0 20px 20px 20px;
+    color: var(--text-dim, #b0b0b0);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    margin-top: 5px;
+    padding-top: 14px;
+}
+
+.faq-answer-inner ul {
+    margin: 10px 0 0 18px;
+    padding: 0;
+}
+
+.faq-answer-inner li {
+    margin-bottom: 6px;
+}
