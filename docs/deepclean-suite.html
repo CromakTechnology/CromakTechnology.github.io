@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak DeepClean Suite - Manual Oficial do Usuário</title>
+    <link rel="icon" href="../images/cromak_technology_logo_small.png" type="image/png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #00A4EF;
+            --primary-light: #38bdf8;
+            --primary-hover: #38bdf8;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #da3633;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; color: #fff; font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0, 164, 239, 0.35);
+            border: 1px solid rgba(0, 164, 239, 0.3);
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(0, 164, 239, 0.08); border: 1px solid rgba(0, 164, 239, 0.2);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(0, 164, 239, 0.15); }
+        .back-link svg { flex-shrink: 0; }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a svg { flex-shrink: 0; color: var(--primary-light); opacity: 0.85; }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+        .sidebar-nav li a:hover svg { opacity: 1; }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(0, 164, 239, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(0, 164, 239, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.4); color: var(--warning); }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(0, 164, 239, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(0, 164, 239, 0.3);
+        }
+        .chapter h3 { font-size: 16px; color: var(--primary-light); margin: 20px 0 10px; }
+        .chapter p { margin-bottom: 15px; color: #c9d1d9; font-size: 14.5px; line-height: 1.7; }
+        .chapter ul, .chapter ol { margin-left: 20px; margin-bottom: 15px; color: #c9d1d9; font-size: 14px; line-height: 1.8; }
+        .chapter li { margin-bottom: 8px; }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3, .card h4 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .sub-card { background-color: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; }
+        .sub-card h4 { color: var(--primary-light); margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+        .sub-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--primary-light); border: 1px solid var(--border-color); }
+        .callout, .alert-box {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(0, 164, 239, 0.08); border-left: 4px solid var(--primary-light); color: #e6edf3;
+        }
+        .callout.callout-success { background: rgba(46, 160, 67, 0.08); border-left-color: var(--success); }
+
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 164, 239, 0.4); }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+            .btn-print { display: none; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/deepclean-suite.png" alt="DeepClean Suite" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>DeepClean Suite</h1>
+                <p>Manual Oficial v1.6.4</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Capítulos</li>
+            <li><a href="#assistente"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>01. Assistente Inteligente</span></a></li>
+            <li><a href="#limpeza"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>02. Limpeza Avançada & Privacidade</span></a></li>
+            <li><a href="#otimizacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>03. Otimizadores do Sistema</span></a></li>
+            <li><a href="#inicializacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> <span>04. Inicialização & Tarefas</span></a></li>
+            <li><a href="#monitor"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> <span>05. Monitor & Telemetria</span></a></li>
+            <li><a href="#wintools"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>06. WinTools Avançadas</span></a></li>
+            <li><a href="#atualizacoes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>07. Central de Atualizações</span></a></li>
+            <li><a href="#ativacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>08. Ativação e Licença PRO</span></a></li>
+            <li><a href="#configuracoes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>09. Painel de Preferências</span></a></li>
+            <li><a href="#seguranca"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>10. Senha Mestra (DPAPI)</span></a></li>
+            <li><a href="#safety-engine"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>11. Safety Engine & Boot</span></a></li>
+            <li><a href="#suporte"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> <span>12. Contatos & Suporte</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+
+        <header class="doc-header">
+            <h1>Cromak DeepClean Suite — Manual Oficial do Usuário</h1>
+            <p>Guia operacional completo cobrindo diagnóstico em 1 clique, varredura forense de disco, otimização de registro NTFS, desfragmentação de boot e resgate de sistema.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.6.4 (PRO & Free)</span>
+                <span class="badge success">Zero Telemetria</span>
+                <span class="badge warning">Requer Elevação Admin</span>
+                <span class="badge">Windows 10 / 11 64-bit</span>
+            </div>
+        </header>
+
+<!-- SEÇÃO 1: ASSISTENTE INTELIGENTE -->
+    <section class="chapter" id="assistente">
+        <h2><span class="ch-num">01</span> Assistente Inteligente (One-Click Health Check)</h2>
+        <p>
+            O <b>Assistente Inteligente</b> é o ponto central de manutenção do Cromak DeepClean Suite. Ele realiza uma varredura transversal e unificada nos principais pilares de integridade do sistema operacional em poucos segundos.
+        </p>
+
+        <div class="grid-2">
+            <div class="sub-card">
+                <h4>Diagnóstico Automatizado</h4>
+                <p>Examina simultaneamente: rastros de privacidade, fragmentação lógica de registro, caches temporários do Windows, itens parasitas de inicialização e brechas de integridade.</p>
+            </div>
+            <div class="sub-card">
+                <h4>Resolução em 1 Clique</h4>
+                <p>O botão <b>VERIFICAR</b> analisa o estado geral e apresenta a pontuação de saúde do sistema, permitindo corrigir todas as vulnerabilidades detectadas sem complexidade.</p>
+            </div>
+            <div class="sub-card">
+                <h4>Agendamento Silencioso</h4>
+                <p>O botão de alternância <b>Agendamento Automático</b> permite delegar manutenções preventivas regulares para o motor autônomo <code>Bootup Shield</code>.</p>
+            </div>
+            <div class="sub-card">
+                <h4>Personalização da Varredura</h4>
+                <p>Através do botão <b>Personalizar Varredura</b>, você pode habilitar ou desmarcar categorias específicas (ex: manter histórico de navegadores ou restringir limpeza de logs).</p>
+            </div>
+        </div>
+
+        <div class="callout callout-success">
+            <b>Recomendação Cromak:</b> Execute a verificação pelo Assistente Inteligente pelo menos uma vez por semana para evitar o acúmulo de arquivos temporários gigabytes e chaves de registro corrompidas.
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: LIMPEZA AVANÇADA -->
+    <section class="chapter" id="limpeza">
+        <h2><span class="ch-num">02</span> Limpeza Avançada e Proteção de Privacidade</h2>
+        <p>
+            Os módulos de limpeza do Cromak utilizam o motor nativo <b>CleanCore</b>, com algoritmos de exclusão segura atômica e proteção contra travamentos causados por arquivos em uso.
+        </p>
+
+        <h3>Categorias de Limpeza do Disco:</h3>
+        <ul>
+            <li><b>Caches de Sistema e Windows Update:</b> Remove instaladores obsoletos do <code>SoftwareDistribution\Download</code> e caches corrompidos de relatórios de erro (WER).</li>
+            <li><b>Logs e Lixeira do Sistema:</b> Esvazia logs de diagnóstico com mais de 30 dias e remove resíduos irrecuperáveis da Lixeira de todas as unidades conectadas.</li>
+            <li><b>Navegadores de Internet:</b> Limpeza cirúrgica de caches de páginas, dados de formulários temporários e WebCaches (Google Chrome, Edge, Firefox, Opera, Brave, Vivaldi e Yandex).</li>
+            <li><b>DirectX Shader Cache & GPU:</b> Elimina caches de sombreadores corrompidos que causam micro-travamentos (stuttering) em jogos 3D.</li>
+        </ul>
+
+        <h3>Limpeza de Registro e Privacidade:</h3>
+        <p>
+            O módulo analisa chaves vazias, extensões de arquivos orfãs, caminhos de desinstaladores inexistentes e atalhos corrompidos. Cada alteração gera automaticamente um ponto no <b>Cofre de Quarentena</b> antes da exclusão.
+        </p>
+    </section>
+
+    <!-- SEÇÃO 3: OTIMIZADORES -->
+    <section class="chapter" id="otimizacao">
+        <h2><span class="ch-num">03</span> Otimizadores do Sistema e Desfragmentação</h2>
+        <p>
+            O Cromak DeepClean Suite disponibiliza ferramentas avançadas para restaurar a latência ideal do sistema e liberar poder de processamento.
+        </p>
+
+        <h3>Módulos de Otimização:</h3>
+        <ul>
+            <li><b>Otimizador Rápido:</b> Monitora em tempo real a utilização de CPU, Memória RAM e GPU. O botão <b>ACELERAR SISTEMA</b> aplica purga nas listas de espera de RAM e rebaixa processos em segundo plano que drenam recursos.</li>
+            <li><b>Desfragmentação Nativa NTFS:</b> Organiza fisicamente os clusters em discos rígidos (HDDs) e otimiza a alocação de blocos livres, diminuindo o tempo de leitura de arquivos grandes.</li>
+            <li><b>Compactador de Hives de Registro:</b> O Windows nunca reduz fisicamente o tamanho dos arquivos do registro (<code>SYSTEM</code> e <code>SOFTWARE</code>), mesmo quando chaves são apagadas. O Defrag de Registro recria os arquivos contiguamente, diminuindo a latência do kernel.</li>
+            <li><b>Game Booster:</b> Direciona os núcleos de processamento prioritários para jogos e softwares de alta demanda (edição de vídeo/3D), suspendendo serviços desnecessários durante a sessão.</li>
+        </ul>
+    </section>
+
+    <!-- SEÇÃO 4: INICIALIZAÇÃO E MENUS -->
+    <section class="chapter" id="inicializacao">
+        <h2><span class="ch-num">04</span> Inicialização, Tarefas Agendadas e Menus de Contexto</h2>
+        <p>
+            Gerencie tudo o que é carregado junto com o Windows para obter uma inicialização veloz e sem atrasos indesejados.
+        </p>
+
+        <h3>Classificação de Inicialização:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Classificação</th>
+                    <th>Exemplos Comuns</th>
+                    <th>Ação Recomendada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-green">Essencial</span></td>
+                    <td>Drivers de Áudio, Vídeo Intel/AMD/NVIDIA, Segurança</td>
+                    <td><b>Manter ativado.</b> Indispensável para o funcionamento do hardware.</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-orange">Opcional</span></td>
+                    <td>Spotify, Discord, Steam, Epic Games, OneDrive, Teams</td>
+                    <td><b>Desativar com segurança.</b> Economiza até 15 segundos no boot.</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-red">Parasitário</span></td>
+                    <td>Agentes de telemetria de fabricantes, barras de busca, updaters</td>
+                    <td><b>Desativar ou remover.</b> Consomem CPU e internet continuamente.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Tarefas Agendadas e Menu de Contexto:</h3>
+        <p>
+            A aba de <b>Tarefas do Boot</b> lista rotinas agendadas no Windows com filtro exclusivo <i>Ocultar tarefas da Microsoft</i>. Na aba de <b>Menu de Contexto</b>, você pode desativar comandos redundantes do botão direito do mouse, com aplicação instantânea via shell e opção de reiniciar o Explorer.
+        </p>
+    </section>
+
+    <!-- SEÇÃO 5: MONITOR DO SISTEMA -->
+    <section class="chapter" id="monitor">
+        <h2><span class="ch-num">05</span> Monitor do Sistema e Telemetria</h2>
+        <p>
+            Acompanhe o estado de saúde do seu computador com leitura direta de baixo nível:
+        </p>
+        <ul>
+            <li><b>Resumo de Hardware:</b> Identifica modelo de processador, clock, arquitetura, memória instalada, velocidade, canais ativos e fabricante da placa de vídeo.</li>
+            <li><b>Telemetria de GPU via Win32PDH:</b> Uso em tempo real do motor gráfico 3D da placa de vídeo (AMD Radeon, NVIDIA GeForce e Intel Arc) sem necessidade de drivers proprietários.</li>
+            <li><b>Gráficos de Desempenho:</b> Curvas históricas contínuas de consumo de memória, ciclos de CPU e atividade de leitura/escrita em disco.</li>
+            <li><b>Monitor de Conexões de Rede:</b> Lista portas abertas, processos que estão enviando dados e conexões ativas na internet.</li>
+        </ul>
+    </section>
+
+    <!-- SEÇÃO 6: WINTOOLS -->
+    <section class="chapter" id="wintools">
+        <h2><span class="ch-num">06</span> Ferramentas do Windows (WinTools)</h2>
+        <p>
+            Centraliza os 16 utilitários mais poderosos de diagnóstico e administração nativos do Windows, executados com privilégios administrativos transparentes:
+        </p>
+        <div class="grid-2">
+            <div class="sub-card">
+                <h4>Diagnóstico e Reparo</h4>
+                <p>Prompt de Comando Elevado (CMD), PowerShell Administrativo, Diagnóstico de Memória do Windows e Verificador de Arquivos do Sistema (SFC /scannow).</p>
+            </div>
+            <div class="sub-card">
+                <h4>Gerenciamento do Sistema</h4>
+                <p>Gerenciador de Dispositivos (devmgmt.msc), Gerenciador do Computador (compmgmt.msc), Monitor de Recursos (resmon.exe) e Visualizador de Eventos (eventvwr).</p>
+            </div>
+            <div class="sub-card">
+                <h4>Armazenamento e Disco</h4>
+                <p>Gerenciador de Disco (diskmgmt.msc), Limpeza de Disco Nativa (cleanmgr.exe) e Desfragmentador de Unidades (dfrgui.exe).</p>
+            </div>
+            <div class="sub-card">
+                <h4>Configurações Avançadas</h4>
+                <p>Painel de Controle clássico, Configuração do Sistema (msconfig), Editor do Registro (regedit.exe) e Conexões de Rede (ncpa.cpl).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 7: CENTRAL DE ATUALIZAÇÕES -->
+    <section class="chapter" id="atualizacoes">
+        <h2><span class="ch-num">07</span> Central de Atualizações</h2>
+        <p>
+            O Cromak DeepClean Suite mantém seu motor de segurança sempre em sincronia com as versões mais recentes do Windows:
+        </p>
+        <ul>
+            <li><b>Busca Instantânea:</b> Ao clicar em <i>Buscar Atualizações</i> na tela Sobre, a verificação conecta-se automaticamente aos servidores oficiais da Cromak Technology.</li>
+            <li><b>Checagem em Segundo Plano:</b> O serviço verifica silenciosamente a existência de novos builds e regras heurísticas sem interromper suas atividades.</li>
+            <li><b>Integridade Criptográfica:</b> Cada pacote é autenticado contra assinaturas oficiais antes de qualquer substituição de binários.</li>
+        </ul>
+    </section>
+
+    <!-- SEÇÃO 8: ATIVAÇÃO E LICENÇA -->
+    <section class="chapter" id="ativacao">
+        <h2><span class="ch-num">08</span> Ativação e Licença PRO</h2>
+        <p>
+            Conheça as vantagens da versão completa e as diretrizes do sistema de licenciamento:
+        </p>
+
+        <h3>Vantagens da Licença PRO:</h3>
+        <ul>
+            <li>Desbloqueio irrestrito da <b>Varredura DeepClean Ultra</b> e Limpeza Profunda de Privacidade.</li>
+            <li>Ativação do motor de monitoramento contínuo em segundo plano <b>Cromak Sentinel EDR</b>.</li>
+            <li>Agendamento automatizado de manutenções com o <b>Smart Scheduler</b>.</li>
+            <li>Prioridade máxima no canal de Suporte Técnico oficial da Cromak Technology.</li>
+        </ul>
+
+        <div class="callout callout-warning">
+            <b>Como Ativar sua Chave de Produto:</b><br>
+            Acesse o menu lateral em <b>Ativação / Licença</b>, insira a sua chave no formato <code>CRKDCS-XXXX-XXXX-XXXX</code> e clique em <b>Ativar Licença</b>. O sistema validará a assinatura e liberará todas as funcionalidades imediatamente.
+        </div>
+    </section>
+
+    <!-- SEÇÃO 9: CONFIGURAÇÕES -->
+    <section class="chapter" id="configuracoes">
+        <h2><span class="ch-num">09</span> Painel de Configurações e Preferências</h2>
+        <p>
+            Personalize o comportamento da aplicação no diálogo de <b>Configurações</b> (acessível pelo botão de engrenagem na barra lateral):
+        </p>
+        <ul>
+            <li><b>Geral e Interface:</b> Selecione o idioma oficial (Português, Inglês ou Espanhol) e o tema visual (Escuro ou Dark Red). Defina se a suíte deve ser iniciada com o Windows.</li>
+            <li><b>Serviço Guardião (cbsservice.exe):</b> Exibe o status do processo em segundo plano e abre o gerenciador de transparência e monitoramento de RAM.</li>
+            <li><b>Smart Scheduler:</b> Escolha a frequência de limpeza preventiva (semanal, quinzenal, mensal ou no primeiro boot da máquina).</li>
+            <li><b>Modo Sniper:</b> Ajuste o nível de desinstalação profunda (Básico, Moderado ou Agressivo) para erradicar sobras em profundidade.</li>
+            <li><b>Clone e Backups:</b> Configure o diretório de destino dos arquivos de restauração e a retenção automática de pontos antigos (padrão: 30 dias).</li>
+            <li><b>Auditoria e Logs:</b> Inspecione os relatórios forenses detalhados gerados pelo <code>Engine Logger</code> e exporte registros em arquivo <code>.log</code>.</li>
+        </ul>
+    </section>
+
+    <!-- SEÇÃO 10: SEGURANÇA E SENHA MESTRA -->
+    <section class="chapter" id="seguranca">
+        <h2><span class="ch-num">10</span> Segurança e Senha Mestra (Criptografia DPAPI)</h2>
+        <p>
+            A aba exclusiva de <b>Segurança</b> nas Configurações permite proteger o Cromak DeepClean Suite contra o uso não autorizado por terceiros ou outros usuários da máquina:
+        </p>
+
+        <h3>Camadas de Proteção:</h3>
+        <ul>
+            <li><b>Senha Mestra Criptografada:</b> Utiliza a API de Proteção de Dados nativa do Windows (<b>DPAPI &mdash; CryptProtectData</b>). As credenciais ficam atreladas ao chip TPM e ao perfil do usuário, sem chaves estáticas salvas em disco.</li>
+            <li><b>Exigir Senha ao Iniciar:</b> Bloqueia a inicialização de qualquer janela ou módulo do programa até que a autenticação correta seja fornecida.</li>
+            <li><b>Exigir Senha nas Limpezas:</b> Impede que limpezas de disco, exclusões de registro ou desinstalações sejam executadas sem prévia autorização administrativa.</li>
+            <li><b>Mitigação contra Força Bruta:</b> Tentativas consecutivas inválidas geram atrasos progressivos automáticos e são auditadas no histórico de segurança.</li>
+        </ul>
+    </section>
+
+    <!-- SEÇÃO 11: SAFETY ENGINE E RESGATE -->
+    <section class="chapter" id="safety-engine">
+        <h2><span class="ch-num">11</span> Cromak Safety Engine e Protocolo de Resgate de Boot</h2>
+        <p>
+            O <b>Cromak Safety Engine</b> atua como uma blindagem ativa de baixo nível sobre todas as rotinas que interagem com o sistema de arquivos e o registro do Windows:
+        </p>
+        <ul>
+            <li><b>Interceptação de Núcleo:</b> Bloqueia ativamente a exclusão de pastas como <code>C:\Windows\System32</code>, <code>SysWOW64</code> e ramos mestres do Registro (<code>HKLM\SAM</code>, <code>Winlogon</code>).</li>
+            <li><b>Proteção Dupla (DataCore):</b> Toda modificação crítica mantém uma cápsula espelhada localmente.</li>
+            <li><b>Clone da Hive SOFTWARE (C:\DEEPCLEANSUITE):</b> Uma cópia física byte-a-byte do núcleo lógico do Windows é mantida na raiz da unidade principal.</li>
+        </ul>
+
+        <div class="callout callout-danger">
+            <b>Restauração em Emergência (Tela Azul de Reparo do Windows):</b><br>
+            Se o Windows apresentar falha de inicialização por dano no registro causado por queda de energia ou programas maliciosos:<br>
+            <b>1.</b> Na tela de Reparo do Windows, selecione <i>Solução de Problemas &gt; Opções Avançadas &gt; Prompt de Comando</i>.<br>
+            <b>2.</b> Digite ou cole exatamente o comando abaixo e pressione Enter:<br><br>
+            <code>copy /y C:\DEEPCLEANSUITE\SOFTWARE_CLONE.hiv C:\Windows\System32\config\SOFTWARE</code><br><br>
+            <b>3.</b> Feche o terminal e reinicie o computador. O sistema operacional será revivido instantaneamente.
+        </div>
+    </section>
+
+    <!-- SEÇÃO 12: SUPORTE TÉCNICO -->
+    <section class="chapter" id="suporte">
+        <h2><span class="ch-num">12</span> Contatos Oficiais e Suporte Técnico</h2>
+        <p>
+            Para suporte técnico dedicado, esclarecimento de dúvidas, sugestões ou validação de licenciamento corporativo, utilize nossos canais oficiais:
+        </p>
+        <p>
+            <b>Portal Oficial:</b> <a href="https://cromaktechnology.github.io" target="_blank" style="color:var(--primary);">https://cromaktechnology.github.io</a><br>
+            <b>Central de Suporte:</b> <a href="https://cromaktechnology.github.io/en/suporte.html" target="_blank" style="color:var(--primary);">https://cromaktechnology.github.io/en/suporte.html</a><br>
+            <b>E-mail de Suporte Técnico:</b> <a href="mailto:cromaksupport@gmail.com" style="color:var(--primary);">cromaksupport@gmail.com</a><br>
+            <b>Desenvolvimento e Arquitetura:</b> Marcos Souza (Lead Architect) &bull; Cromak Technology &copy; 2026.
+        </p>
+    </section>
+
+    <footer>
+        <p>Cromak DeepClean Suite &bull; Versão 1.6.4 (Build 2026.11) &bull; Documentação Técnica Oficial &bull; Todos os direitos reservados.</p>
+    </footer>
+
+
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">
+            © 2026 Cromak Technology — Divisão de Engenharia de Software MS Digital. Todos os direitos reservados.
+        </footer>
+    </main>
+
+
+    <!-- Botão Imprimir / Salvar PDF -->
+    <button class="btn-print" onclick="window.print()" title="Salvar como PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Salvar / Imprimir PDF</span>
+    </button>
+
+</body>
+</html>

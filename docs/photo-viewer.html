@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak PhotoViewer - Manual Oficial do Usuário</title>
+    <link rel="icon" href="../images/cromak_technology_logo_small.png" type="image/png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #fbbf24;
+            --primary-light: #fcd34d;
+            --success: #2ea043;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; color: #000; font-size: 18px;
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.35);
+            border: 1px solid rgba(252, 211, 77, 0.3);
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(251, 191, 36, 0.08); border: 1px solid rgba(251, 191, 36, 0.2);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(251, 191, 36, 0.15); }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(251, 191, 36, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(251, 191, 36, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+        }
+    
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.8); }
+
+        @media (max-width: 850px) {
+            .btn-print { display: none; }
+        }
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/photo-viewer.png" alt="PhotoViewer" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>PhotoViewer</h1>
+                <p>Manual Oficial v1.4</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Navegação</li>
+            <li><a href="#visao-geral"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>01. Visão Geral</span></a></li>
+            <li><a href="#execucao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>02. Execução Standalone</span></a></li>
+            <li><a href="#associacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>03. Associação de Arquivos</span></a></li>
+            <li><a href="#formatos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> <span>04. Formatos Suportados</span></a></li>
+            <li><a href="#privacidade"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>05. Zero Telemetria</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+        <header class="doc-header">
+            <h1>Cromak PhotoViewer — Manual do Usuário</h1>
+            <p>Guia operacional para visualização rápida de imagens, carregamento instantâneo sem telemetria e associação de arquivos em sistemas Windows.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.4.2</span>
+                <span class="badge success">Portátil / Standalone</span>
+                <span class="badge primary">Zero Telemetria</span>
+            </div>
+        </header>
+
+        <section id="visao-geral" class="chapter">
+            <h2><span class="ch-num">01</span> Visão Geral da Ferramenta</h2>
+            <p>O <strong>Cromak PhotoViewer</strong> resgata a agilidade dos visualizadores clássicos com uma engine moderna de aceleração por renderização nativa. Abre instantaneamente imagens de altíssima resolução sem consumir gigabytes de memória RAM.</p>
+        </section>
+
+        <section id="execucao" class="chapter">
+            <h2><span class="ch-num">02</span> Execução Portátil (Standalone)</h2>
+            <div class="card">
+                <h3>Sem Poluição no Registro</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">O PhotoViewer não exige instalador com serviços de fundo:</p>
+                <ol style="padding-left: 20px; margin-top: 10px; font-size: 14px; color: var(--text-muted); line-height: 1.8;">
+                    <li>Basta extrair o arquivo e executar o <code>PhotoViewer.exe</code>.</li>
+                    <li>As configurações de tema e idioma são armazenadas de forma segura na pasta <code>AppData</code> do usuário.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="associacao" class="chapter">
+            <h2><span class="ch-num">03</span> Associação de Arquivos (Tornar Padrão)</h2>
+            <p>Para configurar o PhotoViewer como o aplicativo padrão para abrir fotos no Windows:</p>
+            <div class="card">
+                <h3>Método Integrado (Em 1 Clique)</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Abra o aplicativo, vá na aba <strong>Preferências</strong> e selecione <strong>Associação de Extensões</strong> para registrar os formatos desejados no shell do Windows.</p>
+            </div>
+        </section>
+
+        <section id="formatos" class="chapter">
+            <h2><span class="ch-num">04</span> Formatos Suportados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Extensões Suportadas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Imagens Web</strong></td>
+                        <td><code>PNG</code>, <code>JPG / JPEG</code>, <code>WEBP</code>, <code>GIF</code>, <code>BMP</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ícones e Vetoriais</strong></td>
+                        <td><code>ICO</code>, <code>TIFF / TIF</code>, <code>SVG</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="privacidade" class="chapter">
+            <h2><span class="ch-num">05</span> Compromisso Zero Telemetria</h2>
+            <p>Diferente dos visualizadores de fotos modernos que rastreiam metadados das imagens e enviam relatórios para servidores na nuvem, o <strong>Cromak PhotoViewer</strong> é 100% offline. Nenhuma miniatura, caminho de arquivo ou metadado EXIF é transmitido.</p>
+        </section>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">
+            © 2026 Cromak Technology — Divisão de Engenharia de Software MS Digital. Todos os direitos reservados.
+        </footer>
+    </main>
+
+
+    <button class="btn-print" onclick="window.print()" title="Salvar como PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Salvar / Imprimir PDF</span>
+    </button>
+
+</body>
+</html>

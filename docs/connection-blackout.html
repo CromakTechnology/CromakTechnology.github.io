@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak Connection Blackout - Manual Oficial do Usuário</title>
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --border-color-light: #343b4a;
+            --primary: #1f6feb;
+            --primary-light: #58a6ff;
+            --primary-hover: #388bfd;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #da3633;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --text-heading: #ffffff;
+            --code-bg: #090b0e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR DE NAVEGAÇÃO --- */
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+
+        #sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        #sidebar::-webkit-scrollbar-thumb {
+            background-color: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1f6feb 0%, #0d1117 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #fff;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(31, 111, 235, 0.35);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+        }
+
+        .brand-text h1 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-text p {
+            font-size: 11px;
+            color: var(--primary-light);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 20px 0 8px 10px;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-nav li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            color: #c9d1d9;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card);
+            color: var(--primary-light);
+            transform: translateX(3px);
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        /* Header do Documento */
+        .doc-header {
+            background: linear-gradient(135deg, rgba(31, 111, 235, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .doc-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .doc-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .badge-list {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(88, 166, 255, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.4); color: var(--warning); }
+        .badge.danger { border-color: rgba(218, 54, 51, 0.4); color: var(--danger); }
+
+        /* Estilização dos Capítulos */
+        .chapter {
+            margin-bottom: 55px;
+            scroll-margin-top: 30px;
+        }
+
+        .chapter h2 {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chapter h2 span.ch-num {
+            background-color: rgba(31, 111, 235, 0.18);
+            color: var(--primary-light);
+            font-size: 14px;
+            padding: 2px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(88, 166, 255, 0.3);
+        }
+
+        .chapter h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 25px 0 12px;
+            font-weight: 600;
+        }
+
+        .chapter p {
+            margin-bottom: 15px;
+            color: #c9d1d9;
+            font-size: 14.5px;
+        }
+
+        /* Cards Informativos */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-light);
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Callouts / Caixas de Destaque */
+        .callout {
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-left: 4px solid transparent;
+            background-color: var(--bg-card);
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .callout.info {
+            border-left-color: var(--primary-light);
+            background-color: rgba(31, 111, 235, 0.08);
+            border-top: 1px solid rgba(88, 166, 255, 0.2);
+            border-right: 1px solid rgba(88, 166, 255, 0.2);
+            border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+        }
+
+        .callout.warning {
+            border-left-color: var(--warning);
+            background-color: rgba(210, 153, 34, 0.08);
+            border-top: 1px solid rgba(210, 153, 34, 0.2);
+            border-right: 1px solid rgba(210, 153, 34, 0.2);
+            border-bottom: 1px solid rgba(210, 153, 34, 0.2);
+        }
+
+        .callout.danger {
+            border-left-color: var(--danger);
+            background-color: rgba(218, 54, 51, 0.08);
+            border-top: 1px solid rgba(218, 54, 51, 0.2);
+            border-right: 1px solid rgba(218, 54, 51, 0.2);
+            border-bottom: 1px solid rgba(218, 54, 51, 0.2);
+        }
+
+        .callout.success {
+            border-left-color: var(--success);
+            background-color: rgba(46, 160, 67, 0.08);
+            border-top: 1px solid rgba(46, 160, 67, 0.2);
+            border-right: 1px solid rgba(46, 160, 67, 0.2);
+            border-bottom: 1px solid rgba(46, 160, 67, 0.2);
+        }
+
+        .callout-icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 13.5px;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-card-alt);
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Código e Teclas */
+        code {
+            background-color: var(--code-bg);
+            color: #79c0ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            border: 1px solid var(--border-color);
+        }
+
+        kbd {
+            background-color: var(--bg-card-alt);
+            border: 1px solid var(--border-color-light);
+            box-shadow: 0 2px 0 var(--border-color);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 12px;
+            font-family: inherit;
+            color: #fff;
+            display: inline-block;
+        }
+
+        /* Listas Estilizadas */
+        ul.styled-list, ol.styled-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: #c9d1d9;
+            font-size: 14px;
+        }
+
+        ul.styled-list li, ol.styled-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Rodapé */
+        .doc-footer {
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            padding-top: 25px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .doc-footer a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        /* Botão Imprimir */
+        .btn-print {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #1f6feb 0%, #1158c7 100%);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(31, 111, 235, 0.45);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            z-index: 99;
+        }
+
+        .btn-print:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(31, 111, 235, 0.65);
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            #sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            #content {
+                margin-left: 0;
+                padding: 25px;
+            }
+            .btn-print {
+                display: none;
+            }
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                color: #000000;
+            }
+            #sidebar, .btn-print {
+                display: none;
+            }
+            #content {
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .feature-card, .callout, table {
+                border-color: #ccc;
+                background: #f9f9f9;
+                color: #000;
+            }
+            .chapter h2, .doc-header h1 {
+                color: #000;
+            }
+            code {
+                background: #eee;
+                color: #000;
+            }
+        }
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR DE NAVEGAÇÃO -->
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" style="display: inline-flex; align-items: center; gap: 8px; color: #58a6ff; text-decoration: none; font-size: 13px; font-weight: 600; margin-bottom: 15px; padding: 6px 10px; border-radius: 6px; background: rgba(88, 166, 255, 0.08); border: 1px solid rgba(88, 166, 255, 0.2);">← Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/connection-blackout.png" alt="Connection Blackout" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Cromak Connection Blackout</h1>
+                <p>Manual Oficial v1.2.1</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <div class="sidebar-section-title">Início</div>
+            <li><a href="#apresentacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>Visão Geral & Arquitetura</span></a></li>
+            <li><a href="#requisitos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>Requisitos & Instalação</span></a></li>
+
+            <div class="sidebar-section-title">Módulos & Operação</div>
+            <li><a href="#dashboard"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> <span>1. Dashboard em Tempo Real</span></a></li>
+            <li><a href="#total-lockdown"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>2. Total Lockdown (Kill Switch)</span></a></li>
+            <li><a href="#gravador-trafego"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> <span>3. Gravador de Tráfego</span></a></li>
+            <li><a href="#visualizador-csv"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span>4. Visualizador de Relatórios</span></a></li>
+            <li><a href="#regras-firewall"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>5. Regras de Firewall</span></a></li>
+            <li><a href="#filtro-web"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>6. Filtro Web Anti-Mining</span></a></li>
+            <li><a href="#monitor-rede"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>7. Monitor de Sockets</span></a></li>
+            <li><a href="#network-fix"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>8. Restauração de Rede</span></a></li>
+            <li><a href="#seguranca-acesso"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>9. Proteção Administrativa</span></a></li>
+            <li><a href="#configuracoes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>10. Configurações & Idiomas</span></a></li>
+            <li><a href="#licenciamento"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-1.5 1.5L14 9l-1.5-1.5L11 9l-1.5-1.5L8 9c-3.87 0-7 3.13-7 7s3.13 7 7 7 7-3.13 7-7c0-.85-.16-1.67-.44-2.43L22 4.5V2h-1z"/><circle cx="7.5" cy="15.5" r="1.5"/></svg> <span>11. Licença Free vs PRO</span></a></li>
+
+            <div class="sidebar-section-title">Suporte</div>
+            <li><a href="#faq"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> <span>Dúvidas Frequentes (FAQ)</span></a></li>
+            <li><a href="#suporte-oficial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>Contato & Suporte</span></a></li>
+        </ul>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="content">
+
+        <!-- CABEÇALHO -->
+        <header class="doc-header" id="apresentacao">
+            <h1>Manual do Usuário & Guia de Segurança de Rede</h1>
+            <p>Documentação técnica oficial para administração de firewall, contenção de tráfego, gravação forense e auditoria com o <strong>Cromak Connection Blackout</strong>.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.2.1 (Build 2026.10)</span>
+                <span class="badge success">Advanced WFP & Kernel Engine</span>
+                <span class="badge warning">Enterprise & Domestic</span>
+                <span class="badge danger">Zero-Leak Matrix</span>
+                <span class="badge">Windows 10 / 11 64-bit</span>
+                <span class="badge">© 2026 Cromak Technology</span>
+            </div>
+        </header>
+
+        <!-- VISÃO GERAL -->
+        <section class="chapter">
+            <h2><span class="ch-num">00</span> Visão Geral da Solução</h2>
+            <p>O <strong>Cromak Connection Blackout</strong> é uma matriz de segurança e controle de firewall de alto desempenho, desenvolvida para fornecer soberania total sobre as comunicações de rede de computadores e servidores Windows.</p>
+            <p>Atuando em camada profunda sobre a pilha TCP/IP e a <strong>Windows Filtering Platform (WFP)</strong>, o software intercepta, monitora, bloqueia e audita conexões de entrada (Inbound) e saída (Outbound) em tempo real, impedindo vazamento de dados confidenciais (Data Exfiltration), conexões de malware para servidores de Comando e Controle (C2), telemetria invasiva e atividades não autorizadas.</p>
+
+            <div class="info-grid">
+                <div class="feature-card">
+                    <h4>🛑 Total Lockdown Imediato</h4>
+                    <p>Contenção de emergência (Kill Switch) que isola 100% da rede em menos de 50ms contra infecções ativas de ransomware ou ataques externos.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📹 Gravador Forense de Tráfego</h4>
+                    <p>Captura contínua de sockets, PIDs, executáveis, IPs remotos e domínios DNS assíncronos com exportação direta para CSV.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔍 Visualizador Nativo Integrado</h4>
+                    <p>Inspeção instantânea de relatórios de tráfego gravados com filtro de busca em tempo real e tags coloridas, sem depender do Excel.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⛏️ Bloqueio Anti-Cryptomining</h4>
+                    <p>Interrupção proativa de conexões para as principais pools e portas Stratum de mineração oculta de criptomoedas.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🛠️ Restauração de Rede (Network Fix)</h4>
+                    <p>Diagnóstico e reparo automático com Flush DNS, Reset Winsock, renovação de DHCP e reinício de adaptadores de rede.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌐 Suporte Multilíngue 100%</h4>
+                    <p>Alternância instantânea entre 11 idiomas em tempo real sem reiniciar a aplicação, compatível com empresas multinacionais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REQUISITOS -->
+        <section class="chapter" id="requisitos">
+            <h2><span class="ch-num">01</span> Requisitos de Sistema & Instalação</h2>
+            <p>O Cromak Connection Blackout foi desenvolvido para operar com consumo ultra-reduzido de memória RAM e CPU, garantindo proteção ininterrupta sem impactar na velocidade da conexão ou na resposta dos jogos e aplicações:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Requisito Mínimo</th>
+                        <th>Recomendado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sistema Operacional</strong></td>
+                        <td>Windows 10 Pro / Enterprise (x64)</td>
+                        <td>Windows 11 Pro / Enterprise (64-bit)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Privilégios</strong></td>
+                        <td>Conta de Administrador Local</td>
+                        <td>Administrador Local / Domínio</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memória RAM</strong></td>
+                        <td>1 GB Livre</td>
+                        <td>2 GB ou mais</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Espaço em Disco</strong></td>
+                        <td>80 MB de espaço livre</td>
+                        <td>300 MB (para retenção de logs e relatórios CSV)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adaptadores de Rede</strong></td>
+                        <td>Ethernet ou Wi-Fi 802.11 b/g/n</td>
+                        <td>Adaptador Gigabit Ethernet / Wi-Fi 6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout warning">
+                <div class="callout-icon">⚠️</div>
+                <div>
+                    <strong>Execução Obrigatória como Administrador:</strong> Para que o software consiga injetar regras no Firewall do Windows, interceptar pacotes de soquetes nativos e controlar adaptadores de rede, é imprescindível executá-lo com <strong>privilégios de Administrador</strong>. Clique com o botão direito no atalho e selecione <em>"Executar como Administrador"</em>.
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section class="chapter" id="dashboard">
+            <h2><span class="ch-num">02</span> Painel Principal (Dashboard)</h2>
+            <p>O <strong>Dashboard</strong> é a central de comando tática do sistema. Ele reúne o status em tempo real do firewall, métricas consolidadas, histórico de atividades e atalhos rápidos de segurança.</p>
+
+            <h3>Elementos do Painel Principal:</h3>
+            <ul class="styled-list">
+                <li><strong>Status do Firewall (Status Banner):</strong> Indicador visual com lâmpada e escudo:
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li><span style="color:var(--success); font-weight:bold;">● FIREWALL ATIVO (Verde):</span> Proteção normal operante, filtrando tráfego de acordo com as regras estabelecidas.</li>
+                        <li><span style="color:var(--danger); font-weight:bold;">● TOTAL LOCKDOWN (Vermelho):</span> Contenção de emergência engatada; todo o tráfego externo está rigorosamente bloqueado.</li>
+                    </ul>
+                </li>
+                <li><strong>Cards de Estatísticas em Tempo Real:</strong>
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li><strong>Conexões Ativas:</strong> Quantidade de soquetes de rede TCP e UDP abertos neste instante na máquina.</li>
+                        <li><strong>Processos Bloqueados:</strong> Total de executáveis impedidos de trafegar pela lista de regras.</li>
+                        <li><strong>Ameaças / URLs Neutras:</strong> Quantidade de domínios restritos pelo Filtro Web e pools de mineração barradas.</li>
+                        <li><strong>Status de Integridade:</strong> Validação do serviço do firewall no Windows.</li>
+                    </ul>
+                </li>
+                <li><strong>Histórico de Eventos em Tempo Real (Live Feed):</strong> Monitor em texto corrido que registra cada liberação de rota, ativação de bloqueio, expurgo de regras ou intervenção de sistema com estampa de data e hora.</li>
+                <li><strong>Ações Rápidas no Cabeçalho:</strong>
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li><strong>Otimizar Firewall:</strong> Varre e expurga regras órfãs ou duplicadas no subsistema de rede do Windows.</li>
+                        <li><strong>Gravação de Tráfego:</strong> Abre a central de captura e diagnóstico forense de conexões.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <!-- TOTAL LOCKDOWN -->
+        <section class="chapter" id="total-lockdown">
+            <h2><span class="ch-num">03</span> Total Lockdown (Kill Switch Imediato)</h2>
+            <p>O <strong>Total Lockdown</strong> é a ferramenta de resposta rápida a incidentes cibernéticos do Cromak Connection Blackout. Projetada para ser acionada em caso de suspeita de ataque hacker, infiltração ativa de ransomware ou vazamento de dados sigilosos.</p>
+
+            <div class="callout danger">
+                <div class="callout-icon">🛑</div>
+                <div>
+                    <strong>Como opera o Total Lockdown:</strong><br>
+                    Ao clicar no botão de contenção na Dashboard, o sistema emite regras globais prioritárias de bloqueio no firewall do Windows, derrubando e impedindo <strong>qualquer tráfego de entrada e saída pela Internet</strong>. Apenas o loopback local (<code>127.0.0.1</code>) é preservado para assegurar que os serviços internos do Windows não sofram travamentos.
+                </div>
+            </div>
+
+            <h3>Cenários Recomendados de Utilização:</h3>
+            <ol class="styled-list">
+                <li><strong>Alerta de Malware / Ransomware:</strong> Isole a estação de trabalho imediatamente para impedir que o malware transmita chaves criptográficas para servidores externos ou infecte outros computadores na rede local.</li>
+                <li><strong>Redes Wi-Fi Públicas Desconhecidas:</strong> Bloqueie qualquer saída de dados ao se conectar temporariamente em ambientes hostis.</li>
+                <li><strong>Manutenção e Auditoria de Software:</strong> Execute um programa suspeito com o Lockdown ativado para verificar seu comportamento em isolamento absoluto de rede.</li>
+            </ol>
+
+            <div class="callout success">
+                <div class="callout-icon">✅</div>
+                <div>
+                    <strong>Desativação Segura:</strong> Para restabelecer o acesso normal à Internet, basta clicar no botão de liberação na Dashboard. As rotas autorizadas serão restauradas sem a necessidade de reiniciar o computador.
+                </div>
+            </div>
+        </section>
+
+        <!-- GRAVADOR DE TRÁFEGO -->
+        <section class="chapter" id="gravador-trafego">
+            <h2><span class="ch-num">04</span> Gravador de Tráfego de Rede (Traffic Recorder)</h2>
+            <p>O módulo de <strong>Gravação de Tráfego</strong> permite capturar, com rigor pericial, toda e qualquer conexão de rede estabelecida por qualquer processo em execução no sistema operacional.</p>
+
+            <h3>Como Iniciar uma Gravação:</h3>
+            <ol class="styled-list">
+                <li>No Dashboard principal, clique no botão <strong>"Gravar Tráfego"</strong> (localizado na barra superior).</li>
+                <li>Na janela modal de configuração:
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li><strong>Defina o Tempo de Gravação:</strong> Escolha durações pré-configuradas (ex: <em>1 Minuto</em>, <em>5 Minutos</em>, <em>15 Minutos</em>, <em>30 Minutos</em>) ou ative o modo <em>Gravação Contínua</em>.</li>
+                        <li><strong>Caminho do Arquivo:</strong> Por padrão, o relatório é salvo diretamente na <strong>Área de Trabalho (Desktop)</strong> do usuário, com nomenclatura automática contendo data e hora (ex: <code>Cromak_Trafego_Rede_2026-10-27_012500.csv</code>).</li>
+                    </ul>
+                </li>
+                <li>Clique no botão azul <strong>"INICIAR GRAVAÇÃO"</strong>. A janela passará a exibir o cronômetro regressivo e a contagem de eventos capturados em tempo real.</li>
+            </ol>
+
+            <h3>Campos Registrados no Relatório Forense (.CSV):</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Descrição Técnica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Data/Hora</strong></td>
+                        <td>Timestamp formatado com precisão de segundos no fuso horário local.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PID</strong></td>
+                        <td>Identificador numérico exclusivo do processo no Windows (Process ID).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Processo</strong></td>
+                        <td>Nome do arquivo executável associado à conexão (ex: <code>chrome.exe</code>, <code>svchost.exe</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Caminho do Executável</strong></td>
+                        <td>Caminho absoluto do arquivo no disco rígido (permite identificar malwares disfarçados em pastas temporárias).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IP Remoto</strong></td>
+                        <td>Endereço IPv4 ou IPv6 de destino no qual o processo está conectado.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Host/Domínio DNS</strong></td>
+                        <td>Resolução reversa do IP obtida pelo motor assíncrono em segundo plano (evita congelamento da tela).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Porta Remota</strong></td>
+                        <td>Porta de destino da conexão (ex: <code>443</code> para HTTPS, <code>80</code> para HTTP, <code>53</code> para DNS).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Protocolo</strong></td>
+                        <td>Protocolo de camada de transporte: <code>TCP</code> ou <code>UDP</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status</strong></td>
+                        <td>Estado da conexão TCP (ex: <code>ESTABLISHED</code>, <code>SYN_SENT</code>, <code>LISTEN</code>, <code>TIME_WAIT</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alerta/Ameaça</strong></td>
+                        <td>Sinalização automática em caso de conexões suspeitas, como portas de mineração de criptomoedas Stratum (<code>3333</code>, <code>4444</code>, <code>14433</code>, etc.).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- VISUALIZADOR NATIVO CSV -->
+        <section class="chapter" id="visualizador-csv">
+            <h2><span class="ch-num">05</span> Visualizador Nativo de Relatórios Forenses</h2>
+            <p>Para simplificar a vida do analista de segurança e do usuário corporativo, o Cromak Connection Blackout inclui um <strong>Visualizador de Relatórios CSV Integrado</strong>, dispensando a instalação de suítes de escritório como Microsoft Excel ou LibreOffice Calc.</p>
+
+            <h3>Recursos do Visualizador Integrado:</h3>
+            <ul class="styled-list">
+                <li><strong>Visualização Instantânea:</strong> Ao concluir uma gravação, o operador pode clicar imediatamente em <strong>"Visualizar no Programa"</strong> para abrir os dados estruturados na tela.</li>
+                <li><strong>Abertura de Gravações Salvas:</strong> Na janela de gravação, o card <em>"Abrir Gravação Salva"</em> permite selecionar e auditar qualquer arquivo <code>.csv</code> gravado anteriormente com um único clique.</li>
+                <li><strong>Busca e Filtragem em Tempo Real:</strong> Uma barra de pesquisa interativa no topo do visualizador filtra instantaneamente a tabela à medida que você digita. É possível buscar por nome de processo (ex: <code>discord</code>), número de IP (ex: <code>192.168.</code>), número de porta (ex: <code>443</code>) ou domínio.</li>
+                <li><strong>Tags Visuais de Alto Contraste:</strong>
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li><span style="color:#58a6ff; font-weight:bold;">TCP:</span> Destaque em azul translúcido.</li>
+                        <li><span style="color:#f0883e; font-weight:bold;">UDP:</span> Destaque em laranja suave.</li>
+                        <li><span style="color:#3fb950; font-weight:bold;">ESTABLISHED:</span> Destaque em verde, indicando fluxo de dados ativo.</li>
+                        <li><span style="color:#f85149; font-weight:bold;">ALERTA:</span> Destaque em vermelho brilhante em caso de portas conhecidas de mineração ou tráfego anômalo.</li>
+                    </ul>
+                </li>
+                <li><strong>Botão "Abrir Outro...":</strong> Alterna entre relatórios sem fechar a janela do visualizador.</li>
+            </ul>
+        </section>
+
+        <!-- GESTÃO DE REGRAS DE FIREWALL -->
+        <section class="chapter" id="regras-firewall">
+            <h2><span class="ch-num">06</span> Gestão de Regras de Firewall (Inbound & Outbound)</h2>
+            <p>Na aba <strong>Regras</strong>, o administrador cria e administra políticas estritas de comunicação para qualquer arquivo executável presente no computador.</p>
+
+            <h3>Criando uma Nova Regra:</h3>
+            <ol class="styled-list">
+                <li>Acesse a aba <strong>Regras</strong> no menu lateral do programa.</li>
+                <li>Clique no botão <strong>"Adicionar Regra"</strong>.</li>
+                <li>Selecione o executável desejado utilizando o navegador de arquivos (ex: <code>C:\Jogos\jogo.exe</code> ou <code>C:\App\software.exe</code>).</li>
+                <li>Escolha o sentido do tráfego:
+                    <ul style="margin-left:20px; margin-top:5px;">
+                        <li><strong>Saída (Outbound):</strong> Impede que o software envie dados, consulte licenças na nuvem ou faça downloads em segundo plano.</li>
+                        <li><strong>Entrada (Inbound):</strong> Impede que agentes externos estabeleçam conexões diretas para o software em sua máquina.</li>
+                    </ul>
+                </li>
+                <li>Defina a ação desejada: <strong>Bloquear</strong> ou <strong>Permitir</strong>.</li>
+                <li>Clique em <strong>Salvar Regra</strong>. A regra é injetada no kernel do firewall instantaneamente.</li>
+            </ol>
+
+            <div class="callout info">
+                <div class="callout-icon">💡</div>
+                <div>
+                    <strong>Persistência Segura:</strong> Todas as regras cadastradas no Cromak Connection Blackout permanecem ativas mesmo se o computador for reiniciado, graças à integração com as diretivas persistentes do Windows Defender Firewall.
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTRO WEB E ANTI-CRYPTOMINING -->
+        <section class="chapter" id="filtro-web">
+            <h2><span class="ch-num">07</span> Filtro Web & Proteção Anti-Cryptomining</h2>
+            <p>O módulo de <strong>Filtro Web</strong> protege o sistema contra a resolução de endereços web maliciosos, sites fraudulentos e mineradores clandestinos de criptomoedas (Cryptojacking).</p>
+
+            <h3>Como funciona o Bloqueio de Domínios:</h3>
+            <p>O sistema atua combinando o redirecionamento de resolução no arquivo Hosts blindado do Windows (<code>%SystemRoot%\System32\drivers\etc\hosts</code>) e regras complementares na pilha de rede, impedindo que navegadores ou scripts instalados alcancem o domínio cadastrado.</p>
+
+            <h3>Módulo Anti-Cryptomining Nativo:</h3>
+            <p>O programa incorpora uma base especializada (<code>pools_cripto.json</code>) contendo os servidores de mineração mais explorados por malwares de sequestro de processamento e placas de vídeo (GPU):</p>
+            <ul class="styled-list">
+                <li><strong>Monero (XMR) & Bytecoin:</strong> Bloqueio das pools <code>supportxmr.com</code>, <code>nanopool.org</code>, <code>hashvault.pro</code>, <code>c3pool.com</code> e <code>minexmr.com</code>.</li>
+                <li><strong>Portas Stratum Especializadas:</strong> Monitoramento rígido e bloqueio nas portas <code>3333</code>, <code>4444</code>, <code>5555</code>, <code>7777</code>, <code>8888</code>, <code>9999</code>, <code>14433</code> e <code>14444</code>.</li>
+            </ul>
+        </section>
+
+        <!-- MONITOR ATIVO DE SOCKETS -->
+        <section class="chapter" id="monitor-rede">
+            <h2><span class="ch-num">08</span> Monitor Ativo de Sockets & Conexões</h2>
+            <p>A aba <strong>Monitor</strong> realiza uma varredura profunda periódica em todos os soquetes de comunicação abertos no sistema operacional.</p>
+
+            <h3>Ações Rápidas com Botão Direito:</h3>
+            <p>Ao identificar um processo suspeito ou que esteja consumindo largura de banda sem autorização, clique com o botão direito sobre a linha correspondente para acionar:</p>
+            <ul class="styled-list">
+                <li><strong>Criar Regra de Bloqueio Imediata:</strong> Adiciona o executável à lista de bloqueio do firewall na hora, interrompendo qualquer envio de pacotes futuros.</li>
+                <li><strong>Finalizar Processo:</strong> Envia um sinal de encerramento imediato (<code>SIGKILL</code>) para o executável na memória RAM.</li>
+                <li><strong>Copiar Endereço IP / Host:</strong> Copia o IP remoto para a área de transferência para consulta em bases de inteligência de ameaças (como VirusTotal ou AbuseIPDB).</li>
+            </ul>
+        </section>
+
+        <!-- NETWORK FIX -->
+        <section class="chapter" id="network-fix">
+            <h2><span class="ch-num">09</span> Restauração e Reparo de Rede (Network Fix)</h2>
+            <p>Problemas de conectividade, perda de DNS e rotas residuais causadas por infecções anteriores podem ser solucionados em poucos segundos através do módulo <strong>Network Fix</strong>.</p>
+
+            <h3>Operações de Reparo Executadas:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comando Interno</th>
+                        <th>Ação Executada no Windows</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>ipconfig /flushdns</code></td>
+                        <td>Esvazia a memória cache do resolvedor de DNS do Windows, eliminando resoluções de nomes corrompidas ou envenenadas.</td>
+                    </tr>
+                    <tr>
+                        <td><code>netsh winsock reset</code></td>
+                        <td>Restaura o catálogo de sockets de rede Winsock para o padrão limpo de fábrica.</td>
+                    </tr>
+                    <tr>
+                        <td><code>netsh int ip reset</code></td>
+                        <td>Reconfigura e zera a pilha do protocolo TCP/IP, removendo alterações indevidas.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ipconfig /release</code> & <code>/renew</code></td>
+                        <td>Libera a concessão de endereço IP atual e solicita uma nova configuração automática via DHCP para o roteador.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reset de Adaptadores</strong></td>
+                        <td>Reinicia os controladores de rede Ethernet e Wi-Fi de forma segura.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SEGURANÇA E SENHA -->
+        <section class="chapter" id="seguranca-acesso">
+            <h2><span class="ch-num">10</span> Proteção Administrativa & Modo Auto-Defesa</h2>
+            <p>Para garantir que o firewall não seja desativado por usuários comuns em ambientes empresariais, escolas ou por softwares maliciosos que tentam desarmar defesas, o sistema conta com autenticação mestre e auto-defesa.</p>
+
+            <h3>Proteção por Senha Mestra:</h3>
+            <p>Na aba <strong>Segurança</strong>, você pode definir uma senha de administrador. Uma vez configurada:</p>
+            <ul class="styled-list">
+                <li>A abertura do painel do programa passa a exigir autenticação na janela padronizada Cromak (<code>400x490</code>).</li>
+                <li>O encerramento do processo e a alteração de regras de bloqueio ficam condicionados à inserção da chave de segurança.</li>
+                <li>A senha é armazenada com algoritmo de derivação e hash criptográfico blindado com Salt (PBKDF2/SHA-256).</li>
+            </ul>
+
+            <div class="callout warning">
+                <div class="callout-icon">🚨</div>
+                <div>
+                    <strong>Procedimento de Emergência (Esquecimento de Senha Mestre):</strong><br>
+                    Por razões rigorosas de integridade corporativa, <strong>não existem senhas universais ou backdoors</strong> no software. Caso a senha seja esquecida pelo administrador:<br>
+                    1. Reinicie o computador em <strong>Modo de Segurança do Windows</strong>.<br>
+                    2. No Modo de Segurança, o módulo residente não é carregado pelo sistema operacional.<br>
+                    3. Navegue até a pasta de configuração em <code>%PROGRAMDATA%\Cromak Technology\Connection Blackout\</code> e renomeie o arquivo de configurações.<br>
+                    4. Reinicie o Windows no modo normal para redefinir as credenciais.
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIGURAÇÕES -->
+        <section class="chapter" id="configuracoes">
+            <h2><span class="ch-num">11</span> Configurações Gerais & 11 Idiomas</h2>
+
+            <h3>Suporte Multilíngue em Tempo Real:</h3>
+            <p>O Cromak Connection Blackout possui suporte integral a <strong>11 idiomas estruturados em JSON</strong> na pasta <code>locales/</code>. Ao selecionar o idioma nas Configurações, toda a interface gráfica (incluindo abas, tabelas, logs e janelas de autenticação) é traduzida <strong>instantaneamente sem fechar ou reiniciar o programa</strong>.</p>
+            <p>Idiomas disponíveis: <em>Português (Brasil), English (US), Español, Français, Deutsch, Italiano, 日本語 (Japonês), 한국어 (Coreano), Русский (Russo), ไทย (Tailandês) e 简体中文 (Chinês Simplificado)</em>.</p>
+
+            <h3>Comportamento e Inicialização:</h3>
+            <ul class="styled-list">
+                <li><strong>Minimizar para a Bandeja (System Tray):</strong> O software opera silenciosamente ao lado do relógio do Windows com menu de contexto rápido para acionar o Total Lockdown ou abrir o painel.</li>
+                <li><strong>Inicializar com o Windows:</strong> Ativa o início automático junto com a inicialização do computador, mantendo a proteção residente ativa 24 horas por dia.</li>
+                <li><strong>Localização dos Logs de Auditoria:</strong> Gravados localmente em disco no diretório:<br>
+                    <code>%PROGRAMDATA%\Cromak Technology\Connection Blackout\logs\</code>
+                </li>
+                <li><strong>Hard Reset (Fábrica):</strong> Botão de limpeza profunda que expurga todas as regras injetadas no firewall e restaura as tabelas padrão do sistema.</li>
+            </ul>
+        </section>
+
+        <!-- LICENCIAMENTO -->
+        <section class="chapter" id="licenciamento">
+            <h2><span class="ch-num">12</span> Licenciamento: Free vs PRO</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Funcionalidade</th>
+                        <th>Versão Free</th>
+                        <th>Versão PRO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Firewall e Bloqueio de Executáveis</strong></td>
+                        <td>✅ Incluído</td>
+                        <td>✅ Incluído</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monitor de Sockets em Tempo Real</strong></td>
+                        <td>✅ Incluído</td>
+                        <td>✅ Incluído</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Lockdown (Kill Switch Imediato)</strong></td>
+                        <td>✅ Modo Padrão</td>
+                        <td>✅ Ilimitado com Exceções Avançadas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gravador de Tráfego de Rede</strong></td>
+                        <td>✅ Gravação Básica</td>
+                        <td>✅ Gravação Contínua Ilimitada & Diagnóstico Forense</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Visualizador Nativo de Relatórios CSV</strong></td>
+                        <td>✅ Incluído</td>
+                        <td>✅ Incluído</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Filtro Web & Bloqueio Anti-Cryptomining</strong></td>
+                        <td>✅ Base Padrão</td>
+                        <td>✅ Atualizações em Nuvem Contínuas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Restauração Completa de Rede (Network Fix)</strong></td>
+                        <td>✅ Incluído</td>
+                        <td>✅ Incluído</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uso em Ambientes Corporativos & Empresas</strong></td>
+                        <td>❌ Apenas Doméstico</td>
+                        <td>✅ Licença Comercial Autorizada</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Suporte Técnico Prioritário</strong></td>
+                        <td>❌ Comunidade</td>
+                        <td>✅ Suporte Direto Cromak Technology</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- FAQ -->
+        <section class="chapter" id="faq">
+            <h2><span class="ch-num">13</span> Dúvidas Frequentes (FAQ)</h2>
+
+            <h3>1. Um jogo ou aplicativo legítimo parou de conectar após ativar o Blackout. Como liberar?</h3>
+            <p>Verifique se o modo <strong>Total Lockdown</strong> está ativado no Dashboard. Se estiver, basta desativá-lo. Se o Lockdown estiver desligado, acesse a aba <strong>Regras</strong> e verifique se o executável do jogo consta na lista de bloqueios; se constar, basta remover a regra ou alterá-la para <em>Permitir</em>.</p>
+
+            <h3>2. Onde as gravações de tráfego de rede são salvas?</h3>
+            <p>Por padrão, todos os relatórios gerados pelo gravador são salvos diretamente na <strong>Área de Trabalho (Desktop)</strong> do computador atual em formato <code>.csv</code>. Você também pode inspecioná-los a qualquer momento utilizando o <strong>Visualizador Nativo</strong> do próprio programa clicando em <em>"Abrir Gravação Salva"</em>.</p>
+
+            <h3>3. A gravação de tráfego deixa a minha navegação lenta?</h3>
+            <p>Não. O motor do <strong>Network Traffic Recorder</strong> opera de forma 100% não-bloqueante: a captura de pacotes roda em uma thread dedicada e a resolução de nomes de domínio DNS é processada em um pool de threads assíncrono com cache local inteligente, garantindo impacto zero na velocidade da sua conexão.</p>
+
+            <h3>4. Ao desinstalar o programa, o que acontece com as regras do firewall?</h3>
+            <p>Para garantir que nenhuma regra de bloqueio permaneça órfã no Windows Defender Firewall, recomendamos acessar a aba <strong>Configurações</strong> e clicar no botão <strong>"Hard Reset (Fábrica)"</strong> antes de executar o desinstalador oficial (<code>uninstall.exe</code>).</p>
+        </section>
+
+        <!-- CONTATO E SUPORTE -->
+        <section class="chapter" id="suporte-oficial">
+            <h2><span class="ch-num">14</span> Contato & Suporte Oficial</h2>
+            <p>O Cromak Connection Blackout é um produto oficial desenvolvido e mantido com padrões rigorosos de segurança e engenharia reversa por <strong>Cromak Technology</strong>.</p>
+            
+            <div class="callout success">
+                <div class="callout-icon">🌐</div>
+                <div>
+                    <strong>Canais Oficiais de Atendimento:</strong><br>
+                    • <strong>Portal Oficial:</strong> <a href="https://cromaktechnology.github.io/pt/connection-blackout.html" target="_blank" style="color:var(--primary-light);">cromaktechnology.github.io/pt/connection-blackout.html</a><br>
+                    • <strong>Central de Suporte:</strong> <a href="https://cromaktechnology.github.io/pt/suporte.html" target="_blank" style="color:var(--primary-light);">cromaktechnology.github.io/pt/suporte.html</a><br>
+                    • <strong>E-mail de Contato:</strong> suporte@cromaktechnology.com
+                </div>
+            </div>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="doc-footer">
+            <p>© 2026 <strong>Cromak Technology</strong>. Todos os direitos reservados.</p>
+            <p style="margin-top: 5px; font-size: 12px;">Cromak Connection Blackout é uma marca registrada de Cromak Technology. Documentação técnica gerada para a versão 1.2.1 (Build 2026.10).</p>
+        </footer>
+
+    </main>
+
+    <!-- BOTÃO IMPRIMIR -->
+    <button class="btn-print" onclick="window.print()">
+        🖨️ Imprimir / Salvar PDF
+    </button>
+
+</body>
+</html>

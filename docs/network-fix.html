@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak Network Fix - Manual Oficial do Usuário</title>
+    <link rel="icon" href="../images/cromak_technology_logo_small.png" type="image/png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --border-color-light: #343b4a;
+            --primary: #007bff;
+            --primary-light: #00d4ff;
+            --primary-hover: #0099ff;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #da3633;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --text-heading: #ffffff;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; color: #fff; font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.35);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(0, 212, 255, 0.15); }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(0, 212, 255, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.4); color: var(--warning); }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(0, 123, 255, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--primary-light); border: 1px solid var(--border-color); }
+        .alert-box {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(210, 153, 34, 0.1); border-left: 4px solid var(--warning); color: #e6edf3;
+        }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+        }
+    
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.8); }
+
+        @media (max-width: 850px) {
+            .btn-print { display: none; }
+        }
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/network-fix.png" alt="Network Fix" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Network Fix</h1>
+                <p>Manual Oficial v1.0</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Navegação</li>
+            <li><a href="#visao-geral"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>01. Visão Geral</span></a></li>
+            <li><a href="#diagnostico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span>02. Diagnóstico & Telemetria</span></a></li>
+            <li><a href="#reparo"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>03. Correção & Redefinição</span></a></li>
+            <li><a href="#procedimento"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>04. Fluxo Operacional</span></a></li>
+            <li><a href="#privacidade"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>05. Zero Telemetria</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+        <header class="doc-header">
+            <h1>Cromak Network Fix — Manual do Usuário</h1>
+            <p>Guia operacional para diagnóstico avançado de conectividade, reset de pilha TCP/IP, renovação de concessão DHCP e restauração da API Winsock em sistemas Windows.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.0.0</span>
+                <span class="badge success">Código 100% Nativo</span>
+                <span class="badge warning">Requer Elevação Admin</span>
+            </div>
+        </header>
+
+        <section id="visao-geral" class="chapter">
+            <h2><span class="ch-num">01</span> Visão Geral da Ferramenta</h2>
+            <p>O <strong>Cromak Network Fix</strong> é um utilitário nativo de alto desempenho desenvolvido para restaurar a integridade das conexões de rede em computadores com Windows 10 e Windows 11. Elimina rotinas repetitivas de terminal (cmd/PowerShell), unificando diagnósticos e reparos em uma interface gráfica moderna e responsiva.</p>
+            
+            <div class="card" style="margin-top: 20px;">
+                <h3>Objetivos Técnicos</h3>
+                <ul style="padding-left: 20px; color: var(--text-muted); font-size: 14px;">
+                    <li>Resolver instantaneamente problemas de navegação com "Sem Internet / Conectado Seguro".</li>
+                    <li>Eliminar conflitos de roteamento, tabelas ARP corrompidas e caches DNS defasados.</li>
+                    <li>Restaurar camadas de baixo nível do subsistema Winsock e pilha IP sem a necessidade de formatação.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="diagnostico" class="chapter">
+            <h2><span class="ch-num">02</span> Módulo de Diagnóstico & Telemetria Local</h2>
+            <p>Ferramentas ativas para identificar onde a conexão falhou antes de aplicar qualquer reparo:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ferramenta</th>
+                        <th>Comando Subjacente</th>
+                        <th>Finalidade Técnica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ping Test</strong></td>
+                        <td><code>ping -n 4 8.8.8.8</code></td>
+                        <td>Mede latência e percentual de perda de pacotes contra nós globais confiáveis.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Traceroute</strong></td>
+                        <td><code>tracert -d [destino]</code></td>
+                        <td>Mapeia todos os saltos de roteadores até o host final, identificando gargalos de rota.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nslookup</strong></td>
+                        <td><code>nslookup [domínio]</code></td>
+                        <td>Testa se os servidores DNS configurados na placa estão respondendo com registros válidos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Netstat</strong></td>
+                        <td><code>netstat -ano</code></td>
+                        <td>Examina conexões TCP ativas, portas em escuta (LISTENING) e PIDs associados.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ipconfig</strong></td>
+                        <td><code>ipconfig /all</code></td>
+                        <td>Extrai parâmetros completos de interfaces (IPv4, IPv6, Gateway, Máscara e Lease Time).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="reparo" class="chapter">
+            <h2><span class="ch-num">03</span> Correção, Limpeza e Redefinição</h2>
+            <p>Módulos de reparo cirúrgico integrados com privilégio administrativo:</p>
+
+            <div class="card">
+                <h3>1. Flush DNS (Esvaziamento de Cache)</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Elimina o repositório temporário de resoluções de nome do Windows Resolver. Essencial para quando domínios mudaram de IP ou foram envenenados.</p>
+            </div>
+
+            <div class="card">
+                <h3>2. Release / Renew DHCP</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Força o descarte do IP concedido anteriormente e solicita ao roteador/servidor DHCP local uma concessão renovada com gateway atualizado.</p>
+            </div>
+
+            <div class="card">
+                <h3>3. Limpeza de Tabela ARP</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Apaga o mapeamento entre endereços IP e MAC addresses locais, corrigindo conflitos de IP em switches ou redes corporativas.</p>
+            </div>
+
+            <div class="card">
+                <h3>4. Reset Winsock (Catálogo de Sockets)</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Restaura o subsistema Windows Sockets ao padrão de fábrica, removendo filtros corrompidos de antivírus legados ou malwares. <em>(Requer reinício do computador)</em>.</p>
+            </div>
+
+            <div class="card">
+                <h3>5. Reset TCP/IP Stack</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Reescreve as chaves do registro do Windows responsáveis pela camada TCP/IP, recriando as pilhas IPv4 e IPv6 do zero. <em>(Requer reinício do computador)</em>.</p>
+            </div>
+        </section>
+
+        <section id="procedimento" class="chapter">
+            <h2><span class="ch-num">04</span> Fluxo Operacional Recomendado</h2>
+            <div class="alert-box">
+                <strong>Recomendação de Suporte:</strong> Sempre execute o aplicativo como <strong>Administrador</strong> para garantir que as redefinições no registro do Windows e no catálogo Winsock sejam aplicadas sem restrições de permissão.
+            </div>
+            <ol style="padding-left: 24px; color: var(--text-muted); font-size: 14px; line-height: 1.8;">
+                <li>Execute o <strong>Ping Test</strong>. Se houver resposta sem perda de pacotes, a camada física e o gateway estão saudáveis.</li>
+                <li>Execute o <strong>Nslookup</strong>. Se falhar, aplique <strong>Flush DNS</strong> e alterne os servidores para DNS públicos (1.1.1.1 ou 8.8.8.8).</li>
+                <li>Se persistir o status "Sem Internet", aplique em sequência: <strong>Flush DNS</strong> → <strong>Release / Renew IP</strong> → <strong>Limpar ARP</strong>.</li>
+                <li>Em cenários críticos de falha de driver ou após remoção de malwares de rede, acione <strong>Reset Winsock</strong> e <strong>Reset TCP/IP</strong> e reinicie a máquina.</li>
+            </ol>
+        </section>
+
+        <section id="privacidade" class="chapter">
+            <h2><span class="ch-num">05</span> Compromisso Zero Telemetria</h2>
+            <p>O <strong>Cromak Network Fix</strong> opera 100% em modo local (Zero-Cloud). Nenhum relatório de rede, endereço IP, nome de máquina ou histórico de tráfego é transmitido para a internet. Suas análises pertencem estritamente à sua máquina.</p>
+        </section>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">
+            © 2026 Cromak Technology — Divisão de Engenharia de Software MS Digital. Todos os direitos reservados.
+        </footer>
+    </main>
+
+
+    <button class="btn-print" onclick="window.print()" title="Salvar como PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Salvar / Imprimir PDF</span>
+    </button>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak Install Compiler - Manual Oficial do Usuário</title>
+    <link rel="icon" href="../images/cromak_technology_logo_small.png" type="image/png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #f97316;
+            --primary-light: #fb923c;
+            --primary-hover: #fb923c;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #da3633;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; color: #fff; font-size: 18px;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(249, 115, 22, 0.08); border: 1px solid rgba(249, 115, 22, 0.2);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(249, 115, 22, 0.15); }
+        .back-link svg { flex-shrink: 0; }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a svg { flex-shrink: 0; color: var(--primary-light); opacity: 0.85; }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+        .sidebar-nav li a:hover svg { opacity: 1; }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(249, 115, 22, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.4); color: var(--warning); }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(249, 115, 22, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(249, 115, 22, 0.3);
+        }
+        .chapter h3 { font-size: 16px; color: var(--primary-light); margin: 20px 0 10px; }
+        .chapter p { margin-bottom: 15px; color: #c9d1d9; font-size: 14.5px; line-height: 1.7; }
+        .chapter ul, .chapter ol { margin-left: 20px; margin-bottom: 15px; color: #c9d1d9; font-size: 14px; line-height: 1.8; }
+        .chapter li { margin-bottom: 8px; }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3, .card h4 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .sub-card { background-color: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; }
+        .sub-card h4 { color: var(--primary-light); margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+        .sub-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--primary-light); border: 1px solid var(--border-color); }
+        .callout, .alert-box {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(249, 115, 22, 0.08); border-left: 4px solid var(--primary-light); color: #e6edf3;
+        }
+        .callout.callout-success { background: rgba(46, 160, 67, 0.08); border-left-color: var(--success); }
+
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4); }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+            .btn-print { display: none; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/install-compiler.png" alt="Install Compiler" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Install Compiler</h1>
+                <p>Manual Oficial v1.4.0</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Capítulos</li>
+            <li><a href="#introducao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>01. Introdução & Filosofia</span></a></li>
+            <li><a href="#compatibilidade"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>02. Compatibilidade & Performance</span></a></li>
+            <li><a href="#desinstalador"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>03. Motor do Desinstalador</span></a></li>
+            <li><a href="#recursos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> <span>04. Recursos Avançados do Setup</span></a></li>
+            <li><a href="#licenca"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>05. Licenciamento PRO & HWID</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+
+        <header class="doc-header">
+            <h1>Cromak Install Compiler — Manual do Usuário</h1>
+            <p>Guia técnico de geração de instaladores autônomos (.exe), compressão LZMA de arquivos, injeção de registro, variáveis de sistema e motor de desinstalação segura.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.4.0 PRO</span>
+                <span class="badge success">Compressão LZMA</span>
+                <span class="badge warning">Setup Standalone</span>
+                <span class="badge">Win 10/11 64-bit</span>
+            </div>
+        </header>
+
+<section id="introducao" class="chapter">
+<h2><span class="ch-num">1</span> Introdução e Filosofia</h2>
+
+    <p>
+        O <b>Cromak Install Compiler</b> é um sistema avançado de geração de instaladores nativos para o ecossistema Windows. 
+        Construído sob uma arquitetura robusta em Python, nosso compilador entrega setups independentes (.exe) com alta taxa de 
+        compressão (LZMA/UPX) e interfaces gráficas modernas.
+    </p>
+    <ul>
+        <li><b>Independência:</b> Os instaladores gerados são pacotes <i>standalone</i>. Eles não exigem que o cliente final baixe dependências externas na hora da instalação.</li>
+        <li><b>UX Internacional:</b> Sistema de detecção de QLocale integrado. O instalador detecta automaticamente o idioma nativo do sistema operacional do cliente.</li>
+    </ul>
+
+    
+</section>
+
+<section id="compatibilidade" class="chapter">
+<h2><span class="ch-num">2</span> Compatibilidade e Performance</h2>
+
+    <div class="card">
+        <p>
+            <b>Foco no Futuro, não no Passado.</b><br>
+            A arquitetura do Cromak Install Compiler foi concebida visando o máximo desempenho, segurança de memória e velocidade de extração de disco. 
+            Por esse motivo, tanto o Builder (Compilador) quanto os executáveis (Setups) gerados por ele são estritamente otimizados e compatíveis apenas com <b>Windows 10 e Windows 11 (Arquitetura 64-bits)</b>.
+        </p>
+        <p>
+            Sistemas legados como Windows 7, Windows 8 ou arquiteturas de 32-bits não são oficialmente suportados. A remoção do suporte a tecnologias defasadas permite que nossos motores de compressão entreguem o ápice da performance sem gargalos de compatibilidade.
+        </p>
+    </div>
+
+    
+</section>
+
+<section id="desinstalador" class="chapter">
+<h2><span class="ch-num">3</span> O Motor do Desinstalador (Atenção ao PyQt6)</h2>
+
+    <p>
+        Durante a configuração do seu projeto na aba "Desinstalador", você notará duas abordagens para a geração do executável de remoção do seu software (o <code>unins000.exe</code>). É crucial entender a diferença de arquitetura entre elas para evitar reclamações dos seus clientes finais:
+    </p>
+    
+    <div class="info-grid">
+        <div class="card" style="border: 1px solid var(--success);">
+            <h4 style="color: var(--success);">✅ Motor Nativo Slim (Tkinter) - RECOMENDADO</h4>
+            <p>O desinstalador nativo padrão (Slim) utiliza uma interface extremamente leve (Tkinter) para manter o arquivo final na faixa dos KBs.</p>
+        </div>
+        <div class="card" style="border: 1px solid var(--danger);">
+            <h4 style="color: var(--danger);">❌ Motor Visual Completo (PyQt6) - NÃO RECOMENDADO</h4>
+            <p>Ativa uma interface rica idêntica à do instalador, mas com um custo de armazenamento altíssimo, não sendo a abordagem recomendada.</p>
+        </div>
+    </div>
+
+    <div class="alert-box">
+        <strong>ALERTA DE DESEMPENHO E TAMANHO (INFLAÇÃO DO PACOTE)</strong><br>
+        Não recomendamos o uso do assistente de desinstalação em PyQt6. Ao ativar o assistente visual em PyQt6, o motor precisará embutir novamente todas as bibliotecas robustas (DLLs do Qt, motores de fontes, a própria linguagem Python, etc.) dentro do desinstalador para que ele consiga desenhar a janela na tela. <br><br>
+        Isso fará com que a sua pasta de instalação fique significativamente maior (muitas vezes aumentando mais de 30MB apenas para a função de remover os arquivos). Para evitar que seu cliente reclame do tamanho desnecessário do software instalado, opte sempre pelo motor Slim padrão!
+    </div>
+
+    
+</section>
+
+<section id="recursos" class="chapter">
+<h2><span class="ch-num">4</span> Recursos Avançados do Setup</h2>
+
+    <p>O ecossistema do instalador oferece injeções a nível de sistema operacional de forma silenciosa e transparente:</p>
+    
+    <h3>⚙️ Injeção de Registro e Variáveis</h3>
+    <p>
+        Você pode mapear chaves <code>HKEY_LOCAL_MACHINE</code> ou <code>HKEY_CURRENT_USER</code> diretamente pela interface. O instalador também processa macros dinâmicas como <code>#AppData#</code>, <code>#LocalAppData#</code> e <code>#InstallDir#</code> para adaptar caminhos relativos na máquina de cada cliente.
+    </p>
+
+    <h3>🧹 Limpeza Profunda (Shredder)</h3>
+    <p>
+        Na aba do Desinstalador, você pode mapear rotinas de <i>Auto-Kill</i> (que forçam o encerramento do seu software se o cliente tentar desinstalá-lo com ele aberto) e rotinas de exclusão de rastros, removendo caches e logs soltos na pasta AppData que normalmente ficariam para trás como lixo digital no Windows.
+    </p>
+
+    
+</section>
+
+<section id="licenca" class="chapter">
+<h2><span class="ch-num">5</span> Licenciamento PRO & HWID <span class="badge badge-pro">PRO</span> <span class="badge badge-trial">TRIAL 15 DIAS</span></h2>
+
+    <p>
+        O Cromak Install Compiler é protegido por um sistema avançado de ativação baseado em Hardware ID (HWID). 
+        A versão de avaliação (Trial) permite testar a compilação por tempo limitado. O registro de uma Licença PRO vitalícia remove os limites de dias e garante acesso contínuo aos motores de compilação.
+    </p>
+    <p>
+        A licença é atrelada diretamente à placa-mãe/processador da máquina do desenvolvedor. Em caso de troca de computador, utilize o botão "Remover Licença" na tela "Sobre" para desvincular seu registro do Registro do Windows atual e permitir a migração segura para o novo hardware.
+    </p>
+
+    
+</section>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">
+            © 2026 Cromak Technology — Divisão de Engenharia de Software MS Digital. Todos os direitos reservados.
+        </footer>
+    </main>
+
+
+    <!-- Botão Imprimir / Salvar PDF -->
+    <button class="btn-print" onclick="window.print()" title="Salvar como PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Salvar / Imprimir PDF</span>
+    </button>
+
+</body>
+</html>

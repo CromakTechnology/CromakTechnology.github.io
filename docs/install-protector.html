@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak Install Protector - Manual Oficial do Usuário</title>
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --border-color-light: #343b4a;
+            --primary: #00a2ed;
+            --primary-hover: #0078d7;
+            --success: #4caf50;
+            --warning: #db831e;
+            --danger: #ff4d4d;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --text-heading: #ffffff;
+            --code-bg: #090b0e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR DE NAVEGAÇÃO --- */
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+
+        #sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        #sidebar::-webkit-scrollbar-thumb {
+            background-color: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00a2ed 0%, #004d80 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #fff;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0, 162, 237, 0.3);
+        }
+
+        .brand-text h1 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-text p {
+            font-size: 11px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 20px 0 8px 10px;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-nav li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            color: #c9d1d9;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card);
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1200px;
+        }
+
+        /* Header do Documento */
+        .doc-header {
+            background: linear-gradient(135deg, rgba(0,162,237,0.1) 0%, rgba(19,22,28,0.7) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .doc-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .doc-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .badge-list {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(0,162,237,0.4); color: var(--primary); }
+        .badge.success { border-color: rgba(76,175,80,0.4); color: var(--success); }
+        .badge.warning { border-color: rgba(219,131,30,0.4); color: var(--warning); }
+
+        /* Estilização dos Capítulos */
+        .chapter {
+            margin-bottom: 50px;
+            scroll-margin-top: 30px;
+        }
+
+        .chapter h2 {
+            font-size: 24px;
+            color: #ffffff;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chapter h2 span.ch-num {
+            background-color: rgba(0,162,237,0.15);
+            color: var(--primary);
+            font-size: 14px;
+            padding: 2px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,162,237,0.3);
+        }
+
+        .chapter h3 {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 25px 0 12px;
+            font-weight: 600;
+        }
+
+        .chapter p {
+            margin-bottom: 15px;
+            color: #c9d1d9;
+            font-size: 14.5px;
+        }
+
+        /* Cards Informativos */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+
+        .feature-card h4 {
+            color: var(--primary);
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* Callouts / Caixas de Destaque */
+        .callout {
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-left: 4px solid transparent;
+            background-color: var(--bg-card);
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .callout.info {
+            border-left-color: var(--primary);
+            background-color: rgba(0, 162, 237, 0.08);
+            border-top: 1px solid rgba(0, 162, 237, 0.2);
+            border-right: 1px solid rgba(0, 162, 237, 0.2);
+            border-bottom: 1px solid rgba(0, 162, 237, 0.2);
+        }
+
+        .callout.warning {
+            border-left-color: var(--warning);
+            background-color: rgba(219, 131, 30, 0.08);
+            border-top: 1px solid rgba(219, 131, 30, 0.2);
+            border-right: 1px solid rgba(219, 131, 30, 0.2);
+            border-bottom: 1px solid rgba(219, 131, 30, 0.2);
+        }
+
+        .callout.danger {
+            border-left-color: var(--danger);
+            background-color: rgba(255, 77, 77, 0.08);
+            border-top: 1px solid rgba(255, 77, 77, 0.2);
+            border-right: 1px solid rgba(255, 77, 77, 0.2);
+            border-bottom: 1px solid rgba(255, 77, 77, 0.2);
+        }
+
+        .callout.success {
+            border-left-color: var(--success);
+            background-color: rgba(76, 175, 80, 0.08);
+            border-top: 1px solid rgba(76, 175, 80, 0.2);
+            border-right: 1px solid rgba(76, 175, 80, 0.2);
+            border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .callout-icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        /* Tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 13.5px;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-card-alt);
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Código e Teclas */
+        code {
+            background-color: var(--code-bg);
+            color: #79c0ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            border: 1px solid var(--border-color);
+        }
+
+        kbd {
+            background-color: var(--bg-card-alt);
+            border: 1px solid var(--border-color-light);
+            box-shadow: 0 2px 0 var(--border-color);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 12px;
+            font-family: inherit;
+            color: #fff;
+            display: inline-block;
+        }
+
+        /* Listas Estilizadas */
+        ul.styled-list, ol.styled-list {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: #c9d1d9;
+            font-size: 14px;
+        }
+
+        ul.styled-list li, ol.styled-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Rodapé */
+        .doc-footer {
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            padding-top: 25px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .doc-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Botão Imprimir */
+        .btn-print {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #00a2ed 0%, #0078d7 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 162, 237, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            z-index: 99;
+        }
+
+        .btn-print:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 162, 237, 0.6);
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            #sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            #content {
+                margin-left: 0;
+                padding: 25px;
+            }
+            .btn-print {
+                display: none;
+            }
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                color: #000000;
+            }
+            #sidebar, .btn-print {
+                display: none;
+            }
+            #content {
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+            .feature-card, .callout, table {
+                border-color: #ccc;
+                background: #f9f9f9;
+                color: #000;
+            }
+            .chapter h2, .doc-header h1 {
+                color: #000;
+            }
+            code {
+                background: #eee;
+                color: #000;
+            }
+        }
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR DE NAVEGAÇÃO -->
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" style="display: inline-flex; align-items: center; gap: 8px; color: #58a6ff; text-decoration: none; font-size: 13px; font-weight: 600; margin-bottom: 15px; padding: 6px 10px; border-radius: 6px; background: rgba(88, 166, 255, 0.08); border: 1px solid rgba(88, 166, 255, 0.2);">← Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/install-protector.png" alt="Install Protector" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Cromak Install Protector</h1>
+                <p>Manual Oficial v1.2.2</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <div class="sidebar-section-title">Início</div>
+            <li><a href="#apresentacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>Visão Geral & Arquitetura</span></a></li>
+            <li><a href="#requisitos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>Requisitos & Instalação</span></a></li>
+
+            <div class="sidebar-section-title">Módulos & Telas</div>
+            <li><a href="#dashboard"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> <span>1. Dashboard em Tempo Real</span></a></li>
+            <li><a href="#bloqueio-inteligente"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>2. Bloqueio Inteligente</span></a></li>
+            <li><a href="#quarentena-sandbox"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>3. Quarentena & Sandbox</span></a></li>
+            <li><a href="#deteccao-blacklist"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>4. Detecção & Blacklist</span></a></li>
+            <li><a href="#whitelist"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>5. Whitelist (Imunidade)</span></a></li>
+            <li><a href="#rastreamento-modificacoes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span>6. Rastreamento & Snapshots</span></a></li>
+            <li><a href="#lockdown-sistema"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>7. Lockdown do Windows</span></a></li>
+            <li><a href="#manutencao-dados"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg> <span>8. Manutenção & Auditoria</span></a></li>
+            <li><a href="#configuracoes"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>9. Configurações & Idiomas</span></a></li>
+            <li><a href="#licenciamento"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-1.5 1.5L14 9l-1.5-1.5L11 9l-1.5-1.5L8 9c-3.87 0-7 3.13-7 7s3.13 7 7 7 7-3.13 7-7c0-.85-.16-1.67-.44-2.43L22 4.5V2h-1z"/><circle cx="7.5" cy="15.5" r="1.5"/></svg> <span>10. Licença Free vs PRO</span></a></li>
+
+            <div class="sidebar-section-title">Suporte</div>
+            <li><a href="#faq"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> <span>Dúvidas Frequentes (FAQ)</span></a></li>
+            <li><a href="#suporte-oficial"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>Contato & Suporte</span></a></li>
+        </ul>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="content">
+
+        <!-- CABEÇALHO -->
+        <header class="doc-header" id="apresentacao">
+            <h1>Manual do Usuário & Guia de Segurança</h1>
+            <p>Documentação técnica oficial para configuração, administração e auditoria de segurança com o <strong>Cromak Install Protector</strong>.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.2.2 (Build 2026.10)</span>
+                <span class="badge success">Zero-Trust Engine</span>
+                <span class="badge warning">Enterprise & Domestic</span>
+                <span class="badge">Windows 10 / 11 64-bit</span>
+                <span class="badge">© 2026 Cromak Technology</span>
+            </div>
+        </header>
+
+        <!-- VISÃO GERAL -->
+        <section class="chapter">
+            <h2><span class="ch-num">00</span> Visão Geral da Solução</h2>
+            <p>O <strong>Cromak Install Protector</strong> é uma sentinela de segurança avançada projetada para blindar estações de trabalho e ambientes corporativos contra a execução, instalação ou modificação de programas não autorizados.</p>
+            <p>Diferente de antivírus convencionais que dependem de assinaturas virais para barrar malware, o Cromak Install Protector opera sob o rigoroso princípio <strong>Zero-Trust</strong>: nenhum executável instalador, script invasivo ou pacote de terceiros pode se instalar ou rodar no sistema operacional sem a prévia autorização da política do administrador.</p>
+
+            <div class="info-grid">
+                <div class="feature-card">
+                    <h4>⚡ Abate em Tempo Real</h4>
+                    <p>Patrulha residente que varre o ciclo de vida dos processos e encerra instaladores em menos de 100ms.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🧪 Isolamento por Sandbox</h4>
+                    <p>Execução de binários suspeitos em ambiente Micro-VM descartável fornecido pelo Windows Sandbox.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🛡️ Proteção Anti-Kill</h4>
+                    <p>Mecanismo nativo de integridade de processo que impede o encerramento do sentinela por usuários mal-intencionados.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌐 Suporte Multilíngue 100%</h4>
+                    <p>Alternância instantânea entre 11 idiomas em tempo real sem a necessidade de reiniciar o programa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- REQUISITOS -->
+        <section class="chapter" id="requisitos">
+            <h2><span class="ch-num">01</span> Requisitos de Sistema & Instalação</h2>
+            <p>Para garantir a performance máxima do sentinela e o correto funcionamento dos módulos de quarentena e sandbox, certifique-se de que a máquina atenda aos seguintes pré-requisitos:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Requisito Mínimo</th>
+                        <th>Recomendado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sistema Operacional</strong></td>
+                        <td>Windows 10 Pro / Enterprise (x64)</td>
+                        <td>Windows 11 Pro / Enterprise (64-bit)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Privilégios</strong></td>
+                        <td>Conta de Administrador Local</td>
+                        <td>Administrador Local / Domínio</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memória RAM</strong></td>
+                        <td>2 GB Livres</td>
+                        <td>4 GB ou mais</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Armazenamento</strong></td>
+                        <td>150 MB de espaço em disco</td>
+                        <td>500 MB (para histórico de snapshots)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Windows Sandbox</strong></td>
+                        <td>Opcional (Desativado)</td>
+                        <td>Habilitado na BIOS/UEFI e no Windows</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout warning">
+                <div class="callout-icon">⚠️</div>
+                <div>
+                    <strong>Importante:</strong> Para que o instalador e as travas de proteção do Windows funcionem integralmente, o software deve ser executado como <strong>Administrador</strong>. Clique com o botão direito no executável e selecione <em>"Executar como Administrador"</em>.
+                </div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section class="chapter" id="dashboard">
+            <h2><span class="ch-num">02</span> Painel Principal (Dashboard)</h2>
+            <p>O <strong>Dashboard</strong> é a central de comando operacional do Cromak Install Protector. Ele agrega indicadores-chave de desempenho (KPIs), integridade da proteção e o histórico gráfico de interceptações.</p>
+
+            <h3>Indicadores do Painel:</h3>
+            <ul class="styled-list">
+                <li><strong>Nível de Proteção (Donut Chart):</strong> Apresenta o percentual de integridade da proteção (100% quando todos os escudos e hooks estão operantes). Se a proteção for pausada pelo administrador, o indicador reduz e alerta o operador visualmente.</li>
+                <li><strong>Ameaças Bloqueadas:</strong> Contador total de interceptações realizadas desde o início do funcionamento ou último expurgo.</li>
+                <li><strong>Eventos de Auditoria:</strong> Quantidade consolidada de rastreamentos registrados no banco de dados.</li>
+                <li><strong>Gráfico de Tendências:</strong> Curva de incidentes com filtros dinâmicos selecionáveis por período: <strong>7 dias</strong>, <strong>15 dias</strong>, <strong>30 dias</strong> ou <strong>90 dias</strong>.</li>
+            </ul>
+
+            <div class="callout info">
+                <div class="callout-icon">💡</div>
+                <div>
+                    <strong>Botão "Testar Bloqueio":</strong> Permite ao administrador validar a resposta ativa do motor em tempo real. Dispara uma simulação inofensiva de interceptação gerando alerta, registro no banco de dados e auditoria idênticos a uma ameaça real.
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUEIO INTELIGENTE -->
+        <section class="chapter" id="bloqueio-inteligente">
+            <h2><span class="ch-num">03</span> Bloqueio Inteligente & Varredura</h2>
+            <p>O coração do sistema é o <strong>Motor de Bloqueio Inteligente</strong>, capaz de reconhecer instaladores mesmo quando disfarçados ou executados silenciosamente.</p>
+
+            <h3>Ameaças Interceptadas Automaticamente:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vetor de Ataque</th>
+                        <th>Descrição Técnica do Bloqueio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Instaladores Convencionais</strong></td>
+                        <td>Detecção de executáveis padrão de setup (InnoSetup, NSIS, InstallShield, Wise, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pacotes MSI</strong></td>
+                        <td>Interceptação automática de chamadas do utilitário nativo <code>msiexec.exe</code> executando pacotes <code>.msi</code> ou <code>.msp</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pastas Voláteis (%TEMP% e Downloads)</strong></td>
+                        <td>Trava de segurança preventiva que proíbe a execução direta de arquivos baixados na pasta de Downloads ou na pasta temporária do usuário.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instaladores Silenciosos</strong></td>
+                        <td>Vigilância contra comandos de instalação sem interface gráfica com switches evasivos: <code>/silent</code>, <code>/quiet</code>, <code>/qn</code>, <code>/passive</code>, <code>-s</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scripts Evasivos</strong></td>
+                        <td>Abate imediato de scripts ofuscados: <code>powershell.exe -enc</code> (código em Base64), <code>mshta.exe</code>, arquivos <code>.vbs</code>, <code>.bat</code>, <code>.cmd</code> e <code>.ps1</code>.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Mecanismo Anti-Flood de Janelas:</h3>
+            <p>O sentinela conta com um algoritmo inteligente de <strong>trava atômica e cooldown de 4 segundos</strong>. Se um executável malicioso tentar rodar repetidamente ou abrir vários processos em cascata, o sistema abaterá 100% das tentativas na memória, mas exibirá apenas <strong>uma única janela de alerta na tela</strong>, evitando o acúmulo de caixas de diálogo na área de trabalho.</p>
+        </section>
+
+        <!-- QUARENTENA E SANDBOX -->
+        <section class="chapter" id="quarentena-sandbox">
+            <h2><span class="ch-num">04</span> Quarentena & Windows Sandbox</h2>
+            <p>Quando um executável não autorizado é interceptado, o administrador pode configurar para que ele seja desarmado e isolado na <strong>Quarentena</strong>.</p>
+
+            <h3>Como funciona o Desarme de Binários:</h3>
+            <ol class="styled-list">
+                <li>O processo é terminado imediatamente na memória RAM (<code>proc.kill()</code>).</li>
+                <li>O arquivo físico é movido para o diretório isolado e protegido <code>%ProgramData%\Cromak Technology\Install Protector\Quarantine</code>.</li>
+                <li>A extensão original é alterada para <code>.locked</code> acompanhada de uma estampa de tempo.</li>
+                <li>As permissões de execução do arquivo são revogadas no NTFS via <code>icacls /deny Everyone:(X)</code>.</li>
+            </ol>
+
+            <h3>Ambiente de Testes Isolado (Windows Sandbox):</h3>
+            <p>O Cromak Install Protector integra-se nativamente ao <strong>Windows Sandbox</strong> da Microsoft, permitindo executar qualquer arquivo da quarentena ou do computador em uma Micro-Máquina Virtual isolada por hardware:</p>
+            <ul class="styled-list">
+                <li><strong>Montagem Somente Leitura (ReadOnly):</strong> A pasta de testes é espelhada sem permissão de escrita, protegendo o computador real contra infecções.</li>
+                <li><strong>Zero Rastros:</strong> Assim que a janela da Sandbox é fechada, tudo o que rodou dentro dela é completamente destruído pelo Windows.</li>
+                <li><strong>Isolamento de Rede Opcional:</strong> Permite desabilitar o acesso à Internet dentro da Sandbox para testes de malwares que tentam comunicação externa (C2).</li>
+            </ul>
+        </section>
+
+        <!-- DETECÇÃO E BLACKLIST -->
+        <section class="chapter" id="deteccao-blacklist">
+            <h2><span class="ch-num">05</span> Resposta Ativa & Blacklist Personalizada</h2>
+            <p>Na aba <strong>Detecção Avançada</strong>, você define qual atitude o software deve tomar instantaneamente ao flagrar um executável bloqueado:</p>
+
+            <div class="info-grid">
+                <div class="feature-card">
+                    <h4>🛑 Bloquear Execução</h4>
+                    <p>Mata o processo na memória e mantém o arquivo no disco, gerando apenas o aviso ao usuário.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📦 Mover para Quarentena</h4>
+                    <p>Desarma o binário, retira permissões e move o arquivo para a pasta de isolamento criptografada.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🗑️ Excluir do Disco</h4>
+                    <p>Deleta fisicamente o arquivo do disco imediatamente após abortar o processo.</p>
+                </div>
+            </div>
+
+            <h3>Lista Negra Personalizada (Blacklist):</h3>
+            <p>Permite cadastrar nomes de executáveis que devem ser permanentemente proibidos de rodar, independentemente de serem instaladores ou não (exemplo: jogos, navegadores alternativos, ferramentas de torrent, emuladores):</p>
+            <ul class="styled-list">
+                <li><strong>Adição Rápida:</strong> Digite o nome sem a extensão (ex: <code>utorrent</code>, <code>steam</code>, <code>discord</code>) e clique em Adicionar.</li>
+                <li><strong>Importação e Exportação:</strong> Importe ou exporte listas de bloqueio prontas em lote nos formatos <code>.txt</code> ou <code>.json</code>.</li>
+            </ul>
+        </section>
+
+        <!-- WHITELIST -->
+        <section class="chapter" id="whitelist">
+            <h2><span class="ch-num">06</span> Whitelist (Lista de Imunidade)</h2>
+            <p>A <strong>Whitelist</strong> define exceções seguras que nunca devem ser bloqueadas pelo sentinela, mesmo que estejam na pasta temporária ou possuam assinaturas de instaladores legítimos.</p>
+
+            <h3>Tipos de Regras de Imunidade:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Exemplo de Valor</th>
+                        <th>Comportamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Processo</strong></td>
+                        <td><code>python.exe</code> ou <code>code.exe</code></td>
+                        <td>Permite a execução do processo independentemente de onde ele for chamado.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usuário</strong></td>
+                        <td><code>Administrador</code> ou <code>Diretoria</code></td>
+                        <td>Concede imunidade completa para que os usuários especificados instalem softwares livremente.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Caminho Completo</strong></td>
+                        <td><code>C:\Ferramentas\Setup.exe</code></td>
+                        <td>Libera apenas aquele executável específico naquele diretório delimitado.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- RASTREAMENTO -->
+        <section class="chapter" id="rastreamento-modificacoes">
+            <h2><span class="ch-num">07</span> Rastreamento de Modificações (Snapshots & Hooks)</h2>
+            <p>O módulo de rastreamento audita mudanças críticas que softwares tentam aplicar silenciosamente no Windows:</p>
+            <ul class="styled-list">
+                <li><strong>Vigilância de Chaves de Inicialização (Registry Run Keys):</strong> Monitora <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code> e caminhos de persistência de serviços.</li>
+                <li><strong>Auditoria Delta de Arquivos:</strong> Compara instantâneos (Snapshots) do sistema para revelar exatamente quais pastas e arquivos foram criados ou deletados por uma instalação.</li>
+                <li><strong>Agendamento Automatizado:</strong> Configure capturas de snapshots a cada inicialização do Windows ou em intervalos regulares (ex: a cada 60 minutos).</li>
+            </ul>
+        </section>
+
+        <!-- LOCKDOWN DO SISTEMA -->
+        <section class="chapter" id="lockdown-sistema">
+            <h2><span class="ch-num">08</span> Lockdown do Windows (Políticas Corporativas)</h2>
+            <p>O <strong>Lockdown</strong> é voltado para ambientes corporativos, quiosques públicos e computadores compartilhados que exigem restrições severas de uso.</p>
+
+            <div class="callout danger">
+                <div class="callout-icon">🛡️</div>
+                <div>
+                    <strong>Travas Nativas de Diretiva (Policies):</strong><br>
+                    • <strong>Desativar Gerenciador de Tarefas:</strong> Impede o encerramento manual de serviços de proteção.<br>
+                    • <strong>Desativar Editor de Registro (Regedit):</strong> Proíbe alterações não autorizadas nas chaves do Windows.<br>
+                    • <strong>Desativar Prompt de Comando (CMD / PowerShell):</strong> Evita execução de scripts administrativos por usuários padrão.<br>
+                    • <strong>Desativar Painel de Controle e Configurações:</strong> Restringe a desinstalação de programas nativos.
+                </div>
+            </div>
+        </section>
+
+        <!-- MANUTENÇÃO DE DADOS -->
+        <section class="chapter" id="manutencao-dados">
+            <h2><span class="ch-num">09</span> Manutenção de Dados & Auditoria</h2>
+            <p>Todos os eventos de segurança, histórico de bloqueios e snapshots são armazenados em um banco de dados SQLite blindado (<code>CromakProtectorDB.dat</code>) com permissões restritas a nível de sistema.</p>
+
+            <h3>Ferramentas de Manutenção:</h3>
+            <ul class="styled-list">
+                <li><strong>Otimização de Armazenamento (VACUUM):</strong> Desfragmenta e reorganiza as páginas do banco de dados, recuperando espaço físico no disco.</li>
+                <li><strong>Auditoria de Integridade:</strong> Executa um <code>PRAGMA integrity_check</code> completo para atestar que o banco de dados não sofreu corrupção ou adulteração externa.</li>
+                <li><strong>Backup Blindado:</strong> Gera cópias de segurança instantâneas do banco de dados protegidas contra exclusão acidental.</li>
+                <li><strong>Exportação em CSV:</strong> Exporta relatórios de bloqueio consolidados compatíveis com Microsoft Excel e softwares de SIEM.</li>
+                <li><strong>Limpeza Inteligente (Smart Purge):</strong> Elimina permanentemente registros antigos de acordo com a política de retenção (<strong>Zero Day</strong>, <strong>Mais de 30 dias</strong>, <strong>Mais de 90 dias</strong> ou <strong>Mais de 180 dias</strong>).</li>
+            </ul>
+        </section>
+
+        <!-- CONFIGURAÇÕES -->
+        <section class="chapter" id="configuracoes">
+            <h2><span class="ch-num">10</span> Configurações Gerais & Idiomas</h2>
+            
+            <h3>Suporte Multilíngue em Tempo Real:</h3>
+            <p>O Cromak Install Protector suporta <strong>11 idiomas completos</strong> com carregamento estrutural em JSON na pasta <code>locales/</code>. Ao alternar o idioma no painel de configurações, toda a interface gráfica (incluindo abas, gráficos, tabelas e avisos do Windows) se atualiza <strong>instantaneamente sem a necessidade de reiniciar o programa</strong>.</p>
+            <p>Idiomas disponíveis: <em>Português (Brasil), English (US), Español, Français, Deutsch, Italiano, 日本語 (Japonês), 한국어 (Coreano), Русский (Russo), ไทย (Tailandês) e 简体中文 (Chinês Simplificado)</em>.</p>
+
+            <h3>Recursos de Comportamento:</h3>
+            <ul class="styled-list">
+                <li><strong>Minimizar para a Bandeja (System Tray):</strong> Ao clicar no botão minimizar <kbd>-</kbd> ou fechar <kbd>X</kbd>, a janela é recolhida silenciosamente para a área de notificação do relógio, emitindo a notificação de <em>"Proteção Ativa"</em>.</li>
+                <li><strong>Modo Auto-Defesa (Anti-Kill):</strong> Ativa a blindagem avançada do processo. Se o executável do sentinela sofrer uma tentativa de encerramento forçado por um utilitário externo, o sistema aciona proteção de integridade em nível de kernel.</li>
+                <li><strong>Senha de Administrador:</strong> Permite proteger o encerramento do sentinela e o acesso a configurações críticas por meio de uma palavra-passe criptografada com hash seguro.</li>
+            </ul>
+        </section>
+
+        <!-- LICENCIAMENTO -->
+        <section class="chapter" id="licenciamento">
+            <h2><span class="ch-num">11</span> Licenciamento: Free vs PRO</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Funcionalidade</th>
+                        <th>Versão Free</th>
+                        <th>Versão PRO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Patrulha e Abate de Instaladores</strong></td>
+                        <td>✅ Incluído</td>
+                        <td>✅ Incluído</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dashboard com Métricas em Tempo Real</strong></td>
+                        <td>✅ Incluído</td>
+                        <td>✅ Incluído</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uso Doméstico / Pessoal</strong></td>
+                        <td>✅ Ilimitado</td>
+                        <td>✅ Ilimitado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ambientes Corporativos & Empresas</strong></td>
+                        <td>❌ Não permitido</td>
+                        <td>✅ Licenciado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Modo Auto-Defesa (Anti-Kill BSOD)</strong></td>
+                        <td>❌ Bloqueado</td>
+                        <td>✅ Acesso Completo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lockdown Avançado do Windows</strong></td>
+                        <td>❌ Básico</td>
+                        <td>✅ Políticas Completas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Auditoria de Snapshots Ilimitada</strong></td>
+                        <td>❌ Até 3 snapshots</td>
+                        <td>✅ Ilimitado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Suporte Técnico Prioritário</strong></td>
+                        <td>❌ Comunidade</td>
+                        <td>✅ Canal Dedicado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- FAQ -->
+        <section class="chapter" id="faq">
+            <h2><span class="ch-num">12</span> Dúvidas Frequentes (FAQ)</h2>
+
+            <h3>1. Um instalador legítimo de confiança foi bloqueado. O que devo fazer?</h3>
+            <p>Você pode liberar o programa com um clique: abra a aba <strong>Logs de Detecção</strong>, clique com o botão direito sobre o bloqueio e escolha <em>"Enviar para Whitelist"</em>. Alternativamente, acesse a aba <strong>Whitelist</strong> e adicione o executável ou o caminho do software.</p>
+
+            <h3>2. O que acontece se o computador for reiniciado? A proteção volta automaticamente?</h3>
+            <p>Sim. Se a opção <em>"Iniciar com o sistema"</em> estiver ativada nas Configurações, o Cromak Install Protector inicializa silenciosamente em segundo plano junto com o Windows, minimizado na bandeja e com a patrulha ativa.</p>
+
+            <h3>3. Esqueci minha senha de administrador. Como recuperá-la?</h3>
+            <p>Por questões de segurança corporativa e proteção contra desativação maliciosa, a senha é armazenada de forma blindada. Para restaurar o controle, execute a ferramenta de reparo oficial com a chave mestre de licença corporativa ou entre em contato com o suporte técnico da Cromak Technology.</p>
+
+            <h3>4. Por que a janela do Windows Sandbox não abre ao clicar em Testar?</h3>
+            <p>O recurso "Windows Sandbox" é nativo das edições Pro e Enterprise do Windows 10/11 e requer que a Virtualização de Hardware (Intel VT-x ou AMD-V) esteja habilitada na BIOS da sua placa-mãe. Se o recurso estiver desativado, o próprio Cromak Install Protector exibirá uma mensagem solicitando autorização para requisitar a ativação do recurso no Windows.</p>
+        </section>
+
+        <!-- CONTATO E SUPORTE -->
+        <section class="chapter" id="suporte-oficial">
+            <h2><span class="ch-num">13</span> Contato & Suporte Oficial</h2>
+            <p>O Cromak Install Protector é desenvolvido e mantido com padrões rigorosos de qualidade e engenharia reversa por <strong>Cromak Technology</strong>.</p>
+            
+            <div class="callout success">
+                <div class="callout-icon">🌐</div>
+                <div>
+                    <strong>Canais Oficiais de Atendimento:</strong><br>
+                    • <strong>Portal Oficial:</strong> <a href="https://cromaktechnology.github.io/pt/install-protector.html" target="_blank" style="color:var(--primary);">cromaktechnology.github.io/pt/install-protector.html</a><br>
+                    • <strong>Central de Suporte:</strong> <a href="https://cromaktechnology.github.io/pt/suporte.html" target="_blank" style="color:var(--primary);">cromaktechnology.github.io/pt/suporte.html</a><br>
+                    • <strong>E-mail de Contato:</strong> suporte@cromaktechnology.com
+                </div>
+            </div>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="doc-footer">
+            <p>© 2026 <strong>Cromak Technology</strong>. Todos os direitos reservados.</p>
+            <p style="margin-top: 5px; font-size: 12px;">Cromak Install Protector é uma marca registrada de Cromak Technology. Documento gerado para a versão 1.2.2.</p>
+        </footer>
+
+    </main>
+
+    <!-- BOTÃO IMPRIMIR -->
+    <button class="btn-print" onclick="window.print()">
+        🖨️ Imprimir / Salvar PDF
+    </button>
+
+</body>
+</html>

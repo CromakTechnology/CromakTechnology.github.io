@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak Web To Apk Compiler - Manual Oficial do Usuário</title>
+    <link rel="icon" href="../images/cromak_technology_logo_small.png" type="image/png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #22c55e;
+            --primary-light: #4ade80;
+            --primary-hover: #4ade80;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #da3633;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; color: #fff; font-size: 18px;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(34, 197, 94, 0.15); }
+        .back-link svg { flex-shrink: 0; }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a svg { flex-shrink: 0; color: var(--primary-light); opacity: 0.85; }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+        .sidebar-nav li a:hover svg { opacity: 1; }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(34, 197, 94, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.4); color: var(--warning); }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(34, 197, 94, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        .chapter h3 { font-size: 16px; color: var(--primary-light); margin: 20px 0 10px; }
+        .chapter p { margin-bottom: 15px; color: #c9d1d9; font-size: 14.5px; line-height: 1.7; }
+        .chapter ul, .chapter ol { margin-left: 20px; margin-bottom: 15px; color: #c9d1d9; font-size: 14px; line-height: 1.8; }
+        .chapter li { margin-bottom: 8px; }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3, .card h4 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .sub-card { background-color: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; }
+        .sub-card h4 { color: var(--primary-light); margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+        .sub-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--primary-light); border: 1px solid var(--border-color); }
+        .callout, .alert-box {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(34, 197, 94, 0.08); border-left: 4px solid var(--primary-light); color: #e6edf3;
+        }
+        .callout.callout-success { background: rgba(46, 160, 67, 0.08); border-left-color: var(--success); }
+
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4); }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+            .btn-print { display: none; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/web-to-apk.png" alt="Web To Apk Compiler" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Web To Apk</h1>
+                <p>Manual Oficial v2.0.0</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Capítulos</li>
+            <li><a href="#introducao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>01. Introdução & Novidades</span></a></li>
+            <li><a href="#anatomia-base"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> <span>02. Anatomia da Base APK</span></a></li>
+            <li><a href="#projetos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> <span>03. Projetos .wacp</span></a></li>
+            <li><a href="#modos-fonte"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>04. Modos Online vs Offline</span></a></li>
+            <li><a href="#aparencia"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg> <span>05. Design & Splash Screen</span></a></li>
+            <li><a href="#performance"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>06. Cache & Performance</span></a></li>
+            <li><a href="#monetizacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>07. AdMob & Permissões</span></a></li>
+            <li><a href="#keystore"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-1.5 1.5L14 9l-1.5-1.5L11 9l-1.5-1.5L8 9c-3.87 0-7 3.13-7 7s3.13 7 7 7 7-3.13 7-7c0-.85-.16-1.67-.44-2.43L22 4.5V2h-1z"/><circle cx="7.5" cy="15.5" r="1.5"/></svg> <span>08. Assinatura Digital (Keystore)</span></a></li>
+            <li><a href="#ferramentas"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> <span>09. Engenharia Reversa (Apktool)</span></a></li>
+            <li><a href="#plugins"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>10. Shell Extensions</span></a></li>
+            <li><a href="#compilacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> <span>11. Compilação (.APK / .AAB)</span></a></li>
+            <li><a href="#diretorios"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg> <span>12. Diretórios & Sincronização</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+
+        <header class="doc-header">
+            <h1>Cromak Web To Apk Compiler — Manual Oficial</h1>
+            <p>Guia definitivo para empacotamento offline de aplicações web em binários nativos Android APK/AAB, injeção de WebView otimizada, Keystore e monetização.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 2.0.0 PRO</span>
+                <span class="badge success">Android SDK 34+ Ready</span>
+                <span class="badge warning">Build 100% Offline</span>
+                <span class="badge">Keystore V2/V3</span>
+            </div>
+        </header>
+
+<section id="introducao" class="chapter">
+<h2><span class="ch-num">1</span> Introdução, Filosofia e Novidades da Versão 2.0</h2>
+
+    <p>
+        O <b>CROMAK Web To Apk Compiler (WAC)</b> é uma plataforma profissional de compilação, injeção de código e engenharia reversa Android. 
+        Ele automatiza a transformação de projetos Web (sites responsivos, aplicações HTML5, CSS3, JavaScript dinâmico, Single Page Applications) em binários nativos de alta performance, sem que o desenvolvedor precise escrever linhas complexas em Java ou Kotlin.
+    </p>
+    
+    <div class="info-grid">
+        <div class="card">
+            <h4>🔒 100% Local, Privado e Seguro</h4>
+            <p>Todas as etapas de descompilação, reescrita de manifesto, injeção de recursos e assinatura digital acontecem inteiramente na sua máquina local. O código-fonte do seu projeto nunca é transferido para servidores de terceiros.</p>
+        </div>
+        <div class="card">
+            <h4>🎯 Target SDK 35 / 36 (Android 15 e 16)</h4>
+            <p>O motor foi recalibrado para total conformidade com as diretrizes e prazos de publicação da Google Play Store (Target SDK 35 obrigatório, com suporte preliminar a 36 e Min SDK 24 / Android 7.0+).</p>
+        </div>
+        <div class="card">
+            <h4>⚡ Zero Dependências SaaS</h4>
+            <p>Diferente de serviços web por assinatura mensal, o WAC opera como uma ferramenta de desktop definitiva e autônoma desenvolvida em Python e PyQt6 com aceleração gráfica nativa do Windows.</p>
+        </div>
+    </div>
+
+    <!-- 2. ANATOMIA DA BASE APK -->
+    
+</section>
+
+<section id="anatomia-base" class="chapter">
+<h2><span class="ch-num">2</span> Anatomia da Base APK & Motor de Injeção</h2>
+
+    <p>
+        O núcleo do compilador utiliza um binário mestre de alto padrão denominado <code>base.apk</code>. 
+        Durante o processo de geração do seu aplicativo, o motor executa as seguintes etapas arquiteturais:
+    </p>
+    <ul>
+        <li><b>Injeção no AndroidManifest.xml:</b> O compilador reescreve metadados, permissões de hardware (Internet, Câmera, Notificações, Localização), configurações de tema e a flag <code>android:debuggable="false"</code> para impedir adulteração por ferramentas de análise dinâmica em produção.</li>
+        <li><b>Sanitização de Strings e Recursos (AAPT2):</b> Aspas duplas e simples em títulos e identificadores de pacotes são tratadas com escapes rigorosos para garantir que o compilador de recursos da Google (AAPT2) não interrompa o build.</li>
+        <li><b>Controle de Tráfego HTTP/HTTPS:</b> A flag <code>android:usesCleartextTraffic="true"</code> é gerenciada para assegurar compatibilidade contínua tanto com servidores de desenvolvimento em rede local quanto com URLs de produção criptografadas via TLS.</li>
+        <li><b>Estrutura de Assets:</b> Se você compilar no Modo Offline, o seu pacote de arquivos web é compactado com precisão diretamente na pasta de ativos nativa (<code>/assets/www/</code>), preservando caminhos relativos de fontes, imagens e scripts.</li>
+    </ul>
+
+    <!-- 3. PROJETOS -->
+    
+</section>
+
+<section id="projetos" class="chapter">
+<h2><span class="ch-num">3</span> Projetos e Arquivos .wacp</h2>
+
+    <p>
+        Todas as configurações do seu aplicativo são salvas de forma estruturada em arquivos de projeto com a extensão <code>.wacp</code> (Web to Apk Compiler Project). 
+        Um arquivo <code>.wacp</code> é um documento JSON criptograficamente validado que preserva:
+    </p>
+    <ul>
+        <li>Nome do aplicativo, pacote Android (ex: <code>com.empresa.meuapp</code>) e número de versão;</li>
+        <li>Modo de fonte (URL online ou diretório de assets local);</li>
+        <li>Paleta de cores hexadecimais da barra de status, tela de splash e barra de navegação;</li>
+        <li>Caminhos absolutos dos ícones personalizados e telas de abertura;</li>
+        <li>Configurações de rede, cache do WebView e tempo de exibição da tela de abertura;</li>
+        <li>Blocos de anúncios AdMob e lista de permissões solicitadas ao usuário.</li>
+    </ul>
+
+    <div class="card">
+        <p>💡 <b>Abertura Direta no Windows:</b> Ative a integração de arquivos <code>.wacp</code> no menu <i>Preferências > Integração ao Sistema</i>. Isso associa o ícone personalizado oficial ao formato e permite carregar qualquer projeto existente com apenas um duplo-clique no Explorador de Arquivos.</p>
+    </div>
+
+    <!-- 4. MODOS DE FONTE -->
+    
+</section>
+
+<section id="modos-fonte" class="chapter">
+<h2><span class="ch-num">4</span> Modos de Fonte: Online vs Offline</h2>
+
+    <div class="info-grid">
+        <div class="card">
+            <h4>🌐 Modo Online (URL Hospedada)</h4>
+            <p>O aplicativo atua como um wrapper WebView de altíssima performance carregando uma aplicação web ativa na internet (ex: <code>https://meusite.com.br</code>).</p>
+            <p><b>Indicação:</b> E-commerces, blogs, portais jornalísticos, redes sociais e sistemas corporativos que mudam de conteúdo frequentemente sem necessidade de reenviar um APK novo para a loja.</p>
+        </div>
+        <div class="card">
+            <h4>📂 Modo Offline (Diretório Local)</h4>
+            <p>O aplicativo empacota uma pasta completa do seu computador (HTML, CSS, JavaScript, imagens, fontes) diretamente para dentro do APK nativo.</p>
+            <p><b>Indicação:</b> Aplicativos de catálogo offline, utilitários de cálculo, manuais técnicos, jogos em HTML5 Canvas/WebGL e ferramentas que necessitam de funcionamento autônomo sem internet.</p>
+        </div>
+    </div>
+
+    <!-- 5. APARÊNCIA -->
+    
+</section>
+
+<section id="aparencia" class="chapter">
+<h2><span class="ch-num">5</span> Personalização, Design e Splash Screen</h2>
+
+    <p>
+        A aba <b>Aparência</b> define a identidade visual do binário final gerado:
+    </p>
+    <ul>
+        <li><b>Ícone do Aplicativo:</b> Recomenda-se o fornecimento de uma imagem quadrada de 512x512 pixels no formato PNG. O motor gera automaticamente todos os tamanhos mipmap exigidos pelo ecossistema Android (mdpi, hdpi, xhdpi, xxhdpi e xxxhdpi).</li>
+        <li><b>Tela de Splash (Abertura):</b> Forneça uma arte em alta resolução (recomendado 1080x1920). O WAC injeta uma Activity nativa em tela cheia que cobre o tempo de inicialização do WebView.</li>
+        <li><b>Duração da Splash:</b> O tempo de exibição é configurado em milissegundos (ex: 2000 a 4000 ms) e possui validação estrita no motor para evitar travamentos em celulares lentos.</li>
+        <li><b>Cores do Sistema:</b> Ajuste a cor da barra de status (Status Bar) para que se harmonize perfeitamente com o layout da sua aplicação web.</li>
+    </ul>
+
+    <!-- 6. CACHE E PERFORMANCE -->
+    
+</section>
+
+<section id="performance" class="chapter">
+<h2><span class="ch-num">6</span> Política de Cache, Performance e Conectividade</h2>
+
+    <p>
+        Para garantir uma experiência de navegação nativa, o WAC disponibiliza três estratégias de gerenciamento do motor Chromium embutido:
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Estratégia</th>
+                <th>Comportamento Técnico</th>
+                <th>Cenário Ideal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Padrão (LOAD_DEFAULT)</b></td>
+                <td>Respeita rigorosamente os cabeçalhos HTTP (Cache-Control, ETag) enviados pelo servidor web.</td>
+                <td>Sites modernos que possuem regras de cache configuradas via Nginx, Apache ou Cloudflare.</td>
+            </tr>
+            <tr>
+                <td><b>Alto Cache (LOAD_CACHE_ELSE_NETWORK)</b></td>
+                <td>Verifica primeiramente o cache local do dispositivo; caso os arquivos estejam presentes, carrega instantaneamente sem gastar dados.</td>
+                <td>Aplicações estáticas, portais informativos com poucas alterações e conexões móveis lentas.</td>
+            </tr>
+            <tr>
+                <td><b>Sem Cache (LOAD_NO_CACHE)</b></td>
+                <td>Força o download limpo de todos os recursos a cada abertura de tela, ignorando o armazenamento local temporário.</td>
+                <td>Dashboards em tempo real, sistemas financeiros, telas de login sensíveis ou ambientes de teste.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="info-box">
+        <b>Página Offline Customizada:</b> O motor permite que você especifique um arquivo HTML de fallback. Caso o usuário entre em modo avião ou perca o sinal de rede, o aplicativo apresentará uma tela amigável personalizada da sua marca em vez do erro padrão do navegador.
+    </div>
+
+    <!-- 7. MONETIZAÇÃO -->
+    
+</section>
+
+<section id="monetizacao" class="chapter">
+<h2><span class="ch-num">7</span> Monetização (Google AdMob) e Permissões</h2>
+
+    <p>
+        O WAC inclui injeção nativa para as bibliotecas de anúncios da Google, eliminando a dependência de plugins de terceiros sujeitos a descontinuação:
+    </p>
+    <ul>
+        <li><b>Banner AdMob:</b> Fixado na parte inferior ou superior da tela com gerenciamento automático de ciclo de vida.</li>
+        <li><b>Anúncio Intersticial:</b> Anúncio de tela cheia que é acionado de forma inteligente com base no intervalo de tempo configurado (ex: a cada 60 ou 120 segundos). O motor valida o intervalo para assegurar conformidade com as diretrizes de experiência do usuário da Google Play.</li>
+        <li><b>Permissões Nativas:</b> Na aba correspondente, ative apenas as permissões de que o seu aplicativo realmente necessita (Câmera, Localização, Gravação de Áudio, Armazenamento). O motor ajusta os manifestos e os diálogos de consentimento em tempo de execução.</li>
+    </ul>
+
+    <!-- 8. KEYSTORE -->
+    
+</section>
+
+<section id="keystore" class="chapter">
+<h2><span class="ch-num">8</span> Assinatura Digital e Keystore (CRÍTICO)</h2>
+
+    <div class="alert-box">
+        <strong>🛑 ALERTA DE SEGURANÇA: A Proteção Irreversível da sua Keystore</strong><br><br>
+        Todo aplicativo Android precisa de uma assinatura criptográfica para ser instalado em smartphones ou submetido à Google Play Store.<br>
+        O arquivo da Keystore (<code>.jks</code> ou <code>.keystore</code>), juntamente com a sua <b>Senha</b> e o seu <b>Alias</b>, compõem a <b>identidade legal imutável</b> do seu aplicativo.<br><br>
+        <b>Se você perder a sua Keystore ou esquecer a senha:</b>
+        <ol style="margin-top: 8px;">
+            <li>Você NUNCA MAIS conseguirá publicar atualizações para o aplicativo existente na Play Store.</li>
+            <li>Você será obrigado a recriar o app com um novo nome de pacote, perdendo todos os usuários ativos, instalações e avaliações.</li>
+            <li>Nenhum suporte técnico ou ferramenta no mundo é capaz de quebrar essa criptografia.</li>
+        </ol>
+        <b>Ação obrigatória:</b> Realize cópias de segurança da sua Keystore em múltiplos locais seguros (pen drives físicos, cofres de senhas e nuvem criptografada).
+    </div>
+
+    <!-- 9. FERRAMENTAS -->
+    
+</section>
+
+<section id="ferramentas" class="chapter">
+<h2><span class="ch-num">9</span> Ferramentas de Engenharia Reversa (Apktool)</h2>
+
+    <p>
+        No menu <b>Ferramentas</b>, o desenvolvedor encontra um módulo tático de engenharia reversa com monitoramento de terminal em tempo real:
+    </p>
+    <div class="info-grid">
+        <div class="card">
+            <h4>🔓 Descompilador de APK</h4>
+            <p>Arraste um binário <code>.apk</code> existente para descompactar o arquivo em sua estrutura integral: código Smali (bytecode descompilado do DEX), arquivos de layout XML decodificados, recursos estáticos e manifesto completo legível.</p>
+        </div>
+        <div class="card">
+            <h4>📦 Recompilador de Pasta</h4>
+            <p>Após auditar ou modificar recursos na pasta extraída, utilize o Recompilador. O motor invocará o Apktool com argumentos de build otimizados, executará o alinhamento de memória (Zipalign de 4 bytes) e aplicará a assinatura de release (ApkSigner).</p>
+        </div>
+    </div>
+    
+    <div class="warning-box">
+        <b>Aviso Legal e Ético:</b> A engenharia reversa e a modificação de binários proprietários de terceiros sem autorização prévia podem constituir violação de direitos autorais e termos de uso. Empregue estas ferramentas estritamente em projetos próprios, auditorias de conformidade ou pesquisas autorizadas de segurança da informação.
+    </div>
+
+    <!-- 10. PLUGINS -->
+    
+</section>
+
+<section id="plugins" class="chapter">
+<h2><span class="ch-num">10</span> Plugins do Sistema (ApkShellext2)</h2>
+
+    <p>
+        Na versão 2.0, todos os utilitários de extensão do sistema operacional foram centralizados no diretório oficial <code>plugins/ApkShellext2</code>, eliminando conflitos de compilação da pasta <code>dist</code>.
+    </p>
+    <ul>
+        <li><b>APK Shell Extension:</b> Permite que o Explorador de Arquivos do Windows renderize a miniatura e o ícone real dos arquivos <code>.apk</code> diretamente nas pastas do sistema, facilitando a catalogação visual de compilações.</li>
+        <li><b>Instalação e Desinstalação com Elevação UAC:</b> Na aba <i>Preferências > Integração ao Sistema</i>, você pode instalar, reiniciar o Windows Explorer ou remover a extensão com um clique. O WAC dispara o processo com uma janela de console dedicada e elevação de administrador controlada.</li>
+    </ul>
+
+    <!-- 11. COMPILAÇÃO -->
+    
+</section>
+
+<section id="compilacao" class="chapter">
+<h2><span class="ch-num">11</span> Compilando o Pacote (.APK / .AAB)</h2>
+
+    <p>
+        Na aba final <b>Compilar</b>, o desenvolvedor escolhe entre os formatos de saída:
+    </p>
+    <ul>
+        <li><b>APK (.apk - Android Application Package):</b> Formato universal autônomo. Ideal para testes imediatos em dispositivos físicos ou emuladores, distribuição direta via download (sideloading) ou lojas corporativas privadas.</li>
+        <li><b>AAB (.aab - Android App Bundle):</b> Formato obrigatório para novos envios e atualizações na Google Play Store. O Google Play gera dinamicamente APKs divididos específicos para a arquitetura de processador (arm64-v8a, armeabi-v7a, x86_64) de cada usuário, reduzindo significativamente o tamanho do download.</li>
+    </ul>
+    <p>
+        Durante o processo, acompanhe o log passo a passo no terminal integrado. Ao término, o botão <b>Abrir Pasta de Destino</b> ficará disponível para acessar o arquivo assinado.
+    </p>
+
+    <!-- 12. DIRETÓRIOS E SINCRONIZAÇÃO -->
+    
+</section>
+
+<section id="diretorios" class="chapter">
+<h2><span class="ch-num">12</span> Diretórios, Logs e Sincronização Online</h2>
+
+    <p>
+        O WAC 2.0 atende a todas as diretrizes de integridade de sistema operacional, armazenando arquivos dinâmicos no perfil seguro do usuário:
+    </p>
+    <ul>
+        <li><b>Caminho Oficial de Dados:</b> <code>%APPDATA%\Cromak Technology\Web To Apk Compiler\</code></li>
+        <li><b>Armazenamento de Licenças:</b> <code>...\License\activation_config.dat</code> (criptografado em 256 bits).</li>
+        <li><b>Logs de Execução:</b> <code>...\logs\</code> (registros de compilação e diagnósticos técnicos).</li>
+        <li><b>Cromak Online Sync:</b> Sistema assíncrono que consulta atualizações e comunicados de segurança oficiais diretamente dos repositórios da Cromak Technology sem travar a interface gráfica.</li>
+    </ul>
+
+    
+</section>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">
+            © 2026 Cromak Technology — Divisão de Engenharia de Software MS Digital. Todos os direitos reservados.
+        </footer>
+    </main>
+
+
+    <!-- Botão Imprimir / Salvar PDF -->
+    <button class="btn-print" onclick="window.print()" title="Salvar como PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Salvar / Imprimir PDF</span>
+    </button>
+
+</body>
+</html>

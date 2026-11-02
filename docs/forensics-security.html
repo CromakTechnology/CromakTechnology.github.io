@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak Forensics Security - Manual Oficial do Usuário</title>
+    <link rel="icon" href="../images/cromak_technology_logo_small.png" type="image/png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #00d4ff;
+            --primary-light: #58a6ff;
+            --success: #2ea043;
+            --danger: #da3633;
+            --warning: #d29922;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #0052ff 0%, #0d1117 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; color: #fff; font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0, 82, 255, 0.35);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.2);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(0, 212, 255, 0.15); }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary); transform: translateX(3px);
+        }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(0, 212, 255, 0.4); color: var(--primary); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(0, 212, 255, 0.18); color: var(--primary);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 16px; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary); font-weight: 600; }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+        }
+    
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.8); }
+
+        @media (max-width: 850px) {
+            .btn-print { display: none; }
+        }
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/forensics-security.png" alt="Forensics Security" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Forensics Security</h1>
+                <p>Manual Oficial v1.0</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Navegação</li>
+            <li><a href="#visao-geral"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>01. Visão Geral</span></a></li>
+            <li><a href="#modulos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span>02. Módulos Forenses</span></a></li>
+            <li><a href="#auditoria"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>03. Cadeia de Custódia</span></a></li>
+            <li><a href="#relatorios"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> <span>04. Laudos Forenses</span></a></li>
+            <li><a href="#privacidade"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>05. Zero Telemetria</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+        <header class="doc-header">
+            <h1>Cromak Forensics Security — Manual do Usuário</h1>
+            <p>Guia operacional para perícia forense digital, extração de logs de eventos, análise de executáveis e investigação de incidentes em ambiente Windows.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.0.0</span>
+                <span class="badge success">Operação 100% Offline</span>
+                <span class="badge primary">Zero Telemetria</span>
+            </div>
+        </header>
+
+        <section id="visao-geral" class="chapter">
+            <h2><span class="ch-num">01</span> Visão Geral da Ferramenta</h2>
+            <p>O <strong>Cromak Forensics Security</strong> é uma plataforma dedicada à coleta, auditoria e preservação da cadeia de custódia de artefatos digitais no Microsoft Windows. Projetado para peritos, analistas de SOC e profissionais de segurança ofensiva e defensiva.</p>
+        </section>
+
+        <section id="modulos" class="chapter">
+            <h2><span class="ch-num">02</span> Módulos Forenses Integrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Módulo</th>
+                        <th>Alvo de Inspeção</th>
+                        <th>Objetivo Investigativo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Event Log Forensics</strong></td>
+                        <td>Logs de Segurança, Sistema e Aplicação (EVTX)</td>
+                        <td>Identificação de tentativas de logon (4624/4625), criação de processos (4688) e escalonamento de privilégio.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Process Memory Map</strong></td>
+                        <td>Mapeamento de DLLs e Threads ativas</td>
+                        <td>Detecção de injeções de DLL, hollow processes e módulos não assinados em execução.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hash Verification</strong></td>
+                        <td>MD5, SHA-1, SHA-256 e SSDEEP</td>
+                        <td>Garantia de integridade forense e hashing criptográfico contra bases de IOCs.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Persistence Auditor</strong></td>
+                        <td>Run keys, Tasks agendadas e Serviços</td>
+                        <td>Mapeamento exaustivo de pontos de persistência comuns em infecções de persistência furtiva.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="auditoria" class="chapter">
+            <h2><span class="ch-num">03</span> Auditoria de Artefatos</h2>
+            <div class="card">
+                <h3>Preservação da Cadeia de Custódia</h3>
+                <p style="font-size: 14px; color: var(--text-muted);">Todas as leituras são realizadas em modo estritamente read-only (somente leitura), garantindo que carimbos de data/hora (Timestomping) e atributos originais do sistema de arquivos NTFS/ReFS não sejam alterados durante a perícia.</p>
+            </div>
+        </section>
+
+        <section id="relatorios" class="chapter">
+            <h2><span class="ch-num">04</span> Exportação de Laudos</h2>
+            <p>Exportação estruturada de evidências com hash de integridade em múltiplos formatos:</p>
+            <ul style="padding-left: 20px; font-size: 14px; color: var(--text-muted); line-height: 1.8;">
+                <li><strong>Relatório HTML Interativo:</strong> Documento visual estruturado com gráficos e linha do tempo de eventos.</li>
+                <li><strong>JSON Estruturado:</strong> Ideal para ingestão em plataformas SIEM e pipelines de análise automatizada.</li>
+            </ul>
+        </section>
+
+        <section id="privacidade" class="chapter">
+            <h2><span class="ch-num">05</span> Compromisso Zero Telemetria</h2>
+            <p>O <strong>Cromak Forensics Security</strong> opera sem qualquer comunicação externa. Nenhum artefato periciado, hash gerado ou log capturado sai da máquina investigada. Máxima confidencialidade para investigações corporativas e judiciais.</p>
+        </section>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">
+            © 2026 Cromak Technology — Divisão de Engenharia de Software MS Digital. Todos os direitos reservados.
+        </footer>
+    </main>
+
+
+    <button class="btn-print" onclick="window.print()" title="Salvar como PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Salvar / Imprimir PDF</span>
+    </button>
+
+</body>
+</html>

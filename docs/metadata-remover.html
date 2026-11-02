@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak Metadata Remover - Manual Oficial do Usuário</title>
+    <link rel="icon" href="../images/cromak_technology_logo_small.png" type="image/png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #10b981;
+            --primary-light: #34d399;
+            --primary-hover: #34d399;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #da3633;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo {
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; color: #fff; font-size: 18px;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(16, 185, 129, 0.15); }
+        .back-link svg { flex-shrink: 0; }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a svg { flex-shrink: 0; color: var(--primary-light); opacity: 0.85; }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+        .sidebar-nav li a:hover svg { opacity: 1; }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(16, 185, 129, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.4); color: var(--warning); }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(16, 185, 129, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .chapter h3 { font-size: 16px; color: var(--primary-light); margin: 20px 0 10px; }
+        .chapter p { margin-bottom: 15px; color: #c9d1d9; font-size: 14.5px; line-height: 1.7; }
+        .chapter ul, .chapter ol { margin-left: 20px; margin-bottom: 15px; color: #c9d1d9; font-size: 14px; line-height: 1.8; }
+        .chapter li { margin-bottom: 8px; }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3, .card h4 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .sub-card { background-color: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; }
+        .sub-card h4 { color: var(--primary-light); margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+        .sub-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--primary-light); border: 1px solid var(--border-color); }
+        .callout, .alert-box {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--primary-light); color: #e6edf3;
+        }
+        .callout.callout-success { background: rgba(46, 160, 67, 0.08); border-left-color: var(--success); }
+
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4); }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+            .btn-print { display: none; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+    
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Voltar à Documentação</a>
+        <div class="brand-container">
+            <img src="../images/icons/metadata-remover.png" alt="Metadata Remover" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Metadata Remover</h1>
+                <p>Manual Oficial v1.4.0</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Capítulos</li>
+            <li><a href="#introducao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>01. Introdução & Privacidade</span></a></li>
+            <li><a href="#operacao"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>02. Operação em Lote</span></a></li>
+            <li><a href="#saida"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> <span>03. Modos de Saída</span></a></li>
+            <li><a href="#motores"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> <span>04. Motores por Formato</span></a></li>
+            <li><a href="#seguranca-docs"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>05. Criptografia PDF</span></a></li>
+            <li><a href="#defesas"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>06. Segurança de Nível SO</span></a></li>
+            <li><a href="#ferramentas"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> <span>07. Ferramentas Integradas</span></a></li>
+            <li><a href="#online-sync"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>08. Atualizações & Sync</span></a></li>
+            <li><a href="#idiomas"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span>09. Suporte a 11 Idiomas</span></a></li>
+            <li><a href="#licenca"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> <span>10. Licenciamento PRO</span></a></li>
+            <li><a href="#alerta"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>11. Wiping e Backups</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+
+        <header class="doc-header">
+            <h1>Cromak Metadata Remover — Manual do Usuário</h1>
+            <p>Guia operacional para sanitização forense atômica, expurgo de dados EXIF/ID3/GPS, criptografia AES de documentos e proteção de identidade digital.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.4.0 PRO</span>
+                <span class="badge success">Sanitização Atômica</span>
+                <span class="badge warning">Anti-Forense Zero-Trace</span>
+                <span class="badge">11 Idiomas</span>
+            </div>
+        </header>
+
+<section id="introducao" class="chapter">
+<h2><span class="ch-num">1</span> Introdução e Privacidade Offline (Zero Cloud)</h2>
+
+    <p>
+        O <b>Cromak Metadata Remover</b> é uma suíte forense militar projetada para extirpar metadados de rastreamento (EXIF, ID3, XMP, MakerNotes), histórico oculto de revisões, dados de câmeras/GPS, assinaturas digitais e restrições de permissões em documentos antes do compartilhamento na rede.
+    </p>
+    <ul>
+        <li><b>Processamento 100% Offline:</b> O software opera localmente em sua máquina. Toda a sanitização ocorre diretamente na memória RAM e nos processadores do seu computador.</li>
+        <li><b>Zero Cloud Storage:</b> Documentos confidenciais, fotografias, áudios e contratos nunca saem do seu computador nem trafegam por servidores externos.</li>
+        <li><b>Destruição Forense:</b> Em modos de sobrescrita e wiping, os metadados antigos são sobrescritos com bytes randômicos no disco rígido, impedindo a recuperação via laboratórios forenses.</li>
+    </ul>
+
+    
+</section>
+
+<section id="operacao" class="chapter">
+<h2><span class="ch-num">2</span> Operação em Lote e Roteamento Inteligente</h2>
+
+    <p>
+        Você pode importar arquivos soltos ou <b>pastas inteiras</b> de uma só vez utilizando a barra superior de ferramentas ou arrastando os arquivos para a interface.
+    </p>
+    <div class="card">
+        <p>O algoritmo de Roteamento Inteligente analisa os arquivos importados e os classifica automaticamente na aba correspondente (<b>Imagens</b>, <b>Vídeos</b>, <b>Áudios</b>, <b>Documentos</b>, <b>Dados</b> ou <b>Outros</b>) com base em suas extensões e assinaturas binárias (Magic Bytes).</p>
+    </div>
+    <p>
+        Use a grade de listagem para marcar <code>[ X ]</code> nos itens que deseja processar, ou use o <b>duplo clique</b> em qualquer arquivo para abrir o painel de inspeção de metadados, visualização forense em modo texto bruto (Raw) ou a Central de Segurança.
+    </p>
+
+    
+</section>
+
+<section id="saida" class="chapter">
+<h2><span class="ch-num">3</span> Modos de Saída e Empacotamento</h2>
+
+    <p>No rodapé do programa, você define como os arquivos higienizados serão persistidos no disco:</p>
+    <div class="info-grid">
+        <div class="card">
+            <h4>📁 Mesma Pasta</h4>
+            <p>Gera uma cópia limpa ao lado do arquivo original. Você pode definir um prefixo ou sufixo personalizado (por exemplo, <code>_cromak</code>) para diferenciar a versão limpa do arquivo original.</p>
+        </div>
+        <div class="card">
+            <h4>📂 Pasta Específica</h4>
+            <p>Permite selecionar um diretório exclusivo no seu computador onde todos os arquivos processados serão salvos de forma centralizada.</p>
+        </div>
+        <div class="card">
+            <h4>⚠️ Sobrescrever Originais</h4>
+            <p>Substitui o arquivo físico original pela versão sanitizada. Quando combinado com o Wiping Militar nas configurações, os dados originais são destruídos de forma irrecuperável.</p>
+        </div>
+        <div class="card">
+            <h4>📦 Exportar para .ZIP</h4>
+            <p>Higieniza todos os arquivos selecionados e os reúne diretamente em um arquivo compactado <code>.zip</code>, removendo cópias soltas temporárias. Ideal para envio rápido e seguro.</p>
+        </div>
+    </div>
+
+    
+</section>
+
+<section id="motores" class="chapter">
+<h2><span class="ch-num">4</span> Motores de Sanitização por Formato</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Categoria</th>
+                <th>Formatos Suportados</th>
+                <th>Ações de Limpeza Forense</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>📸 Imagens</b></td>
+                <td>.JPG, .JPEG, .PNG, .TIFF, .WEBP, .HEIC, .RAW, .BMP, .GIF</td>
+                <td>Extirpação completa de EXIF (GPS, modelo, lente, número de série), perfis ICC não essenciais, miniaturas embutidas e metadados XMP.</td>
+            </tr>
+            <tr>
+                <td><b>🎥 Vídeos</b></td>
+                <td>.MP4, .MOV, .MKV, .AVI, .WEBM, .FLV, .MTS, .3GP</td>
+                <td>Remoção de identificadores proprietários de codificadores, faixas de metadados de áudio e datas de criação via integração com FFmpeg.</td>
+            </tr>
+            <tr>
+                <td><b>🎵 Áudios</b></td>
+                <td>.MP3, .WAV, .FLAC, .AAC, .OGG, .M4A, .WMA</td>
+                <td>Destruição profunda de tags ID3, comentários, dados de gravação, ISRC e capas de álbuns embutidas.</td>
+            </tr>
+            <tr>
+                <td><b>📄 Documentos</b></td>
+                <td>.PDF, .DOCX, .XLSX, .PPTX, .ODT, .RTF, .TXT</td>
+                <td>Remoção de histórico de revisões, comentários ocultos, nomes de autores, impressoras, metadados XMP e tinta invisível em PDFs.</td>
+            </tr>
+            <tr>
+                <td><b>📊 Dados</b></td>
+                <td>.CSV, .JSON, .XML, .YAML</td>
+                <td>Limpeza estrutural de cabeçalhos rastreáveis, preservando a sintaxe e a integridade do conteúdo dos dados.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</section>
+
+<section id="seguranca-docs" class="chapter">
+<h2><span class="ch-num">5</span> Central de Segurança e Criptografia PDF (Aba Segurança) <span class="badge badge-new">NOVO v1.4.0</span></h2>
+
+    <p>
+        Ao dar duplo clique em qualquer arquivo <b>PDF</b> ou clicar no botão <b>Opções de Documento</b>, o sistema disponibiliza a avançada <b>Aba Segurança</b>:
+    </p>
+
+    <div class="card">
+        <h4>🔓 1. Desbloqueio de PDF para Edição Livre</h4>
+        <p>
+            Elimina restrições impostas por senhas de proprietário (owner password). Remove travas que bloqueiam a cópia de texto, edição e impressão do arquivo, gerando um documento 100% aberto e editável sem corromper elementos visuais.
+        </p>
+
+        <h4>🔏 2. Purga de Assinaturas Digitais e Certificados</h4>
+        <p>
+            Expurga do PDF os dicionários <code>/AcroForm</code>, flags de validação <code>/SigFlags</code>, campos de assinatura digital e chaves de permissão <code>/Perms</code> (como <code>/DocMDP</code> e <code>/UR3</code>). O documento é desvinculado de qualquer certificado digital (como ICP-Brasil ou corporativo), anonimizando o arquivo por completo.
+        </p>
+
+        <h4>🔒 3. Aplicação de Criptografia Militar AES-256 (PDF Standard R=6)</h4>
+        <p>
+            Permite proteger qualquer PDF com criptografia de ponta a ponta (algoritmo AES-256 padrão PDF Revision 6), permitindo definir:
+        </p>
+        <ul>
+            <li><b>Senha de Abertura / Leitura:</b> Exigida para que qualquer pessoa consiga visualizar o documento.</li>
+            <li><b>Senha de Permissões / Dono:</b> Exigida para alterar configurações ou remover travas no futuro.</li>
+            <li><b>Permissões Granulares aos Leitores:</b> Ativação/Desativação de Impressão em alta resolução, Cópia de texto e gráficos (extração), Modificações no conteúdo e Preenchimento de formulários/anotações.</li>
+        </ul>
+
+        <h4>🛡️ 4. Gestão Automática de Permissões Windows</h4>
+        <p>
+            O motor remove automaticamente atributos de sistema <i>Somente Leitura</i> (Read-Only) do Windows ao salvar o arquivo e apresenta orientações amigáveis se o documento estiver retido por visualizadores externos (Edge, Chrome, Acrobat ou Painel de Pré-visualização do Explorer).
+        </p>
+    </div>
+
+    
+</section>
+
+<section id="defesas" class="chapter">
+<h2><span class="ch-num">6</span> Segurança Avançada de Nível de SO <span class="badge badge-pro">PRO</span></h2>
+
+    <p>Para fluxos corporativos e jurídicos confidenciais, configure as diretivas globais em <b>Preferências > Configurações Globais</b>:</p>
+    <div class="card">
+        <h4>📄 PDF - Escaneamento de Tinta Invisível (Invisible Ink)</h4>
+        <p>Detecta e tarja automaticamente textos brancos em fundos brancos ou fontes com tamanho microscópico (menores que 2.0pt), muito utilizadas para criar marcas d'água forenses contra vazamentos.</p>
+        
+        <h4>🪆 Office Matryoshka (Word / Excel / PowerPoint)</h4>
+        <p>Descompacta a árvore XML interna do documento do Office e sanitiza individualmente todas as fotos e imagens embutidas <i>dentro</i> do arquivo, eliminando coordenadas de GPS de fotos tiradas por smartphones corporativos.</p>
+        
+        <h4>🕰️ Mascaramento de MAC Times</h4>
+        <p>Altera as marcas de tempo de Modificação, Acesso e Criação do arquivo final no sistema de arquivos NTFS/FAT, congelando-as no momento da sanitização para impedir a cronologia forense.</p>
+    </div>
+
+    
+</section>
+
+<section id="ferramentas" class="chapter">
+<h2><span class="ch-num">7</span> Ferramentas Integradas <span class="badge badge-new">NOVO v1.4.0</span></h2>
+
+    <div class="info-grid">
+        <div class="card">
+            <h4>💥 Destruidor de Dados Atômico (Data Shredder)</h4>
+            <p>Exclui permanentemente arquivos e pastas do disco rígido através de múltiplos passos de sobrescrita com dados pseudo-aleatórios e zeramento, impossibilitando a recuperação por ferramentas de undelete ou laboratórios forenses.</p>
+        </div>
+        <div class="card">
+            <h4>🏷️ Renomeador em Lote (Batch Rename)</h4>
+            <p>Ferramenta rápida para renomear dezenas de arquivos simultaneamente, limpando identificadores de câmeras (ex: <code>IMG_202611...</code>) ou aplicando sequências numéricas anônimas antes da distribuição.</p>
+        </div>
+    </div>
+
+    
+</section>
+
+<section id="online-sync" class="chapter">
+<h2><span class="ch-num">8</span> Cromak Online Sync & Central de Atualizações <span class="badge badge-new">NOVO v1.4.0</span></h2>
+
+    <p>
+        A versão 1.4.0 introduz o motor padronizado <b>Cromak Online Sync</b>:
+    </p>
+    <ul>
+        <li><b>Central de Atualizações Instantânea:</b> Localizada em <i>Ajuda > Central de Atualizações</i>. Executa a verificação em background sem congelar a interface gráfica, exibindo a versão instalada, checando múltiplos canais locais e online, e disponibilizando o botão direto de download quando uma nova versão for publicada.</li>
+        <li><b>Sistema de Comunicados e Promoções:</b> Apresenta novidades e ofertas especiais com temporizador de proteção (cooldown de 4 horas ou 3 aberturas do software), respeitando o foco de trabalho do usuário.</li>
+    </ul>
+
+    
+</section>
+
+<section id="idiomas" class="chapter">
+<h2><span class="ch-num">9</span> Suporte Global Multilíngue (11 Idiomas) <span class="badge badge-new">NOVO v1.4.0</span></h2>
+
+    <p>
+        O Cromak Metadata Remover possui suporte nativo integral aos seguintes idiomas:
+    </p>
+    <div class="info-box">
+        <b>Idiomas Disponíveis:</b> Português (Brasil) [pt_BR], English (US) [en_US], Español (España) [es_ES], Français (France) [fr_FR], Deutsch (Deutschland) [de_DE], Italiano (Italia) [it_IT], Русский (Россия) [ru_RU], 简体中文 (中国) [zh_CN], 日本語 (日本) [ja_JP], 한국어 (대한민국) [ko_KR] e ภาษาไทย (ประเทศไทย) [th_TH].
+    </div>
+    <p>Para alterar o idioma, basta acessar <b>Preferências > Configurações Globais</b> e escolher o idioma desejado. A interface se adapta em tempo real.</p>
+
+    
+</section>
+
+<section id="licenca" class="chapter">
+<h2><span class="ch-num">10</span> Licenciamento PRO & Período Trial <span class="badge badge-pro">PRO</span> <span class="badge badge-trial">TRIAL 30 DIAS</span></h2>
+
+    <div class="warning-box">
+        <h3 style="color: #ffb347; margin-top: 0;">⏱️ Período de Avaliação (30 Dias)</h3>
+        <p>
+            O software oferece 30 dias de avaliação gratuita com recursos essenciais liberados. A sanitização profunda nas abas de <b>Imagens</b> e <b>Documentos</b> é exclusiva da versão <b>PRO Vitalícia</b>.<br><br>
+            <i>Armadilha Anti-Fraude:</i> O sistema conta com detecção de violação temporal. Qualquer tentativa de alteração do relógio do sistema operacional ou remoção dos registros de controle colocará o programa em bloqueio definitivo (Deadlock).
+        </p>
+    </div>
+    <p>
+        Para desbloquear todas as funções e extinguir qualquer limite temporal, clique em <b>Ajuda > Inserir Chave de Ativação</b> e registre o seu código oficial <code>CRKMDR</code> emitido para o Hardware ID do seu computador.
+    </p>
+
+    
+</section>
+
+<section id="alerta" class="chapter">
+<h2><span class="ch-num">11</span> Responsabilidade, Wiping e Backups</h2>
+
+    <div class="alert-box">
+        <strong>AVISO DE RESPONSABILIDADE SOBRE BACKUPS</strong><br>
+        Ao utilizar o modo de saída <b>"Sobrescrever os arquivos originais"</b> ou o <b>Destruidor de Dados</b>, a eliminação dos metadados e arquivos originais é definitiva e irreversível. A criação e manutenção de cópias de segurança (backups) é de inteira responsabilidade do usuário. A Cromak Technology não se responsabiliza por perdas acidentais decorrentes de configurações incorretas de sobrescrita.
+    </div>
+
+    
+</section>
+
+        <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">
+            © 2026 Cromak Technology — Divisão de Engenharia de Software MS Digital. Todos os direitos reservados.
+        </footer>
+    </main>
+
+
+    <!-- Botão Imprimir / Salvar PDF -->
+    <button class="btn-print" onclick="window.print()" title="Salvar como PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <span>Salvar / Imprimir PDF</span>
+    </button>
+
+</body>
+</html>
