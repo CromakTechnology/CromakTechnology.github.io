@@ -3,268 +3,677 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mapa do site - Cromak Technology">
-    <title>Mapa do Site - Cromak Technology</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- METADADOS DE SEO -->
+    <title>Mapa do Site Completo | Cromak Technology</title>
+    <meta name="title" content="Mapa do Site Completo | Cromak Technology">
+    <meta name="description" content="Mapa do site oficial da Cromak Technology. Navegue por todo o ecossistema de softwares nativos para Windows, compiladores, ferramentas forenses, documentação e suporte.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cromaktechnology.github.io/sitemap.html">
+    <meta name="theme-color" content="#00d4ff">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mapa do Site Completo | Cromak Technology">
+    <meta property="og:description" content="Navegue por todo o ecossistema de softwares de alta performance e segurança da Cromak Technology.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+    <meta property="og:url" content="https://cromaktechnology.github.io/sitemap.html">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="images/cromak_technology_logo_small.png">
+    <link rel="apple-touch-icon" href="images/cromak_technology_logo_small.png">
+
     <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --card-bg: rgba(20, 22, 28, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover-border: rgba(0, 212, 255, 0.5);
+            --accent: #00d4ff;
+            --accent-glow: rgba(0, 212, 255, 0.2);
+            --accent-purple: #8b5cf6;
+            --text-main: #f3f4f6;
+            --text-dim: #9ca3af;
+            --text-muted: #6b7280;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-            padding: 20px;
+            min-height: 100vh;
+            padding: 40px 20px 80px 20px;
+            position: relative;
+            overflow-x: hidden;
         }
-        
+
+        /* Ambient Glow Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.12) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 75%);
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
         }
-        
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 2.5em;
+
+        /* Header */
+        .site-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
-        
-        .subtitle {
-            color: #7f8c8d;
-            margin-bottom: 30px;
-            font-size: 1.1em;
+
+        .site-logo {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.25));
+            transition: transform 0.3s ease;
         }
-        
+
+        .site-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .site-header h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        .site-header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto 20px auto;
+        }
+
+        .stats-bar {
+            display: inline-flex;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stats-bar span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Sections */
         .sitemap-section {
-            margin-bottom: 30px;
+            margin-bottom: 45px;
         }
-        
-        .section-title {
-            color: #34495e;
-            font-size: 1.5em;
-            margin-bottom: 15px;
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
-        
+
+        .section-icon {
+            font-size: 1.4rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.3px;
+        }
+
+        .section-badge {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(0, 212, 255, 0.12);
+            color: var(--accent);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .section-badge.purple {
+            background: rgba(139, 92, 246, 0.12);
+            color: #c4b5fd;
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        /* Grid */
         .sitemap-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
             gap: 15px;
         }
-        
+
+        /* Items / Cards */
         .sitemap-item {
-            padding: 12px 15px;
-            background: #f8f9fa;
-            border-radius: 5px;
-            border-left: 3px solid #3498db;
-            transition: all 0.3s ease;
-        }
-        
-        .sitemap-item:hover {
-            background: #e3f2fd;
-            border-left-color: #2980b9;
-            transform: translateX(5px);
-        }
-        
-        .sitemap-item a {
-            color: #2980b9;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
             text-decoration: none;
-            font-weight: 500;
-            display: block;
         }
-        
-        .sitemap-item a:hover {
-            text-decoration: underline;
+
+        .sitemap-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--accent);
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
-        
-        .lang-pair {
+
+        .sitemap-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--card-hover-border);
+            background: rgba(28, 32, 42, 0.85);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.12);
+        }
+
+        .sitemap-item:hover::before {
+            opacity: 1;
+        }
+
+        .item-content {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 3px;
         }
-        
-        .lang-indicator {
-            font-size: 0.75em;
-            color: #7f8c8d;
-            text-transform: uppercase;
+
+        .item-title {
+            color: #ffffff;
+            font-size: 0.98rem;
             font-weight: 600;
+            transition: color 0.2s ease;
         }
-        
-        .back-link {
-            display: inline-block;
-            margin-top: 30px;
-            color: #3498db;
+
+        .sitemap-item:hover .item-title {
+            color: var(--accent);
+        }
+
+        .item-desc {
+            color: var(--text-dim);
+            font-size: 0.78rem;
+            line-height: 1.3;
+        }
+
+        .item-arrow {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            margin-left: 10px;
+        }
+
+        .sitemap-item:hover .item-arrow {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
+
+        /* Footer Link */
+        .footer-action {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(139, 92, 246, 0.15));
+            color: #ffffff;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            padding: 14px 32px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
-        
-        .back-link:hover {
-            text-decoration: underline;
+
+        .btn-home:hover {
+            background: var(--accent);
+            color: #0c0c0c;
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+            transform: translateY(-2px);
         }
-        
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 20px;
+            body {
+                padding: 30px 16px 60px 16px;
             }
-            
-            h1 {
-                font-size: 2em;
+            .site-header {
+                margin-bottom: 35px;
             }
-            
             .sitemap-grid {
                 grid-template-columns: 1fr;
+            }
+            .sitemap-item {
+                padding: 14px 16px;
             }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>🗺️ Mapa do Site</h1>
-        <p class="subtitle">Navegue por todas as páginas do nosso site</p>
         
-        <!-- Página Principal -->
-        <div class="sitemap-section">
-            <h2 class="section-title">🏠 Página Principal</h2>
-            <div class="sitemap-grid">
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/">Página Inicial</a>
-                </div>
+        <!-- CABEÇALHO -->
+        <header class="site-header">
+            <a href="https://cromaktechnology.github.io/">
+                <img src="images/cromaklogob.png" alt="Cromak Technology" class="site-logo">
+            </a>
+            <h1>Mapa do Site Oficial</h1>
+            <p>Diretório completo de soluções nativas, compiladores, arquitetura técnica e documentação da Cromak Technology.</p>
+            <div class="stats-bar">
+                <div>Total de Soluções: <span>13 Nativas</span></div>
+                <div>•</div>
+                <div>Idiomas: <span>Português & English</span></div>
+                <div>•</div>
+                <div>Status: <span>100% Online</span></div>
             </div>
-        </div>
-        
-        <!-- Ferramentas - Português -->
-        <div class="sitemap-section">
-            <h2 class="section-title">🛠️ Ferramentas (Português)</h2>
-            <div class="sitemap-grid">
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/pt/index.html">Página Inicial</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/pt/deepclean_suite.html">DeepClean Suite</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/pt/install_compiler.html">Install Compiler</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/pt/metadata_remover.html">Metadata Remover</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/pt/password_guard.html">Password Guard</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/pt/png_to_ico_converter.html">PNG to ICO Converter</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/pt/web_to_apk_compiler.html">Web to APK Compiler</a>
-                </div>
+        </header>
+
+        <!-- PORTAL & INÍCIO -->
+        <section class="sitemap-section">
+            <div class="section-header">
+                <span class="section-icon">🌐</span>
+                <h2 class="section-title">Portais de Entrada</h2>
+                <span class="section-badge">Gateway</span>
             </div>
-        </div>
-        
-        <!-- Tools - English -->
-        <div class="sitemap-section">
-            <h2 class="section-title">🛠️ Tools (English)</h2>
             <div class="sitemap-grid">
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/en/index.html">Home Page</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/en/deepclean_suite.html">DeepClean Suite</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/en/install_compiler.html">Install Compiler</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/en/metadata_remover.html">Metadata Remover</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/en/password_guard.html">Password Guard</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/en/png_to_ico_converter.html">PNG to ICO Converter</a>
-                </div>
-                <div class="sitemap-item">
-                    <a href="https://cromaktechnology.github.io/en/web_to_apk_compiler.html">Web to APK Compiler</a>
-                </div>
+                <a href="https://cromaktechnology.github.io/" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Gateway Global (Raiz)</span>
+                        <span class="item-desc">Roteador inteligente por idioma</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/index.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Página Inicial (Português)</span>
+                        <span class="item-desc">Portal completo em português</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/index.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Home Page (English)</span>
+                        <span class="item-desc">Official international global portal</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
             </div>
-        </div>
-        
-        <!-- Documentação -->
-        <div class="sitemap-section">
-            <h2 class="section-title">📚 Documentação</h2>
+        </section>
+
+        <!-- FERRAMENTAS - PORTUGUÊS -->
+        <section class="sitemap-section">
+            <div class="section-header">
+                <span class="section-icon">🛡️</span>
+                <h2 class="section-title">Arsenal de Softwares Nativos</h2>
+                <span class="section-badge">Português (13 Soluções)</span>
+            </div>
             <div class="sitemap-grid">
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">PT</span>
-                        <a href="https://cromaktechnology.github.io/pt/documentacao.html">Documentação</a>
+                <a href="https://cromaktechnology.github.io/pt/deepclean_suite.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">DeepClean Suite</span>
+                        <span class="item-desc">Otimização extrema em nível Kernel</span>
                     </div>
-                </div>
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">EN</span>
-                        <a href="https://cromaktechnology.github.io/en/documentacao.html">Documentation</a>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/connection-blackout.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Connection Blackout</span>
+                        <span class="item-desc">Firewall cirúrgico & corte de telemetria</span>
                     </div>
-                </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/install-protector.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Install Protector</span>
+                        <span class="item-desc">Escudo contra adwares e instaladores</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/password_guard.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Password Guard</span>
+                        <span class="item-desc">Cofre de senhas offline com AES-256</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/metadata_remover.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Metadata Remover</span>
+                        <span class="item-desc">Sanitização forense de metadados ocultos</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/syslock.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">SysLock</span>
+                        <span class="item-desc">Blindagem de recursos críticos do Windows</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/network-fix.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Network Fix</span>
+                        <span class="item-desc">Diagnóstico e reparo rápido de rede</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/photoviewer.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Classic Photo Viewer</span>
+                        <span class="item-desc">Visualizador ultraleve estilo Windows 7</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/new-tab-service.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">NewTab</span>
+                        <span class="item-desc">Central de atalhos e produtividade Metro UI</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/bridge-vox.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Bridge Vox</span>
+                        <span class="item-desc">Agente de máquina e automação inteligente</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/web_to_apk_compiler.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Web to APK Compiler</span>
+                        <span class="item-desc">Compilador Web para Android nativo offline</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/install_compiler.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Install Compiler</span>
+                        <span class="item-desc">Criador de instaladores .exe profissionais</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/png_to_ico_converter.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">PNG to ICO Converter</span>
+                        <span class="item-desc">Compilação precisa de ícones multi-resolução</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
             </div>
-        </div>
-        
-        <!-- Suporte -->
-        <div class="sitemap-section">
-            <h2 class="section-title">💬 Suporte</h2>
+        </section>
+
+        <!-- TOOLS - ENGLISH -->
+        <section class="sitemap-section">
+            <div class="section-header">
+                <span class="section-icon">⚡</span>
+                <h2 class="section-title">Native Software Arsenal</h2>
+                <span class="section-badge purple">English (13 Solutions)</span>
+            </div>
             <div class="sitemap-grid">
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">PT</span>
-                        <a href="https://cromaktechnology.github.io/pt/suporte.html">Suporte</a>
+                <a href="https://cromaktechnology.github.io/en/deepclean_suite.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">DeepClean Suite</span>
+                        <span class="item-desc">Extreme low-level Kernel PC optimization</span>
                     </div>
-                </div>
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">EN</span>
-                        <a href="https://cromaktechnology.github.io/en/suporte.html">Support</a>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/connection-blackout.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Connection Blackout</span>
+                        <span class="item-desc">Surgical firewall & telemetry containment</span>
                     </div>
-                </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/install-protector.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Install Protector</span>
+                        <span class="item-desc">Zero-trust installer interceptor shield</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/password_guard.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Password Guard</span>
+                        <span class="item-desc">100% offline AES-256 password vault</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/metadata_remover.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Metadata Remover</span>
+                        <span class="item-desc">Forensic metadata sanitization & wipe</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/syslock.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">SysLock</span>
+                        <span class="item-desc">Instant hardening of Windows tools</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/network-fix.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Network Fix</span>
+                        <span class="item-desc">Vital Windows network repairs & diagnostics</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/photoviewer.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Classic Photo Viewer</span>
+                        <span class="item-desc">Ultra-fast nostalgic Windows 7 image viewer</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/new-tab-service.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">NewTab</span>
+                        <span class="item-desc">Smart Metro UI shortcut dashboard</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/bridge-vox.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Bridge Vox</span>
+                        <span class="item-desc">Machine Agent & background voice automation</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/web_to_apk_compiler.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Web to APK Compiler</span>
+                        <span class="item-desc">Transform web apps into native Android APKs</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/install_compiler.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Install Compiler</span>
+                        <span class="item-desc">Create professional .exe setup packages</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/png_to_ico_converter.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">PNG to ICO Converter</span>
+                        <span class="item-desc">Multi-resolution Windows icon compilation</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
             </div>
-        </div>
-        
-        <!-- Legal -->
-        <div class="sitemap-section">
-            <h2 class="section-title">📋 Legal</h2>
+        </section>
+
+        <!-- INSTITUCIONAL & SUPORTE -->
+        <section class="sitemap-section">
+            <div class="section-header">
+                <span class="section-icon">🏛️</span>
+                <h2 class="section-title">Institucional, Documentação & Suporte</h2>
+                <span class="section-badge">Ecossistema</span>
+            </div>
             <div class="sitemap-grid">
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">PT</span>
-                        <a href="https://cromaktechnology.github.io/pt/privacidade.html">Política de Privacidade</a>
+                <a href="https://cromaktechnology.github.io/pt/sobre.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Sobre a Cromak (PT)</span>
+                        <span class="item-desc">Nossa filosofia e laboratório de software</span>
                     </div>
-                </div>
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">EN</span>
-                        <a href="https://cromaktechnology.github.io/en/privacidade.html">Privacy Policy</a>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/sobre.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">About Us (EN)</span>
+                        <span class="item-desc">Our vision, security pillars & laboratory</span>
                     </div>
-                </div>
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">PT</span>
-                        <a href="https://cromaktechnology.github.io/pt/termos.html">Termos de Uso</a>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/documentacao.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Documentação Técnica (PT)</span>
+                        <span class="item-desc">Guias, manuais de usuário e arquitetura</span>
                     </div>
-                </div>
-                <div class="sitemap-item">
-                    <div class="lang-pair">
-                        <span class="lang-indicator">EN</span>
-                        <a href="https://cromaktechnology.github.io/en/termos.html">Terms of Use</a>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/documentacao.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Documentation Center (EN)</span>
+                        <span class="item-desc">Technical manuals and implementation runbooks</span>
                     </div>
-                </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/suporte.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Central de Suporte & FAQ (PT)</span>
+                        <span class="item-desc">Base de conhecimento e abertura de tickets</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/suporte.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Support Center & FAQ (EN)</span>
+                        <span class="item-desc">Knowledge base and direct ticket support</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/png_to_ico_converter_comprar.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Licenciamento PNG to ICO (PT)</span>
+                        <span class="item-desc">Aquisição de chave vitalícia</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/png_to_ico_converter_comprar.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">PNG to ICO License (EN)</span>
+                        <span class="item-desc">Commercial lifetime key checkout</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
             </div>
+        </section>
+
+        <!-- POLÍTICAS & TERMOS LEGAIS -->
+        <section class="sitemap-section">
+            <div class="section-header">
+                <span class="section-icon">⚖️</span>
+                <h2 class="section-title">Políticas, Privacidade & Termos Legais</h2>
+                <span class="section-badge">Legal</span>
+            </div>
+            <div class="sitemap-grid">
+                <a href="https://cromaktechnology.github.io/pt/privacidade.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Política de Privacidade (PT)</span>
+                        <span class="item-desc">Compromisso com zero telemetria abusiva</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/privacidade.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Privacy Policy (EN)</span>
+                        <span class="item-desc">Our strict offline-first zero data collection</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/pt/termos.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Termos de Uso (PT)</span>
+                        <span class="item-desc">Condições de uso e licenciamento de software</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+                <a href="https://cromaktechnology.github.io/en/termos.html" class="sitemap-item">
+                    <div class="item-content">
+                        <span class="item-title">Terms of Use (EN)</span>
+                        <span class="item-desc">Software distribution terms and conditions</span>
+                    </div>
+                    <span class="item-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- BOTÃO DE RETORNO -->
+        <div class="footer-action">
+            <a href="https://cromaktechnology.github.io/" class="btn-home">
+                <span>←</span> Voltar para a Página Inicial
+            </a>
         </div>
-        
-        <a href="https://cromaktechnology.github.io/" class="back-link">← Voltar para a página inicial</a>
+
     </div>
+
 </body>
 </html>

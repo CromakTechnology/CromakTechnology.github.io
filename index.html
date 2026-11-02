@@ -1,62 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cromak Technology</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- METADADOS DE SEO -->
-    <meta name="description" content="Cromak Technology - High performance software engineering.">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="mOchE2IHxNII0qF9s1rImpwncvGEDO1-ZKyMFUHT6wc" />
+    <!-- TÍTULO E INDEXAÇÃO PRINCIPAL -->
+    <title>Cromak Technology | Softwares Nativos, Segurança e Alta Performance para Windows</title>
+    <meta name="title" content="Cromak Technology | Softwares Nativos, Segurança e Alta Performance para Windows">
+    <meta name="description" content="Engenharia de software nativo para Windows. Conheça o ecossistema Cromak: otimização extrema com DeepClean Suite, segurança com Install Protector e Connection Blackout, compiladores e ferramentas forenses 100% offline.">
+    <meta name="keywords" content="Cromak Technology, software nativo windows, DeepClean Suite, Connection Blackout, Install Protector, Password Guard, Metadata Remover, Web to Apk Compiler, Install Compiler, PNG to ICO, SysLock, Network Fix, Bridge Vox, otimização de pc, segurança forense, software offline">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://cromaktechnology.github.io/" />
-    <meta name="theme-color" content="#00d4ff">
-	
+
+    <!-- GOOGLE SITE VERIFICATION -->
+    <meta name="google-site-verification" content="mOchE2IHxNII0qF9s1rImpwncvGEDO1-ZKyMFUHT6wc" />
+
+    <!-- SEO INTERNACIONAL (HREFLANG) -->
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/index.html" />
+    <link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/index.html" />
+    <link rel="alternate" hreflang="x-default" href="https://cromaktechnology.github.io/" />
+
     <!-- OPEN GRAPH (WhatsApp, Facebook, LinkedIn, Discord) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cromak Technology - Alta Performance">
-    <meta property="og:description" content="Engenharia de software nativo, utilitários de sistema e segurança forense.">
-    <meta property="og:image" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:url" content="https://cromaktechnology.github.io/">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:title" content="Cromak Technology | Forjando Ferramentas de Alta Performance">
+    <meta property="og:description" content="Soberania digital e performance de baixo nível. Utilitários de sistema, segurança contra ameaças e compiladores 100% locais sem nuvem e sem mensalidades.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+    <meta property="og:image:secure_url" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Logotipo Oficial da Cromak Technology">
 
-    <!-- TWITTER CARDS -->
+    <!-- TWITTER / X CARDS -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cromak Technology">
-    <meta name="twitter:description" content="Engenharia de software nativo e ferramentas de segurança forense.">
+    <meta name="twitter:url" content="https://cromaktechnology.github.io/">
+    <meta name="twitter:title" content="Cromak Technology | Softwares Nativos e Segurança para Windows">
+    <meta name="twitter:description" content="Engenharia de ponta: otimização kernel, contenção de rede, cofre blindado e compiladores independentes no Windows.">
     <meta name="twitter:image" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+    <meta name="twitter:image:alt" content="Logotipo Oficial da Cromak Technology">
 
-    <link rel="icon" type="image/png" href="cromak_technology_logo_small.png">
+    <!-- IDENTIDADE VISUAL E CORES DO SISTEMA -->
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="msapplication-TileColor" content="#0c0c0c">
+    <link rel="icon" type="image/png" href="images/cromak_technology_logo_small.png">
+    <link rel="apple-touch-icon" href="images/cromak_technology_logo_small.png">
 
-    <script>
-        // 1. Lê a preferência salva pelo usuário (se houver)
-        var savedLang = localStorage.getItem('idioma_preferido');
-        
-        // 2. Lê o idioma do navegador do usuário
-        var browserLang = navigator.language || navigator.userLanguage;
-
-        // 3. Lógica de Redirecionamento
-        if (savedLang === 'pt' || (!savedLang && browserLang.toLowerCase().startsWith('pt'))) {
-            // Manda para o site em Português
-            window.location.replace('/pt/index.html');
-        } else {
-            // Se for Inglês ou qualquer outro idioma, cai no Padrão Global (Inglês)
-            window.location.replace('/en/index.html');
+    <!-- DADOS ESTRUTURADOS JSON-LD (ORGANIZATION + WEBSITE) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cromaktechnology.github.io/#organization",
+          "name": "Cromak Technology",
+          "url": "https://cromaktechnology.github.io/",
+          "logo": "https://cromaktechnology.github.io/images/cromak_technology_logo.png",
+          "description": "Desenvolvedora e laboratório de engenharia de software focado em performance de baixo nível, segurança forense, compiladores e utilitários nativos offline para Windows.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "technical support",
+            "email": "cromaksupport@gmail.com",
+            "availableLanguage": ["Portuguese", "English"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://cromaktechnology.github.io/#website",
+          "url": "https://cromaktechnology.github.io/",
+          "name": "Cromak Technology",
+          "publisher": {
+            "@id": "https://cromaktechnology.github.io/#organization"
+          },
+          "inLanguage": ["pt-BR", "en"]
         }
+      ]
+    }
+    </script>
+
+    <!-- REDIRECIONADOR INSTANTÂNEO BLINDADO -->
+    <script>
+        (function() {
+            try {
+                var savedLang = localStorage.getItem('idioma_preferido');
+                var browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
+                
+                if (savedLang === 'pt' || (!savedLang && browserLang.toLowerCase().startsWith('pt'))) {
+                    window.location.replace('/pt/index.html');
+                } else {
+                    window.location.replace('/en/index.html');
+                }
+            } catch (e) {
+                // Fallback seguro caso localStorage esteja restrito por sandbox
+                window.location.replace('/pt/index.html');
+            }
+        })();
     </script>
 </head>
-<body style="background-color: #0c0c0c; color: #ffffff; font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+<body style="background-color: #0c0c0c; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
     
-    <!-- Tela preta padrão do JS redirecionador -->
-
-    <!-- FALLBACK: Salva-vidas caso o JavaScript esteja bloqueado -->
+    <!-- FALLBACK PARA CASO O JAVASCRIPT ESTEJA BLOQUEADO -->
     <noscript>
-        <div style="text-align: center;">
-            <img src="images/cromaklogoa.png" alt="Cromak Technology" style="max-width: 250px; margin-bottom: 30px;">
-            <h2 style="margin-bottom: 10px;">Cromak Technology</h2>
-            <p style="color: #888; margin-bottom: 30px;">Please select your language / Por favor, selecione seu idioma:</p>
+        <meta http-equiv="refresh" content="3;url=/pt/index.html">
+        <div style="text-align: center; padding: 20px;">
+            <img src="images/cromaklogoa.png" alt="Cromak Technology" style="max-width: 250px; margin-bottom: 25px;">
+            <h1 style="margin-bottom: 10px; font-size: 1.8rem; font-weight: 700;">Cromak Technology</h1>
+            <p style="color: #a0a0a0; margin-bottom: 25px; font-size: 0.95rem;">Please select your language / Selecione seu idioma:</p>
             
-            <a href="/en/index.html" style="background-color: #3b82f6; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 10px; display: inline-block;">English</a>
-            <a href="/pt/index.html" style="background-color: #3b82f6; color: white; padding: 12px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; margin: 10px; display: inline-block;">Português</a>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="/pt/index.html" style="background-color: #00d4ff; color: #0c0c0c; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.95rem;">Português</a>
+                <a href="/en/index.html" style="background-color: #1f2937; color: #ffffff; border: 1px solid #374151; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.95rem;">English</a>
+            </div>
         </div>
     </noscript>
 

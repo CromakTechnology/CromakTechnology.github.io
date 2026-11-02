@@ -919,17 +919,78 @@ footer {
 .span-2-col { grid-column: span 2; }
 .span-2-row { grid-row: span 2; }
 
-.logo-display { text-align: center; }
+.logo-display { 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-display img {
     width: 80%;
     max-width: 250px;
     filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
-    animation: float 6s ease-in-out infinite;
+    animation: float-and-crt 4.5s ease-in-out infinite;
+    will-change: transform, filter, opacity;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+/* Efeito combinado: Flutuação suave + Falha periódica de TV de tubo CRT a cada 4 a 5 segundos */
+@keyframes float-and-crt {
+    /* 0% a 88%: Flutuação suave contínua */
+    0% {
+        transform: translateY(0) scale(1) skewX(0deg);
+        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(-6px) scale(1) skewX(0deg);
+        filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.5));
+    }
+    50% {
+        transform: translateY(-12px) scale(1) skewX(0deg);
+        filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6));
+    }
+    75% {
+        transform: translateY(-6px) scale(1) skewX(0deg);
+        filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.5));
+    }
+    88% {
+        transform: translateY(-1px) scale(1) skewX(0deg);
+        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+        opacity: 1;
+    }
+
+    /* 90% a 98%: Falha eletromagnética / TV de tubo CRT (Aberração Cromática RGB + Desvio Horizontal + Flicker) */
+    90% {
+        transform: translateY(0) translate(-4px, 1px) skewX(3deg);
+        filter: drop-shadow(-4px 0 0 rgba(255, 0, 70, 0.75)) drop-shadow(4px 0 0 rgba(0, 212, 255, 0.75)) brightness(1.3) contrast(1.15);
+        opacity: 0.9;
+    }
+    92% {
+        transform: translateY(0) translate(4px, -2px) skewX(-3deg);
+        filter: drop-shadow(4px 0 0 rgba(255, 0, 70, 0.8)) drop-shadow(-4px 0 0 rgba(0, 212, 255, 0.8)) brightness(1.7) contrast(1.3);
+        opacity: 0.82;
+    }
+    94% {
+        transform: translateY(0) translate(-2px, 2px) scale(1.02);
+        filter: drop-shadow(-3px 0 0 rgba(0, 212, 255, 0.85)) drop-shadow(2px 0 0 rgba(255, 0, 70, 0.6)) brightness(0.9);
+        opacity: 0.95;
+    }
+    96% {
+        transform: translateY(0) translate(2px, -1px) skewX(1deg);
+        filter: drop-shadow(3px 0 0 rgba(255, 0, 70, 0.7)) brightness(1.4);
+        opacity: 0.88;
+    }
+    98% {
+        transform: translateY(0) translate(-1px, 0) scale(0.99);
+        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1) skewX(0deg);
+        filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+        opacity: 1;
+    }
 }
 
 .tech-stack {
@@ -970,6 +1031,12 @@ footer {
     padding-bottom: 60px;
     text-align: center;
     background: radial-gradient(circle at bottom, rgba(0, 164, 239, 0.1), transparent);
+}
+
+.support-hero h1 {
+    font-size: clamp(1.85rem, 5vw, 3rem);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 .support-grid {
@@ -1135,21 +1202,85 @@ footer {
 }
 
 .tv-glitch-img {
-    animation: tv-glitch 3s infinite; 
+    animation: tv-glitch 4.5s infinite; 
     display: inline-block;
 }
 
 @keyframes tv-glitch {
-    0%, 95%, 100% { transform: translate(0, 0) skew(0deg); filter: none; }
-    96% { transform: translate(-3px, 2px) skew(2deg); filter: drop-shadow(-3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(3px 0 0 rgba(0, 212, 255, 0.6)); }
-    97% { transform: translate(3px, -2px) skew(-2deg); filter: none; }
-    98% { transform: translate(-2px, 1px) skew(1deg); filter: drop-shadow(3px 0 0 rgba(255, 0, 0, 0.6)) drop-shadow(-3px 0 0 rgba(0, 212, 255, 0.6)); }
+    0%, 92%, 100% { transform: translate(0, 0) skew(0deg); filter: none; }
+    93% { transform: translate(-3px, 2px) skew(2deg); filter: drop-shadow(-3px 0 0 rgba(255, 0, 70, 0.7)) drop-shadow(3px 0 0 rgba(0, 212, 255, 0.7)) brightness(1.3); }
+    95% { transform: translate(3px, -2px) skew(-2deg); filter: drop-shadow(3px 0 0 rgba(255, 0, 70, 0.7)) drop-shadow(-3px 0 0 rgba(0, 212, 255, 0.7)) brightness(1.6); }
+    97% { transform: translate(-2px, 1px) skew(1deg); filter: drop-shadow(2px 0 0 rgba(0, 212, 255, 0.6)) brightness(0.9); }
     99% { transform: translate(1px, -1px) skew(0deg); filter: none; }
 }
 
 @media (max-width: 992px) {
     .support-grid { grid-template-columns: 1fr; }
     .contact-sidebar { position: static; }
+}
+
+@media (max-width: 768px) {
+    .support-hero {
+        padding-top: 120px;
+        padding-bottom: 35px;
+    }
+    .support-grid {
+        margin-top: 25px;
+        gap: 25px;
+    }
+    .faq-container {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+    .faq-search {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    .contact-card {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+    .download-center {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+    .ticket-form {
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+    .faq-question-title {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding-right: 10px;
+    }
+    .faq-accordion-header {
+        padding: 14px 14px;
+        font-size: 0.95rem;
+    }
+    .faq-answer-inner {
+        padding: 0 14px 16px 14px;
+        font-size: 0.9rem;
+    }
+    .tv-glitch-img {
+        max-width: 220px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    .faq-badge {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+    .btn-support {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
 }
 
 /* =========================================================
@@ -1636,4 +1767,159 @@ footer {
 
 .faq-answer-inner li {
     margin-bottom: 6px;
+}
+
+/* =========================================================
+   ESTILOS DA PÁGINA: CENTRO DE DOCUMENTAÇÃO
+========================================================= */
+.download-hero {
+    padding-top: 180px;
+    padding-bottom: 60px;
+    text-align: center;
+    background: radial-gradient(circle at bottom, rgba(0, 212, 255, 0.08), transparent 70%);
+}
+
+.download-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffffff 40%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.category-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.category-title span {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--accent);
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.download-card {
+    background: var(--card-bg, #1e1e1e);
+    border: 1px solid var(--card-border, #333);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+}
+
+.download-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.download-card h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.download-card p {
+    color: var(--text-dim, #b0b0b0);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.download-info {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    flex-wrap: wrap;
+}
+
+.download-info span {
+    background: rgba(0, 212, 255, 0.08);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 13px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.25);
+    cursor: pointer;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .download-hero {
+        padding-top: 120px;
+        padding-bottom: 35px;
+    }
+    .download-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .download-card {
+        padding: 22px 18px;
+    }
+    .category-title {
+        font-size: 1.3rem;
+        margin-top: 35px;
+    }
 }

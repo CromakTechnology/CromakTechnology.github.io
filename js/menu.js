@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         </div>
                     </div>
 
-                    <a href="index.html#recursos">${t.features}</a>
+                    <a href="index.html#arsenal">${t.features}</a>
                     <a href="sobre.html">${t.about}</a>
                     <a href="suporte.html">${t.support}</a>
                     
@@ -182,6 +182,14 @@ document.addEventListener("DOMContentLoaded", function() {
             navMenu.classList.toggle('active');
             mobileMenu.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
         });
+    }
+
+    // 6. Contador Global do Ecossistema Cromak
+    // Registra a visita de todas as páginas no mesmo contador geral.
+    // Apenas a página 'sobre.html' exibe visualmente o painel de leitura acumulado.
+    if (!window.location.pathname.includes('sobre.html')) {
+        const hitBeacon = new Image();
+        hitBeacon.src = 'https://hits.sh/cromaktechnology.github.io.svg';
     }
 });
 

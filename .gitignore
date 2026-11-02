@@ -1,0 +1,12 @@
+# Arquivos temporários e locks do sistema/IDE
+state/
+*.lock
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs e caches locais
+*.log
+.vscode/
+.idea/
