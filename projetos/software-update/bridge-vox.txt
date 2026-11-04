@@ -1,2 +1,2 @@
-1.3.5
+1.3.7
 https://cromaktechnology.github.io/pt/bridge-vox.html
