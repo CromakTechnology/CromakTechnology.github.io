@@ -70,12 +70,16 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="dropdown-submenu">
                                 <a href="#" class="submenu-btn">${t.cat_security} <span>▸</span></a>
                                 <div class="submenu-content">
-                                    <a href="install-protector.html">Install Protector</a>
                                     <a href="connection-blackout.html">Connection Blackout</a>
-                                    <a href="password_guard.html">Password Guard</a>
+                                    <a href="install-protector.html">Install Protector</a>
+                                    <a href="instant-rollback.html">Instant Rollback</a>
                                     <a href="metadata_remover.html">Metadata Remover</a>
                                     <a href="network-fix.html">Network Fix</a>
+                                    <a href="password_guard.html">Password Guard</a>
+                                    <a href="silent-observer.html">Silent Observer</a>
+                                    <a href="smart-crypt.html">Smart Crypt</a>
                                     <a href="syslock.html">SysLock</a>
+                                    <a href="update-guardian.html">Update Guardian</a>
                                 </div>
                             </div>
                             

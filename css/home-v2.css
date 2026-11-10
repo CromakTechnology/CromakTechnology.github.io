@@ -1,0 +1,570 @@
+/* =========================================================
+   HOME V2 — BENTO GRID, CYBER TERMINAL & SMART FAQ
+   Cromak Technology — Next-Gen Showcase
+========================================================= */
+
+/* --- 1. SEÇÃO MINI-BENTO: OS 3 PILARES --- */
+.bento-section {
+    padding: 70px 0 60px 0;
+    position: relative;
+    background: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.05) 0%, transparent 60%);
+}
+
+.bento-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 50px auto;
+}
+
+.bento-header h2 {
+    font-size: 2.4rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.bento-header p {
+    font-size: 1.1rem;
+    color: var(--text-dim, #94a3b8);
+    line-height: 1.6;
+}
+
+.bento-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 20px;
+}
+
+.bento-card {
+    background: linear-gradient(160deg, #161b24 0%, #0e1219 100%);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    padding: 34px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--card-accent, #00d4ff), transparent);
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--card-accent, #00d4ff);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 212, 255, 0.18);
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+}
+
+.bento-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.bento-card:hover .bento-icon-wrapper {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    border-color: var(--card-accent, #00d4ff);
+}
+
+.bento-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--card-accent, #00d4ff);
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.bento-card h3 {
+    font-size: 1.35rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.bento-card p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.bento-footer-stat {
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+/* --- 2. SEÇÃO TERMINAL CYBERPUNK INTERATIVO --- */
+.terminal-section {
+    padding: 60px 0 70px 0;
+    position: relative;
+}
+
+.terminal-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+.terminal-header h2 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.terminal-header p {
+    font-size: 1.05rem;
+    color: var(--text-dim, #94a3b8);
+}
+
+.terminal-window {
+    max-width: 920px;
+    margin: 0 auto;
+    background: #0b0e14;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 212, 255, 0.2);
+    overflow: hidden;
+    position: relative;
+}
+
+.terminal-topbar {
+    height: 44px;
+    background: #141923;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.terminal-title {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+/* Abas de Comandos no Terminal */
+.terminal-tabs {
+    display: flex;
+    gap: 8px;
+    background: #0f141d;
+    padding: 10px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    overflow-x: auto;
+}
+
+.terminal-tab-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.terminal-tab-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+.terminal-tab-btn.active {
+    background: rgba(0, 212, 255, 0.15);
+    color: #00d4ff;
+    border-color: #00d4ff;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+.terminal-body {
+    padding: 24px 28px;
+    font-family: 'Consolas', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #e2e8f0;
+    min-height: 240px;
+    max-height: 360px;
+    overflow-y: auto;
+    background: radial-gradient(circle at bottom right, rgba(0, 212, 255, 0.03), transparent 70%);
+}
+
+.terminal-line {
+    margin-bottom: 6px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.term-cmd { color: #38bdf8; font-weight: bold; }
+.term-ok { color: #34d399; font-weight: bold; }
+.term-warn { color: #fbbf24; font-weight: bold; }
+.term-label { color: #94a3b8; }
+.term-val { color: #ffffff; }
+.term-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #00d4ff;
+    vertical-align: middle;
+    margin-left: 4px;
+    animation: term-blink 1s infinite;
+}
+
+@keyframes term-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* --- 3. SEÇÃO FAQ RÁPIDO COM REDIRECIONAMENTO --- */
+.quick-faq-section {
+    padding: 60px 0 70px 0;
+    position: relative;
+    background: rgba(10, 14, 22, 0.5);
+}
+
+.quick-faq-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+.quick-faq-header h2 {
+    font-size: 2.3rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.quick-faq-header p {
+    font-size: 1.05rem;
+    color: var(--text-dim, #94a3b8);
+}
+
+.quick-faq-container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.qfaq-item {
+    background: rgba(22, 27, 36, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.qfaq-item:hover {
+    border-color: rgba(0, 212, 255, 0.35);
+    background: rgba(22, 27, 36, 0.95);
+}
+
+.qfaq-question {
+    width: 100%;
+    padding: 18px 22px;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    text-align: left;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.25s ease;
+}
+
+.qfaq-item.active .qfaq-question {
+    color: var(--accent, #00d4ff);
+}
+
+.qfaq-icon {
+    font-size: 1.25rem;
+    color: var(--text-dim, #94a3b8);
+    transition: transform 0.3s ease, color 0.3s ease;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.qfaq-item.active .qfaq-icon {
+    transform: rotate(45deg);
+    color: var(--accent, #00d4ff);
+}
+
+.qfaq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease;
+}
+
+.qfaq-answer-inner {
+    padding: 0 22px 20px 22px;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 14px;
+}
+
+/* Card Chamada para Suporte Oficial */
+.qfaq-support-card {
+    margin-top: 35px;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.12) 0%, rgba(0, 212, 255, 0.06) 100%);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    border-radius: 16px;
+    padding: 26px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.qfaq-support-card:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.qfaq-support-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.qfaq-support-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(0, 212, 255, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00d4ff;
+    flex-shrink: 0;
+}
+
+.qfaq-support-text h4 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.qfaq-support-text p {
+    color: #94a3b8;
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.qfaq-support-btn {
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.92rem;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.35);
+}
+
+.qfaq-support-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+    color: #ffffff;
+}
+
+/* =========================================================
+   RESPONSIVIDADE DAS SEÇÕES DA HOME
+========================================================= */
+@media (max-width: 992px) {
+    .bento-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .bento-header h2, .terminal-header h2, .quick-faq-header h2 {
+        font-size: 2rem;
+    }
+    .qfaq-support-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+    }
+    .qfaq-support-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    .qfaq-support-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-section, .terminal-section, .quick-faq-section {
+        padding: 45px 0;
+    }
+    .bento-header, .terminal-header, .quick-faq-header {
+        margin-bottom: 30px;
+    }
+    .bento-header h2, .terminal-header h2, .quick-faq-header h2 {
+        font-size: 1.7rem;
+    }
+    .bento-card {
+        padding: 24px 20px;
+    }
+    .terminal-body {
+        padding: 18px 16px;
+        font-size: 0.84rem;
+        min-height: 200px;
+    }
+    .qfaq-question {
+        padding: 15px 16px;
+        font-size: 0.95rem;
+    }
+    .qfaq-answer-inner {
+        padding: 0 16px 16px 16px;
+        font-size: 0.88rem;
+    }
+}
+
+/* =========================================================
+   EQUILÍBRIO DO ARSENAL GRID (Harmonia visual para 13 cards)
+========================================================= */
+@media (min-width: 992px) {
+    .arsenal-grid .arsenal-card:last-child:nth-child(3n + 1) {
+        grid-column: 2;
+    }
+}
+
+@media (min-width: 680px) and (max-width: 991px) {
+    .arsenal-grid .arsenal-card:last-child:nth-child(2n + 1) {
+        grid-column: 1 / -1;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   HERO TITLE & BADGE V2 ULTRA-PREMIUM (ESTILO STRIPE/LINEAR)
+========================================================= */
+.hero-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(0, 212, 255, 0.06);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 22px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.12);
+}
+
+.hero-pill-badge svg {
+    color: #00d4ff;
+}
+
+.hero-pill-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #00d4ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00d4ff;
+    animation: pillPulse 2s infinite ease-in-out;
+}
+
+@keyframes pillPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.hero-main-title {
+    font-size: clamp(2.4rem, 5.2vw, 4.2rem) !important;
+    font-weight: 850 !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.035em !important;
+    color: #ffffff !important;
+    margin-bottom: 20px !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: initial !important;
+    background: none !important;
+}
+
+.hero-main-title .hero-title-highlight {
+    background: linear-gradient(135deg, #00d4ff 0%, #38bdf8 45%, #007bff 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 0 22px rgba(0, 212, 255, 0.45));
+    display: inline-block;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.05rem, 1.8vw, 1.22rem) !important;
+    color: #94a3b8 !important;
+    max-width: 760px;
+    margin: 0 auto 36px auto !important;
+    line-height: 1.65 !important;
+    font-weight: 400;
+}

@@ -1,0 +1,328 @@
+/* =========================================================
+   CAROUSEL V2 — ULTRA-PREMIUM COVERFLOW 3D
+   Cromak Technology — Visual Showcase Engine
+========================================================= */
+
+.carousel-v2-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1180px;
+    margin: 40px auto 20px auto;
+    padding: 10px 10px 25px 10px;
+    perspective: 1400px;
+    overflow: visible;
+}
+
+/* Efeito de Luz Ambiente (Ambient Glow) no Fundo */
+.carousel-v2-glow {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    height: 320px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.25) 0%, rgba(0, 123, 255, 0.12) 40%, transparent 70%);
+    filter: blur(65px);
+    z-index: 0;
+    pointer-events: none;
+    transition: background 0.8s ease;
+    animation: glow-pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% { transform: translate(-50%, -50%) scale(0.95); opacity: 0.75; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+}
+
+/* Palco do Carrossel 3D */
+.carousel-v2-container {
+    position: relative;
+    width: 100%;
+    height: 490px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.carousel-v2-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* O Card em Formato de Janela de Software Moderna */
+.carousel-v2-card {
+    position: absolute;
+    width: 62%;
+    left: 19%;
+    top: 15px;
+    background: #0f131a;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.7s ease,
+                filter 0.7s ease,
+                box-shadow 0.7s ease,
+                border-color 0.7s ease;
+    transform-style: preserve-3d;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Barra Superior da Janela (Window Header) — Título Centralizado Limpo */
+.v2-window-header {
+    height: 36px;
+    background: linear-gradient(180deg, #181d26 0%, #12161f 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 16px;
+}
+
+.v2-window-dots {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    z-index: 2;
+}
+
+.v2-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.v2-dot.close { background: #ff5f56; box-shadow: 0 0 6px rgba(255, 95, 86, 0.6); }
+.v2-dot.min   { background: #ffbd2e; box-shadow: 0 0 6px rgba(255, 189, 46, 0.6); }
+.v2-dot.max   { background: #27c93f; box-shadow: 0 0 6px rgba(39, 201, 63, 0.6); }
+
+.v2-window-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.88rem;
+    color: #e2e8f0;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 60px;
+    pointer-events: none;
+}
+
+/* Corpo da Janela (Imagem) */
+.v2-window-body {
+    background: #090c10;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.v2-window-body img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.carousel-v2-card.active:hover .v2-window-body img {
+    transform: scale(1.02);
+}
+
+/* =========================================================
+   ESTADOS 3D (COVERFLOW ANGULAR)
+========================================================= */
+
+/* Slide Central Ativo */
+.carousel-v2-card.active {
+    opacity: 1;
+    transform: translateX(0) translateZ(80px) rotateY(0deg) scale(1.04);
+    z-index: 10;
+    border-color: rgba(0, 212, 255, 0.55);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 212, 255, 0.35);
+    cursor: default;
+}
+
+/* Slide Anterior (Esquerda com Perspectiva) */
+.carousel-v2-card.prev {
+    opacity: 0.45;
+    transform: translateX(-56%) translateZ(-160px) rotateY(32deg) scale(0.82);
+    z-index: 5;
+    filter: brightness(0.65) blur(0.5px);
+}
+
+.carousel-v2-card.prev:hover {
+    opacity: 0.75;
+    filter: brightness(0.9) blur(0);
+}
+
+/* Slide Posterior (Direita com Perspectiva) */
+.carousel-v2-card.next {
+    opacity: 0.45;
+    transform: translateX(56%) translateZ(-160px) rotateY(-32deg) scale(0.82);
+    z-index: 5;
+    filter: brightness(0.65) blur(0.5px);
+}
+
+.carousel-v2-card.next:hover {
+    opacity: 0.75;
+    filter: brightness(0.9) blur(0);
+}
+
+/* Slides Ocultos nas Asas */
+.carousel-v2-card.hidden-left {
+    opacity: 0;
+    transform: translateX(-100%) translateZ(-350px) rotateY(45deg) scale(0.6);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-v2-card.hidden-right {
+    opacity: 0;
+    transform: translateX(100%) translateZ(-350px) rotateY(-45deg) scale(0.6);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* =========================================================
+   BOTÕES DE NAVEGAÇÃO NEON (GLASSMORPHISM)
+========================================================= */
+.carousel-v2-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(13, 17, 26, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-v2-btn:hover {
+    background: rgba(0, 212, 255, 0.15);
+    border-color: #00d4ff;
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.12);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+}
+
+.carousel-v2-btn:active {
+    transform: translateY(-50%) scale(0.96);
+}
+
+.carousel-v2-btn.prev { left: -10px; }
+.carousel-v2-btn.next { right: -10px; }
+
+/* =========================================================
+   INDICADORES / DOTS INTERATIVOS
+========================================================= */
+.carousel-v2-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.v2-dot-item {
+    height: 6px;
+    width: 10px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+.v2-dot-item:hover {
+    background: rgba(0, 212, 255, 0.5);
+    width: 18px;
+}
+
+.v2-dot-item.active {
+    width: 34px;
+    background: #00d4ff;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.85);
+}
+
+/* =========================================================
+   RESPONSIVIDADE (MOBILE & TABLET)
+========================================================= */
+@media (max-width: 992px) {
+    .carousel-v2-container {
+        height: 400px;
+    }
+    .carousel-v2-card {
+        width: 74%;
+        left: 13%;
+    }
+    .carousel-v2-card.prev {
+        transform: translateX(-48%) translateZ(-120px) rotateY(25deg) scale(0.85);
+    }
+    .carousel-v2-card.next {
+        transform: translateX(48%) translateZ(-120px) rotateY(-25deg) scale(0.85);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-v2-wrapper {
+        margin-top: 25px;
+        padding: 10px 5px 20px 5px;
+    }
+    .carousel-v2-container {
+        height: 300px;
+    }
+    .carousel-v2-card {
+        width: 86%;
+        left: 7%;
+    }
+    .v2-window-header {
+        height: 30px;
+        padding: 0 12px;
+    }
+    .v2-window-title {
+        font-size: 0.78rem;
+        padding: 0 45px;
+    }
+    .carousel-v2-btn {
+        width: 40px;
+        height: 40px;
+    }
+    .carousel-v2-btn.prev { left: 4px; }
+    .carousel-v2-btn.next { right: 4px; }
+    .carousel-v2-card.prev {
+        transform: translateX(-35%) translateZ(-80px) rotateY(18deg) scale(0.85);
+        opacity: 0.3;
+    }
+    .carousel-v2-card.next {
+        transform: translateX(35%) translateZ(-80px) rotateY(-18deg) scale(0.85);
+        opacity: 0.3;
+    }
+    .carousel-v2-dots {
+        margin-top: 18px;
+    }
+}
