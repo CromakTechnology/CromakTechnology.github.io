@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak NewTab - Your Smart Start Page | Download</title>
+    <meta name="description" content="Customize your browsing with Cromak NewTab. A fast, secure start page based on Metro UI with 100% offline saving via LocalStorage.">
+    <meta name="keywords" content="new tab, start page, metro ui, link panel, web productivity, cromak newtab, browser customization">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Cromak NewTab - Smart Start Page">
+    <meta property="og:description" content="Your new Metro UI style navigation hub, 100% customizable and with local saving.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/newtab/newtab1.png">
+    <meta property="og:url" content="https://cromaktechnology.github.io/new-tab-service.html">
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    
+    
+</head>
+<body>
+
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <span class="badge-pro">Optimized and Customizable Browsing</span>
+                <h1 style="font-size: 4rem; margin-bottom: 10px;">Cromak NewTab</h1>
+                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">Your New Smart Metro UI Style Shortcut Hub</p>
+                <p style="font-size: 1.0rem; color: var(--accent); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    Version: 1.1.3 (Open Source)
+                </p>
+				
+                <div style="margin-bottom: 40px;">
+                    <a href="https://cromaktechnology.github.io/projetos/newtab/newtab.html" class="btn" target="_blank" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Access Online</a>
+                    <a href="#planos" class="btn" style="background: rgba(255,255,255,0.05); color: white; padding: 15px 40px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--card-border);">Download Source Code</a>
+                </div>
+
+                <img src="../images/newtab/newtab1.png" alt="Cromak NewTab Initial Panel" class="screenshot-main lightbox-trigger" style="max-width: 1000px; display: block; margin: 0 auto;">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">The 3 Pillars of the New Tab</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Customize, save, and access your essential services without relying on third-party servers.</p>
+                
+                <div class="info-grid">
+                    <div class="card-pilar">
+                        <h4>🎨 100% Customizable Metro UI</h4>
+                        <p>Clean block-based interface with full support for color, text, and opacity customization. Change the look in real-time to match your style.</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>💾 LocalStorage (Offline)</h4>
+                        <p>Privacy is guaranteed. All modifications, links, and preferences you change are stored directly in your local browser memory.</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>🔄 Portable Backups</h4>
+                        <p>Access the preferences panel to export your entire page as a base64 file. Import it on any other machine and recover your layout in seconds.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Layout Overview</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Click the images to expand and view interface details.</p>
+                
+                <div class="gallery-grid">
+                    
+                    <div class="gallery-card">
+                        <img src="../images/newtab/newtab1.png" alt="Main Home Screen" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Home Screen and Categories</h4>
+                            <p>The main page comes pre-linked to dynamic subcategories like videos, music, AI, games, and stores. A giant highlight in the center exclusively for <b>Google Services</b>.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/newtab/newtab2.png" alt="Quick Block Configuration" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Block Configuration</h4>
+                            <p>Press ALT + Click on any block to open the editing modal. Change the title, set a new destination link, change the icon image, and adjust the panel's background color.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/newtab/newtab3.png" alt="Preferences and Interface Adjustments" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>General Preferences</h4>
+                            <p>Absolute control over the overall design. Choose a new background wallpaper, adjust the color and transparency of all panels, and manage your Backup files.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/newtab/newtab4.png" alt="Direct Block Name Editing" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Direct Name Editing</h4>
+                            <p>Just need to rename? The system allows for quick dynamic editing of service names directly on the panel, ensuring fluidity in your daily workflow.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/newtab/newtab5.png" alt="Smart Search Engine Bar" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Search Engines</h4>
+                            <p>Far beyond Google. Dynamically select which engine you want to search (Bing, DuckDuckGo, Amazon, and others) directly from the same central bar.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/newtab/newtab6.png" alt="About Cromak NewTab Software Panel" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>About the Software</h4>
+                            <p>Informational window detailing the current version of the Metro UI Interface, designed to be a smart and fully modular shortcut panel.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="tech-specs">
+                    <div>
+                        <h2 style="text-align: left;" class="section-title">Advanced Web Engineering</h2>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>Dynamic DOM Modifications</h4>
+                                <p>JavaScript handles each visual change instantly without reloading the page, maintaining the feel of a fast native application.</p>
+                            </li>
+                            <li>
+                                <h4>Clean Rendering</h4>
+                                <p>The HTML5 and CSS3 source code is minified and organized, avoiding heavy frameworks and ensuring immediate loading.</p>
+                            </li>
+                            <li>
+                                <h4>Placeholder System</h4>
+                                <p>Ready for safe use. The repository version features neutral blocks and "Add New" images to prevent online content violations.</p>
+                            </li>
+                        </ul>
+                        
+                        <div class="dark-web-alert">
+                            <h4 style="color: #00a4ef; margin: 0 0 5px 0;">⚡ Hybrid Hosting</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem; margin: 0;">You can use the ready-made version running on GitHub Pages (where your data is saved locally on your machine) or download the files and use them as an offline extension in your browser.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="../images/newtab/newtab1.png" alt="NewTab Architecture" class="screenshot-main lightbox-trigger" style="max-width: 1000px; display: block; margin: 0 auto;" style="margin-bottom: 25px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Universal Browser Compatibility</h2>
+                <p style="color: var(--text-dim); max-width: 750px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Developed with modern web standards to ensure your Metro UI experience works flawlessly, regardless of your browser choice.
+                </p>
+                <div class="lang-grid">
+                    <span class="lang-badge">Google Chrome</span>
+                    <span class="lang-badge">Microsoft Edge</span>
+                    <span class="lang-badge">Mozilla Firefox</span>
+                    <span class="lang-badge">Brave Browser</span>
+                    <span class="lang-badge">Opera GX</span>
+                    <span class="lang-badge">Safari</span>
+                </div>
+            </div>
+        </section>
+		
+		<!-- BLOCO DE PLANOS E PREÇOS (ADAPTADO) -->
+        <section class="section" id="planos" style="padding-top: 80px; padding-bottom: 80px; background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Acquire or Support the Project</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Cromak NewTab is an Open Source initiative. You can use it for free or support continuous development.</p>
+
+                <div class="pricing-grid">
+                    
+                    <!-- Card: Gratuito -->
+                    <div class="price-card">
+                        <h3>Personal Use (Free)</h3>
+                        <div class="price-value">$ 0<span>/free</span></div>
+                        <ul class="price-features">
+                            <li>Full Code Access</li>
+                            <li>Unlimited Customization</li>
+                            <li>Offline and Online Use</li>
+                            <li>Community Updates</li>
+                            <li class="disabled">No Direct Support</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/mp1bfxcmnj021yn/Cromak-NewTab-v1.1.3-cliente.zip/file" target="_blank" class="btn-outline">Download Source Code</a>
+                    </div>
+
+                    <!-- Card: Apoiador -->
+                    <div class="price-card popular">
+                        <div class="popular-tag">Incentive</div>
+                        <h3>Official Supporter</h3>
+                        <div class="price-value">$ 19<span>.90/one-time</span></div>
+                        <ul class="price-features">
+                            <li><b>Everything in Personal Use, plus:</b></li>
+                            <li>Helps Maintain Servers</li>
+                            <li>Supporter Badge on Discord</li>
+                            <li>Early Access to New Themes</li>
+                            <li>Acknowledgment in official README</li>
+                        </ul>
+                        <a href="https://mpago.la/2YMgeWM" target="_blank" class="btn-buy">Support Project</a>
+                    </div>
+
+                    <!-- Card: Uso Comercial -->
+                    <div class="price-card popular" style="border-color: #00a4ef;">
+                        <div class="popular-tag" style="background: #00a4ef; color: white;">Agencies and Companies</div>
+                        <h3>Commercial License</h3>
+                        <div class="price-value" style="margin-top: 10px;">
+                            $ 99<span>.90/one-time</span>
+                        </div>
+                        <ul class="price-features">
+                            <li><b>Modified Resale Rights</b></li>
+                            <li>Removal of "Cromak" Brand</li>
+                            <li>Intranet Integration</li>
+                            <li>Exclusive Icon Pack</li>
+                            <li>Support for Server Deployment</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy" style="background: #00a4ef; color: white;">Buy License</a>
+                    </div>
+
+                </div>
+
+                <div class="secure-payment" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p>🔒 Developed with love by Cromak Technology.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- TÍTULO E INDEXAÇÃO PRINCIPAL -->
+    <title>Visualizador de Fotos Clássico para Windows 10 e 11 | Cromak Photo Viewer</title>
+    <meta name="title" content="Visualizador de Fotos Clássico para Windows 10 e 11 | Cromak Photo Viewer">
+    <meta name="description" content="Descarregue o visualizador de imagens clássico mais rápido e leve para Windows. Resgate a interface nostálgica do Windows 7, Vista e Live Photo Gallery num motor moderno em PyQt6, 100% offline e gratuito.">
+    <meta name="keywords" content="visualizador de fotos classico, windows photo viewer, live photo gallery, abrir fotos rapido windows 11, alternativa app fotos windows 10, cromak photo viewer, visualizador leve, aero glass windows 11, visualizador offline">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://cromaktechnology.github.io/photoviewer.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/photoviewer.html">
+    <link rel="alternate" hreflang="x-default" href="https://cromaktechnology.github.io/photoviewer.html">
+
+    <!-- OPEN GRAPH (WHATSAPP, FACEBOOK, LINKEDIN, DISCORD) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://cromaktechnology.github.io/photoviewer.html">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:title" content="Visualizador de Fotos Clássico para Windows | Cromak Photo Viewer">
+    <meta property="og:description" content="A experiência clássica do visualizador de fotos do Windows com arranque instantâneo, suporte a temas Aero Glass, Dark Mode e operação 100% offline.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg">
+    <meta property="og:image:secure_url" content="https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="675">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Interface clássica do Cromak Photo Viewer para Windows">
+
+    <!-- TWITTER / X CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cromaktechnology.github.io/photoviewer.html">
+    <meta name="twitter:title" content="Visualizador de Fotos Clássico para Windows | Download Grátis">
+    <meta name="twitter:description" content="Carregamento quase instantâneo de imagens sem telemetria. Temas Classic, Vista, Live e Dark Mode para Windows 10 e 11.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg">
+
+    <!-- TEMA DO NAVEGADOR E IDENTIDADE VISUAL -->
+    <meta name="theme-color" content="#121212">
+    <meta name="msapplication-TileColor" content="#121212">
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+
+    <!-- DADOS ESTRUTURADOS JSON-LD (SCHEMA.ORG: SOFTWAREAPPLICATION + WEBPAGE + FAQPAGE) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://cromaktechnology.github.io/photoviewer.html#software",
+          "name": "Cromak Photo Viewer & Photo Gallery",
+          "operatingSystem": "Windows 10 64-bit, Windows 11 64-bit",
+          "applicationCategory": "MultimediaApplication",
+          "applicationSubCategory": "Image Viewer",
+          "softwareVersion": "1.4.2",
+          "releaseNotes": "Build 2026.11: Motor de descodificação em segundo plano, suporte a temas clássicos e aero glass, e execução nativa sem dependências externas.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "BRL",
+            "category": "Freeware"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Cromak Technology",
+            "url": "https://cromaktechnology.github.io"
+          },
+          "screenshot": "https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg",
+          "featureList": [
+            "Abertura quase instantânea de imagens JPG, PNG, WEBP e BMP",
+            "Temas nostálgicos: Windows Classic, Windows Vista e Live Photo Gallery",
+            "Opção de Modo Escuro nativo (Dark Mode)",
+            "Suporte opcional para efeitos translúcidos Aero Glass",
+            "Operação 100% offline com zero telemetria ou recolha de dados",
+            "Associação nativa de extensões através do registo do Windows",
+            "Suporte multilingue integrado com 11 idiomas"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://cromaktechnology.github.io/photoviewer.html#webpage",
+          "url": "https://cromaktechnology.github.io/photoviewer.html",
+          "name": "Visualizador de Fotos Clássico para Windows 10 e 11 | Cromak Photo Viewer",
+          "description": "Página oficial de transferência do Cromak Photo Viewer. O visualizador de imagens clássico leve e sem telemetria para Windows.",
+          "inLanguage": "pt-BR",
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "Cromak Technology",
+            "url": "https://cromaktechnology.github.io"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cromaktechnology.github.io/photoviewer.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "O Visualizador de Fotos funciona no Windows 11 e Windows 10?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. O software foi concebido e compilado de forma autónoma (Stand-Alone) especificamente para versões de 64 bits do Windows 10 e Windows 11, não exigindo a instalação prévia de Python ou bibliotecas externas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O aplicativo envia as minhas fotografias para a internet ou recolhe dados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Não. O aplicativo opera 100% offline. Não possui rastreadores de telemetria, não exibe anúncios e nunca transmite qualquer ficheiro ou fotografia para a nuvem."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como posso definir o aplicativo como o visualizador predefinido do Windows?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Basta abrir as Preferências do programa, aceder ao separador Associações e assinalar as extensões desejadas (JPG, PNG, WEBP, BMP). O software configura as diretivas necessárias no registo do Windows num só clique."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "O programa é gratuito?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim, é um projeto Freeware 100% gratuito, sem anúncios ou funcionalidades bloqueadas para uso pessoal."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <span class="badge-pro">Nostalgia & Performance</span>
+				<span class="badge-pro">Freeware / Fan Project</span>
+                <h1 style="font-size: 4rem; margin-bottom: 10px;">Visualizador de Fotos para Windows</h1>
+                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">A Experiência Clássica do Windows em um Motor Moderno</p>
+                <p style="font-size: 1.0rem; color: var(--accent); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    Versão: 1.4.2 (Build: 2026.11)
+                </p>
+				
+                <div style="margin-bottom: 40px;">
+                    <a href="#planos" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Baixar Grátis (Windows)</a>
+                </div>
+
+                <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Interface do Visualizador de Fotos" class="screenshot-main lightbox-trigger" style="max-width: 1000px; display: block; margin: 0 auto;">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">A Beleza do Passado, a Engenharia do Futuro</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Reviva a interface rápida e direta que marcou época, sem abrir mão da velocidade e segurança atual.</p>
+                
+                <div class="info-grid">
+                    <div class="card-pilar">
+                        <h4>🖼️ Temas Clássicos</h4>
+                        <p>Escolha entre os temas Classic, Windows Vista, Live Photo Gallery ou o moderno Dark Mode. A interface se adapta perfeitamente ao seu gosto e nível de nostalgia.</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>⚡ Desempenho Nativo</h4>
+                        <p>Desenvolvido em Python e PyQt6, o motor de renderização carrega suas imagens quase instantaneamente. Navegação fluida, aproximação sem engasgos e resposta imediata.</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>🔒 100% Offline e Privado</h4>
+                        <p>Suas fotos são suas. O software não possui NENHUMA telemetria, não coleta dados e não acessa a internet. O que acontece no seu computador, fica no seu computador.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Visão Geral do Layout</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Clique nas imagens para expandir e ver os detalhes da interface.</p>
+                
+                <div class="gallery-grid">
+                    
+                                        <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Tela Principal do Visualizador" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Navegação Clássica</h4>
+                            <p>Controles de reprodução, rotação, zoom e exclusão exatamente onde você se lembra. Funciona perfeitamente como galeria ou visualizador individual.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev2.jpg" alt="Modo Escuro e Temas" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Temas Personalizáveis</h4>
+                            <p>Cansado da tela clara? Escolha entre diversas variações visuais, incluindo novos e modernos Modos Escuros, mantendo toda a elegância original.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev3.jpg" alt="Menu de Contexto" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Menu de Contexto Rápido</h4>
+                            <p>Acesse rapidamente opções úteis como copiar, excluir, girar a imagem ou defini-la como papel de parede direto pelo clique direito do mouse.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev4.jpg" alt="Configurações e Associações" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Integração Inteligente</h4>
+                            <p>Associe os principais formatos de imagem (JPG, PNG, WEBP, etc.) para abrirem nativamente com o programa com apenas um clique nas preferências.</p>
+                        </div>
+                    </div>
+					
+					<div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev5.jpg" alt="Idiomas Disponíveis" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Idiomas em Tempo Real</h4>
+                            <p>Tradução completa e instantânea para 11 dos idiomas mais falados do mundo. Troque o idioma da interface sem precisar reiniciar o aplicativo.</p>
+                        </div>
+                    </div>
+					
+					<div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev6.jpg" alt="Barra de Menus" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Barra de Ferramentas Nostálgica</h4>
+                            <p>As clássicas opções agrupadas no topo da janela. Acesse com facilidade atalhos para imprimir, gravar em disco ou enviar a imagem por e-mail.</p>
+                        </div>
+                    </div>
+					
+					<div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev7.jpg" alt="Efeito Aero Glass" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Transparência Aero Glass</h4>
+                            <p>Traga de volta as famosas bordas translúcidas de vidro aos sistemas operacionais mais modernos (Windows 10 e 11) com uma integração nativa e dedicada.</p>
+                        </div>
+                    </div>
+					
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="tech-specs">
+                    <div>
+                        <h2 style="text-align: left;" class="section-title">Engenharia de Baixo Nível em PyQt6</h2>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>Múltiplos Formatos Suportados</h4>
+                                <p>Carrega sem esforço imagens JPG, PNG, BMP, WEBP e muito mais, usando bibliotecas nativas de decodificação para máxima velocidade.</p>
+                            </li>
+                            <li>
+                                <h4>Internacionalização Dinâmica</h4>
+                                <p>Suporte completo a 8 idiomas (Português, Inglês, Espanhol, Francês, Japonês, etc.) com troca em tempo real, sem precisar reiniciar o aplicativo.</p>
+                            </li>
+                            <li>
+                                <h4>Leitura em Background (Threads)</h4>
+                                <p>A listagem e criação de miniaturas em grandes pastas é feita em segundo plano para que a interface principal nunca trave ou congele.</p>
+                            </li>
+                        </ul>
+                        
+                        <div class="dark-web-alert">
+                            <h4 style="color: #00a4ef; margin: 0 0 5px 0;">⚡ Fair Use e Transparência</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem; margin: 0;">Este é um projeto não-oficial feito de fã para fãs. Não possui vínculos com a Microsoft Corporation. As marcas e designs originais são de propriedade de seus respectivos donos. O objetivo é a preservação histórica e educacional.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Interface Clássica" class="screenshot-main lightbox-trigger" style="max-width: 1000px; display: block; margin: 0 auto;" style="margin-bottom: 25px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Compatibilidade do Sistema</h2>
+                <p style="color: var(--text-dim); max-width: 750px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Compilado de forma independente (Stand-Alone). Não requer instalação de Python, bibliotecas ou frameworks externos na sua máquina.
+                </p>
+                <div class="lang-grid">
+                    <span class="lang-badge">Windows 10 (64-bits)</span>
+                    <span class="lang-badge">Windows 11 (64-bits)</span>
+                </div>
+            </div>
+        </section>
+		
+        <section class="section" id="planos" style="padding-top: 80px; padding-bottom: 80px; background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Faça o Download</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">O Visualizador de Fotos é um projeto 100% gratuito. Você pode apoiar o desenvolvedor se desejar.</p>
+
+                <div class="pricing-grid">
+                    
+                    <!-- Card: Gratuito -->
+                    <div class="price-card">
+                        <h3>Uso Pessoal (Freeware)</h3>
+                        <div class="price-value">R$ 0<span>/grátis</span></div>
+                        <ul class="price-features">
+                            <li>Software Completo</li>
+                            <li>Todos os Temas Clássicos</li>
+                            <li>Associações de Extensões</li>
+                            <li>Totalmente Offline</li>
+                            <li class="disabled">Sem Suporte Direto</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/47gb7go2nufg533/Cromak-PhotoViewer-v1.4.2.zip/file" class="btn-outline">Baixar Grátis</a>
+                    </div>
+
+                    <!-- Card: Apoiador -->
+                    <div class="price-card popular">
+                        <div class="popular-tag">Incentivo</div>
+                        <h3>Apoiador do Projeto</h3>
+                        <div class="price-value">R$ 19<span>,90/único</span></div>
+                        <ul class="price-features">
+                            <li><b>O software é idêntico, mas:</b></li>
+                            <li>Você incentiva novos updates</li>
+                            <li>Ajuda a manter o site online</li>
+                            <li>Nosso eterno agradecimento ❤️</li>
+                        </ul>
+                        <a href="https://mpago.la/2YMgeWM" target="_blank" class="btn-buy">Doar e Apoiar</a>
+                    </div>
+
+                </div>
+
+                <div class="secure-payment" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p>🔒 Distribuído com orgulho pela Cromak Technology.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

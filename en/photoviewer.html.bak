@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- MAIN TITLE & SEARCH INDEXING -->
+    <title>Classic Photo Viewer for Windows 10 & 11 | Cromak Photo Viewer</title>
+    <meta name="title" content="Classic Photo Viewer for Windows 10 & 11 | Cromak Photo Viewer">
+    <meta name="description" content="Download the fastest and most lightweight classic image viewer for Windows. Relive the nostalgic interface of Windows 7, Vista, and Live Photo Gallery in a modern, 100% offline, and free PyQt6 engine.">
+    <meta name="keywords" content="classic photo viewer, windows photo viewer, live photo gallery, fast image opener windows 11, windows 10 photos alternative, cromak photo viewer, lightweight viewer, aero glass windows 11, offline image viewer">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://cromaktechnology.github.io/en/photoviewer.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/photoviewer.html">
+    <link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/photoviewer.html">
+    <link rel="alternate" hreflang="x-default" href="https://cromaktechnology.github.io/en/photoviewer.html">
+
+    <!-- OPEN GRAPH (WHATSAPP, FACEBOOK, LINKEDIN, DISCORD) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://cromaktechnology.github.io/en/photoviewer.html">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:title" content="Classic Photo Viewer for Windows | Cromak Photo Viewer">
+    <meta property="og:description" content="The classic Windows image viewing experience with instant startup, Aero Glass theme support, Dark Mode, and 100% offline operation.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg">
+    <meta property="og:image:secure_url" content="https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="675">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:alt" content="Classic interface of Cromak Photo Viewer for Windows">
+
+    <!-- TWITTER / X CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cromaktechnology.github.io/en/photoviewer.html">
+    <meta name="twitter:title" content="Classic Photo Viewer for Windows | Free Download">
+    <meta name="twitter:description" content="Near-instant image rendering with zero telemetry. Classic, Vista, Live, and Dark Mode themes for Windows 10 and 11.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg">
+
+    <!-- BROWSER THEMING & BRAND COLORS -->
+    <meta name="theme-color" content="#121212">
+    <meta name="msapplication-TileColor" content="#121212">
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+
+    <!-- STRUCTURED DATA JSON-LD (SCHEMA.ORG: SOFTWAREAPPLICATION + WEBPAGE + FAQPAGE) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://cromaktechnology.github.io/en/photoviewer.html#software",
+          "name": "Cromak Photo Viewer & Photo Gallery",
+          "operatingSystem": "Windows 10 64-bit, Windows 11 64-bit",
+          "applicationCategory": "MultimediaApplication",
+          "applicationSubCategory": "Image Viewer",
+          "softwareVersion": "1.4.2",
+          "releaseNotes": "Build 2026.11: Background decoding engine, support for classic themes and Aero Glass, native execution with zero external dependencies.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "category": "Freeware"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Cromak Technology",
+            "url": "https://cromaktechnology.github.io"
+          },
+          "screenshot": "https://cromaktechnology.github.io/images/photoviewer/photoviewer_prev1.jpg",
+          "featureList": [
+            "Near-instant loading of JPG, PNG, WEBP, and BMP images",
+            "Nostalgic themes: Windows Classic, Windows Vista, and Live Photo Gallery",
+            "Native Dark Mode option",
+            "Optional support for translucent Aero Glass borders",
+            "100% offline operation with zero telemetry or data collection",
+            "Native file association setup via Windows Registry",
+            "Integrated multilingual support across 11 languages"
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://cromaktechnology.github.io/en/photoviewer.html#webpage",
+          "url": "https://cromaktechnology.github.io/en/photoviewer.html",
+          "name": "Classic Photo Viewer for Windows 10 & 11 | Cromak Photo Viewer",
+          "description": "Official download page for Cromak Photo Viewer. The fast, lightweight, and telemetry-free classic image viewer for Windows.",
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "Cromak Technology",
+            "url": "https://cromaktechnology.github.io"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cromaktechnology.github.io/en/photoviewer.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does Photo Viewer work on Windows 11 and Windows 10?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The software is compiled as an independent, standalone executable specifically optimized for 64-bit editions of Windows 10 and Windows 11, requiring no Python runtimes or external framework installations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the application send my photos to the internet or collect telemetry?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The utility operates 100% offline. It has zero telemetry trackers, serves no ads, and never transmits personal photos or local files to external servers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I set the program as my default Windows photo viewer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Open Preferences inside the application, navigate to the Associations tab, and select the image formats you wish to associate (JPG, PNG, WEBP, BMP). The tool updates the appropriate Windows Registry keys automatically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the software completely free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, it is a 100% free freeware project with no advertising or locked features for personal use."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <span class="badge-pro">Nostalgia & Performance</span>
+				<span class="badge-pro">Freeware / Fan Project</span>
+                <h1 style="font-size: 4rem; margin-bottom: 10px;">Photo Viewer for Windows</h1>
+                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">The Classic Windows Experience in a Modern Engine</p>
+                <p style="font-size: 1.0rem; color: var(--accent); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    Version: 1.4.2 (Build: 2026.11)
+                </p>
+				
+                <div style="margin-bottom: 40px;">
+                    <a href="#planos" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Download for Windows</a>
+                </div>
+
+                <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Photo Viewer Interface" class="screenshot-main lightbox-trigger" style="max-width: 1000px; display: block; margin: 0 auto;">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">The Beauty of the Past, the Engineering of the Future</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Relive the fast and direct interface that marked an era, without sacrificing modern speed and security.</p>
+                
+                <div class="info-grid">
+                    <div class="card-pilar">
+                        <h4>🖼️ Classic Themes</h4>
+                        <p>Choose between Classic, Windows Vista, Live Photo Gallery, or the modern Dark Mode. The interface adapts perfectly to your taste and nostalgia level.</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>⚡ Native Performance</h4>
+                        <p>Developed in Python and PyQt6, the rendering engine loads your images almost instantly. Fluid navigation, smooth zooming, and immediate response.</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>🔒 100% Offline and Private</h4>
+                        <p>Your photos are yours. The software has NO telemetry, collects no data, and does not access the internet. What happens on your computer stays on your computer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Layout Overview</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Click on the images to expand and see interface details.</p>
+                
+                <div class="gallery-grid">
+                    
+                                        <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Viewer Main Screen" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Classic Navigation</h4>
+                            <p>Playback, rotation, zoom, and deletion controls exactly where you remember them. Works perfectly as a gallery or an individual viewer.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev2.jpg" alt="Dark Mode and Themes" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Customizable Themes</h4>
+                            <p>Tired of the light screen? Choose from various visual variations, including new and modern Dark Modes, while keeping all the original elegance.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev3.jpg" alt="Context Menu" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Quick Context Menu</h4>
+                            <p>Quickly access useful options like copying, deleting, rotating the image, or setting it as your desktop background right from the right-click menu.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev4.jpg" alt="Settings and Associations" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Smart Integration</h4>
+                            <p>Associate major image formats (JPG, PNG, WEBP, etc.) to open natively with the program with just one click in the preferences.</p>
+                        </div>
+                    </div>
+					
+					<div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev5.jpg" alt="Available Languages" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Real-time Languages</h4>
+                            <p>Complete and instant translation to 11 of the most spoken languages in the world. Change the interface language without needing to restart the app.</p>
+                        </div>
+                    </div>
+					
+					<div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev6.jpg" alt="Menu Bar" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Nostalgic Toolbar</h4>
+                            <p>The classic options grouped at the top of the window. Easily access shortcuts to print, burn to disc, or send the image by email.</p>
+                        </div>
+                    </div>
+					
+					<div class="gallery-card">
+                        <img src="../images/photoviewer/photoviewer_prev7.jpg" alt="Aero Glass Effect" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Aero Glass Transparency</h4>
+                            <p>Bring back the famous translucent glass borders to the most modern operating systems (Windows 10 and 11) with a dedicated native integration.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="tech-specs">
+                    <div>
+                        <h2 style="text-align: left;" class="section-title">Low-Level Engineering in PyQt6</h2>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>Multiple Formats Supported</h4>
+                                <p>Effortlessly loads JPG, PNG, BMP, WEBP images and more, using native decoding libraries for maximum speed.</p>
+                            </li>
+                            <li>
+                                <h4>Dynamic Internationalization</h4>
+                                <p>Full support for 8 languages (English, Portuguese, Spanish, French, Japanese, etc.) with real-time switching, no app restart required.</p>
+                            </li>
+                            <li>
+                                <h4>Background Loading (Threads)</h4>
+                                <p>Listing and creating thumbnails in large folders is done in the background so the main interface never freezes or stutters.</p>
+                            </li>
+                        </ul>
+                        
+                        <div class="dark-web-alert">
+                            <h4 style="color: #00a4ef; margin: 0 0 5px 0;">⚡ Fair Use and Transparency</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem; margin: 0;">This is an unofficial fan-made project for fans. It has no affiliation with Microsoft Corporation. Original trademarks and designs are the property of their respective owners. The objective is historical and educational preservation.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Classic Interface" class="screenshot-main lightbox-trigger" style="max-width: 1000px; display: block; margin: 0 auto;" style="margin-bottom: 25px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">System Compatibility</h2>
+                <p style="color: var(--text-dim); max-width: 750px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Compiled independently (Stand-Alone). Does not require Python, libraries, or external frameworks to be installed on your machine.
+                </p>
+                <div class="lang-grid">
+                    <span class="lang-badge">Windows 10 (64-bit)</span>
+                    <span class="lang-badge">Windows 11 (64-bit)</span>
+                </div>
+            </div>
+        </section>
+		
+        <section class="section" id="planos" style="padding-top: 80px; padding-bottom: 80px; background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Download Now</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Photo Viewer is a 100% free project. You can support the developer if you wish.</p>
+
+                <div class="pricing-grid">
+                    
+                    <!-- Card: Gratuito -->
+                    <div class="price-card">
+                        <h3>Personal Use (Freeware)</h3>
+                        <div class="price-value">$ 0<span>/free</span></div>
+                        <ul class="price-features">
+                            <li>Full Software</li>
+                            <li>All Classic Themes</li>
+                            <li>Extension Associations</li>
+                            <li>Fully Offline</li>
+                            <li class="disabled">No Direct Support</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/47gb7go2nufg533/Cromak-PhotoViewer-v1.4.2.zip/file" class="btn-outline">Free Download</a>
+                    </div>
+
+                    <!-- Card: Apoiador -->
+                    <div class="price-card popular">
+                        <div class="popular-tag">Incentive</div>
+                        <h3>Project Supporter</h3>
+                        <div class="price-value">$ 19<span>.90/once</span></div>
+                        <ul class="price-features">
+                            <li><b>The software is identical, but:</b></li>
+                            <li>You encourage new updates</li>
+                            <li>Helps keep the site online</li>
+                            <li>Our eternal gratitude ❤️</li>
+                        </ul>
+                        <a href="https://mpago.la/2YMgeWM" target="_blank" class="btn-buy">Donate and Support</a>
+                    </div>
+
+                </div>
+
+                <div class="secure-payment" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p>🔒 Distributed with pride by Cromak Technology.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

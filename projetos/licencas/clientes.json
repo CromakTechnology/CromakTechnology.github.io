@@ -1,0 +1,24 @@
+{
+  "_info": "Cromak Technology - Controle Central de Licencas Commerce 360",
+  "fce37c9d605bbf45f2d77d6699a4bdf2cee8785d467edda1a0220845582fd7ea": {
+    "cliente": "Cromak Technology - Controle Central de Licencas Commerce 360",
+    "status": 1,
+    "plano": "Mensalidade",
+    "vencimento": "2026-12-15",
+    "observacao": "Mensalidade Ativa"
+  },
+  "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92": {
+    "cliente": "Supermercado Modelo - PDV 01",
+    "status": 2,
+    "plano": "Mensalidade",
+    "vencimento": "2026-11-10",
+    "observacao": "Boleto vencido ha 5 dias (Restricao Leve)"
+  },
+  "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3": {
+    "cliente": "Padaria & Confeitaria Estrela",
+    "status": 0,
+    "plano": "Mensalidade",
+    "vencimento": "2026-10-01",
+    "observacao": "Inadimplente / Cancelado (Bloqueado)"
+  }
+}

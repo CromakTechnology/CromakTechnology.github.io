@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak SysLock v1.0 | Download</title>
+    <meta name="description" content="Assuma o controle total do seu sistema Windows. Gerencie restrições, bloqueie acesso a ferramentas críticas como Gerenciador de Tarefas e Regedit em um clique.">
+    <meta name="keywords" content="syslock, bloquear task manager, regedit, cmd, políticas de grupo, kiosk mode, cromak technology">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Cromak SysLock | Controle Absoluto do seu Windows">
+    <meta property="og:description" content="A ferramenta essencial para gerenciamento de políticas e restrições de sistema no Windows.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/syslock/syslock_prev1.jpg">
+    <meta property="og:url" content="https://cromaktechnology.github.io/syslock.html">
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    <style>
+        .sys-img-hover {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+        .sys-img-hover:hover {
+            transform: scale(1.04) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3) !important;
+            border-color: rgba(0, 212, 255, 0.5) !important;
+        }
+        .split-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 70px;
+        }
+        .split-section.reverse {
+            flex-direction: row-reverse;
+        }
+        .split-text {
+            flex: 1;
+            text-align: left;
+        }
+        .split-img {
+            flex: 1.2;
+        }
+        @media (max-width: 960px) {
+            .split-section, .split-section.reverse {
+                flex-direction: column;
+            }
+            .split-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <span class="badge-pro">Gerenciamento & Segurança</span>
+                <h1 style="font-size: 4rem; margin-bottom: 10px;">Cromak SysLock</h1>
+                <p style="font-size: 1.5rem; color: var(--accent); margin-bottom: 40px;">Assuma o Controle Total das Restrições do Windows</p>
+                <p style="font-size: 1.0rem; color: var(--text-dim); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    Versão: 1.0 (Freeware / Ferramenta Administrativa)
+                </p>
+				
+                <div style="margin-bottom: 40px;">
+                    <a href="#planos" class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Baixar Grátis (Windows)</a>
+                </div>
+
+                <img src="../images/syslock/syslock_prev1.jpg" alt="Interface do Cromak SysLock" class="sys-img-hover screenshot-main lightbox-trigger" style="max-width: 1000px; display: block; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Proteção Profunda, Gerenciamento Simples</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Esqueça a navegação exaustiva pelo Editor de Políticas de Grupo (gpedit.msc) ou modificações perigosas no Registro. O Cromak SysLock traz o poder da administração corporativa para uma interface limpa, segura e amigável, permitindo que você restrinja ou libere acessos críticos em poucos segundos.</p>
+                
+                <div class="info-grid">
+                    <div class="card-pilar">
+                        <h4>🔒 Bloqueios de Sistema Crítico</h4>
+                        <p>Desabilite instantaneamente ferramentas que podem comprometer a integridade da máquina. Com um único clique, impeça a abertura do Gerenciador de Tarefas (Ctrl+Alt+Del), Editor de Registro (regedit) e Prompt de Comando (CMD).</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>🛑 Prevenção de Modificações</h4>
+                        <p>Impeça instalações indesejadas bloqueando o Windows Installer (MSI). Restrinja o acesso ao Windows Update e aos painéis de configuração clássicos e modernos, garantindo que o sistema permaneça exatamente como você configurou.</p>
+                    </div>
+                    <div class="card-pilar">
+                        <h4>🖥️ Personalização Restritiva</h4>
+                        <p>Bloqueie a alteração do plano de fundo da área de trabalho, oculte a unidade C: para evitar exploração de arquivos vitais e desative o menu de contexto. Perfeito para quiosques, computadores públicos ou ambientes corporativos monitorados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Tudo o Que Você Precisa em Uma Só Tela</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">O painel unificado do SysLock foi projetado com elegância e usabilidade em mente. Ele separa cada nível de acesso em categorias intuitivas para que você tenha controle absoluto do sistema operacional sem perder tempo procurando opções escondidas.</p>
+                
+                <div class="split-section">
+                    <div class="split-text">
+                        <h3 style="color: var(--accent); margin-bottom: 15px; font-size: 1.8rem;">Aba Segurança: Controle de Ponta a Ponta</h3>
+                        <p style="color: var(--text-dim); font-size: 1.05rem; line-height: 1.6;">A primeira aba centraliza as políticas essenciais de sobrevivência do sistema. Aqui você pode remover as engrenagens de manutenção da mão do usuário comum com apenas um clique. Bloqueie o <strong>Gerenciador de Tarefas</strong> para evitar finalização forçada de seus processos, esconda o <strong>Editor de Registro</strong> contra manipulações indevidas e impeça instalações silenciosas bloqueando a janela de Instalação de Programas (MSI).</p>
+                    </div>
+                    <div class="split-img">
+                        <img src="../images/syslock/syslock_prev2.jpg" alt="Aba Segurança do Cromak SysLock" class="sys-img-hover lightbox-trigger" style="max-width: 100%; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    </div>
+                </div>
+
+                <div class="split-section reverse">
+                    <div class="split-text">
+                        <h3 style="color: var(--accent); margin-bottom: 15px; font-size: 1.8rem;">Aba Sistema & Painel: Blindagem Administrativa</h3>
+                        <p style="color: var(--text-dim); font-size: 1.05rem; line-height: 1.6;">Projetada para blindar o computador, esta seção gerencia os acessos de configuração global. Limite o <strong>Windows Update</strong> para impedir atualizações inesperadas que quebrem softwares corporativos, e proíba a abertura do Painel de Controle e das Configurações do PC. Além disso, conta com um botão exclusivo de manuseio de Políticas Locais (GPO), oferecendo facilidade absurda no reset e deploy de regras no ambiente.</p>
+                    </div>
+                    <div class="split-img">
+                        <img src="../images/syslock/syslock_prev3.jpg" alt="Aba Sistema do Cromak SysLock" class="sys-img-hover lightbox-trigger" style="max-width: 100%; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    </div>
+                </div>
+
+                <div class="feature-highlight" style="display: flex; flex-direction: column; align-items: center; gap: 30px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; margin-top: 20px; max-width: 1000px;">
+                        <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h4 style="color: var(--accent); margin-bottom: 10px;">Ação Instantânea</h4>
+                            <p style="color: var(--text-dim); font-size: 0.95rem; margin: 0;">Chega de reiniciar o computador apenas para ver os efeitos de uma diretiva de grupo. O SysLock aplica grande parte de suas travas de forma imediata através de uma reinicialização transparente do Explorer e gravação nativa no Registro.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h4 style="color: var(--accent); margin-bottom: 10px;">Manutenção de GPO</h4>
+                            <p style="color: var(--text-dim); font-size: 0.95rem; margin: 0;">Além de configurar restrições avulsas, o utilitário possui um poderoso recurso integrado de limpeza de cache de GPO e aplicação forçada (gpupdate), permitindo que você resete as diretivas com segurança.</p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
+                            <h4 style="color: var(--accent); margin-bottom: 10px;">Multi-idioma Dinâmico</h4>
+                            <p style="color: var(--text-dim); font-size: 0.95rem; margin: 0;">Uma interface que atende profissionais em qualquer lugar, totalmente traduzida de forma dinâmica para Português, Inglês e Espanhol. O programa lembra suas escolhas em um arquivo offline seguro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="tech-specs">
+                    <div>
+                        <h2 style="text-align: left;" class="section-title">Engenharia Segura, Portátil e Confiável</h2>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>Executável Único (Portable)</h4>
+                                <p>Distribuído em um prático formato ".EXE" independente. O SysLock não requer instaladores complexos ou dependências que fiquem rodando no sistema, tornando-se o companheiro ideal em qualquer pendrive de um técnico de TI.</p>
+                            </li>
+                            <li>
+                                <h4>Tratamento Nativo de Diretivas</h4>
+                                <p>Ao invés de depender de scripts amadores, o programa utiliza as APIs nativas de Windows Registry (winreg) para gravação segura na memória (HKLM e HKCU), minimizando taxas de corrupção ou falhas de permissão.</p>
+                            </li>
+                            <li>
+                                <h4>Privacidade Absoluta (Zero Telemetria)</h4>
+                                <p>A Cromak Technology leva os seus dados a sério. O SysLock funciona de forma 100% offline, não conecta-se a servidores externos, não envia relatórios e armazena suas configurações apenas na máquina do cliente.</p>
+                            </li>
+                        </ul>
+                        
+                        <div class="dark-web-alert" style="border-left: 4px solid var(--accent);">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0;">⚠️ Uso e Nível Administrativo</h4>
+                            <p style="color: var(--text-dim); font-size: 0.9rem; margin: 0;">O Cromak SysLock aplica restrições profundas ao sistema e requer execução com privilégios de Administrador. Tenha cautela ao bloquear o Editor de Registro e o Prompt de Comando simultaneamente, para não trancar a si mesmo fora das opções avançadas de recuperação do sistema operacional.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <img src="../images/syslock/syslock_prev4.jpg" alt="Aba de Customização da Interface do SysLock" class="sys-img-hover screenshot-main lightbox-trigger" style="max-width: 100%; border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Compatibilidade de Sistema</h2>
+                <p style="color: var(--text-dim); max-width: 750px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Homologado rigorosamente para os ambientes modernos da Microsoft, utilizando a biblioteca WebView2 de alta performance gráfica.
+                </p>
+                <div class="lang-grid">
+                    <span class="lang-badge">Windows 10 (64-bits)</span>
+                    <span class="lang-badge">Windows 11 (64-bits)</span>
+                </div>
+            </div>
+        </section>
+		
+        <section class="section" id="planos" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Faça o Download do SysLock</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Disponibilizamos o Cromak SysLock em modelo de Licença Dupla: Freeware para testes de usuários e comercial para administradores.</p>
+
+                <div class="pricing-grid">
+                    
+                    <!-- Card: Gratuito -->
+                    <div class="price-card">
+                        <h3>Uso Pessoal (Freeware)</h3>
+                        <div class="price-value">R$ 0<span>/grátis</span></div>
+                        <ul class="price-features">
+                            <li>Bloqueio de Tarefas & Regedit</li>
+                            <li>Restrições Totais de Interface</li>
+                            <li>Manutenção Local de GPO</li>
+                            <li>Formato Portátil & Seguro</li>
+                            <li class="disabled">Licença para Redes Corporativas</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/mlii2vpzi16hm05/Cromak-SysLock-v1.0-portable.zip/file" class="btn-outline">Baixar Versão Grátis</a>
+                    </div>
+
+                    <!-- Card: Apoiador -->
+                    <div class="price-card popular">
+                        <div class="popular-tag">Apoiador</div>
+                        <h3>Apoiador do Projeto</h3>
+                        <div class="price-value">R$ 19<span>,90/único</span></div>
+                        <ul class="price-features">
+                            <li><b>O software é idêntico, mas:</b></li>
+                            <li>Você financia novos updates</li>
+                            <li>Ajuda a manter a Cromak online</li>
+                            <li>Nosso eterno agradecimento ❤️</li>
+                        </ul>
+                        <a href="https://mpago.la/2YMgeWM" target="_blank" class="btn-buy">Doar e Apoiar</a>
+                    </div>
+
+                </div>
+
+                <div class="secure-payment" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p>🔒 Desenvolvido com excelência e orgulho pela Cromak Technology.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

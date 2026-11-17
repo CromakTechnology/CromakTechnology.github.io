@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- TÍTULO E INDEXAÇÃO PRINCIPAL -->
+    <title>Cromak Technology | Softwares Nativos, Segurança e Alta Performance para Windows</title>
+    <meta name="title" content="Cromak Technology | Softwares Nativos, Segurança e Alta Performance para Windows">
+    <meta name="description" content="Engenharia de software nativo para Windows. Conheça o ecossistema Cromak: otimização extrema com DeepClean Suite, segurança com Install Protector e Connection Blackout, compiladores e ferramentas forenses 100% offline.">
+    <meta name="keywords" content="Cromak Technology, software nativo windows, DeepClean Suite, Connection Blackout, Install Protector, Password Guard, Metadata Remover, Web to Apk Compiler, Install Compiler, PNG to ICO, SysLock, Network Fix, Bridge Vox, otimização de pc, segurança ofensiva, software offline">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://cromaktechnology.github.io/">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/">
+    <link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/">
+    <link rel="alternate" hreflang="x-default" href="https://cromaktechnology.github.io/">
+
+    <!-- OPEN GRAPH (FACEBOOK, LINKEDIN, WHATSAPP, DISCORD) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://cromaktechnology.github.io/">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:title" content="Cromak Technology | Forjando Ferramentas de Alta Performance">
+    <meta property="og:description" content="Soberania digital e performance de baixo nível. Utilitários de sistema, segurança contra ameaças e compiladores 100% locais sem nuvem e sem mensalidades.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+    <meta property="og:image:secure_url" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Logotipo Oficial da Cromak Technology">
+
+    <!-- TWITTER / X CARDS -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://cromaktechnology.github.io/">
+    <meta name="twitter:title" content="Cromak Technology | Softwares Nativos e Segurança para Windows">
+    <meta name="twitter:description" content="Engenharia de ponta: otimização kernel, contenção de rede, cofre blindado e compiladores independentes no Windows.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/cromak_technology_logo.png">
+
+    <!-- IDENTIDADE VISUAL E CORES DO SISTEMA -->
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="msapplication-TileColor" content="#121212">
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+
+    <!-- DADOS ESTRUTURADOS JSON-LD (ORGANIZATION + WEBSITE + ARSENAL DE PRODUTOS) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cromaktechnology.github.io/#organization",
+          "name": "Cromak Technology",
+          "url": "https://cromaktechnology.github.io/",
+          "logo": "https://cromaktechnology.github.io/images/cromak_technology_logo.png",
+          "description": "Desenvolvedora e laboratório de engenharia de software focado em performance de baixo nível, segurança forense, compiladores e utilitários nativos offline para Windows.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "technical support",
+            "email": "cromaksupport@gmail.com",
+            "availableLanguage": ["Portuguese", "English"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://cromaktechnology.github.io/#website",
+          "url": "https://cromaktechnology.github.io/",
+          "name": "Cromak Technology",
+          "publisher": {
+            "@id": "https://cromaktechnology.github.io/#organization"
+          },
+          "inLanguage": "pt-BR"
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://cromaktechnology.github.io/#software-arsenal",
+          "name": "Arsenal de Softwares Cromak Technology",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "DeepClean Suite",
+              "url": "https://cromaktechnology.github.io/deepclean_suite.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Connection Blackout",
+              "url": "https://cromaktechnology.github.io/connection-blackout.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Install Protector",
+              "url": "https://cromaktechnology.github.io/install-protector.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Password Guard",
+              "url": "https://cromaktechnology.github.io/password_guard.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Metadata Remover",
+              "url": "https://cromaktechnology.github.io/metadata_remover.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Web To Apk Compiler",
+              "url": "https://cromaktechnology.github.io/web_to_apk_compiler.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Install Compiler",
+              "url": "https://cromaktechnology.github.io/install_compiler.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 8,
+              "name": "Bridge Vox",
+              "url": "https://cromaktechnology.github.io/bridge-vox.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 9,
+              "name": "PNG To ICO Converter",
+              "url": "https://cromaktechnology.github.io/png_to_ico_converter.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 10,
+              "name": "Classic Photo Viewer",
+              "url": "https://cromaktechnology.github.io/photoviewer.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 11,
+              "name": "SysLock",
+              "url": "https://cromaktechnology.github.io/syslock.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 12,
+              "name": "Network Fix",
+              "url": "https://cromaktechnology.github.io/network-fix.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 13,
+              "name": "NewTab",
+              "url": "https://cromaktechnology.github.io/new-tab-service.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="../css/carousel-v2.css">
+    <link rel="stylesheet" href="../css/home-v2.css">
+</head>
+<body>
+
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <!-- Pill Badge Superior (100% SVG) -->
+            <div class="hero-pill-badge">
+                <span class="hero-pill-dot"></span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Arquitetura Nativa Windows &bull; 100% Offline</span>
+            </div>
+
+            <!-- Título Principal Dual-Tone Ultra Nítido -->
+            <h1 class="hero-main-title">
+                Forjando Ferramentas de <span class="hero-title-highlight">Alta Performance</span>
+            </h1>
+
+            <!-- Subtítulo de Alta Legibilidade -->
+            <p class="hero-subtitle">
+                A soberania digital que você perdeu, devolvida. Softwares de arquitetura sólida criados para quem exige segurança absoluta e velocidade inegociável, pensados para quem valoriza performance e praticidade.
+            </p>
+
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <a href="#arsenal" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Ver o Arsenal de Softwares</a>
+            </div>
+        </div>
+        
+        <!-- Carrossel V2 Ultra-Premium 3D Coverflow -->
+        <div class="carousel-v2-wrapper">
+            <!-- Glow Ambiente Dinâmico -->
+            <div class="carousel-v2-glow" id="carouselGlow"></div>
+
+            <div class="carousel-v2-container">
+                <!-- Botão Voltar -->
+                <button class="carousel-v2-btn prev" id="v2PrevBtn" aria-label="Slide anterior">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Palco 3D Coverflow com Moldura de Janela de Software -->
+                <div class="carousel-v2-stage" id="carouselStage">
+                    
+                    <!-- 01. Bridge Vox -->
+                    <div class="carousel-v2-card" data-title="Cromak Bridge Vox" data-tag="Assistente Local-First" data-desc="Controle de voz avançado, arquitetura BYOK offline e automação nativa para Windows sem envio de dados para terceiros." data-link="bridge-vox.html" data-doc="../docs/bridge-vox.html" data-accent="#9d4edd">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak Bridge Vox</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/bridge-vox/bridge-vox_prev1.png" alt="Cromak Bridge Vox" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 02. DeepClean Suite -->
+                    <div class="carousel-v2-card" data-title="Cromak DeepClean Suite" data-tag="Otimização Profunda de Sistema" data-desc="Varredura de baixo nível, desfragmentação e limpeza de registros órfãos, compactação LZMA e telemetria zero." data-link="deepclean_suite.html" data-doc="../docs/deepclean-suite.html" data-accent="#00d4ff">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak DeepClean Suite</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/deep-clean-suite/deep-clean-suite_prev1.jpg" alt="DeepClean Suite" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 03. Connection Blackout -->
+                    <div class="carousel-v2-card" data-title="Cromak Connection Blackout" data-tag="Kill Switch Emergencial" data-desc="Corte emergencial de tráfego de rede em menos de 50ms, gravador de pacotes, bloqueio de portas e isolamento total." data-link="connection-blackout.html" data-doc="../docs/connection-blackout.html" data-accent="#ff0055">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak Connection Blackout</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/connection-blackout/connection-blackout_prev1.jpg" alt="Connection Blackout" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 04. Install Protector -->
+                    <div class="carousel-v2-card" data-title="Cromak Install Protector" data-tag="Contenção Zero-Trust" data-desc="Interceptação em tempo real de instaladores não assinados, sandbox de processos e blindagem contra bloatware." data-link="install-protector.html" data-doc="../docs/install-protector.html" data-accent="#10b981">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak Install Protector</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/install-protector/installprotector_prev1.jpg" alt="Install Protector" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 05. Password Guard -->
+                    <div class="carousel-v2-card" data-title="Cromak Password Guard" data-tag="Cofre Criptográfico Blindado" data-desc="Gerenciamento de credenciais com criptografia AES-256-GCM, arquitetura Zero-Knowledge e backup militar offline." data-link="password_guard.html" data-doc="../docs/password-guard.html" data-accent="#3b82f6">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak Password Guard</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/passguard/passguard_prev1.png" alt="Password Guard" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 06. Metadata Remover -->
+                    <div class="carousel-v2-card" data-title="Cromak Metadata Remover" data-tag="Sanitização Forense" data-desc="Higienização em lote de coordenadas GPS, metadados EXIF e propriedades ocultas confidenciais de arquivos e imagens." data-link="metadata_remover.html" data-doc="../docs/metadata-remover.html" data-accent="#f59e0b">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak Metadata Remover</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/metadata-remover/metadata-remover-001.png" alt="Metadata Remover" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 07. Web To Apk Compiler -->
+                    <div class="carousel-v2-card" data-title="Web To Apk Compiler" data-tag="Compilação Mobile Nativa" data-desc="Empacotamento autônomo de sites, dashboards e PWAs em pacotes APK Android nativos e instaláveis sem nuvem." data-link="web_to_apk_compiler.html" data-doc="../docs/web-to-apk.html" data-accent="#06b6d4">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Web To Apk Compiler</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/web-to-apk-compiler/web-to-apk-compiler.jpg" alt="Web To Apk Compiler" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 08. Install Compiler -->
+                    <div class="carousel-v2-card" data-title="Cromak Install Compiler" data-tag="Empacotador Autônomo LZMA" data-desc="Crie instaladores de alta densidade (.exe) com suporte a variáveis de ambiente, registro e instalação limpa." data-link="install_compiler.html" data-doc="../docs/install-compiler.html" data-accent="#8b5cf6">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak Install Compiler</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/install-compiler/install-compiler1.png" alt="Install Compiler" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 09. PNG To ICO Converter -->
+                    <div class="carousel-v2-card" data-title="PNG To ICO Converter" data-tag="Matriz Multirresolução" data-desc="Compilação de matrizes multirresolução de 16x16 até 256x256 com preservação cirúrgica de nitidez de pixels." data-link="png_to_ico_converter.html" data-doc="../docs/png-to-ico.html" data-accent="#ec4899">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">PNG To ICO Converter</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/png_to_ico_converter/png_to_ico_converter.jpg" alt="PNG To ICO Converter" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 10. Classic Photo Viewer -->
+                    <div class="carousel-v2-card" data-title="Classic Photo Viewer" data-tag="Visualização Instantânea" data-desc="Visualizador leve e ágil para Windows com suporte a RAW, PNG, JPEG e WEBP com aceleração gráfica." data-link="photoviewer.html" data-doc="../docs/photo-viewer.html" data-accent="#00d4ff">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Classic Photo Viewer</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Classic Photo Viewer" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- 11. NewTab Service -->
+                    <div class="carousel-v2-card" data-title="Cromak NewTab Suite" data-tag="Hub de Produtividade" data-desc="Central leve e sem distrações para sua rotina, atalhos rápidos e ferramentas essenciais para seu navegador." data-link="new-tab-service.html" data-doc="../docs/dock.html" data-accent="#10b981">
+                        <div class="v2-window-header">
+                            <div class="v2-window-dots">
+                                <span class="v2-dot close"></span>
+                                <span class="v2-dot min"></span>
+                                <span class="v2-dot max"></span>
+                            </div>
+                            <span class="v2-window-title">Cromak NewTab Suite</span>
+                        </div>
+                        <div class="v2-window-body">
+                            <img src="../images/newtab/newtab1.png" alt="NewTab" class="lightbox-trigger">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botão Avançar -->
+                <button class="carousel-v2-btn next" id="v2NextBtn" aria-label="Próximo slide">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            
+
+            <!-- Indicadores / Dots Interativos -->
+            <div class="carousel-v2-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+<section class="bento-section" id="pilares">
+        <div class="container">
+            <div class="bento-header">
+                <h2>O Padrão Ouro em Performance & Privacidade</h2>
+                <p>Nossos softwares são forjados para quem exige soberania operacional total: sem telemetria invasiva, sem nuvem obrigatória e com velocidade bruta de baixo nível.</p>
+            </div>
+
+            <div class="bento-grid-3">
+                <!-- Pilar 1: Baixo Nível -->
+                <div class="bento-card" style="--card-accent: #00d4ff;">
+                    <div>
+                        <div class="bento-icon-wrapper">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                <rect x="9" y="9" width="6" height="6"/>
+                                <line x1="9" y1="1" x2="9" y2="4"/>
+                                <line x1="15" y1="1" x2="15" y2="4"/>
+                                <line x1="9" y1="20" x2="9" y2="23"/>
+                                <line x1="15" y1="20" x2="15" y2="23"/>
+                                <line x1="20" y1="9" x2="23" y2="9"/>
+                                <line x1="20" y1="14" x2="23" y2="14"/>
+                                <line x1="1" y1="9" x2="4" y2="9"/>
+                                <line x1="1" y1="14" x2="4" y2="14"/>
+                            </svg>
+                        </div>
+                        <span class="bento-tag">Kernel & Native x64</span>
+                        <h3>Engenharia de Baixo Nível</h3>
+                        <p>Desenvolvemos utilitários com código compilado em C++, Rust e PyQt puro. Zero frameworks inchados (como Electron), garantindo tempo de resposta abaixo de 50ms e consumo insignificante de memória RAM.</p>
+                    </div>
+                    <div class="bento-footer-stat">
+                        <svg class="bento-sub-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-3px; margin-right:6px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Overhead médio menor que 20MB de RAM
+                    </div>
+                </div>
+
+                <!-- Pilar 2: Zero Knowledge -->
+                <div class="bento-card" style="--card-accent: #3b82f6;">
+                    <div>
+                        <div class="bento-icon-wrapper">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <circle cx="12" cy="11" r="2"/>
+                                <path d="M12 13v3"/>
+                            </svg>
+                        </div>
+                        <span class="bento-tag" style="color: #3b82f6;">Segurança Matemática</span>
+                        <h3>Arquitetura Zero-Knowledge</h3>
+                        <p>Seus dados, históricos, chaves e arquivos nunca tocam a nuvem. Cofres blindados com criptografia militar AES-256-GCM operando com retenção local estrita: nem mesmo a Cromak possui acesso às suas informações.</p>
+                    </div>
+                    <div class="bento-footer-stat">
+                        <svg class="bento-sub-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-3px; margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Chaves geradas exclusivamente no seu disco
+                    </div>
+                </div>
+
+                <!-- Pilar 3: Autonomia -->
+                <div class="bento-card" style="--card-accent: #10b981;">
+                    <div>
+                        <div class="bento-icon-wrapper">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="m4.93 4.93 4.24 4.24"/>
+                                <path d="m14.83 9.17 4.24-4.24"/>
+                                <path d="m14.83 14.83 4.24 4.24"/>
+                                <path d="m4.93 19.07 4.24-4.24"/>
+                            </svg>
+                        </div>
+                        <span class="bento-tag" style="color: #10b981;">Autonomia Irrestrita</span>
+                        <h3>100% Offline & Vitalício</h3>
+                        <p>Adeus às assinaturas mensais recorrentes e bloqueios por falta de internet. Adquira ferramentas definitivas com licenças perpétuas que funcionam em qualquer ambiente isolado com soberania digital real.</p>
+                    </div>
+                    <div class="bento-footer-stat">
+                        <svg class="bento-sub-svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-3px; margin-right:6px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Operação garantida sem conexão à internet
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 35px;">
+                <a href="sobre.html" class="btn-blue-glow">Conhecer a Filosofia do Laboratório →</a>
+            </div>
+        </div>
+    </section>
+
+<section class="terminal-section" id="terminal">
+        <div class="container">
+            <div class="terminal-header">
+                <h2>Cromak Core Engine — Console Interativo</h2>
+                <p>Simulação em tempo real da camada de auditoria, corte de telemetria e integridade criptográfica dos nossos sistemas.</p>
+            </div>
+
+            <div class="terminal-window">
+                <!-- Barra Superior da Janela -->
+                <div class="terminal-topbar">
+                    <div class="terminal-dots">
+                        <span class="v2-dot close"></span>
+                        <span class="v2-dot min"></span>
+                        <span class="v2-dot max"></span>
+                    </div>
+                    <span class="terminal-title">cromak-cli ~ session: active (x64-release)</span>
+                    <span style="color: #34d399; font-size: 0.75rem; font-family: monospace; font-weight: bold;">● LIVE</span>
+                </div>
+
+                <!-- Abas de Comandos Clicáveis -->
+                <div class="terminal-tabs">
+                    <button class="terminal-tab-btn active" data-target="status">[ 1. Status do Ambiente ]</button>
+                    <button class="terminal-tab-btn" data-target="rede">[ 2. Blindagem de Rede ]</button>
+                    <button class="terminal-tab-btn" data-target="forense">[ 3. Auditoria de Processos ]</button>
+                    <button class="terminal-tab-btn" data-target="cofre">[ 4. Cofre Criptográfico ]</button>
+                </div>
+
+                <!-- Corpo do Terminal -->
+                <div class="terminal-body" id="terminalBody">
+                    <!-- Preenchido dinamicamente por js/home-v2.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="section" id="arsenal" style="background: rgba(10, 10, 10, 0.5);">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Nossas Soluções Nativas</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 20px;">Conheça a suíte completa de utilitários e compiladores.</p>
+            
+            <div class="arsenal-grid">
+                
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/bridge-vox/bridge-vox_prev1.png" alt="Bridge Vox">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Bridge Vox</h3>
+                        <p>Focado em acessibilidade, o Bridge é um verdadeiro "Agente de Máquina" capaz de interagir, ler e gerenciar o seu computador operando ferramentas avançadas em segundo plano.</p>
+                        <a href="bridge-vox.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+				
+				<div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/deep-clean-suite/deep-clean-suite_prev1.jpg" alt="DeepClean Suite">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>DeepClean Suite</h3>
+                        <p>Otimização brutal para recuperar a performance do seu PC. Limpeza de nível Kernel, desfragmentação de baixo nível e otimizador de boot.</p>
+                        <a href="deepclean_suite.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/web-to-apk-compiler/web-to-apk-compiler.jpg" alt="Web To Apk Compiler">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Web To Apk Compiler</h3>
+                        <p>Transforme sites e sistemas HTML em aplicativos Android nativos e monetizados, com processamento 100% offline no seu computador.</p>
+                        <a href="web_to_apk_compiler.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/passguard/passguard_prev1.png" alt="Password Guard">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Password Guard</h3>
+                        <p>A fortaleza digital inquebrável. Cofre de senhas 100% offline com criptografia militar AES-256 e monitor de vazamentos na Dark Web.</p>
+                        <a href="password_guard.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/metadata-remover/metadata-remover-001.png" alt="Metadata Remover">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Metadata Remover</h3>
+                        <p>Motor forense para proteger sua privacidade. Remova metadados EXIF ocultos de fotos, áudios e expurgue rastreadores em PDFs.</p>
+                        <a href="metadata_remover.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/install-compiler/install-compiler1.png" alt="Install Compiler">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Install Compiler</h3>
+                        <p>O ponto final do seu código. Reúna seus projetos, scripts e executáveis em instaladores profissionais .exe personalizados e seguros.</p>
+                        <a href="install_compiler.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/png_to_ico_converter/png_to_ico_converter.jpg" alt="PNG to ICO Converter">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>PNG To ICO Converter</h3>
+                        <p>Compilação precisa de ícones. Suporte a matrizes legado, engenharia reversa para extração e redimensionamento em lote de alta qualidade.</p>
+                        <a href="png_to_ico_converter.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+				
+				<div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/newtab/newtab1.png" alt="NewTab">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>NewTab</h3>
+                        <p>Sua Nova Central de Atalhos Inteligente Estilo Metro UI. Personalize como quiser, use localmente ou via Web.</p>
+                        <a href="new-tab-service.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/photoviewer/photoviewer_prev1.jpg" alt="Visualizador de Fotos">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Visualizador de Fotos</h3>
+                        <p>O melhor e mais rápido visualizador de imagens. A experiência clássica e nostálgica do Windows 7 resgatada em um motor moderno, leve e 100% gratuito.</p>
+                        <a href="photoviewer.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/dock/cromak-dock-prev01.jpg" alt="Dock">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Dock</h3>
+                        <p>Barra de tarefas e lançador de alta performance para Windows. Física de zoom gaussiano, até 4 docks simultâneas, widgets de hardware, temas clássicos e 100% offline.</p>
+                        <a href="dock.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+<div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/clock/cromak-clock-&-alarm.jpg" alt="Cromak Clock & Alarm">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Clock & Alarm</h3>
+                        <p>Despertador moderno e relógio de mesa multifuncional para Windows. Modos analógico, digital e retrô LED, alarmes com MP3 personalizado, cronômetro e pomodoro.</p>
+                        <a href="clock.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+
+                <div class="arsenal-card">
+                    <div class="arsenal-img-container">
+                        <img src="../images/install-protector/installprotector_prev1.jpg" alt="Install Protector Pro">
+                    </div>
+                    <div class="arsenal-content">
+                        <h3>Install Protector</h3>
+                        <p>Intercepte ameaças, bloqueie execuções não autorizadas e audite cada etapa no seu computador de uma maneira fácil e rapida.</p>
+                        <a href="install-protector.html" class="btn-arsenal">Acessar Produto</a>
+                    </div>
+                </div>
+				
+				<div class="arsenal-card">
+					<div class="arsenal-img-container">
+						<img src="../images/connection-blackout/connection-blackout_prev1.jpg" alt="Connection Blackout">
+					</div>
+					<div class="arsenal-content">
+						<h3>Connection Blackout</h3>
+						<p>Assuma o controle da sua rede. Intercepte conexões de executáveis e bloqueie domínios de rastreamento com precisão cirúrgica.</p>
+						<a href="connection-blackout.html" class="btn-arsenal">Acessar Produto</a>
+					</div>
+				</div>
+				
+				<div class="arsenal-card">
+					<div class="arsenal-img-container">
+						<img src="../images/syslock/syslock_prev1.jpg" alt="SysLock">
+					</div>
+					<div class="arsenal-content">
+						<h3>SysLock</h3>
+						<p>Desabilite instantaneamente ferramentas que podem comprometer a integridade da máquina. Restrinja ou libere acessos críticos em poucos segundos.</p>
+						<a href="syslock.html" class="btn-arsenal">Acessar Produto</a>
+					</div>
+				</div>
+				
+				<div class="arsenal-card">
+					<div class="arsenal-img-container">
+						<img src="../images/network-fix/network-fix_prev1.jpg" alt="Network Fix">
+					</div>
+					<div class="arsenal-content">
+						<h3>Network Fix</h3>
+						<p>A Solução Definitiva para Problemas de Conexão no Windows. Reunimos as instruções de rede mais vitais do Windows em uma única interface moderna, limpa e segura.</p>
+						<a href="network-fix.html" class="btn-arsenal">Acessar Produto</a>
+					</div>
+				</div>
+
+				<div class="arsenal-card">
+					<div class="arsenal-img-container">
+						<img src="../images/update-guardian/update_guardian.jpg" alt="Update Guardian">
+					</div>
+					<div class="arsenal-content">
+						<h3>Update Guardian</h3>
+						<p>Governança rigorosa de updates do Windows e proteção de certificados X.509. Elimine reinicializações forçadas, congele pacotes instáveis e audite chaves corporativas.</p>
+						<a href="update-guardian.html" class="btn-arsenal">Acessar Produto</a>
+					</div>
+				</div>
+
+				<div class="arsenal-card">
+					<div class="arsenal-img-container">
+						<img src="../images/smart-crypt/smart_crypt.jpg" alt="Smart Crypt">
+					</div>
+					<div class="arsenal-content">
+						<h3>Smart Crypt</h3>
+						<p>Criptografia em repouso acelerada por hardware (AES-256-GCM + Argon2id). Cofres virtuais (.scv), selagem de pastas e trilha pericial imutável LGPD.</p>
+						<a href="smart-crypt.html" class="btn-arsenal">Acessar Produto</a>
+					</div>
+				</div>
+
+				<div class="arsenal-card">
+					<div class="arsenal-img-container">
+						<img src="../images/silent-observer/silent_observer.jpg" alt="Silent Observer">
+					</div>
+					<div class="arsenal-content">
+						<h3>Silent Observer</h3>
+						<p>Sentinela forense de integridade de arquivos (FIM). Monitoramento contínuo em tempo real com hashes SHA-256, assinaturas digitais Ed25519 e provas Merkle Tree.</p>
+						<a href="silent-observer.html" class="btn-arsenal">Acessar Produto</a>
+					</div>
+				</div>
+
+				<div class="arsenal-card">
+					<div class="arsenal-img-container">
+						<img src="../images/instant-rollback/instant_rollback.jpg" alt="Instant Rollback">
+					</div>
+					<div class="arsenal-content">
+						<h3>Instant Rollback</h3>
+						<p>Recuperação instantânea contra desastres e auto-cura para PDV e ERP. Snapshots golden SHA-256 com reversão em milissegundos e detecção de anomalias em tempo real.</p>
+						<a href="instant-rollback.html" class="btn-arsenal">Acessar Produto</a>
+					</div>
+				</div>
+
+            </div>
+        </div>
+    </section>
+
+<section class="quick-faq-section" id="duvidas">
+        <div class="container">
+            <div class="quick-faq-header">
+                <h2>Dúvidas Frequentes</h2>
+                <p>Respostas rápidas sobre funcionamento, licenças e compatibilidade dos softwares da Cromak Technology.</p>
+            </div>
+
+            <div class="quick-faq-container">
+                <!-- Pergunta 1 -->
+                <div class="qfaq-item active">
+                    <button class="qfaq-question" type="button">
+                        <span>Preciso de conexão com a internet para executar os softwares?</span>
+                        <span class="qfaq-icon">+</span>
+                    </button>
+                    <div class="qfaq-answer" style="max-height: 200px; opacity: 1;">
+                        <div class="qfaq-answer-inner">
+                            <strong>Não.</strong> Todo o nosso ecossistema opera sob a filosofia estrita de <strong>Local-First</strong>. Os utilitários, sanitizadores de metadados, cofres de senhas e otimizadores operam 100% desconectados da internet, sem envio de telemetria ou validações remotas.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="qfaq-item">
+                    <button class="qfaq-question" type="button">
+                        <span>Como funciona o modelo de licenciamento da Cromak?</span>
+                        <span class="qfaq-icon">+</span>
+                    </button>
+                    <div class="qfaq-answer">
+                        <div class="qfaq-answer-inner">
+                            Nossas licenças para usuários finais são <strong>vitalícias</strong> (perpetual). Você adquire o programa uma única vez e utiliza sem mensalidades recorrentes, sem surpresas e sem dependência de serviços na nuvem.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="qfaq-item">
+                    <button class="qfaq-question" type="button">
+                        <span>Quais versões do Windows são suportadas?</span>
+                        <span class="qfaq-icon">+</span>
+                    </button>
+                    <div class="qfaq-answer">
+                        <div class="qfaq-answer-inner">
+                            Nossos utilitários são nativos de 64 bits projetados para <strong>Windows 10 e Windows 11</strong>. Compilamos binários otimizados para instruções modernas de processadores Intel e AMD (x86_64).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 4 -->
+                <div class="qfaq-item">
+                    <button class="qfaq-question" type="button">
+                        <span>Onde encontro manuais técnicos e documentação oficial?</span>
+                        <span class="qfaq-icon">+</span>
+                    </button>
+                    <div class="qfaq-answer">
+                        <div class="qfaq-answer-inner">
+                            Disponibilizamos 14 manuais técnicos completos e interativos em nosso centro de documentação, cobrindo guias de instalação, diretivas de sistema e especificações de segurança.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner Convidativo de Redirecionamento para o Suporte Oficial -->
+                <div class="qfaq-support-card">
+                    <div class="qfaq-support-info">
+                        <div class="qfaq-support-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/>
+                                <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/>
+                                <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/>
+                                <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/>
+                            </svg>
+                        </div>
+                        <div class="qfaq-support-text">
+                            <h4>Ainda possui dúvidas técnicas ou precisa de apoio?</h4>
+                            <p>Acesse nossa central de atendimento completa, tire dúvidas na base de conhecimento ou fale com nossa engenharia.</p>
+                        </div>
+                    </div>
+                    <a href="suporte.html" class="qfaq-support-btn">Acessar Central de Suporte →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="support-section">
+        <div class="container">
+            <h2 class="support-title">Pronto para a Soberania Digital?</h2>
+            <div class="cyan-line"></div>
+            <p style="font-size: 1.15rem; color: #ffffff; margin-bottom: 15px;">Blinde seus dados e extraia a performance máxima da sua infraestrutura.</p>
+            <p style="font-size: 1rem; color: var(--text-dim); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Nossos especialistas estão a postos. Entre em contato para licenciamento corporativo (SLA), pacotes vitalícios para usuários avançados ou suporte técnico com acesso direto aos nossos engenheiros.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="suporte.html" class="btn-blue-glow" style="background: rgba(255,255,255,0.05); border: 1px solid var(--accent); color: var(--accent); box-shadow: none;">Falar com Especialistas</a>
+                <a href="#arsenal" class="btn-blue-glow">Explorar Licenças</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal do Lightbox para o Carrossel -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/carousel-v2.js"></script>
+    <script src="../js/home-v2.js"></script>
+</body>
+</html>

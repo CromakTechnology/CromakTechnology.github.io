@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Cromak DeepClean Suite | PC Optimizer for Windows 10/11 (Free Download)</title>
+    <meta name="description" content="PC optimizer with kernel-level registry cleaning, Game Booster, RAM recovery and ultra-fast boot. Native x64 C++ engine. Free download for Windows 10 and 11.">
+    <meta name="keywords" content="pc optimizer, windows registry cleaner, game booster, speed up boot, ssd trim defrag, ram cleaner, deepclean suite, cromak">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="application-name" content="Cromak DeepClean Suite">
+    <meta name="theme-color" content="#0b0f1a">
+
+    <!-- Canonical + languages -->
+    <link rel="canonical" href="https://cromaktechnology.github.io/en/deepclean_suite.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/deepclean_suite.html">
+    <link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/deepclean_suite.html">
+    <link rel="alternate" hreflang="x-default" href="https://cromaktechnology.github.io/deepclean_suite.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Cromak DeepClean Suite | PC Optimizer with Game Booster & Kernel Cleaning">
+    <meta property="og:description" content="Restore your PC's original performance: kernel-level registry cleaning, Game Booster, free RAM and ultra-fast boot. Free download for Windows 10/11.">
+    <meta property="og:url" content="https://cromaktechnology.github.io/en/deepclean_suite.html">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/deep-clean-suite/deep-clean-suite_prev1.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cromak DeepClean Suite — PC optimizer for Windows">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cromak DeepClean Suite | PC Optimizer for Windows 10/11">
+    <meta name="twitter:description" content="Kernel-level registry cleaning, Game Booster, RAM recovery and ultra-fast boot. Free download.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/deep-clean-suite/deep-clean-suite_prev1.jpg">
+
+    <!-- Icon + CSS -->
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+
+    <!-- Structured data (rich results for Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Cromak DeepClean Suite",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, Windows 11 (x64)",
+      "softwareVersion": "1.5.2",
+      "description": "PC optimizer with kernel-level registry cleaning, Game Booster, RAM recovery, boot optimization and MFT/TRIM defragmentation. Native x64 C++ engine.",
+      "url": "https://cromaktechnology.github.io/en/deepclean_suite.html",
+      "image": "https://cromaktechnology.github.io/images/deep-clean-suite/deep-clean-suite_prev1.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cromak Technology",
+        "url": "https://cromaktechnology.github.io/"
+      },
+      "offers": [
+        { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free Personal Edition" },
+        { "@type": "Offer", "price": "3.99", "priceCurrency": "USD", "description": "Monthly Personal License" },
+        { "@type": "Offer", "price": "49", "priceCurrency": "USD", "description": "Lifetime License (up to 3 PCs)" }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "196"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <span class="badge-danger">Kernel-Level Cleaning</span>
+                <span class="badge-pro">Native x64 Architecture</span>
+                
+                <h1 style="font-size: 3.5rem; margin-bottom: 15px; line-height: 1.1;">Cromak DeepClean Suite</h1>
+                <h2 style="font-size: 1.8rem; color: var(--text-dim); font-weight: normal; margin-bottom: 30px;">Brutal optimization to recover your PC's original performance.</h2>
+				
+				<p style="font-size: 1.0rem; color: var(--accent); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    Version: 1.6.4 (build 2026.11)
+                </p>
+                
+                <p style="font-size: 1.1rem; color: #FFF; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    The ultimate solution to accelerate boot time, manage background tasks, and purge registry errors. A robust C++ engine operating invisibly on your Windows.
+                </p>
+                
+                <div style="margin-bottom: 60px;">
+                    <a href="#planos"  class="btn" style="background: var(--accent); color: #000; padding: 15px 40px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; text-decoration: none; margin-right: 15px;">Download for Windows</a>
+                </div>
+
+                <img src="../images/deep-clean-suite/deep-clean-suite_prev1.jpg" alt="Smart Assistant in Action" class="screenshot-main" style="max-width: 1000px;">
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Explore the Engine Inside</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">Click the images to expand and discover our suite's panels.</p>
+                
+                <div class="gallery-grid">
+                    
+                    <div class="gallery-card">
+                        <img src="../images/deep-clean-suite/deep-clean-suite_prev1.png" alt="Smart Assistant — The computer is healthy! 1-click scan." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Smart Assistant</h4>
+                            <p>The heart of the system. Run a quick health and security check on your computer with just one click.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deep-clean-suite/deep-clean-suite_prev2.png" alt="Advanced Uninstaller — Deep software listing and removal." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>"Sniper" Uninstaller</h4>
+                            <p>Lists all installed programs. Our independent engine hunts down and obliterates traces and forgotten registry keys.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deep-clean-suite/deep-clean-suite_prev3.png" alt="Advanced Cleaning — Magic Cleaning Guide for Windows." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Advanced Cleaning</h4>
+                            <p>Surgical purging of electronic junk, orphan Registry keys, and temporary files that overload the system.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deep-clean-suite/deep-clean-suite_prev4.png" alt="System Optimizer — Boot time and processes tracking." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Boot Optimizer</h4>
+                            <p>Monitor your last boot time. Hide or delay unnecessary services for ultra-fast startup.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deep-clean-suite/deep-clean-suite_prev5.png" alt="System Monitor — Complete Hardware Summary (CPU, RAM, GPU)." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Hardware Monitor</h4>
+                            <p>Track your CPU, RAM, GPU, and Motherboard usage and specifications in real-time with native reading.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/deep-clean-suite/deep-clean-suite_prev6.png" alt="Update Center — Driver and software updater." class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Update Center</h4>
+                            <p>Tracks and allows you to install critical packages and new hardware driver versions directly from the panel.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="recursos">
+            <div class="container">
+                <h2 class="section-title">Structural Modules</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Bootup Shield</h3>
+                        <p style="font-size: 0.9rem;">Optimize startup by disabling unnecessary items and reducing load time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">RAM Recovery</h3>
+                        <p style="font-size: 0.9rem;">Instantly free memory and automate active purging to prevent crashes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Game Booster</h3>
+                        <p style="font-size: 0.9rem;">Throttles background processes and forces full Kernel priority for heavy gaming.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Registry Cleaner</h3>
+                        <p style="font-size: 0.9rem;">Engine that purges orphan keys, rewrites hives, and generates Clones (.hiv) as a security backup.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Data Shredder</h3>
+                        <p style="font-size: 0.9rem;">Military-grade "Shredder" tool that overwrites confidential files preventing recovery.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">MFT Defragmenter</h3>
+                        <p style="font-size: 0.9rem;">Low-level C++ engine that applies atomic healing on HDDs and triggers the TRIM protocol on SSDs.</p>
+                    </div>
+					
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Performance Monitor</h3>
+                        <p style="font-size: 0.9rem;">Track CPU and RAM utilization in real-time with a modern and intuitive graphical interface.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">"Sniper" Uninstaller</h3>
+                        <p style="font-size: 0.9rem;">Independent engine that hunts down and obliterates traces and registry keys of stubborn system programs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Update Center</h3>
+                        <p style="font-size: 0.9rem;">Tracks and installs the latest versions of drivers, third-party software, and Windows Update packages.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Smart Assistant</h3>
+                        <p style="font-size: 0.9rem;">Perform a "One-Click Scan" to check the overall health of the computer and trigger automatic optimizations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Backup Manager</h3>
+                        <p style="font-size: 0.9rem;">Dedicated security control center to create Restore Points and Registry Clones locally.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 style="font-size: 1.2rem;">Smart Diagnostics</h3>
+                        <p style="font-size: 0.9rem;">Deep analysis tool designed to audit kernel health and resolve structural Windows conflicts.</p>
+                    </div>
+					
+                </div>
+            </div>
+        </section>
+
+		<section class="section">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">See the Engine in Action</h2>
+                <p style="color: var(--text-dim); font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                    Watch DeepClean Suite operating in real-time, purging errors, and unleashing true Windows performance.
+                </p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">System Requirements</h2>
+                
+                <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+                        
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Operating System</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Windows 10/11 <span style="color: var(--text-dim); font-weight: normal;">(or higher. x64)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Processor</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Dual Core <span style="color: var(--text-dim); font-weight: normal;">(2.0 GHz or higher)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">RAM Memory</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">4 GB Minimum <span style="color: var(--text-dim); font-weight: normal;">(8 GB Recommended)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Storage</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">100 MB <span style="color: var(--text-dim); font-weight: normal;">of free disk space</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">System Privileges</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Native UAC <span style="color: var(--text-dim); font-weight: normal;">(Integrated Auto-Elevation)</span></p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                            <h4 style="color: var(--accent); margin: 0 0 5px 0; font-size: 1rem;">Internet Connection</h4>
+                            <p style="color: #FFF; margin: 0; font-weight: bold;">Required <span style="color: var(--text-dim); font-weight: normal;">only to validate the PRO license</span></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+                
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">Does DeepClean offer protection before deep cleaning?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">Yes. As a security measure, the system strongly recommends creating a Registry Clone (.hiv). If an extreme modification breaks Windows startup, you can use the Restore Screen to restore this clone and revive the PC instantly (read the manual).</p>
+                </div>
+
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">What does Cromak Sentinel do on my computer?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">The native component "cbsservice.exe" acts as a guardian service in the background that orchestrates Cromak Sentinel, functioning as a real-time protection EDR.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.1rem; margin-bottom: 10px;">How does the uninstaller ensure no files are left behind?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.6;">Our tool goes beyond common uninstallers. The software uses the "Sniper" engine, designed to obliterate hidden program traces by scanning directly from the executable path after the standard uninstallation.</p>
+                </div>
+            </div>
+        </section>
+		
+		<section  id="planos" class="section" style="background: rgba(255,255,255,0.02);">
+			<div class="container">
+				<h2 class="section-title">Choose Your Performance Level</h2>
+				<p style="text-align: center; color: var(--text-dim); margin-bottom: 50px;">Unlock full access to the low-level engines of the Cromak DeepClean Suite.</p>
+
+				<div class="pricing-grid">
+					
+					<div class="price-card">
+						<h3>Personal Free</h3>
+						<div class="price-value">$0<span>/forever</span></div>
+						<ul class="price-features">
+							<li>Standard System Cleaning</li>
+							<li>Basic Startup Manager</li>
+							<li>Standard Uninstaller</li>
+							<li class="disabled">"Sniper" Forced Uninstaller</li>
+							<li class="disabled">Game Booster (Kernel Mode)</li>
+							<li class="disabled">MFT Defragmentation / SSD TRIM</li>
+							<li class="disabled">Military Data Shredder</li>
+						</ul>
+						<a href="https://www.mediafire.com/file/y9llool9mgd9qdo/Cromak-DeepClean-Suite-v1.6.4-beta.zip/file" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Download Free</a>
+					</div>
+
+					<div class="price-card">
+						<h3>Personal Monthly</h3>
+						<div class="price-value">$5<span>.90/mo</span></div>
+						<ul class="price-features">
+							<li>1 PC License</li>
+							<li>Implacable "Sniper" Uninstaller</li>
+							<li>Game Booster & RAM Allocation</li>
+							<li>Registry Cleaner (Atomic Healing)</li>
+							<li>UWP Remover (Microsoft Store)</li>
+							<li>Hives Defragmenter (Boot Execute)</li>
+							<li>Basic Support</li>
+						</ul>
+						<a href="https://cromaktechnology.github.io/en/suporte.html" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Subscribe Monthly</a>
+					</div>
+
+					<div class="price-card">
+						<h3>Personal Annual</h3>
+						<div class="price-value">$29<span>.90/yr</span></div>
+						<ul class="price-features">
+							<li>1 PC License</li>
+							<li>All Premium features unlocked</li>
+							<li>Automatic Backup in .dcr</li>
+							<li>Year-long updates</li>
+							<li>Equivalent to just $2.49/mo</li>
+							<li>Priority Support</li>
+						</ul>
+						<a href="https://cromaktechnology.github.io/en/suporte.html" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Subscribe Annual</a>
+					</div>
+
+					<div class="price-card popular">
+						<div class="popular-tag">Best Seller</div>
+						<h3>Personal Lifetime</h3>
+						<div class="price-value">$49<span>.90/once</span></div>
+						<ul class="price-features">
+							<li>One-time payment, yours forever</li>
+							<li>License for up to 3 PCs</li>
+							<li>All Premium features unlocked</li>
+							<li>Lifetime software updates</li>
+							<li>Early access to new modules</li>
+							<li>VIP Technical Support</li>
+						</ul>
+						<a href="https://cromaktechnology.github.io/en/suporte.html" class="btn btn-primary">Buy Lifetime</a>
+					</div>
+
+					<div class="price-card">
+						<h3>Enterprise</h3>
+						<div class="price-value">$69<span>.90/yr</span></div>
+						<ul class="price-features">
+							<li>Bulk License (Up to 10 PCs)</li>
+							<li>Centralized Management Panel</li>
+							<li>Bulk Optimization</li>
+							<li>Corporate Invoice</li>
+							<li>Guided Implementation</li>
+							<li>24/7 Corporate Support</li>
+						</ul>
+						<a href="https://cromaktechnology.github.io/en/suporte.html" class="btn" style="background: rgba(255,255,255,0.1); color: white;">Contact Sales</a>
+					</div>
+
+				</div>
+
+				<div class="secure-payment" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+					<p>🔒 Encrypted Transaction & Immediate Licensing</p>
+					<p style="font-size: 0.8rem;">After approval, your exclusive activation key is sent instantly to your email.</p>
+				</div>
+			</div>
+		</section>
+
+    </main>
+
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="closeLightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

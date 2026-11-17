@@ -158,4 +158,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // =========================================================
+    // 3. ALTERNADOR DE VISUALIZAÇÃO DO ARSENAL (2 COLUNAS / 3 COLUNAS)
+    // =========================================================
+    const arsenalGrid = document.querySelector(".arsenal-grid");
+    const viewButtons = document.querySelectorAll(".view-btn");
+
+    if (arsenalGrid && viewButtons.length > 0) {
+        // Recupera preferência salva ou define '2' colunas como padrão oficial
+        const savedCols = localStorage.getItem("cromak_arsenal_cols") || "2";
+
+        function applyViewColumns(cols) {
+            arsenalGrid.classList.remove("cols-2", "cols-3");
+            arsenalGrid.classList.add(`cols-${cols}`);
+
+            viewButtons.forEach(btn => {
+                const isActive = (btn.dataset.columns === cols);
+                btn.classList.toggle("active", isActive);
+                btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+            });
+
+            try {
+                localStorage.setItem("cromak_arsenal_cols", cols);
+            } catch (e) {
+                // Fallback silencioso
+            }
+        }
+
+        // Aplica inicialmente o padrão
+        applyViewColumns(savedCols);
+
+        viewButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const targetCols = this.dataset.columns;
+                if (targetCols) {
+                    applyViewColumns(targetCols);
+                }
+            });
+        });
+    }
+
 });
