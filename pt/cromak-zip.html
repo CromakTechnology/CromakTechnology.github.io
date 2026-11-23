@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- METADADOS DE SEO PRIMÁRIOS -->
+    <title>Cromak ZIP v1.4.6 | Compactador Oficial do Formato .CMKZ (ZIP, RAR, 7Z) e CromakSFX</title>
+    <meta name="description" content="Cromak ZIP é o gerenciador oficial da extensão .CMKZ (Cromak Archive). Compactação nativa em Rust via cmkz.dll (Zstd multi-thread + Modo Sólido), criptografia AES-256-GCM, 18 formatos, miniaturas em RAM e CromakSFX.">
+    <meta name="keywords" content="arquivo cmkz, extensao cmkz, como abrir cmkz, formato cmkz, .cmkz, Cromak ZIP, compactador windows, cmkz.dll, zstd multi-thread, aes-256-gcm, sfx auto extraivel">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="application-name" content="Cromak ZIP">
+    <meta name="theme-color" content="#0d1117">
+
+    <!-- CANONICAL & IDIOMAS -->
+    <link rel="canonical" href="https://cromaktechnology.github.io/pt/cromak-zip.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/cromak-zip.html">
+    <link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/cromak-zip.html">
+    <link rel="alternate" hreflang="x-default" href="https://cromaktechnology.github.io/pt/cromak-zip.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Cromak ZIP v1.4.6 | Compactador Nativo em Rust + 18 Formatos + CromakSFX">
+    <meta property="og:description" content="Comprima mais rápido e menor com o motor nativo cmkz.dll (Zstd multi-thread + Modo Sólido), criptografia AES-256-GCM e miniaturas em memória sem lag.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/cromak-zip/cromak-zip-interface.jpg">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:url" content="https://cromaktechnology.github.io/pt/cromak-zip.html">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cromak ZIP v1.4.6 | Compactador Nativo em Rust + 18 Formatos">
+    <meta name="twitter:description" content="Motor nativo cmkz.dll (Zstd multi-thread), 18 formatos, AES-256-GCM, miniaturas instantâneas em memória e gerador CromakSFX (.exe).">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/cromak-zip/cromak-zip-interface.jpg">
+
+    <!-- FAVICON & CSS -->
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+
+    <!-- DADOS ESTRUTURADOS (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Cromak ZIP",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, Windows 11 (x64)",
+      "softwareVersion": "1.4.6",
+      "description": "Gerenciador universal de arquivos compactados para Windows com motor nativo cmkz.dll em Rust (Zstd multi-thread + Modo Sólido), suporte a 18 formatos, criptografia AES-256-GCM e gerador auto-extraível CromakSFX.",
+      "url": "https://cromaktechnology.github.io/pt/cromak-zip.html",
+      "image": "https://cromaktechnology.github.io/images/cromak-zip/cromak-zip-interface.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cromak Technology",
+        "url": "https://cromaktechnology.github.io/"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Avaliação Gratuita (40 Dias)",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Licença Vitalícia PRO (20% OFF)",
+          "price": "19.90",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- INJEÇÃO DO CABEÇALHO (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <main>
+        <section class="product-hero">
+            <div class="container">
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+                    <span class="badge-danger" style="background: rgba(0, 212, 255, 0.15); border: 1px solid var(--accent); color: var(--accent); font-weight: bold; display: inline-flex; align-items: center; gap: 6px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        NOVO: Versão 1.4.6 com Motor cmkz.dll (Rust)
+                    </span>
+                    <span class="badge-pro">18 Formatos + Modo Sólido</span>
+                    <span class="badge-danger">AES-256-GCM + CromakSFX</span>
+                </div>
+
+                <h1 style="font-size: 3.5rem; margin-bottom: 15px; line-height: 1.1;">Cromak ZIP</h1>
+                <h2 style="font-size: 1.8rem; color: var(--text-dim); font-weight: normal; margin-bottom: 25px;">Veja imagens direto dentro do arquivo sem extrair. Compactação Nativa em Rust e Segurança AES-256-GCM.</h2>
+
+                <p style="font-size: 1.15rem; color: #FFF; margin-bottom: 35px; max-width: 860px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+                    Chega de clicar arquivo por arquivo ou extrair pastas inteiras só para achar uma foto ou textura. Abra pacotes em 18 formatos (<code>.cmkz</code>, <code>.zip</code>, <code>.rar</code>, <code>.7z</code>, <code>.iso</code>, <code>.zst</code>) com <strong>grade de miniaturas em RAM</strong> (PNG, JPG, BMP, TGA, PSD, ICO, DDS, WEBP, SVG), abas estilo navegador, arrastar-e-soltar bidirecional e gerador autoextraível <strong>CromakSFX</strong>.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 30px;">
+                    <a href="#precos" class="btn" style="background: var(--accent); color: #000; padding: 16px 42px; font-size: 1.15rem; font-weight: bold; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 20px rgba(0, 212, 255, 0.35); display: inline-flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                        Baixar para Windows
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; color: var(--text-dim); font-size: 0.9rem; margin-bottom: 50px;">
+                    <span><b>Motor Nativo cmkz.dll (611 KB)</b></span>
+                    <span><b>Windows 10 e 11 (64-bit)</b></span>
+                    <span><b>Zero Telemetria / 100% Local</b></span>
+                    <span><b>11 Idiomas Nativos</b></span>
+                </div>
+
+                <img src="../images/cromak-zip/cromak-zip-interface.jpg" alt="Interface Principal do Cromak ZIP com Miniaturas em Grade" class="screenshot-main" style="max-width: 1000px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); border: 1px solid var(--card-border); border-radius: 12px;">
+            </div>
+        </section>
+
+        <!-- DESTAQUE: FORMATO OFICIAL .CMKZ -->
+        <section id="formato-cmkz" class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <div class="highlight-box" style="border-left: 4px solid var(--accent); padding: 35px 40px; background: rgba(0, 212, 255, 0.03); margin-bottom: 40px;">
+                    <h2 style="color: #FFF; font-size: 2.1rem; margin-top: 0; margin-bottom: 20px;">O que é o formato de arquivo .CMKZ (Cromak Archive)?</h2>
+                    <p style="font-size: 1.15rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 15px;">
+                        A extensão <code>.cmkz</code> (<strong>Cromak Archive</strong>) é o formato proprietário de compactação e criptografia desenvolvido exclusivamente pela <strong>Cromak Technology</strong> para o <strong>Cromak ZIP</strong>. Ele foi projetado do zero para substituir formatos legados que operam em thread única lenta ou utilizam cifras fracas.
+                    </p>
+                    <p style="font-size: 1.15rem; color: #FFF; font-weight: 600; line-height: 1.8; margin-bottom: 0;">
+                        Cada arquivo <code>.cmkz</code> é processado pelo motor nativo <code>cmkz.dll</code> em Rust (Zstd multi-thread) com <strong>Modo Sólido agrupado por extensão</strong>, atingindo taxas superiores de compressão em pastas de código, JSON e documentos (até 30% menor que arquivos comuns), protegido por criptografia autenticada <code>AES-256-GCM</code> e verificação dupla <code>CRC32 + SHA-256</code>.
+                    </p>
+                </div>
+
+                <div class="table-responsive-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--card-border); background: rgba(255,255,255,0.03);">
+                                <th style="padding: 16px 24px; color: #FFF;">Propriedade Técnica (.CMKZ)</th>
+                                <th style="padding: 16px 24px; color: var(--accent);">Especificação Oficial Cromak Technology</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Extensão &amp; Nome Oficial</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);"><code>.cmkz</code> — Arquivo do CromakZIP (Cromak Archive Format v1.0)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Assinatura Binária (Magic Bytes)</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);"><code>43 4D 4B 5A 01 00</code> (<code>CMKZ\x01\x00</code>)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Motor de Compressão</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);"><code>cmkz.dll</code> em Rust · Zstd Multi-Thread (blocos &ge; 256 KB) + Modo Sólido (16 MB por bloco) + fallback inteligente <code>store</code></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Criptografia &amp; Derivação</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);"><code>AES-256-GCM</code> autenticado por entrada/bloco + <code>PBKDF2-HMAC-SHA256</code> (100.000 iterações, Salt 16 bytes)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Integridade &amp; Índice</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);">Índice estruturado compactado com verificação dupla <code>CRC32</code> + <code>SHA-256</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- TABELA COMPARATIVA -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Cromak ZIP vs. Compactadores Clássicos</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px; font-size: 1.15rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Comparativo técnico direto entre utilitários tradicionais e a nova geração em Rust + PyQt6.
+                </p>
+
+                <div class="table-responsive-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--card-border); background: rgba(255,255,255,0.03);">
+                                <th style="padding: 18px 24px; color: #FFF;">Recursos &amp; Capacidades</th>
+                                <th style="padding: 18px 20px; color: var(--text-dim);">Compactadores Legados</th>
+                                <th style="padding: 18px 24px; color: var(--accent); font-weight: bold; background: rgba(0, 212, 255, 0.08); border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border);">Cromak ZIP v1.4.6</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 16px 24px; color: #FFF; font-weight: 600;">Motor Nativo Multi-Thread</td>
+                                <td style="padding: 16px 20px; color: var(--text-dim);">Deflate padrão / LZMA lento</td>
+                                <td style="padding: 16px 24px; color: #00FF88; font-weight: bold; background: rgba(0, 212, 255, 0.04); border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border);">cmkz.dll em Rust (Zstd Multi-Thread + Modo Sólido)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 16px 24px; color: #FFF; font-weight: 600;">Visualização de Imagens em Grade</td>
+                                <td style="padding: 16px 20px; color: #ff5555;">Apenas lista de texto ou extração em disco</td>
+                                <td style="padding: 16px 24px; color: #00FF88; font-weight: bold; background: rgba(0, 212, 255, 0.04); border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border);">Miniaturas reais (96px/140px) 100% em RAM (0 bytes em disco)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 16px 24px; color: #FFF; font-weight: 600;">Criptografia &amp; Integridade</td>
+                                <td style="padding: 16px 20px; color: var(--text-dim);">ZipCrypto ou AES simples</td>
+                                <td style="padding: 16px 24px; color: #00FF88; font-weight: bold; background: rgba(0, 212, 255, 0.04); border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border);">AES-256-GCM Autenticado + PBKDF2 + CRC32 + SHA-256</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 16px 24px; color: #FFF; font-weight: 600;">Auto-Extraível (.EXE)</td>
+                                <td style="padding: 16px 20px; color: var(--text-dim);">Interface antiga dos anos 90</td>
+                                <td style="padding: 16px 24px; color: #00FF88; font-weight: bold; background: rgba(0, 212, 255, 0.04); border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border);">CromakSFX em Rust Win32 (~273 KB) com EULA e Scripts</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 16px 24px; color: #FFF; font-weight: 600;">Licença Vitalícia</td>
+                                <td style="padding: 16px 20px; color: #ff5555;">US$ 23,95 – US$ 34,22 (R$ 229+)</td>
+                                <td style="padding: 16px 24px; color: var(--accent); font-weight: bold; font-size: 1.1rem; background: rgba(0, 212, 255, 0.04); border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border);">US$ 19,90 (20% OFF · Vitalício)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- OS 4 PILARES -->
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Os 4 Pilares da Arquitetura</h2>
+                <div class="tech-specs">
+                    <div>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>Motor Nativo cmkz.dll (Rust + Zstd)</h4>
+                                <p>Biblioteca nativa enxuta (~611 KB) com compressão paralela multi-núcleo, Modo Sólido por extensão e fallback inteligente para <code>store</code> em mídias já comprimidas.</p>
+                            </li>
+                            <li>
+                                <h4>Privacidade e Limpeza Automática</h4>
+                                <p>Miniaturas em memória RAM sem tocar o disco. Arquivos abertos no visualizador são limpos automaticamente de <code>%TEMP%\CromakZip_Preview</code> ao iniciar e fechar o programa.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="spec-list">
+                            <li>
+                                <h4>Gerador CromakSFX (.exe) em Rust</h4>
+                                <p>Transforme qualquer pacote em um instalador executável independente com modo silencioso, tela de EULA personalizada e execução automática pré/pós-extração.</p>
+                            </li>
+                            <li>
+                                <h4>Interface Multi-Abas &amp; 18 Formatos</h4>
+                                <p>Abra múltiplos pacotes em abas (instância única), personalize os 19 botões da barra de ferramentas e associe qualquer formato no Windows Explorer com 1 clique.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIA DE PRINTS REAIS -->
+        <section id="explore-gallery" class="section">
+            <style>
+                #explore-gallery .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 28px;
+                }
+                @media (max-width: 860px) {
+                    #explore-gallery .gallery-grid { grid-template-columns: 1fr; }
+                }
+                #explore-gallery .gallery-card {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    overflow: hidden;
+                }
+                #explore-gallery .gallery-card img.screenshot-main {
+                    width: 100%;
+                    aspect-ratio: 16 / 10;
+                    object-fit: cover;
+                    object-position: top center;
+                    display: block;
+                }
+                #explore-gallery .card-caption {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px 24px;
+                }
+                #explore-gallery .card-caption h4 {
+                    font-size: 1.18rem;
+                    margin: 0 0 10px 0;
+                    color: #FFF;
+                }
+                #explore-gallery .card-caption p {
+                    font-size: 0.96rem;
+                    line-height: 1.65;
+                    margin: 0;
+                    color: var(--text-dim);
+                }
+            </style>
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Explore o Cromak ZIP por Dentro</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 42px; font-size: 1.12rem;">Capturas reais da versão 1.4.6 mostrando miniaturas em RAM, detalhes, menu inteligente e CromakSFX.</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="../images/cromak-zip/cromak-zip-grid.jpg" alt="Visualização em Grade com Miniaturas Reais em Memória" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Grade de Miniaturas Instantâneas</h4>
+                            <p>Veja fotos, texturas e ícones direto dentro de arquivos .cmkz, .zip, .rar e .7z sem precisar extrair nada para o disco. Decodificação em lote direto na RAM compatível com PNG, JPG, BMP, TGA, PSD, ICO, DDS, WEBP e SVG.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/cromak-zip/cromak-zip-details.jpg" alt="Modo Lista e Árvore de Pastas" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Lista Detalhada &amp; Árvore Hierárquica</h4>
+                            <p>Inspecione pacotes grandes em abas simultâneas com colunas completas de tamanho original, tamanho comprimido, taxa de compressão, hash CRC32 e filtro instantâneo por nome ou extensão sem travamentos.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/cromak-zip/cromak-zip-integration.jpg" alt="Integração com Windows Explorer e 18 Extensões" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Integração Windows &amp; 18 Formatos</h4>
+                            <p>Menu de contexto inteligente no Windows Explorer que exibe ações de extração apenas em compactados e ações de compactação em arquivos comuns ou pastas, com suporte a multiseleção e ícones oficiais.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/cromak-zip/cromak-zip-sfx.jpg" alt="Gerador Auto-Extraível CromakSFX" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Gerador Auto-Extraível CromakSFX</h4>
+                            <p>Transforme qualquer pacote em um instalador executável .exe independente com stub nativo em Rust Win32, janela personalizada, pasta de destino padrão, modo silencioso e execução automática pós-extração.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/cromak-zip/cromak-zip-bench.jpg" alt="Benchmark Multi-Núcleo de CPU" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Benchmark Multi-Núcleo &amp; Progresso Pro</h4>
+                            <p>Meça a velocidade real de compressão e descompressão em MB/s com o motor Rust cmkz.dll e acompanhe operações pesadas com duas barras de progresso, taxa em tempo real, Pausa/Continuar e Segundo Plano.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-card">
+                        <img src="../images/cromak-zip/cromak-zip-about.jpg" alt="Sobre o Cromak ZIP e Licenciamento HWID" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Licenciamento Oficial HWID &amp; LGPD</h4>
+                            <p>Avaliação gratuita de 40 dias com todos os recursos liberados, ativação vitalícia por assinatura SHA-512 vinculada ao hardware, 11 idiomas integrados e processamento 100% local sem telemetria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE PREÇOS -->
+        <div id="plano"></div>
+        <section id="precos" class="section" style="background: rgba(255,255,255,0.02); padding-bottom: 80px;">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Licenciamento Simples e Justo</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 50px; font-size: 1.15rem;">Avalie por 40 dias com todos os recursos ou garanta sua licença vitalícia com 20% de desconto.</p>
+
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h3>Avaliação Gratuita (40 Dias)</h3>
+                        <div class="price-value">US$ 0<span>,00</span></div>
+                        <ul class="price-features">
+                            <li>Todas as funções liberadas por 40 dias</li>
+                            <li>Motor nativo <code>cmkz.dll</code> (Zstd multi-thread)</li>
+                            <li>Leitura e extração de 18 formatos</li>
+                            <li>Miniaturas de imagens 100% em RAM</li>
+                            <li>Acesso não-bloqueante aos seus pacotes</li>
+                            <li class="disabled">Exibe lembrete de licença ao iniciar</li>
+                            <li class="disabled">Uso comercial requer licença PRO após o trial</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/1wrubz51h7ptad9/CromakZIP_Setup_v1.4.6.zip/file" target="_blank" rel="noopener" class="btn-outline">Baixar Instalador</a>
+                    </div>
+
+                    <div class="price-card popular">
+                        <div class="popular-tag">20% OFF · Oferta de Lançamento</div>
+                        <h3>Licença Vitalícia PRO</h3>
+                        <div style="color: var(--text-dim); text-decoration: line-through; font-size: 1rem; margin-bottom: 4px;">De US$ 24,90</div>
+                        <div class="price-value">US$ 19<span>,90/único</span></div>
+                        <ul class="price-features">
+                            <li><b>Licença Vitalícia Perpétua (Pague Uma Vez)</b></li>
+                            <li><b>Zero Telas ou Avisos de Avaliação</b></li>
+                            <li><b>Uso Comercial, Corporativo e Profissional Liberado</b></li>
+                            <li>Motor nativo <code>cmkz.dll</code> + Modo Sólido + AES-256-GCM</li>
+                            <li>Gerador CromakSFX (.exe) Royalty-Free</li>
+                            <li>Atualizações contínuas da série 1.x</li>
+                            <li>Suporte técnico prioritário via Código HWID</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy" style="font-size: 1.15rem; padding: 16px 20px;">Adquirir Licença</a>
+                        <p style="font-size: 0.85rem; color: #FFF; font-weight: 600; margin-top: 12px; margin-bottom: 0;">Envie seu Código HWID ao suporte após a compra</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11 IDIOMAS -->
+        <section class="section">
+            <div class="container" style="text-align: center;">
+                <h2 class="section-title">Disponível em 11 Idiomas Nativos</h2>
+                <p style="color: var(--text-dim); max-width: 750px; margin: 0 auto 30px; font-size: 1.1rem;">
+                    Tanto o aplicativo quanto o instalador oficial suportam 11 idiomas com troca instantânea.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">Português (Brasil)</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">English (US)</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">Español</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">Français</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">Deutsch</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">Italiano</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">Русский</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">简体中文</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">日本語</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">한국어</div>
+                    <div style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 10px 18px; border-radius: 8px; color: #FFF; font-weight: 600;">Polski</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" style="background: rgba(255,255,255,0.02);">
+            <div class="container" style="max-width: 840px; margin: 0 auto;">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Perguntas Frequentes (FAQ)</h2>
+
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.15rem; margin-bottom: 10px;">O que é um arquivo .CMKZ e como abrir?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.7;">Um arquivo com extensão <code>.cmkz</code> é um pacote compactado oficial do <b>Cromak ZIP</b> (Cromak Archive), utilizando compressão Zstd multi-thread via <code>cmkz.dll</code> e criptografia opcional <code>AES-256-GCM</code>. Para abrir, visualizar ou extrair arquivos <code>.cmkz</code> no Windows 10 ou 11, basta instalar o Cromak ZIP oficial.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.15rem; margin-bottom: 10px;">O Cromak ZIP exige dependências externas no computador do cliente?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.7;">Não! O instalador oficial empacota todas as bibliotecas necessárias, incluindo o motor nativo <code>cmkz.dll</code> e o stub <code>CromakSFX.sfx</code>. É só instalar e usar.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.15rem; margin-bottom: 10px;">O que acontece após os 40 dias de avaliação?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.7;">Você nunca perde acesso aos seus arquivos: o Cromak ZIP continua permitindo abrir e extrair pacotes, exibindo um lembrete para adquirir a licença PRO. Para uso contínuo ou comercial, é necessária a licença vitalícia.</p>
+                </div>
+
+                <div style="margin-bottom: 25px; padding-bottom: 20px;">
+                    <h4 style="color: var(--accent); font-size: 1.15rem; margin-bottom: 10px;">Como ativo minha licença PRO com o Código HWID?</h4>
+                    <p style="color: var(--text-dim); line-height: 1.7;">Na janela de ativação, clique em <b>Copiar HWID</b> e envie esse código (<code>CMKZIP-...</code>) para o suporte da Cromak Technology junto do comprovante. Você receberá sua chave de ativação exclusiva para colar no campo Serial.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- INJEÇÃO DO RODAPÉ (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <!-- SCRIPTS GLOBAIS -->
+    <script src="../js/menu.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

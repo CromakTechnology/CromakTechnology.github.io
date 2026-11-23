@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="dropdown-submenu">
                                 <a href="#" class="submenu-btn">${t.cat_optimization} <span>▸</span></a>
                                 <div class="submenu-content">
+                                    <a href="cromak-zip.html">Cromak ZIP</a>
                                     <a href="deepclean_suite.html">DeepClean Suite</a>
                                 </div>
                             </div>
@@ -414,6 +415,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 ? "Bloqueio e gestão de restrições do sistema operacional, controle de portas USB e travas de integridade."
                 : "Complete OS control and restriction management, USB port locks, and system integrity enforcement.",
             keywords: "syslock trava bloqueio sistema portas usb permissoes integridade windows restricoes"
+        },
+        {
+            file: "cromak-zip.html",
+            category: "optimization",
+            categoryName: t.cat_optimization,
+            badgeClass: "cromak-badge-optimization",
+            badge: "CMKZ + Zstd",
+            name: "Cromak ZIP",
+            desc: lang === "pt"
+                ? "Compactador nativo em Rust (cmkz.dll), 18 formatos, miniaturas em RAM, AES-256-GCM e gerador CromakSFX (.exe)."
+                : "Native Rust archiver (cmkz.dll), 18 formats, in-RAM image thumbnails, AES-256-GCM encryption, and CromakSFX (.exe) builder.",
+            keywords: "cromak zip cmkz rar 7z zstd compactador extrator sfx aes256 miniaturas"
         },
         {
             file: "install_compiler.html",

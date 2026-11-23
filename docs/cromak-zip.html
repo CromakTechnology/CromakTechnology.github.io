@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cromak ZIP v1.x.x — Documentação Técnica Oficial (cmkz.dll &amp; CromakSFX)</title>
+    <meta name="description" content="Documentação técnica oficial do Cromak ZIP: motor nativo cmkz.dll em Rust (Zstd multi-thread + Modo Sólido), especificação .cmkz AES-256-GCM, 18 formatos, CromakSFX e CLI.">
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #3b82f6;
+            --primary-light: #38bdf8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg-body); color: var(--text-main); line-height: 1.65; display: flex; min-height: 100vh; }
+        #sidebar { width: 310px; background: var(--bg-sidebar); border-right: 1px solid var(--border-color); position: fixed; top: 0; bottom: 0; left: 0; overflow-y: auto; padding: 25px 20px; }
+        .brand-container { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid var(--border-color); }
+        .brand-logo { width: 42px; height: 42px; border-radius: 8px; background: linear-gradient(135deg, var(--primary), #0d1117); display: flex; align-items: center; justify-content: center; font-weight: 900; color: #fff; font-size: 16px; border: 1px solid rgba(56,189,248,0.35); }
+        .brand-text h1 { font-size: 15px; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600; margin-bottom: 15px; padding: 6px 10px; border-radius: 6px; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.2); }
+        .sidebar-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin: 18px 0 8px 8px; letter-spacing: 1px; }
+        .sidebar-nav { list-style: none; }
+        .sidebar-nav li a { display: block; padding: 8px 12px; color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; }
+        .sidebar-nav li a:hover { background: var(--bg-card); color: var(--primary-light); }
+        #content { margin-left: 310px; flex: 1; padding: 40px 56px 80px; max-width: 1080px; }
+        h2 { font-size: 24px; color: #fff; margin: 36px 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+        h3 { font-size: 17px; color: var(--primary-light); margin: 20px 0 8px; }
+        p { margin-bottom: 12px; color: #cbd5e1; }
+        ul { margin: 8px 0 16px 20px; color: #cbd5e1; }
+        li { margin-bottom: 6px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; padding: 20px 24px; margin-bottom: 18px; }
+        code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; color: #93c5fd; font-family: Consolas, monospace; font-size: 12.5px; }
+        pre { background: var(--code-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 16px; overflow-x: auto; font-family: Consolas, monospace; font-size: 12.5px; color: #93c5fd; margin: 12px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13.5px; }
+        th, td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; }
+        th { background: var(--bg-card-alt); color: var(--primary-light); }
+        .tip { border-left: 3px solid var(--success); background: rgba(16,185,129,0.08); padding: 12px 16px; border-radius: 6px; margin: 14px 0; }
+        @media (max-width: 900px) { #sidebar { position: static; width: 100%; } #content { margin-left: 0; padding: 24px; } body { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <aside id="sidebar">
+        <div class="brand-container">
+            <div class="brand-logo">CZ</div>
+            <div class="brand-text">
+                <h1>Cromak ZIP</h1>
+                <p>Documentação v1.x.x</p>
+            </div>
+        </div>
+        <a href="../pt/documentacao.html" class="back-link">← Voltar para Documentação</a>
+        <div class="sidebar-section-title">Guia Técnico</div>
+        <ul class="sidebar-nav">
+            <li><a href="#arquitetura">1. Arquitetura &amp; cmkz.dll</a></li>
+            <li><a href="#formato-cmkz">2. Especificação .CMKZ</a></li>
+            <li><a href="#formatos">3. Os 18 Formatos Suportados</a></li>
+            <li><a href="#miniaturas">4. Miniaturas em RAM &amp; Temp</a></li>
+            <li><a href="#cromaksfx">5. Gerador CromakSFX (.exe)</a></li>
+            <li><a href="#cli-explorer">6. CLI &amp; Windows Explorer</a></li>
+            <li><a href="#licenciamento">7. Licenciamento &amp; HWID</a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+        <h1 style="font-size: 32px; color: #fff; margin-bottom: 8px;">Cromak ZIP — Manual Técnico Oficial</h1>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">Versão 1.x.x (Build 2026.11) · Windows 10/11 (64-bit) · Motor Nativo em Rust</p>
+
+        <section id="arquitetura">
+            <h2>1. Arquitetura &amp; Motor Nativo cmkz.dll</h2>
+            <div class="card">
+                <p>O Cromak ZIP combina uma interface desktop rápida em <strong>Python 3 + PyQt6</strong> com dois binários nativos compilados em <strong>Rust</strong>:</p>
+                <ul>
+                    <li><code>assets/cmkz.dll</code> (~611 KB): Biblioteca dinâmica C ABI que implementa compressão e descompressão <strong>Zstd multi-thread</strong> (ativada automaticamente em blocos &ge; 256 KB).</li>
+                    <li><code>assets/CromakSFX.sfx</code> (~273 KB): Stub Win32 autônomo para criação de executáveis auto-extraíveis <code>.exe</code> sem dependências externas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="formato-cmkz">
+            <h2>2. Especificação Binária .CMKZ</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Magic Header:</strong> <code>CMKZ\x01\x00</code> (6 bytes) + Flags (uint16 LE).</li>
+                    <li><strong>Derivação de Chave:</strong> <code>PBKDF2-HMAC-SHA256</code> com 100.000 iterações e Salt aleatório de 16 bytes.</li>
+                    <li><strong>Cifragem Autenticada:</strong> <code>AES-256-GCM</code> por bloco com Nonce derivado de 12 bytes.</li>
+                    <li><strong>Modo Sólido (nível &ge; 3):</strong> Agrupa arquivos por extensão em blocos sólidos de até 16 MB, eliminando redundância cruzada entre arquivos semelhantes.</li>
+                    <li><strong>Integridade Dupla:</strong> Verificação por <code>CRC32</code> e <code>SHA-256</code> em cada entrada.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="formatos">
+            <h2>3. Os 18 Formatos Suportados</h2>
+            <table>
+                <tr><th>Formato</th><th>Operações</th><th>Recursos</th></tr>
+                <tr><td><code>.cmkz</code></td><td>Criar, Ler, Extrair, Testar, Criptografar</td><td>Zstd multi-thread + Modo Sólido + AES-256-GCM</td></tr>
+                <tr><td><code>.zip</code>, <code>.cbz</code>, <code>.jar</code>, <code>.apk</code></td><td>Criar, Ler, Extrair, Reparar, Comentar</td><td>Deflate / Store / LZMA / BZip2 + miniaturas</td></tr>
+                <tr><td><code>.rar</code></td><td>Ler, Extrair, Visualizar, Testar</td><td>Integração transparente com UnRAR</td></tr>
+                <tr><td><code>.7z</code>, <code>.iso</code>, <code>.cab</code>, <code>.arj</code>, <code>.lzh</code></td><td>Ler, Extrair, Visualizar, Testar</td><td>Imagens de disco e pacotes compactados</td></tr>
+                <tr><td><code>.tar</code>, <code>.gz</code>, <code>.bz2</code>, <code>.xz</code>, <code>.tgz</code>, <code>.zst</code></td><td>Criar, Ler, Extrair</td><td>Estrutura POSIX e Zstandard</td></tr>
+                <tr><td><code>.001</code></td><td>Ler, Extrair, Unir Volumes</td><td>Reconstrução de volumes divididos</td></tr>
+            </table>
+        </section>
+
+        <section id="miniaturas">
+            <h2>4. Miniaturas 100% em RAM &amp; Limpeza de Temporários</h2>
+            <div class="tip">
+                Os modos de grade (<strong>96 px</strong> e <strong>140 px</strong>) decodificam imagens em segundo plano usando <code>QImageReader.setScaledSize()</code> diretamente na memória RAM — <strong>0 bytes gravados em disco</strong>.
+            </div>
+            <p>Ao abrir um item individual no visualizador externo/interno, a extração temporária vai para <code>%TEMP%\CromakZip_Preview</code>, que é limpa automaticamente na abertura e no encerramento do programa.</p>
+        </section>
+
+        <section id="cromaksfx">
+            <h2>5. Gerador Auto-Extraível CromakSFX (.exe)</h2>
+            <p>Disponível no botão <strong>SFX</strong> da barra principal. Permite configurar pasta padrão de destino, modo silencioso (exibir tudo, ocultar diálogo ou silencioso total), contrato EULA, ícone customizado e comandos pré/pós-extração.</p>
+        </section>
+
+        <section id="cli-explorer">
+            <h2>6. Linha de Comando (CLI) &amp; Explorer</h2>
+            <pre>CromakZip.exe "C:\pasta\pacote.cmkz"
+CromakZip.exe --add-cmkz "C:\pasta\projeto"
+CromakZip.exe --add-zip "C:\pasta\projeto"
+CromakZip.exe --add-dialog "C:\pasta\projeto"
+CromakZip.exe --extract-here "C:\pasta\pacote.zip"
+CromakZip.exe --extract-folder "C:\pasta\pacote.zip"</pre>
+            <p>Instâncias adicionais enviam o arquivo por IPC para a janela já aberta, abrindo uma nova aba.</p>
+        </section>
+
+        <section id="licenciamento">
+            <h2>7. Licenciamento &amp; Código HWID</h2>
+            <p>O Cromak ZIP oferece <strong>40 dias de avaliação gratuita</strong> com acesso não-bloqueante após o término. Para uso contínuo ou comercial, copie o seu <strong>Código HWID</strong> (<code>CMKZIP-...</code>) na janela de ativação e envie ao suporte oficial da Cromak Technology para receber sua chave assinada em SHA-512.</p>
+        </section>
+    </main>
+</body>
+</html>
