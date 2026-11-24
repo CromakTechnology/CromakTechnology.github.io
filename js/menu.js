@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a href="#" class="submenu-btn">${t.cat_utils} <span>▸</span></a>
                                 <div class="submenu-content">
                                     <a href="clock.html">Clock & Alarm</a>
+                                    <a href="converter.html">Universal Converter</a>
                                     <a href="dock.html">Dock</a>
                                     <a href="new-tab-service.html">NewTab</a>
                                     <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
@@ -451,6 +452,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 ? "Conversor de aplicações web, HTML5 e PWAs em pacotes APK nativos Android de alta performance."
                 : "Convert web apps, HTML5 games, and PWAs into high-performance native Android APK packages.",
             keywords: "web to apk compiler conversor html5 pwa android apk desenvolvedor app mobile"
+        },
+        {
+            file: "converter.html",
+            category: "utils",
+            categoryName: t.cat_utils,
+            badgeClass: "cromak-badge-utils",
+            badge: "Conversor Pro",
+            name: "Cromak Universal Converter",
+            desc: lang === "pt"
+                ? "Suíte offline de conversão universal (vídeo, áudio, imagem, PDF, dados) com FFmpeg, Editor de Mídia, Gravador de Tela e Downloader."
+                : "Offline all-in-one conversion suite (video, audio, image, PDF, data) with FFmpeg, Media Editor, Screen Recorder, and Downloader.",
+            keywords: "universal converter conversor mp4 mp3 webp pdf docx xlsx ffmpeg gravador editor downloader"
         },
         {
             file: "dock.html",
