@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <a href="#" class="submenu-btn">${t.cat_security} <span>▸</span></a>
                                 <div class="submenu-content">
                                     <a href="connection-blackout.html">Connection Blackout</a>
+                                    <a href="forensics.html">Forensics Security</a>
                                     <a href="install-protector.html">Install Protector</a>
                                     <a href="instant-rollback.html">Instant Rollback</a>
                                     <a href="metadata_remover.html">Metadata Remover</a>
@@ -147,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     <a href="new-tab-service.html">NewTab</a>
                                     <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                                     <a href="photoviewer.html">Photo Viewer</a>
+                                    <a href="screen-recorder.html">Screen Recorder</a>
                                 </div>
                             </div>
 
@@ -418,6 +420,18 @@ document.addEventListener("DOMContentLoaded", function() {
             keywords: "syslock trava bloqueio sistema portas usb permissoes integridade windows restricoes"
         },
         {
+            file: "forensics.html",
+            category: "security",
+            categoryName: t.cat_security,
+            badgeClass: "cromak-badge-security",
+            badge: lang === "pt" ? "Perícia & OSINT" : "Forensics & OSINT",
+            name: "Cromak Forensics Security",
+            desc: lang === "pt"
+                ? "Suíte completa com 20 motores modulares: perícia do Windows, criptografia CFE (.cfe) com Pepper, esteganografia LSB e sanitização militar."
+                : "Complete digital forensics suite with 20 modular engines: Windows artifacts, CFE (.cfe) encryption with Pepper, LSB steganography, and military disk wipe.",
+            keywords: "forensics pericia seguranca cfe pepper esteganografia prefetch shimcache osint wipe shredder investigacao custody artifacts triage"
+        },
+        {
             file: "cromak-zip.html",
             category: "optimization",
             categoryName: t.cat_optimization,
@@ -464,6 +478,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 ? "Suíte offline de conversão universal (vídeo, áudio, imagem, PDF, dados) com FFmpeg, Editor de Mídia, Gravador de Tela e Downloader."
                 : "Offline all-in-one conversion suite (video, audio, image, PDF, data) with FFmpeg, Media Editor, Screen Recorder, and Downloader.",
             keywords: "universal converter conversor mp4 mp3 webp pdf docx xlsx ffmpeg gravador editor downloader"
+        },
+        {
+            file: "screen-recorder.html",
+            category: "utils",
+            categoryName: t.cat_utils,
+            badgeClass: "cromak-badge-utils",
+            badge: lang === "pt" ? "Gratuito / Pro" : "Free / Pro",
+            name: "Cromak Screen Recorder",
+            desc: lang === "pt"
+                ? "Gravador de tela e capturas profissional até 60 FPS, aceleração por GPU, áudio simultâneo e 11 idiomas. 100% gratuito para uso pessoal e comercial."
+                : "Professional screen recorder & snipping tool up to 60 FPS, GPU hardware encoding, dual audio, and 11 languages. 100% free for personal & commercial use.",
+            keywords: "screen recorder gravador de tela capturar tela print 60fps nvenc ffmpeg gratis comercial"
         },
         {
             file: "dock.html",

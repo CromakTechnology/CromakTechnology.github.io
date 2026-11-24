@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PRIMARY SEO METADATA -->
+    <title>Cromak Forensics Security | Digital Forensics, Cyber Defense & OSINT Intelligence Suite</title>
+    <meta name="description" content="Cromak Forensics Security is the professional standalone suite for computer forensics, digital custody, military-grade wiping, CFE (.cfe) encryption with Pepper shield, and OSINT investigation with 20 modular engines.">
+    <meta name="keywords" content="digital forensics, computer forensics, osint investigation, cromak file encryptor, .cfe, pepper shield, lsb steganography, dod 5220.22-m wiping, windows artifacts prefetch, data recovery, cromak forensics security">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="application-name" content="Cromak Forensics Security">
+    <meta name="theme-color" content="#0b1114">
+
+    <!-- CANONICAL & LANGUAGES -->
+    <link rel="canonical" href="https://cromaktechnology.github.io/en/forensics.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/pt/forensics.html">
+    <link rel="alternate" hreflang="en" href="https://cromaktechnology.github.io/en/forensics.html">
+    <link rel="alternate" hreflang="x-default" href="https://cromaktechnology.github.io/en/forensics.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Cromak Forensics Security | Digital Forensics & Cyber Defense Suite">
+    <meta property="og:description" content="20 Modular high-precision forensic engines: Windows Artifacts Triage, Pepper-shielded CFE (.cfe) Encryption, LSB Steganography, OSINT, and Military-Grade Sanitization.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/forensics-security/forensics-security_interface.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://cromaktechnology.github.io/en/forensics.html">
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cromak Forensics Security | 20 Modular Forensic Engines">
+    <meta name="twitter:description" content="The definitive computer forensics, defense, and digital custody suite. CFE (.cfe) encryption, Windows artifacts, OSINT, and military data sanitization.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/forensics-security/forensics-security_interface.jpg">
+
+    <!-- FAVICON & CSS -->
+    <link rel="icon" type="image/png" href="../images/icons/forensics-security.png">
+    <link rel="stylesheet" href="../css/estilo_premiun.css">
+
+    <!-- STRUCTURED DATA (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Cromak Forensics Security",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Windows 10, Windows 11 (x64)",
+      "description": "Professional computer forensics, incident response, OSINT intelligence, and armored cryptographic custody suite with 20 integrated modular engines.",
+      "url": "https://cromaktechnology.github.io/en/forensics.html",
+      "downloadUrl": "https://www.mediafire.com/file/r92ue9ug5z5ifk8/Cromak_Forensics_Security_Setup_v1.3.4.zip/file",
+      "softwareVersion": "1.3.4",
+      "image": "https://cromaktechnology.github.io/images/forensics-security/forensics-security_interface.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cromak Technology",
+        "url": "https://cromaktechnology.github.io/"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free 40-Day Evaluation",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Lifetime PRO License",
+          "price": "29.90",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAVBAR INJECTION (menu.js) -->
+    <div id="cromak-header"></div>
+
+    <main>
+        <!-- PRODUCT HERO -->
+        <section class="product-hero" style="background: radial-gradient(circle at 50% 15%, rgba(16, 185, 129, 0.12) 0%, rgba(11, 17, 20, 0.98) 75%); padding-top: 170px;">
+            <div class="container">
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px;">
+                    <span class="badge-danger" style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #34d399; font-weight: bold; display: inline-flex; align-items: center; gap: 6px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        NEW: 20 Modular Forensic Engines
+                    </span>
+                    <span class="badge-pro" style="background: rgba(6, 182, 212, 0.15); border: 1px solid #06b6d4; color: #22d3ee;">CFE Encryption (.cfe) + Pepper Shield</span>
+                    <span class="badge-danger" style="background: rgba(99, 102, 241, 0.15); border: 1px solid #6366f1; color: #a5b4fc;">Zero Telemetry · 100% Offline Air-Gapped</span>
+                </div>
+
+                <h1 style="font-size: 3.4rem; margin-bottom: 16px; line-height: 1.15; color: #f0fdf4;">Cromak Forensics Security</h1>
+                <h2 style="font-size: 1.65rem; color: #94a3b8; font-weight: normal; margin-bottom: 25px;">The Definitive Suite for Computer Forensics, OSINT Investigation, Cyber Defense, and Evidentiary Custody.</h2>
+
+                <p style="font-size: 1.15rem; color: #e2e8f0; margin-bottom: 35px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.75;">
+                    Engineered by <strong>Cromak Technology</strong> for digital forensic examiners, cybersecurity researchers, SOC/CSIRT incident handlers, and corporate investigators. Unifies <strong>20 independent modular engines</strong> in an ultra-responsive Dark Premium Emerald & Turquoise architecture. From deep artifact carving in Windows to authenticated military-grade encryption for court-admissible reports.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 32px;">
+                    <a href="#precos" class="btn" style="background: #10b981; color: #062319; padding: 16px 42px; font-size: 1.15rem; font-weight: 800; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 25px rgba(16, 185, 129, 0.4); display: inline-flex; align-items: center; gap: 10px;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                        Download Official Installer
+                    </a>
+                    <a href="#arsenal-20" class="btn" style="background: rgba(255,255,255,0.06); color: #FFF; padding: 16px 36px; font-size: 1.15rem; font-weight: 700; border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.15); display: inline-flex; align-items: center; gap: 8px;">
+                        Explore the 20 Engines
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                    </a>
+                </div>
+
+                <div style="display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; color: #94a3b8; font-size: 0.92rem; margin-bottom: 45px;">
+                    <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color: #34d399;">20 Modular Engines</strong></span>
+                    <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color: #34d399;">Windows 10 & 11 (64-bit)</strong></span>
+                    <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color: #34d399;">100% Offline / Air-Gapped Isolation</strong></span>
+                    <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong style="color: #34d399;">Free 40-Day Evaluation</strong></span>
+                </div>
+
+                <img src="../images/forensics-security/forensics-security_interface.jpg" alt="Cromak Forensics Security Main Interface — Overview and Audit Console" class="screenshot-main" style="max-width: 1060px; box-shadow: 0 25px 60px rgba(0,0,0,0.85); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; margin-bottom: 10px;">
+            </div>
+        </section>
+
+        <!-- CFE FORMAT WITH PEPPER SHIELD HIGHLIGHT -->
+        <section id="formato-cfe" class="section" style="background: rgba(16, 185, 129, 0.03); border-top: 1px solid rgba(16, 185, 129, 0.1); border-bottom: 1px solid rgba(16, 185, 129, 0.1);">
+            <div class="container">
+                <div class="highlight-box" style="border-left: 4px solid #10b981; padding: 35px 40px; background: rgba(11, 24, 21, 0.6); margin-bottom: 40px; border-radius: 0 10px 10px 0;">
+                    <h2 style="color: #f0fdf4; font-size: 2.1rem; margin-top: 0; margin-bottom: 18px;">What is the .CFE Format with Pepper Shield?</h2>
+                    <p style="font-size: 1.15rem; color: #cbd5e1; line-height: 1.8; margin-bottom: 16px;">
+                        The <code>.cfe</code> (<strong>Cromak File Encryptor</strong>) container was specifically engineered to fulfill the most demanding requirements of forensic secrecy and tactical cyber defense. Unlike ordinary encryptors that simply derive a key from user input, the CFE core injects the <strong>Proprietary Pepper Secret</strong> — a high-entropy cryptographic pepper bound directly into the native binary kernel.
+                    </p>
+                    <p style="font-size: 1.15rem; color: #FFF; font-weight: 600; line-height: 1.8; margin-bottom: 0;">
+                        This shielding makes dictionary attacks and rainbow tables mathematically futile, even if an attacker seizes the ciphertext. Every <code>.cfe</code> file uses authenticated <code>AES-256-GCM (AEAD)</code> with a 96-bit CSPRNG initialization vector, <code>PBKDF2-HMAC-SHA256</code> key derivation with 200,000 iterations, and a 16-byte authentication tag that immediately flags any tampering attempts.
+                    </p>
+                </div>
+
+                <div class="table-responsive-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--card-border); background: rgba(255,255,255,0.03);">
+                                <th style="padding: 16px 24px; color: #FFF;">Cryptographic Property (.CFE)</th>
+                                <th style="padding: 16px 24px; color: #34d399;">Cromak Technology Shielding Specification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Main Cipher Algorithm</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);"><code>AES-256-GCM</code> (Galois/Counter Mode) with built-in authenticated integrity (AEAD)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Proprietary Pepper Secret</td>
+                                <td style="padding: 14px 24px; color: #34d399; font-weight: bold;">256-bit shield bound to core — Defeats external brute-force and weak password exposure</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Key Derivation (KDF)</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);"><code>PBKDF2-HMAC-SHA256</code> with 200,000 iterations and unique 16-byte cryptographic salt per container</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Initialization Vector (IV / Nonce)</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);">96 bits generated via OS Cryptographic Service Provider (CSPRNG)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Authentication &amp; Anti-Tamper</td>
+                                <td style="padding: 14px 24px; color: var(--text-dim);">128-bit GCM Tag: any single-bit modification causes instant verification failure</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE 20 FORENSIC ENGINES BY CATEGORY -->
+        <section id="arsenal-20" class="section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 16px;">The Arsenal of 20 Integrated Forensic Engines</h2>
+                <p style="text-align: center; color: #94a3b8; margin-bottom: 55px; font-size: 1.15rem; max-width: 860px; margin-left: auto; margin-right: auto;">
+                    Every engine operates independently in modular isolation without cross-dependencies, guaranteeing zero structural contamination and absolute stability.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 50px;">
+                    <!-- Category 1 -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 10px; padding: 26px; border-top: 3px solid #10b981;">
+                        <h3 style="color: #34d399; font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M10 11V9a2 2 0 1 1 4 0v2"/></svg>
+                            <span>Cryptography &amp; Custody</span>
+                        </h3>
+                        <ul style="color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; padding-left: 20px; margin-bottom: 0;">
+                            <li><strong>File Encryptor (.cfe):</strong> Military-grade AES-256-GCM cipher with Pepper shielding.</li>
+                            <li><strong>Steganography LSB:</strong> Forensic payload injection & extraction in lossless images with channel validation.</li>
+                            <li><strong>Hash Verifier:</strong> Multi-algorithm hash generator with 7 simultaneous digests (SHA-256, SHA-512, MD5...).</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 10px; padding: 26px; border-top: 3px solid #06b6d4;">
+                        <h3 style="color: #22d3ee; font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>
+                            <span>System Digital Forensics</span>
+                        </h3>
+                        <ul style="color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; padding-left: 20px; margin-bottom: 0;">
+                            <li><strong>Windows Artifacts:</strong> Deep triage of Prefetch, ShimCache, ShellBags, and USB history.</li>
+                            <li><strong>Browser Forensics:</strong> Multi-browser extraction of history, downloads, and cookies across 5 browsers.</li>
+                            <li><strong>Data Recovery:</strong> Forensic file carving and signature reconstruction for deleted evidence.</li>
+                            <li><strong>File Finder:</strong> High-speed triage by magic bytes and cryptographic digests.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 10px; padding: 26px; border-top: 3px solid #3b82f6;">
+                        <h3 style="color: #60a5fa; font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <span>Network Surveillance &amp; Telemetry</span>
+                        </h3>
+                        <ul style="color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; padding-left: 20px; margin-bottom: 0;">
+                            <li><strong>Port Monitor:</strong> Real-time listening sockets, active connections, and PID process mapping.</li>
+                            <li><strong>LAN Scanner:</strong> Subnet sweep, ARP resolution, MAC lookups, and device discovery.</li>
+                            <li><strong>Vulnerability Scanner:</strong> Surface check for insecure protocols and open management ports.</li>
+                            <li><strong>Wi-Fi Key Recovery:</strong> Instant audit and extraction of saved WLAN network profiles.</li>
+                            <li><strong>Network Fixer:</strong> Diagnostic reset of DNS resolver cache, ARP tables, and TCP/IP stack.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 10px; padding: 26px; border-top: 3px solid #a855f7;">
+                        <h3 style="color: #c084fc; font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/><circle cx="12" cy="12" r="3"/></svg>
+                            <span>OSINT Intelligence &amp; Recon</span>
+                        </h3>
+                        <ul style="color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; padding-left: 20px; margin-bottom: 0;">
+                            <li><strong>Dork Engine:</strong> Automated advanced search operator generator across Google & Bing.</li>
+                            <li><strong>People Finder:</strong> OSINT intelligence on names, phone records, and public data leaks.</li>
+                            <li><strong>Username Recon:</strong> Cross-platform digital footprint identification on dozens of platforms.</li>
+                            <li><strong>Email Analyzer:</strong> Forensic header breakdown with SPF, DKIM, and DMARC verification.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 5 -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 10px; padding: 26px; border-top: 3px solid #ef4444;">
+                        <h3 style="color: #f87171; font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; gap: 10px;">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                            <span>Anti-Forensics &amp; Military Sanitization</span>
+                        </h3>
+                        <ul style="color: #cbd5e1; font-size: 0.96rem; line-height: 1.8; padding-left: 20px; margin-bottom: 0;">
+                            <li><strong>Disk Wiper:</strong> Unrecoverable free-space sanitization following DoD 5220.22-M & Gutmann protocols.</li>
+                            <li><strong>File Shredder:</strong> Irrecoverable cryptographic file destruction with pseudorandom pattern overwrites.</li>
+                            <li><strong>Clipboard History:</strong> Sensitive memory cleanup and clipboard telemetry mitigation against info-stealers.</li>
+                            <li><strong>Forensic Console:</strong> Real-time event auditing stream with timestamped event logging and TXT export.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL COMPARISON TABLE -->
+        <section class="section" style="background: rgba(255,255,255,0.015);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 16px;">Technical Comparison</h2>
+                <p style="text-align: center; color: #94a3b8; margin-bottom: 45px; font-size: 1.15rem;">Discover why Cromak Forensics Security is the benchmark in speed, integrity, and security.</p>
+
+                <div class="table-responsive-container">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--card-border); background: rgba(255,255,255,0.03);">
+                                <th style="padding: 16px 24px; color: #FFF; text-align: left;">Capability / Feature</th>
+                                <th style="padding: 16px 24px; color: #34d399; text-align: center;">Cromak Forensics Security</th>
+                                <th style="padding: 16px 24px; color: #94a3b8; text-align: center;">Fragmented CLI Tools</th>
+                                <th style="padding: 16px 24px; color: #94a3b8; text-align: center;">Cloud Forensics / Subscriptions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Unified Modular Architecture</td>
+                                <td style="padding: 14px 24px; color: #34d399; text-align: center; font-weight: bold;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="20 6 9 17 4 12"/></svg> 20 Integrated Engines</td>
+                                <td style="padding: 14px 24px; color: #ef4444; text-align: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> 15+ Disconnected Scripts</td>
+                                <td style="padding: 14px 24px; color: #eab308; text-align: center;">Parcial (Bloated SaaS)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Encrypted Container with Pepper Shield</td>
+                                <td style="padding: 14px 24px; color: #34d399; text-align: center; font-weight: bold;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="20 6 9 17 4 12"/></svg> Exclusive .CFE Format</td>
+                                <td style="padding: 14px 24px; color: #ef4444; text-align: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Standard Formats (ZIP/7z)</td>
+                                <td style="padding: 14px 24px; color: #ef4444; text-align: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Third-party Cloud Storage</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Air-Gapped Isolation / Zero Telemetry</td>
+                                <td style="padding: 14px 24px; color: #34d399; text-align: center; font-weight: bold;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="20 6 9 17 4 12"/></svg> 100% Offline by Design</td>
+                                <td style="padding: 14px 24px; color: #eab308; text-align: center;">Varies per Script</td>
+                                <td style="padding: 14px 24px; color: #ef4444; text-align: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Mandatory Online Sync</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Military Sanitization (DoD / Gutmann)</td>
+                                <td style="padding: 14px 24px; color: #34d399; text-align: center; font-weight: bold;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="20 6 9 17 4 12"/></svg> Native 35-Pass Engine</td>
+                                <td style="padding: 14px 24px; color: #eab308; text-align: center;">Requires external tools</td>
+                                <td style="padding: 14px 24px; color: #94a3b8; text-align: center;">Rarely included</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Licensing Model</td>
+                                <td style="padding: 14px 24px; color: #34d399; text-align: center; font-weight: bold;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="20 6 9 17 4 12"/></svg> Lifetime PRO (No Subscriptions)</td>
+                                <td style="padding: 14px 24px; color: #34d399; text-align: center;">Free / Untracked</td>
+                                <td style="padding: 14px 24px; color: #ef4444; text-align: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Heavy Recurring Fees ($$$)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 14px 24px; color: #FFF; font-weight: 600;">Hardware-Bound Anti-Tamper (HWID)</td>
+                                <td style="padding: 14px 24px; color: #34d399; text-align: center; font-weight: bold;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><polyline points="20 6 9 17 4 12"/></svg> Cryptographic Binding</td>
+                                <td style="padding: 14px 24px; color: #ef4444; text-align: center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Absent</td>
+                                <td style="padding: 14px 24px; color: #eab308; text-align: center;">Proprietary Dongles / Accounts</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCREENSHOT GALLERY -->
+        <section id="galeria" class="section">
+            <style>
+                .gallery-grid {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 32px;
+                    margin-top: 30px;
+                }
+                .gallery-card {
+                    background: #0f181c;
+                    border: 1px solid #1e333b;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    transition: transform 0.25s ease, border-color 0.25s ease;
+                }
+                .gallery-card:hover {
+                    transform: translateY(-4px);
+                    border-color: #10b981;
+                }
+                .gallery-card img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    border-bottom: 1px solid #1e333b;
+                }
+                .gallery-card .card-caption {
+                    padding: 22px 26px;
+                }
+                .gallery-card h4 {
+                    color: #34d399;
+                    font-size: 1.25rem;
+                    margin: 0 0 10px 0;
+                }
+                .gallery-card p {
+                    color: #94a3b8;
+                    font-size: 0.95rem;
+                    line-height: 1.65;
+                    margin: 0;
+                }
+                @media (max-width: 900px) {
+                    .gallery-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Explore Forensics Security in Action</h2>
+                <p style="text-align: center; color: #94a3b8; margin-bottom: 45px; font-size: 1.15rem;">Authentic high-resolution captures showcasing the forensic modules in operation.</p>
+
+                <div class="gallery-grid">
+                    <!-- Screenshot 1: Overview -->
+                    <div class="gallery-card">
+                        <img src="../images/forensics-security/forensics-security_overview.png" alt="Overview Tab and Real-Time Forensic Console" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Central Intelligence &amp; Digital Forensics Console</h4>
+                            <p>Global dashboard monitoring all 20 active engines, zero-telemetry status, Pepper cryptographic shield (.cfe), SHA-256 chain of custody, and real-time forensic event stream.</p>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 2: Cryptography -->
+                    <div class="gallery-card">
+                        <img src="../images/forensics-security/forensics-security_criptografia.png" alt="Forensic Cryptography and Steganography Tab" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>CFE Cryptography &amp; LSB Steganography</h4>
+                            <p>Military-grade container encryption (<code>.cfe</code>) reinforced with Pepper secret, lossless LSB forensic data concealment with per-channel verification, and multi-algorithmic verification with 7 simultaneous hashes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 3: Digital Forensics -->
+                    <div class="gallery-card">
+                        <img src="../images/forensics-security/forensics-security_pericia.png" alt="Digital Forensics and Windows Artifacts Triage Tab" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Digital Forensics &amp; Windows Artifacts</h4>
+                            <p>Deep evidentiary extraction: history, cookies, and downloads across 5 major browsers (Chrome, Edge, Firefox, Brave), Windows execution artifacts (Prefetch, ShimCache, ShellBags), and deleted file carving.</p>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 4: Network Surveillance -->
+                    <div class="gallery-card">
+                        <img src="../images/forensics-security/forensics-security_rede.png" alt="Network Surveillance and Port Monitor Tab" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Network Surveillance &amp; Port Monitor</h4>
+                            <p>Real-time telemetry of active connections, open listening sockets, and process PID correlations. Offline stored Wi-Fi credential recovery and automated network vulnerability audits.</p>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 5: OSINT -->
+                    <div class="gallery-card">
+                        <img src="../images/forensics-security/forensics-security_osint.png" alt="OSINT Investigation and Reconnaissance Tab" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>OSINT Intelligence &amp; Reconnaissance</h4>
+                            <p>Automated Dork Engine with dozens of specialized operators, cross-platform username presence checks across numerous networks, and email header forensic validation (SPF, DKIM, DMARC).</p>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 6: Sanitization -->
+                    <div class="gallery-card">
+                        <img src="../images/forensics-security/forensics-security_sanitizacao.png" alt="Military-Grade Disk Sanitization Tab" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>Military-Grade Sanitization &amp; File Shredder</h4>
+                            <p>Irreversible data wiping compliant with DoD 5220.22-M (3 passes), Gutmann (35 passes), and NIST 800-88 guidelines. File shredder with pseudorandom pattern overwrites and randomized garbled renaming.</p>
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 7: About & Specifications -->
+                    <div class="gallery-card">
+                        <img src="../images/forensics-security/forensics-security_sobre.png" alt="About Tab and System Specifications" class="screenshot-main">
+                        <div class="card-caption">
+                            <h4>System Specifications &amp; HWID Licensing</h4>
+                            <p>Cryptographic hardware identification binding (HWID). Complete absence of third-party telemetry, cloud dependencies, or tracking beacons to protect legal admissibility during judicial audits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: THE 20 INTEGRATED FORENSIC ENGINES -->
+        <section id="todas-ferramentas" class="section" style="padding-top: 60px; padding-bottom: 70px; background: rgba(6, 182, 212, 0.02); border-top: 1px solid rgba(16, 185, 129, 0.1); border-bottom: 1px solid rgba(16, 185, 129, 0.1);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 16px;">The 20 Integrated Forensic Engines</h2>
+                <p style="text-align: center; color: #94a3b8; margin-bottom: 50px; font-size: 1.15rem; max-width: 860px; margin-left: auto; margin-right: auto;">
+                    Each engine operates as an independent, high-performance module. Free of third-party bloatware, requiring zero external telemetry, and strictly engineered for legal defensibility and forensic rigor.
+                </p>
+
+                <div class="tools-grid-20" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+
+                    <!-- 1. Cromak File Encryptor (.cfe) -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10b981;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); display: flex; align-items: center; justify-content: center; stroke: #34d399;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect x="9" y="11" width="6" height="5" rx="1"/><path d="M10 11V9a2 2 0 1 1 4 0v2"/></svg>
+                                </div>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.3);">CRYPTOGRAPHY</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Cromak File Encryptor (.cfe)</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Authenticated military-grade cipher container generator (<code>.cfe</code>). Leverages <code>AES-256-GCM</code> (AEAD), <code>PBKDF2-HMAC-SHA256</code> with 200,000 rounds, and the proprietary 256-bit <strong>Cromak Pepper Shield</strong> embedded directly into the executable core, rendering rainbow table and brute-force attacks mathematically futile.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">AES-256-GCM</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Pepper Shield</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">128-bit AEAD Tag</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Steganography LSB -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #06b6d4;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(6, 182, 212, 0.12); display: flex; align-items: center; justify-content: center; stroke: #22d3ee;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                                </div>
+                                <span style="background: rgba(6, 182, 212, 0.15); color: #22d3ee; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(6, 182, 212, 0.3);">STEGANOGRAPHY</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Steganography LSB</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Surgical injection and recovery of confidential forensic payloads in the least significant bits (LSB) of RGB channels in lossless images (PNG, BMP). Features precise byte capacity calculation, payload integrity verification, and zero visual degradation or perceptible noise.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">RGB LSB Mode</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Lossless Carriers</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Zero Visual Artifacts</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Hash Verifier -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #f59e0b;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(245, 158, 11, 0.12); display: flex; align-items: center; justify-content: center; stroke: #fbbf24;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                </div>
+                                <span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.3);">CHAIN OF CUSTODY</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Hash Verifier</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Multi-algorithmic cryptographic digest computation and evidence verification. Simultaneously computes 7 hashes (<code>SHA-256</code>, <code>SHA-512</code>, <code>SHA-1</code>, <code>MD5</code>, <code>SHA-384</code>, <code>BLAKE2b</code>, <code>CRC32</code>) and compares them against known baseline digests to prove evidence immutability.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">7 Hash Algorithms</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">SHA-256 &amp; BLAKE2b</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Judicial Verification</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Browser Forensics -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #8b5cf6;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(139, 92, 246, 0.12); display: flex; align-items: center; justify-content: center; stroke: #a78bfa;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                </div>
+                                <span style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.3);">WEB FORENSICS</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Browser Forensics</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Multi-browser artifact harvesting engine supporting Google Chrome, Microsoft Edge, Mozilla Firefox, Brave, and Opera GX. Extracts URL navigation logs, search history, session cookies, downloads, bookmarks, and saved credentials via transparent DPAPI master key decryption.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Chromium &amp; Gecko</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">DPAPI Decryption</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">HTML / JSON Reports</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Windows Artifacts -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10b981;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); display: flex; align-items: center; justify-content: center; stroke: #34d399;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                                </div>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.3);">OS TRIAGE</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Windows Artifacts</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Forensic reconstruction of user activities and binary execution timelines across the Windows operating system. Parses <code>Prefetch (.pf)</code> traces, JumpLists, UserAssist, connected USB device serial logs, ShimCache (AppCompatCache), and event logs (EVTX).
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Prefetch (.pf)</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">USB Device Logs</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">ShimCache &amp; ShellBags</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Metadata Extractor -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #06b6d4;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(6, 182, 212, 0.12); display: flex; align-items: center; justify-content: center; stroke: #22d3ee;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                </div>
+                                <span style="background: rgba(6, 182, 212, 0.15); color: #22d3ee; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(6, 182, 212, 0.3);">METADATA AUDIT</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Metadata Extractor</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Deep parsing and complete expurgation of hidden metadata in photographic images (EXIF tags, GPS geo-coordinates, camera serials, timestamps) and business documents (PDF, DOCX, XLSX). Features an integrated scrubber to purge private metadata before trial submission.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">EXIF &amp; GPS Triangulation</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Office &amp; PDF Streams</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Anti-Doxxing Scrub</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Email Header Analyzer -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #3b82f6;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(59, 130, 246, 0.12); display: flex; align-items: center; justify-content: center; stroke: #60a5fa;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(59, 130, 246, 0.3);">EMAIL FORENSICS</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Email Header Analyzer</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Forensic deconstruction of raw RFC 822 / MIME electronic message headers (.eml). Audits cryptographic authenticity (<code>SPF</code>, <code>DKIM</code>, <code>DMARC</code>), charts full multi-hop transit server routes, calculates trustworthiness scores, and flags phishing indicators.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">RFC 822 / MIME</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">SPF / DKIM / DMARC</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Hop Route Mapping</span>
+                        </div>
+                    </div>
+
+                    <!-- 8. Clipboard History -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #f59e0b;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(245, 158, 11, 0.12); display: flex; align-items: center; justify-content: center; stroke: #fbbf24;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                                </div>
+                                <span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.3);">VOLATILE DATA</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Clipboard History</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Continuous real-time audit monitor tracking the Windows clipboard buffer. Records copied strings, credentials, URLs, and file paths manipulated by users or malicious droppers, maintaining sub-millisecond timestamps crucial for corporate insider threat triage.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Real-Time Logging</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">High-Precision Timestamps</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Credential Filter</span>
+                        </div>
+                    </div>
+
+                    <!-- 9. LAN Scanner -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10b981;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); display: flex; align-items: center; justify-content: center; stroke: #34d399;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/><line x1="12" y1="10" x2="12" y2="14"/></svg>
+                                </div>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.3);">NETWORK AUDIT</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">LAN Scanner</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                High-speed multithreaded local subnet discovery engine. Resolves active hosts via parallel ICMP sweeps and ARP tables, resolves hardware MAC addresses with IEEE OUI vendor identification, and maps network assets silently without console terminal disruptions.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Multithread ICMP/ARP</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">IEEE OUI Database</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Zero Terminal Flickers</span>
+                        </div>
+                    </div>
+
+                    <!-- 10. Port Monitor -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #06b6d4;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(6, 182, 212, 0.12); display: flex; align-items: center; justify-content: center; stroke: #22d3ee;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                </div>
+                                <span style="background: rgba(6, 182, 212, 0.15); color: #22d3ee; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(6, 182, 212, 0.3);">SOCKET SURVEILLANCE</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Port Monitor</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Continuous live surveillance of active sockets and open TCP/UDP ports. Directly links each active connection and listening state to its operating system process ID (PID), binary executable path, user context, and remote IP addresses to expose stealth C2 channels.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">TCP &amp; UDP Telemetry</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">PID &amp; Path Resolution</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">C2 Beacon Detection</span>
+                        </div>
+                    </div>
+
+                    <!-- 11. Wi-Fi Key Recovery -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #8b5cf6;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(139, 92, 246, 0.12); display: flex; align-items: center; justify-content: center; stroke: #a78bfa;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                                </div>
+                                <span style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.3);">WIRELESS RECOVERY</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Wi-Fi Key Recovery</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Offline retrieval of stored wireless network (WLAN) profiles directly from the Windows credential store. Recovers plain-text pre-shared security keys (WPA/WPA2/WPA3 Personal), SSIDs, cipher configurations, and authentication algorithms via a pure, silent native subsystem.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">WPA2 / WPA3</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Plaintext Passwords</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Native Extraction</span>
+                        </div>
+                    </div>
+
+                    <!-- 12. Vulnerability Scanner -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #ef4444;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(239, 68, 68, 0.12); display: flex; align-items: center; justify-content: center; stroke: #f87171;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                </div>
+                                <span style="background: rgba(239, 68, 68, 0.15); color: #f87171; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.3);">VULNERABILITY AUDIT</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Vulnerability Scanner</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Automated network vulnerability scanner for evaluating risk vectors across exposed ports and listening daemons. Analyzes service banners, detects outdated protocol implementations, and pinpoints unhardened network entry points, providing actionable remediation reports.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Service Probing</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Banner Grabbing</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Risk Assessment</span>
+                        </div>
+                    </div>
+
+                    <!-- 13. File Finder -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #3b82f6;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(59, 130, 246, 0.12); display: flex; align-items: center; justify-content: center; stroke: #60a5fa;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                </div>
+                                <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(59, 130, 246, 0.3);">FORENSIC INDEXING</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">File Finder</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                High-performance forensic search and indexing engine for local disks and mounted network shares. Features surgical filtering by multi-extension lists, regex file masks, hidden system attributes, exact byte size thresholds, and creation/modification timestamp spans.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Instant Indexing</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Regex &amp; Attribute Filters</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">NTFS / FAT Volumes</span>
+                        </div>
+                    </div>
+
+                    <!-- 14. People Finder BR -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #06b6d4;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(6, 182, 212, 0.12); display: flex; align-items: center; justify-content: center; stroke: #22d3ee;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <span style="background: rgba(6, 182, 212, 0.15); color: #22d3ee; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(6, 182, 212, 0.3);">BRAZIL OSINT</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">People Finder BR</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Specialized intelligence engine tailored for Brazilian public-record OSINT research. Facilitates cross-referencing public registries, open government transparency databases, and judicial notice repositories in strict compliance with applicable statutory privacy standards.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Public Registries</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Court Records &amp; Gazettes</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Privacy Compliance</span>
+                        </div>
+                    </div>
+
+                    <!-- 15. OSINT Pro (Omni Search) -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10b981;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); display: flex; align-items: center; justify-content: center; stroke: #34d399;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                                </div>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.3);">OMNI PIVOTING</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">OSINT Pro (Omni Search)</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Cyber intelligence correlation engine featuring omni-directional pivoting across open-source vectors. Interconnects hostnames, IP allocations, ASN ranges, passive DNS histories, and whois records to uncover the broader footprint of malicious attack infrastructures.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Omni-Directional Pivoting</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">DNS &amp; ASN Mapping</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Threat Infrastructure</span>
+                        </div>
+                    </div>
+
+                    <!-- 16. Dork Engine v2.0 Ultra -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #f59e0b;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(245, 158, 11, 0.12); display: flex; align-items: center; justify-content: center; stroke: #fbbf24;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                </div>
+                                <span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(245, 158, 11, 0.3);">DORKING &amp; SCRAPING</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Dork Engine v2.0 Ultra</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Surgical query synthesizer and automated reconnaissance searcher. Assembles advanced query parameters (<code>inurl</code>, <code>intitle</code>, <code>filetype</code>, <code>site</code>) and dispatches automated scraping across 6 major search engines (Google, Bing, DuckDuckGo, Brave, GitHub, and Shodan).
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">6 Search Engines</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Automated Scraping</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Boolean Operators</span>
+                        </div>
+                    </div>
+
+                    <!-- 17. Username Recon -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #8b5cf6;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(139, 92, 246, 0.12); display: flex; align-items: center; justify-content: center; stroke: #a78bfa;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+                                </div>
+                                <span style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(139, 92, 246, 0.3);">IDENTITY FOOTPRINT</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Username Recon</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Automated cross-platform handle detection mapping digital footprints across 100+ social networks, developer hubs, and technical forums. Executes parallel asynchronous probes with HTTP response validation to discover registered handles, avatars, and linked public profiles.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">100+ Target Sites</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Async Concurrent Audit</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Profile Discovery</span>
+                        </div>
+                    </div>
+
+                    <!-- 18. Disk Wiper -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #ef4444;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(239, 68, 68, 0.12); display: flex; align-items: center; justify-content: center; stroke: #f87171;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                                </div>
+                                <span style="background: rgba(239, 68, 68, 0.15); color: #f87171; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.3);">MEDIA SANITIZATION</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Disk Wiper</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Deep forensic sanitization and zero-fill overwriting for unallocated sectors on HDDs, solid-state drives (SSDs), and USB flash media. Eliminates residual magnetic and flash traces, preventing file carving or physical magnetic force microscopy recovery.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Free Space Wiping</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">NIST 800-88 Compliant</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Zero Remanence</span>
+                        </div>
+                    </div>
+
+                    <!-- 19. File Shredder -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #ef4444;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(239, 68, 68, 0.12); display: flex; align-items: center; justify-content: center; stroke: #f87171;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+                                </div>
+                                <span style="background: rgba(239, 68, 68, 0.15); color: #f87171; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(239, 68, 68, 0.3);">MILITARY SHREDDING</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">File Shredder</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Irreversible file and directory shredder employing military-grade multi-pass overwrite standards: DoD 5220.22-M (3 passes), Gutmann (35 passes), and pseudo-random byte stream overwrites. Features prior randomized filename scrambling and zero-byte truncation.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">DoD 5220.22-M</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">35-Pass Gutmann</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Metadata Scramble</span>
+                        </div>
+                    </div>
+
+                    <!-- 20. Data Recovery -->
+                    <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid #10b981;">
+                        <div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                                <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(16, 185, 129, 0.12); display: flex; align-items: center; justify-content: center; stroke: #34d399;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                                </div>
+                                <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.3);">FILE CARVING</span>
+                            </div>
+                            <h3 style="color: #f0fdf4; font-size: 1.22rem; margin: 0 0 10px 0; font-weight: 700;">Data Recovery</h3>
+                            <p style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.65; margin: 0 0 16px 0;">
+                                Advanced raw block file carver reconstructing deleted files through signature analysis (Magic Bytes). Restores orphaned documents, media assets, and database containers across corrupted or reformatted volumes (FAT32, exFAT, NTFS) independently of filesystem MFT structures.
+                            </p>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06);">
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Magic Bytes Carving</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">NTFS / exFAT / FAT32</span>
+                            <span style="background: rgba(255,255,255,0.04); color: #94a3b8; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px;">Raw Block Recovery</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section id="precos" class="section" style="background: rgba(16, 185, 129, 0.02); padding-bottom: 80px;">
+            <span id="comprar"></span>
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Simple, Transparent Licensing</h2>
+                <p style="text-align: center; color: #94a3b8; margin-bottom: 50px; font-size: 1.15rem;">Evaluate for 40 days with all 20 engines unlocked or secure a lifetime PRO license without recurring subscriptions.</p>
+
+                <div class="pricing-grid">
+                    <!-- Card 1: Trial -->
+                    <div class="price-card">
+                        <h3>Free 40-Day Evaluation</h3>
+                        <div class="price-value">$ 0<span>.00</span></div>
+                        <ul class="price-features">
+                            <li>All 20 forensic engines fully unlocked</li>
+                            <li>Cromak File Encryptor (.cfe) with Pepper shield</li>
+                            <li>Windows and Browser forensic artifact triage</li>
+                            <li>LSB Steganography and military sanitization</li>
+                            <li>Official 40-day unrestricted trial period</li>
+                            <li class="disabled">Displays informative trial status screen</li>
+                            <li class="disabled">Continuous commercial/court use requires PRO license after trial</li>
+                        </ul>
+                        <a href="https://www.mediafire.com/file/r92ue9ug5z5ifk8/Cromak_Forensics_Security_Setup_v1.3.4.zip/file" target="_blank" rel="noopener" class="btn-outline">Download Official Installer</a>
+                    </div>
+
+                    <!-- Card 2: Lifetime PRO -->
+                    <div class="price-card popular" style="border-color: #10b981; box-shadow: 0 10px 40px rgba(16, 185, 129, 0.2);">
+                        <div class="popular-tag" style="background: #10b981; color: #062319;">Most Popular · Lifetime</div>
+                        <h3>Lifetime PRO License</h3>
+                        <div style="color: #94a3b8; text-decoration: line-through; font-size: 1rem; margin-bottom: 4px;">Regular: $ 49.90</div>
+                        <div class="price-value">$ 29<span>.90/once</span></div>
+                        <ul class="price-features">
+                            <li><strong>Lifetime Permanent License (Pay Once, Own Forever)</strong></li>
+                            <li><strong>Zero Evaluation Banners or Renewal Prompts</strong></li>
+                            <li><strong>Unlimited Professional, Judicial, and Corporate Usage</strong></li>
+                            <li>All 20 engines unlocked at maximum throughput</li>
+                            <li>Formal report generation with evidentiary chain of custody</li>
+                            <li>Continuous engine and forensic rule updates</li>
+                            <li>Priority technical support tied to your machine HWID</li>
+                        </ul>
+                        <a href="suporte.html" class="btn-buy" style="background: #10b981; color: #062319; font-size: 1.15rem; padding: 16px 20px;">Purchase PRO License</a>
+                        <p style="font-size: 0.85rem; color: #f0fdf4; font-weight: 600; margin-top: 12px; margin-bottom: 0;">Send your HWID code to support to receive your permanent serial</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL SPECIFICATIONS & DOCUMENTATION -->
+        <section class="section">
+            <div class="container">
+                <div style="background: #0f181c; border: 1px solid #1e333b; border-radius: 12px; padding: 40px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 30px;">
+                        <div>
+                            <h2 style="color: #f0fdf4; margin: 0 0 8px 0; font-size: 1.8rem;">Complete Technical Documentation</h2>
+                            <p style="color: #94a3b8; margin: 0; font-size: 1.05rem;">Access the official operational manual and forensic chain-of-custody specification.</p>
+                        </div>
+                        <a href="../docs/forensics-security.html" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #34d399; padding: 14px 28px; font-weight: 700; text-decoration: none; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                            <span>Read Online Manual</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                        </a>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; color: #cbd5e1; font-size: 0.95rem;">
+                        <div>
+                            <strong style="color: #f0fdf4;">Operating System:</strong><br>
+                            Windows 10 / Windows 11 (64-bit native)
+                        </div>
+                        <div>
+                            <strong style="color: #f0fdf4;">UI Framework:</strong><br>
+                            PyQt6 Dark Premium with GPU Rendering
+                        </div>
+                        <div>
+                            <strong style="color: #f0fdf4;">Privacy Standard:</strong><br>
+                            Zero Telemetry / Air-Gapped Compliant
+                        </div>
+                        <div>
+                            <strong style="color: #f0fdf4;">Clean Installer:</strong><br>
+                            Inno Setup 7 with 11 language localizations
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ: FREQUENTLY ASKED QUESTIONS -->
+        <section class="section" style="background: rgba(255,255,255,0.02); padding-bottom: 80px;">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 45px;">Frequently Asked Questions (FAQ)</h2>
+                <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+                    <details style="background: #0f181c; border: 1px solid #1e333b; border-radius: 8px; padding: 18px 24px;">
+                        <summary style="font-size: 1.15rem; font-weight: 700; color: #f0fdf4; cursor: pointer;">Can the software run on machines without Internet access (Air-Gapped)?</summary>
+                        <p style="margin-top: 14px; margin-bottom: 0; color: #94a3b8; line-height: 1.7;">
+                            Yes. The entire suite was developed under a strict Zero Telemetry policy. All operations regarding digital forensics, steganography, disk sanitization, and encryption occur 100% locally and offline, allowing safe deployment in isolated forensic, government, and military labs.
+                        </p>
+                    </details>
+
+                    <details style="background: #0f181c; border: 1px solid #1e333b; border-radius: 8px; padding: 18px 24px;">
+                        <summary style="font-size: 1.15rem; font-weight: 700; color: #f0fdf4; cursor: pointer;">How does the Pepper Shield work in .CFE files?</summary>
+                        <p style="margin-top: 14px; margin-bottom: 0; color: #94a3b8; line-height: 1.7;">
+                            The Pepper is a cryptographic secret embedded directly inside the software's binary kernel. Even if an adversary extracts the encrypted file and inspects the public salt, offline dictionary and rainbow table attacks remain mathematically impossible without the internal Pepper component.
+                        </p>
+                    </details>
+
+                    <details style="background: #0f181c; border: 1px solid #1e333b; border-radius: 8px; padding: 18px 24px;">
+                        <summary style="font-size: 1.15rem; font-weight: 700; color: #f0fdf4; cursor: pointer;">How does HWID license activation work?</summary>
+                        <p style="margin-top: 14px; margin-bottom: 0; color: #94a3b8; line-height: 1.7;">
+                            Upon launch or by visiting the 'About' tab, the application computes an exclusive machine identifier (HWID with prefix CMKFSS-). After acquiring your license, simply share this code with Cromak Technology support to receive your permanent, non-transferable activation key.
+                        </p>
+                    </details>
+
+                    <details style="background: #0f181c; border: 1px solid #1e333b; border-radius: 8px; padding: 18px 24px;">
+                        <summary style="font-size: 1.15rem; font-weight: 700; color: #f0fdf4; cursor: pointer;">What is the difference between the Trial and PRO versions?</summary>
+                        <p style="margin-top: 14px; margin-bottom: 0; color: #94a3b8; line-height: 1.7;">
+                            During the 40-day evaluation period, all 20 forensic engines are completely functional without technical throttling, allowing you to test the suite's full capabilities. The PRO license removes the trial status screens, authorizes continuous judicial/commercial deployment, and unlocks dedicated support.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER INJECTION (menu.js) -->
+    <div id="cromak-footer"></div>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>
