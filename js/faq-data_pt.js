@@ -675,5 +675,37 @@ const FAQ_DATABASE = [
         pergunta: "O Photo Viewer é pago ou possui vínculos oficiais com a Microsoft?",
         resposta: "O software é disponibilizado sob a licença <strong>Freeware (100% gratuito)</strong>. Trata-se de um projeto independente criado de fã para fãs sob o conceito de <em>Fair Use</em> (preservação nostálgica e educacional), não possuindo afiliação, patrocínio ou aprovação oficial por parte da Microsoft Corporation.",
         tags: ["freeware", "gratuito", "licenca", "disclaimer", "microsoft", "fair use"]
+    },
+
+    // ==========================================
+    // SEGURANÇA & PERÍCIA: CROMAK FORENSICS SECURITY (v1.3.4)
+    // ==========================================
+    {
+        categoria: "Segurança & Rede",
+        produto: "Forensics Security",
+        pergunta: "Quais são os 20 motores integrados no Cromak Forensics Security?",
+        resposta: "A suíte reúne <strong>20 motores modulares independentes</strong> organizados em 5 pilares: <strong>Criptografia & Custódia</strong> (Cromak File Encryptor <code>.cfe</code>, Steganography LSB e Hash Verifier com 7 algoritmos), <strong>Perícia Digital</strong> (Browser Forensics, Windows Artifacts, Data Recovery, Metadata Extractor e Clipboard History), <strong>Vigilância de Rede</strong> (Port Monitor, LAN Scanner, Wi-Fi Key Recovery e Vulnerability Scanner), <strong>Inteligência OSINT</strong> (OSINT Pro, Dork Engine, Username Recon, People Finder BR, Email Header Analyzer e File Finder) e <strong>Sanitização Militar</strong> (Disk Wiper e File Shredder).",
+        tags: ["forensics security", "pericia digital", "20 motores", "modulos", "osint", "artefatos", "forense"]
+    },
+    {
+        categoria: "Segurança & Rede",
+        produto: "Forensics Security",
+        pergunta: "Como funciona o formato criptográfico .CFE e a Blindagem Pepper?",
+        resposta: "O <strong>Cromak File Encryptor (.cfe)</strong> combina derivação de chave <code>PBKDF2-HMAC-SHA256</code> (600.000 iterações) e cifragem autenticada <code>AES-256-GCM</code> com um segredo <strong>Pepper</strong> compilado no núcleo binário da suíte. Mesmo que um invasor capture o arquivo <code>.cfe</code> e conheça o salt público do cabeçalho, ataques de força bruta offline em ferramentas externas falham matematicamente sem o componente Pepper oficial.",
+        tags: ["cfe", "pepper", "criptografia", "aes-256-gcm", "pbkdf2", "file encryptor", "forca bruta"]
+    },
+    {
+        categoria: "Segurança & Rede",
+        produto: "Forensics Security",
+        pergunta: "O Cromak Forensics Security pode operar em laboratórios isolados sem internet (Air-Gapped)?",
+        resposta: "<strong>Sim.</strong> Toda a arquitetura segue a diretriz de <strong>Zero Telemetria</strong>. Motores de perícia local, extração de artefatos do Windows/navegadores, criptografia <code>.cfe</code>, esteganografia LSB, cálculo de hashes e sanitização militar funcionam <strong>100% offline</strong>, garantindo sigilo absoluto e preservação da cadeia de custódia em perícias judiciais e corporativas.",
+        tags: ["air-gapped", "offline", "zero telemetria", "cadeia de custodia", "laudo", "pericia judicial"]
+    },
+    {
+        categoria: "Segurança & Rede",
+        produto: "Forensics Security",
+        pergunta: "Como ativar a licença PRO utilizando o código HWID (CMKFSS)?",
+        resposta: "Ao abrir o programa (ou na aba <strong>Sobre</strong>), copie o seu Código de Identificação de Máquina iniciado pelo prefixo <code>CMKFSS-</code>. Após adquirir a licença vitalícia PRO, envie esse código ao suporte da Cromak Technology para receber a sua chave criptográfica permanente SHA-512 vinculada ao seu hardware.",
+        tags: ["cmkfss", "hwid", "ativar licenca", "chave pro", "serial", "vitalicia", "forensics"]
     }
 ];

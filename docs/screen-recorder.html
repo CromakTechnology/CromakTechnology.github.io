@@ -3,42 +3,446 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentação Oficial - Cromak Screen Recorder v1.0.0</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO & INDEXAÇÃO GOOGLE -->
+    <title>Cromak Screen Recorder — Manual Técnico Oficial &amp; Guia de Recursos</title>
+    <meta name="description" content="Manual técnico oficial do Cromak Screen Recorder. Gravação até 60 FPS com aceleração por GPU (NVENC/QSV/AMF), áudio duplo simultâneo, seleção High-DPI, Webcam PiP e Lives RTMP (v1.1.4).">
+    <meta name="keywords" content="Cromak Screen Recorder manual, gravador de tela ffmpeg, nvenc screen recorder, audio duplo dshow, webcam pip gamer, live rtmp youtube twitch">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://cromaktechnology.github.io/docs/screen-recorder.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/docs/screen-recorder.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://cromaktechnology.github.io/docs/screen-recorder.html">
+    <meta property="og:title" content="Cromak Screen Recorder — Manual Técnico Oficial">
+    <meta property="og:description" content="Guia completo do gravador de tela 100% gratuito para uso pessoal e comercial: 60 FPS, GPU, áudio duplo, 11 idiomas, Webcam PiP e Lives RTMP.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/icons/screen-recorder.png">
+
+    <!-- BRANDING & FAVICONS -->
+    <meta name="theme-color" content="#0d0f12">
     <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
-    <link rel="stylesheet" href="../css/estilo_premiun.css">
+    <link rel="apple-touch-icon" href="../images/cromak_technology_logo_small.png">
+
+    <!-- DADOS ESTRUTURADOS JSON-LD (SCHEMA.ORG TECHARTICLE) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Cromak Screen Recorder — Manual Técnico Oficial & Guia de Recursos",
+      "description": "Manual técnico completo do Cromak Screen Recorder: arquitetura FFmpeg gdigrab/dshow, aceleração por GPU, seleção High-DPI, screenshots, Webcam PiP e streaming RTMP.",
+      "url": "https://cromaktechnology.github.io/docs/screen-recorder.html",
+      "image": "https://cromaktechnology.github.io/images/icons/screen-recorder.png",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@type": "Organization",
+        "name": "Cromak Technology",
+        "url": "https://cromaktechnology.github.io/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cromak Technology",
+        "url": "https://cromaktechnology.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cromaktechnology.github.io/images/cromak_technology_logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cromaktechnology.github.io/docs/screen-recorder.html"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #3b82f6;
+            --primary-light: #60a5fa;
+            --primary-hover: #93c5fd;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #ef4444;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.22);
+            transition: 0.2s ease;
+        }
+        .back-link:hover { background: rgba(59, 130, 246, 0.16); }
+        .back-link svg { flex-shrink: 0; }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a svg { flex-shrink: 0; color: var(--primary-light); opacity: 0.85; }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+        .sidebar-nav li a:hover svg { opacity: 1; }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 80px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.14) 0%, rgba(19, 22, 28, 0.85) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(59, 130, 246, 0.45); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.45); color: #3fb950; }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.45); color: #e3b341; }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(59, 130, 246, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        .chapter h3 { font-size: 16px; color: var(--primary-light); margin: 20px 0 10px; }
+        .chapter p { margin-bottom: 15px; color: #c9d1d9; font-size: 14.5px; line-height: 1.7; }
+        .chapter ul, .chapter ol { margin-left: 20px; margin-bottom: 15px; color: #c9d1d9; font-size: 14px; line-height: 1.8; }
+        .chapter li { margin-bottom: 8px; }
+
+        .card {
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 20px; margin-bottom: 20px;
+        }
+        .card h3, .card h4 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .sub-card { background-color: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; }
+        .sub-card h4 { color: var(--primary-light); margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+        .sub-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--primary-light); border: 1px solid var(--border-color); }
+        .callout {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(59, 130, 246, 0.08); border-left: 4px solid var(--primary-light); color: #e6edf3;
+        }
+        .callout.callout-success { background: rgba(46, 160, 67, 0.08); border-left-color: var(--success); }
+        .callout.callout-warning { background: rgba(210, 153, 34, 0.08); border-left-color: var(--warning); }
+
+        .btn-print {
+            position: fixed; bottom: 25px; right: 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1117 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px 20px; border-radius: 30px; font-size: 13px; font-weight: 600;
+            display: flex; align-items: center; gap: 8px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 999; transition: all 0.2s ease;
+        }
+        .btn-print svg { flex-shrink: 0; }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px; }
+            .btn-print { display: none; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, .btn-print { display: none; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            .card, table { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+    </style>
 </head>
 <body>
-    <main class="container" style="padding: 50px 20px; max-width: 920px;">
-        <div style="margin-bottom: 24px;">
-            <a href="../pt/screen-recorder.html" style="color: var(--accent); text-decoration: none; font-weight: 600;">← Voltar para Cromak Screen Recorder</a>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Voltar à Documentação
+        </a>
+        <div class="brand-container">
+            <img src="../images/icons/screen-recorder.png" alt="Cromak Screen Recorder" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Screen Recorder</h1>
+                <p>Manual Oficial v1.0 / v1.1.4</p>
+            </div>
         </div>
-        <h1 style="font-size: 2.4rem; margin-bottom: 10px;">Cromak Screen Recorder v1.0.0 — Manual Oficial</h1>
-        <p style="color: #34D399; font-weight: 700; margin-bottom: 24px;">100% Gratuito para Uso Pessoal, Educacional e Comercial · Sem Marca d'Água</p>
 
-        <section class="feature-card" style="margin-bottom: 20px;">
-            <h3>1. Barra Flutuante & Atalhos</h3>
-            <p>A barra compacta permanece no topo da tela e também pode ser controlada pelo ícone na Bandeja do Sistema. Pressione <strong>F6</strong> para iniciar ou parar a gravação rapidamente.</p>
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Capítulos</li>
+            <li><a href="#visao-geral"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> <span>01. Visão Geral &amp; Barra</span></a></li>
+            <li><a href="#video-gpu"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> <span>02. Vídeo, Formatos &amp; GPU</span></a></li>
+            <li><a href="#audio"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg> <span>03. Áudio &amp; Mixagem Dupla</span></a></li>
+            <li><a href="#area-dpi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L6 18L22 18"/><path d="M2 6L18 6L18 22"/></svg> <span>04. Seleção de Área High-DPI</span></a></li>
+            <li><a href="#screenshots"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg> <span>05. Screenshots &amp; Clipboard</span></a></li>
+            <li><a href="#comportamento"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span>06. Contagem &amp; 11 Idiomas</span></a></li>
+            <li><a href="#v114-roadmap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg> <span>07. Webcam &amp; Lives RTMP (v1.1.4)</span></a></li>
+            <li><a href="#paths-licenca"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>08. Pastas, Sync &amp; Licença</span></a></li>
+        </ul>
+    </aside>
+
+    <main id="content">
+        <div class="doc-header">
+            <h1>Cromak Screen Recorder — Manual Técnico Oficial</h1>
+            <p>Documentação completa da arquitetura de captura, aceleração por hardware, mixagem DirectShow, screenshots, Webcam PiP e transmissão RTMP.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão Atual: v1.0.0</span>
+                <span class="badge warning">Em Desenvolvimento: v1.1.4 (Webcam + Lives)</span>
+                <span class="badge success">100% Gratuito · Uso Comercial Permitido</span>
+                <span class="badge">FFmpeg 8.1 + PyQt6 (Win x64)</span>
+            </div>
+        </div>
+
+        <!-- 01 -->
+        <section id="visao-geral" class="chapter">
+            <h2><span class="ch-num">01</span> Visão Geral &amp; Barra Flutuante</h2>
+            <p>O <strong>Cromak Screen Recorder</strong> foi projetado para oferecer controles de estúdio em uma barra flutuante compacta e independente que permanece sempre acessível no topo da tela, sem poluir o ambiente de trabalho.</p>
+            <div class="grid-2">
+                <div class="sub-card">
+                    <h4>Controles Rápidos da Barra</h4>
+                    <p>Botões dedicados para Print/Recorte, Seleção de Área, Fonte de Áudio, Gravar/Parar (<code>F6</code>), Timer em tempo real, Pasta de Saída, Preferências (5 abas) e Sobre.</p>
+                </div>
+                <div class="sub-card">
+                    <h4>Bandeja do Sistema (System Tray)</h4>
+                    <p>Mesmo se você ocultar a barra flutuante durante a gravação (Modo Discreto), o ícone na bandeja permite iniciar, parar, tirar screenshots ou restaurar a barra.</p>
+                </div>
+            </div>
+            <div class="callout">
+                <strong>Atalho Universal:</strong> Pressione <code>F6</code> com a barra em foco para iniciar ou encerrar uma gravação instantaneamente.
+            </div>
         </section>
 
-        <section class="feature-card" style="margin-bottom: 20px;">
-            <h3>2. Vídeo, Formatos e Aceleração por Hardware</h3>
-            <p>Escolha entre <strong>15, 24, 30 ou 60 FPS</strong>, contêineres <strong>MP4 (H.264)</strong>, <strong>MKV (à prova de quedas de energia)</strong> ou <strong>WEBM (VP9)</strong>, além de encoders de GPU (<strong>NVIDIA NVENC</strong>, <strong>Intel QuickSync</strong>, <strong>AMD AMF</strong>) com fallback automático para CPU x264.</p>
+        <!-- 02 -->
+        <section id="video-gpu" class="chapter">
+            <h2><span class="ch-num">02</span> Vídeo, Formatos &amp; Aceleração por GPU</h2>
+            <p>O motor de vídeo utiliza <code>gdigrab</code> acoplado ao <code>ffmpeg.exe</code> embarcado no instalador, suportando desde gravações leves para tutoriais até capturas de jogos a <strong>60 FPS</strong>.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parâmetro</th>
+                        <th>Opções Disponíveis</th>
+                        <th>Observação Técnica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Taxa de Quadros (FPS)</strong></td>
+                        <td><code>15</code>, <code>24</code>, <code>30</code>, <code>60</code></td>
+                        <td>60 FPS recomendado para jogos e interfaces fluidas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contêineres</strong></td>
+                        <td><code>MP4</code>, <code>MKV</code>, <code>WEBM</code></td>
+                        <td>MP4 usa <code>-movflags +faststart</code> (compatível com Media Player); MKV é à prova de quedas de energia.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Encoders</strong></td>
+                        <td><code>Auto (libx264)</code>, <code>h264_nvenc</code>, <code>h264_qsv</code>, <code>h264_amf</code></td>
+                        <td>Fallback automático para CPU <code>libx264</code> caso o driver da GPU não suporte o codec selecionado.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Qualidade (CRF / CQ)</strong></td>
+                        <td>Alta (<code>18</code>), Equilibrada (<code>22</code>), Compacta (<code>26</code>)</td>
+                        <td>Pixel format padronizado em <code>yuv420p</code> para máxima compatibilidade.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="feature-card" style="margin-bottom: 20px;">
-            <h3>3. Áudio Profissional</h3>
-            <p>Grave sem áudio, apenas <strong>Microfone</strong>, apenas <strong>Som do Sistema</strong> (Mixagem Estéreo / Loopback) ou <strong>Microfone + Som do Sistema simultaneamente</strong> com bitrate de até <strong>320 kbps</strong> em 44.1 kHz ou 48 kHz.</p>
+        <!-- 03 -->
+        <section id="audio" class="chapter">
+            <h2><span class="ch-num">03</span> Áudio Profissional &amp; Mixagem Dupla</h2>
+            <p>A enumeração de dispositivos utiliza Windows DirectShow (<code>-f dshow -list_devices true</code>), detectando automaticamente microfones físicos e dispositivos de loopback (Mixagem Estéreo / Virtual Audio).</p>
+            <div class="card">
+                <h4>Modos de Captura de Áudio</h4>
+                <ul>
+                    <li><strong>Sem Áudio (Mudo):</strong> Grava apenas vídeo (<code>-an</code>).</li>
+                    <li><strong>Microfone:</strong> Seleciona qualquer microfone detectado ou o dispositivo padrão do Windows.</li>
+                    <li><strong>Som do Sistema:</strong> Captura o áudio reproduzido pelo Windows via Mixagem Estéreo / Loopback.</li>
+                    <li><strong>Microfone + Som do Sistema (Simultâneo):</strong> Combina as duas entradas em tempo real usando o filtro <code>-filter_complex "[1:a][2:a]amix=inputs=2:duration=longest:dropout_transition=2[aout]"</code> em AAC ou Opus (<code>128k / 192k / 320k</code> a <code>44.1 / 48 kHz</code>).</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="feature-card" style="margin-bottom: 20px;">
-            <h3>4. Seleção de Área & Capturas (Screenshots)</h3>
-            <p>Recorte qualquer área da tela no estilo Windows Snipping Tool com borda azul click-through ou escolha presets (1080p, 720p, 480p, Tela Inteira). Tire capturas em PNG, JPG ou WEBP com cópia automática para a Área de Transferência.</p>
+        <!-- 04 -->
+        <section id="area-dpi" class="chapter">
+            <h2><span class="ch-num">04</span> Seleção de Área &amp; Precisão High-DPI</h2>
+            <p>O seletor de região escurece a tela no estilo Windows Snipping Tool e exibe uma borda azul Cromak <em>click-through</em> (<code>WA_TransparentForMouseEvents</code>) ao redor da área escolhida.</p>
+            <ul>
+                <li><strong>Conversão High-DPI Automática:</strong> Coordenadas lógicas da tela são multiplicadas pelo <code>devicePixelRatio</code> do monitor antes do envio ao <code>gdigrab</code>, evitando cortes errados em escalas 125%, 150% ou 4K.</li>
+                <li><strong>Dimensões Pares Garantidas:</strong> Largura e altura são ajustadas para múltiplos de 2 automaticamente para cumprir os requisitos do <code>yuv420p</code>.</li>
+                <li><strong>Presets Rápidos:</strong> Tela Inteira, <code>1920×1080</code> (Full HD), <code>1280×720</code> (HD) e <code>854×480</code> (SD).</li>
+            </ul>
         </section>
 
-        <section class="feature-card">
-            <h3>5. 11 Idiomas & Online Sync</h3>
-            <p>Altere o idioma ao vivo em Preferências → Idioma (Português, Inglês, Espanhol, Francês, Alemão, Italiano, Russo, Chinês, Japonês, Coreano e Polonês). Suas configurações ficam salvas em <code>%APPDATA%\Cromak Technology\Screen Recorder</code>.</p>
+        <!-- 05 -->
+        <section id="screenshots" class="chapter">
+            <h2><span class="ch-num">05</span> Capturas de Tela (Screenshots) &amp; Clipboard</h2>
+            <p>Pelo ícone de câmera na barra flutuante é possível recortar uma região ou capturar a tela inteira instantaneamente.</p>
+            <div class="grid-2">
+                <div class="sub-card">
+                    <h4>Formatos Suportados</h4>
+                    <p>Exporte em <code>PNG</code> (sem perdas), <code>JPG</code> (compacto) ou <code>WEBP</code> (moderno), salvos automaticamente na pasta de capturas configurada.</p>
+                </div>
+                <div class="sub-card">
+                    <h4>Clipboard Automático</h4>
+                    <p>Quando ativado em <em>Preferências → Áudio &amp; Captura</em>, a imagem vai direto para a Área de Transferência para colar com <code>Ctrl+V</code>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 -->
+        <section id="comportamento" class="chapter">
+            <h2><span class="ch-num">06</span> Comportamento &amp; 11 Idiomas Nativos</h2>
+            <p>Todas as preferências são persistidas localmente e a troca de idioma ocorre em tempo real sem reiniciar o aplicativo.</p>
+            <ul>
+                <li><strong>Contagem Regressiva:</strong> Escolha entre <code>0s</code> (imediato), <code>3s</code> ou <code>5s</code> com overlay translúcido centralizado.</li>
+                <li><strong>Modo Discreto:</strong> Oculta a barra flutuante enquanto grava, restaurando automaticamente ao parar por <code>F6</code> ou pela Bandeja.</li>
+                <li><strong>11 Idiomas:</strong> Português (BR), English (US), Español, Français, Deutsch, Italiano, Русский, 简体中文, 日本語, 한국어 e Polski.</li>
+            </ul>
+        </section>
+
+        <!-- 07 -->
+        <section id="v114-roadmap" class="chapter">
+            <h2><span class="ch-num">07</span> Webcam PiP &amp; Lives Ao Vivo (v1.1.4)</h2>
+            <div class="callout callout-warning">
+                <strong>Planejamento Oficial v1.1.4:</strong> Recursos em desenvolvimento para ampliar o suporte a gamers, professores e criadores de conteúdo ao vivo.
+            </div>
+            <div class="grid-2">
+                <div class="sub-card">
+                    <h4>Webcam Picture-in-Picture (PiP)</h4>
+                    <p>Overlay de câmera flutuante e arrastável com suporte a formato <strong>retangular arredondado</strong> ou <strong>circular (avatar gamer)</strong>, tamanhos P/M/G, espelhamento horizontal e controle rápido na barra.</p>
+                </div>
+                <div class="sub-card">
+                    <h4>Transmissão Ao Vivo (RTMP)</h4>
+                    <p>Suporte nativo a <strong>YouTube Live, Twitch, Kick</strong> e servidor RTMP personalizado com bitrate CBR (2500 a 8000 kbps), Stream Key mascarada e modo híbrido <strong>Gravar + Transmitir</strong> via muxer <code>tee</code> do FFmpeg.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 08 -->
+        <section id="paths-licenca" class="chapter">
+            <h2><span class="ch-num">08</span> Diretórios, Online Sync &amp; Licença Comercial</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Caminho / Política</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Instalação (x64)</strong></td>
+                        <td><code>C:\Program Files\Cromak Technology\Screen Recorder</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Configurações &amp; Logs</strong></td>
+                        <td><code>%APPDATA%\Cromak Technology\Screen Recorder</code> (inclui <code>settings.json</code> e <code>logs\ffmpeg_last.log</code>)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gravações &amp; Capturas</strong></td>
+                        <td><code>%USERPROFILE%\Videos\Cromak Gravacoes</code> e <code>%USERPROFILE%\Pictures\Cromak Capturas</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Online Sync</strong></td>
+                        <td>Verificação não-bloqueante de atualizações oficiais na inicialização e na janela <em>Sobre</em>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="callout callout-success">
+                <strong>Licença Freeware Comercial:</strong> O Cromak Screen Recorder é <strong>100% gratuito</strong> para uso pessoal, educacional, corporativo e comercial, sem marca d'água e sem limite de tempo.
+            </div>
         </section>
     </main>
+
+    <button class="btn-print" onclick="window.print()" title="Imprimir ou Salvar em PDF">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimir / PDF
+    </button>
+
 </body>
 </html>

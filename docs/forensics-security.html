@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- SEO & INDEXAÇÃO GOOGLE -->
-    <title>Cromak Forensics Security — Manual de Auditoria & Cadeia de Custódia</title>
-    <meta name="description" content="Manual técnico e guia de cadeia de custódia do Forensics Security. Auditoria de processos, análise de memória, detecção de injeção de DLLs e logs forenses imutáveis.">
-    <meta name="keywords" content="Forensics Security manual, análise forense windows, detecção de dll injection, auditoria de processos, perícia digital, cadeia de custódia">
+    <title>Cromak Forensics Security — Manual Técnico dos 20 Motores &amp; Cadeia de Custódia</title>
+    <meta name="description" content="Manual operacional oficial do Cromak Forensics Security: 20 motores modulares de perícia digital, criptografia CFE (.cfe) com blindagem Pepper, artefatos Windows, OSINT, sanitização militar e cadeia de custódia.">
+    <meta name="keywords" content="Forensics Security manual, cromak file encryptor, .cfe pepper, pericia digital windows, browser forensics, esteganografia lsb, sanitizacao dod 5220.22-m, osint, cadeia de custodia">
     <meta name="author" content="Cromak Technology">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://cromaktechnology.github.io/docs/forensics-security.html">
@@ -19,17 +19,15 @@
     <meta property="og:site_name" content="Cromak Technology">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:url" content="https://cromaktechnology.github.io/docs/forensics-security.html">
-    <meta property="og:title" content="Cromak Forensics Security — Manual de Auditoria & Cadeia de Custódia">
-    <meta property="og:description" content="Manual técnico e guia de cadeia de custódia do Forensics Security. Auditoria de processos, análise de memória, detecção de injeção de DLLs e logs forenses imutáveis.">
-    <meta property="og:image" content="https://cromaktechnology.github.io/images/icons/forensics-security.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
+    <meta property="og:title" content="Cromak Forensics Security — Manual Técnico dos 20 Motores &amp; Cadeia de Custódia">
+    <meta property="og:description" content="Manual operacional oficial do Cromak Forensics Security: 20 motores modulares de perícia digital, criptografia CFE (.cfe) com blindagem Pepper, artefatos Windows, OSINT e sanitização militar.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/forensics-security/forensics-security_interface.jpg">
 
     <!-- TWITTER / X CARDS -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Cromak Forensics Security — Manual de Auditoria & Cadeia de Custódia">
-    <meta name="twitter:description" content="Manual técnico e guia de cadeia de custódia do Forensics Security. Auditoria de processos, análise de memória, detecção de injeção de DLLs e logs forenses imutáveis.">
-    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/icons/forensics-security.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cromak Forensics Security — Manual Técnico Oficial">
+    <meta name="twitter:description" content="Guia operacional completo dos 20 motores forenses, formato criptográfico .CFE com Pepper e cadeia de custódia.">
+    <meta name="twitter:image" content="https://cromaktechnology.github.io/images/forensics-security/forensics-security_interface.jpg">
 
     <!-- BRANDING & FAVICONS -->
     <meta name="theme-color" content="#0d0f12">
@@ -68,19 +66,19 @@
     </script>
     <style>
         :root {
-            --bg-body: #0d0f12;
-            --bg-sidebar: #13161c;
-            --bg-card: #181b22;
-            --bg-card-alt: #1e222b;
-            --border-color: #262b36;
-            --primary: #00d4ff;
-            --primary-light: #58a6ff;
-            --success: #2ea043;
-            --danger: #da3633;
-            --warning: #d29922;
-            --text-main: #e6edf3;
-            --text-muted: #8b949e;
-            --code-bg: #090b0e;
+            --bg-body: #0b1114;
+            --bg-sidebar: #0f171b;
+            --bg-card: #121d22;
+            --bg-card-alt: #16242b;
+            --border-color: #1e333b;
+            --primary: #10b981;
+            --primary-light: #34d399;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --text-main: #e6f4f1;
+            --text-muted: #94a3b8;
+            --code-bg: #080d10;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -129,12 +127,12 @@
 
         .back-link {
             display: inline-flex; align-items: center; gap: 8px;
-            color: var(--primary); text-decoration: none; font-size: 13px; font-weight: 600;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
             margin-bottom: 15px; padding: 6px 10px; border-radius: 6px;
-            background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.2);
+            background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25);
             transition: 0.2s ease;
         }
-        .back-link:hover { background: rgba(0, 212, 255, 0.15); }
+        .back-link:hover { background: rgba(16, 185, 129, 0.16); }
 
         .sidebar-nav { list-style: none; }
         .sidebar-section-title {
@@ -158,7 +156,7 @@
         }
 
         .doc-header {
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.12) 0%, rgba(19, 22, 28, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 23, 27, 0.9) 100%);
             border: 1px solid var(--border-color);
             border-left: 4px solid var(--primary);
             border-radius: 12px; padding: 30px; margin-bottom: 40px;
@@ -172,8 +170,8 @@
             font-size: 12px; font-weight: 600; background-color: var(--bg-card);
             border: 1px solid var(--border-color); color: #c9d1d9;
         }
-        .badge.primary { border-color: rgba(0, 212, 255, 0.4); color: var(--primary); }
-        .badge.success { border-color: rgba(46, 160, 67, 0.4); color: var(--success); }
+        .badge.primary { border-color: rgba(16, 185, 129, 0.4); color: var(--primary-light); }
+        .badge.success { border-color: rgba(52, 211, 153, 0.4); color: var(--primary-light); }
 
         .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
         .chapter h2 {
@@ -181,19 +179,35 @@
             padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
         }
         .chapter h2 span.ch-num {
-            background-color: rgba(0, 212, 255, 0.18); color: var(--primary);
-            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(0, 212, 255, 0.3);
+            background-color: rgba(16, 185, 129, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(16, 185, 129, 0.35);
         }
+        .chapter p { margin-bottom: 15px; color: #cbd5e1; font-size: 14.5px; line-height: 1.75; }
 
         .card {
             background-color: var(--bg-card); border: 1px solid var(--border-color);
             border-radius: 8px; padding: 20px; margin-bottom: 20px;
         }
-        .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 16px; }
+        .card h3 { color: var(--primary-light); margin-bottom: 10px; font-size: 16px; }
 
         table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
         th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
-        th { background-color: var(--bg-card-alt); color: var(--primary); font-weight: 600; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code {
+            background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px;
+            font-family: Consolas, monospace; font-size: 12.5px; color: var(--primary-light);
+            border: 1px solid var(--border-color);
+        }
+        pre {
+            background-color: var(--code-bg); border: 1px solid var(--border-color);
+            border-radius: 8px; padding: 14px 16px; overflow-x: auto;
+            font-family: Consolas, monospace; font-size: 13px; color: var(--primary-light); margin: 14px 0;
+        }
+        .callout {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--primary); color: #e6f4f1;
+        }
 
         @media (max-width: 850px) {
             body { flex-direction: column; }
@@ -245,91 +259,94 @@
             <img src="../images/icons/forensics-security.png" alt="Forensics Security" class="brand-logo-img">
             <div class="brand-text">
                 <h1>Forensics Security</h1>
-                <p>Manual Oficial v1.0</p>
+                <p>Manual Técnico Oficial</p>
             </div>
         </div>
 
         <ul class="sidebar-nav">
-            <li class="sidebar-section-title">Navegação</li>
+            <li class="sidebar-section-title">Capítulos do Manual</li>
             <li><a href="#visao-geral"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> <span>01. Visão Geral</span></a></li>
-            <li><a href="#modulos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span>02. Módulos Forenses</span></a></li>
-            <li><a href="#auditoria"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>03. Cadeia de Custódia</span></a></li>
-            <li><a href="#relatorios"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> <span>04. Laudos Forenses</span></a></li>
-            <li><a href="#privacidade"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>05. Zero Telemetria</span></a></li>
+            <li><a href="#criptografia-cfe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <span>02. Formato .CFE &amp; Pepper</span></a></li>
+            <li><a href="#modulos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span>03. Os 20 Motores</span></a></li>
+            <li><a href="#auditoria"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>04. Cadeia de Custódia</span></a></li>
+            <li><a href="#licenciamento"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> <span>05. Ativação HWID &amp; Sigilo</span></a></li>
+            <li class="sidebar-section-title" style="margin-top: 18px;">Links Diretos</li>
+            <li><a href="../pt/forensics.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> <span>Página Oficial do Produto</span></a></li>
         </ul>
     </aside>
 
     <main id="content">
         <header class="doc-header">
-            <h1>Cromak Forensics Security — Manual do Usuário</h1>
-            <p>Guia operacional para perícia forense digital, extração de logs de eventos, análise de executáveis e investigação de incidentes em ambiente Windows.</p>
+            <h1>Cromak Forensics Security — Manual Operacional</h1>
+            <p>Especificação técnica e guia de operação dos 20 motores modulares de perícia computacional, custódia criptográfica blindada (<code>.cfe</code>), investigação OSINT, vigilância de rede e sanitização militar no Microsoft Windows.</p>
             <div class="badge-list">
-                <span class="badge primary">Versão 1.0.0</span>
-                <span class="badge success">Operação 100% Offline</span>
-                <span class="badge primary">Zero Telemetria</span>
+                <span class="badge primary">20 Motores Modulares</span>
+                <span class="badge success">Operação Air-Gapped / Offline</span>
+                <span class="badge primary">Blindagem CFE + Pepper</span>
+                <span class="badge success">Zero Telemetria</span>
             </div>
         </header>
 
         <section id="visao-geral" class="chapter">
-            <h2><span class="ch-num">01</span> Visão Geral da Ferramenta</h2>
-            <p>O <strong>Cromak Forensics Security</strong> é uma plataforma dedicada à coleta, auditoria e preservação da cadeia de custódia de artefatos digitais no Microsoft Windows. Projetado para peritos, analistas de SOC e profissionais de segurança ofensiva e defensiva.</p>
+            <h2><span class="ch-num">01</span> Visão Geral &amp; Arquitetura Modular</h2>
+            <p>O <strong>Cromak Forensics Security</strong> unifica 20 motores independentes sob uma interface acelerada em PyQt6 com isolamento de processos. Cada módulo é executado como instância dedicada e monitorada pelo Console de Auditoria em Tempo Real da aba <em>Visão Geral</em>, evitando bloqueios de thread durante operações pesadas como carving de setores brutos, varreduras paralelas de rede ou cifragem de grandes evidências.</p>
+            <p>Os motores podem ser acionados diretamente pelo Painel Central ou por linha de comando via <code>ForensicsSecurity.exe --engine &lt;nome_do_motor&gt;</code> em fluxos automatizados de resposta a incidentes (CSIRT/SOC).</p>
+        </section>
+
+        <section id="criptografia-cfe" class="chapter">
+            <h2><span class="ch-num">02</span> Criptografia .CFE &amp; Blindagem Pepper</h2>
+            <div class="card">
+                <h3>Arquitetura Dupla PBKDF2-HMAC-SHA256 + AES-256-GCM + Pepper</h3>
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7;">O formato proprietário <code>.cfe</code> (<em>Cromak File Encryptor</em>) protege dossiês, imagens periciais e relatórios contra ataques de força bruta offline. Além do salt aleatório criptográfico único por arquivo e <code>600.000</code> iterações de derivação, o KDF incorpora um segredo interno <strong>Pepper</strong> embutido no binário compilado. Sem esse componente secreto, ferramentas externas de quebra de senha não conseguem reproduzir o fluxo de derivação mesmo dispondo do cabeçalho do contêiner, enquanto a tag de autenticação GCM detecta imediatamente qualquer adulteração de 1 único bit.</p>
+            </div>
         </section>
 
         <section id="modulos" class="chapter">
-            <h2><span class="ch-num">02</span> Módulos Forenses Integrados</h2>
+            <h2><span class="ch-num">03</span> Catálogo Técnico dos 20 Motores Integrados</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Módulo</th>
-                        <th>Alvo de Inspeção</th>
-                        <th>Objetivo Investigativo</th>
+                        <th>Motor Forense</th>
+                        <th>Pilar / Alvo Técnico</th>
+                        <th>Função Pericial &amp; Saída</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>Event Log Forensics</strong></td>
-                        <td>Logs de Segurança, Sistema e Aplicação (EVTX)</td>
-                        <td>Identificação de tentativas de logon (4624/4625), criação de processos (4688) e escalonamento de privilégio.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Process Memory Map</strong></td>
-                        <td>Mapeamento de DLLs e Threads ativas</td>
-                        <td>Detecção de injeções de DLL, hollow processes e módulos não assinados em execução.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hash Verification</strong></td>
-                        <td>MD5, SHA-1, SHA-256 e SSDEEP</td>
-                        <td>Garantia de integridade forense e hashing criptográfico contra bases de IOCs.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Persistence Auditor</strong></td>
-                        <td>Run keys, Tasks agendadas e Serviços</td>
-                        <td>Mapeamento exaustivo de pontos de persistência comuns em infecções de persistência furtiva.</td>
-                    </tr>
+                    <tr><td><strong>1. Cromak File Encryptor</strong></td><td>Criptografia · Contêiner <code>.cfe</code></td><td>Cifragem autenticada AES-256-GCM + PBKDF2 (600k) com segredo Pepper e wipe opcional do original.</td></tr>
+                    <tr><td><strong>2. Steganography LSB</strong></td><td>Criptografia · PNG / BMP Lossless</td><td>Ocultação e extração forense nos bits menos significativos RGB com cifragem prévia AES-256 e checksum.</td></tr>
+                    <tr><td><strong>3. Hash Verifier</strong></td><td>Custódia · 7 Algoritmos</td><td>Cálculo simultâneo de MD5, SHA-1, SHA-256, SHA-512, SHA3-256, BLAKE2b e CRC32 para cadeia de custódia.</td></tr>
+                    <tr><td><strong>4. Browser Forensics</strong></td><td>Perícia · Chrome, Edge, Firefox, Brave, Opera</td><td>Coleta read-only de histórico, buscas, downloads, cookies e credenciais com descriptografia DPAPI local.</td></tr>
+                    <tr><td><strong>5. Windows Artifacts</strong></td><td>Perícia · Prefetch, USBSTOR, JumpLists, EVTX</td><td>Reconstrução cronológica de execução de binários, montagem de pendrives USB e eventos críticos de logon.</td></tr>
+                    <tr><td><strong>6. Data Recovery</strong></td><td>Perícia · File Carving Raw / NTFS / FAT32</td><td>Varredura de assinaturas binárias (Magic Bytes) em volumes lógicos e mídias físicas para resgate de deletados.</td></tr>
+                    <tr><td><strong>7. Metadata Extractor</strong></td><td>Perícia · EXIF, GPS, PDF, DOCX/XLSX</td><td>Extração pericial de coordenadas GPS, câmera, autor e revisões ocultas, com modo de expurgo sanitizador.</td></tr>
+                    <tr><td><strong>8. Clipboard History</strong></td><td>Perícia · Área de Transferência RAM</td><td>Auditoria contínua de capturas em memória volátil com detecção heurística de chaves, tokens, PIX e carteiras.</td></tr>
+                    <tr><td><strong>9. Port Monitor</strong></td><td>Rede · Sockets TCP/UDP &amp; PIDs</td><td>Mapeamento em tempo real de conexões estabelecidas e portas LISTEN associadas ao executável, PID e IP remoto.</td></tr>
+                    <tr><td><strong>10. LAN Scanner</strong></td><td>Rede · Sub-rede ICMP/ARP/OUI</td><td>Descoberta multi-thread de hosts ativos na rede local com resolução de MAC, fabricante OUI e portas comuns.</td></tr>
+                    <tr><td><strong>11. Wi-Fi Key Recovery</strong></td><td>Rede · Perfis WLAN Nativos</td><td>Extração administrativa das credenciais WPA2/WPA3 salvas no cofre sem fio do Windows para auditoria.</td></tr>
+                    <tr><td><strong>12. Vulnerability Scanner</strong></td><td>Rede &amp; Host · Hardening Windows</td><td>Auditoria automatizada de superfície de ataque local (Firewall, SMBv1, RDP, RemoteRegistry, UAC, Guest e portas).</td></tr>
+                    <tr><td><strong>13. OSINT Pro</strong></td><td>OSINT · Domínios, DNS, SSL/TLS, WHOIS</td><td>Reconhecimento técnico de infraestrutura externa com enumeração DNS, inspeção de certificados e geolocalização IP.</td></tr>
+                    <tr><td><strong>14. Dork Engine</strong></td><td>OSINT · Google / Bing / GitHub / Shodan</td><td>Construtor avançado de queries investigativas para localizar documentos expostos, backups e painéis indexados.</td></tr>
+                    <tr><td><strong>15. Username Recon</strong></td><td>OSINT · Dezenas de Plataformas</td><td>Rastreamento assíncrono de presença digital de aliases e nicknames em redes sociais, fóruns e repositórios dev.</td></tr>
+                    <tr><td><strong>16. People Finder BR</strong></td><td>OSINT · Fontes Públicas Nacionais</td><td>Consolidação de consultas abertas em portais oficiais brasileiros (Diários Oficiais, CNPJ, tribunais e transparência).</td></tr>
+                    <tr><td><strong>17. Email Header Analyzer</strong></td><td>OSINT · Cabeçalhos RFC 822 / MIME</td><td>Rastreamento reverso de saltos SMTP (Hops), latência entre servidores e validação antifraude SPF, DKIM e DMARC.</td></tr>
+                    <tr><td><strong>18. File Finder</strong></td><td>Investigação · Indexador Multi-Critério</td><td>Busca ultrarrápida em disco por expressões regulares, faixas de tamanho, datas de modificação e conteúdo interno.</td></tr>
+                    <tr><td><strong>19. Disk Wiper</strong></td><td>Sanitização · Espaço Livre de Volumes</td><td>Esterilização forense de clusters não alocados em SSDs/HDDs sem afetar o sistema operacional ou arquivos ativos.</td></tr>
+                    <tr><td><strong>20. File Shredder</strong></td><td>Sanitização · DoD 5220.22-M &amp; Gutmann</td><td>Destruição irreversível de arquivos sensíveis (1, 3, 7 ou 35 passes) com truncamento e renomeação aleatória antes do unlink.</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section id="auditoria" class="chapter">
-            <h2><span class="ch-num">03</span> Auditoria de Artefatos</h2>
+            <h2><span class="ch-num">04</span> Preservação da Cadeia de Custódia &amp; Laudos</h2>
             <div class="card">
-                <h3>Preservação da Cadeia de Custódia</h3>
-                <p style="font-size: 14px; color: var(--text-muted);">Todas as leituras são realizadas em modo estritamente read-only (somente leitura), garantindo que carimbos de data/hora (Timestomping) e atributos originais do sistema de arquivos NTFS/ReFS não sejam alterados durante a perícia.</p>
+                <h3>Coleta Não-Intrusiva e Exportação Auditável</h3>
+                <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7;">Os motores de triagem operam sobre cópias temporárias isoladas ou descritores somente leitura, preservando timestamps originais do NTFS e evitando bloqueios de banco SQLite em navegadores abertos. Os resultados podem ser exportados diretamente em <strong>Laudo HTML Forense</strong> pronto para impressão/PDF, planilhas <strong>CSV</strong> e arquivos estruturados <strong>JSON</strong> acompanhados de carimbo temporal e hashes SHA-256.</p>
             </div>
         </section>
 
-        <section id="relatorios" class="chapter">
-            <h2><span class="ch-num">04</span> Exportação de Laudos</h2>
-            <p>Exportação estruturada de evidências com hash de integridade em múltiplos formatos:</p>
-            <ul style="padding-left: 20px; font-size: 14px; color: var(--text-muted); line-height: 1.8;">
-                <li><strong>Relatório HTML Interativo:</strong> Documento visual estruturado com gráficos e linha do tempo de eventos.</li>
-                <li><strong>JSON Estruturado:</strong> Ideal para ingestão em plataformas SIEM e pipelines de análise automatizada.</li>
-            </ul>
-        </section>
-
-        <section id="privacidade" class="chapter">
-            <h2><span class="ch-num">05</span> Compromisso Zero Telemetria</h2>
-            <p>O <strong>Cromak Forensics Security</strong> opera sem qualquer comunicação externa. Nenhum artefato periciado, hash gerado ou log capturado sai da máquina investigada. Máxima confidencialidade para investigações corporativas e judiciais.</p>
+        <section id="licenciamento" class="chapter">
+            <h2><span class="ch-num">05</span> Licenciamento HWID (CMKFSS) &amp; Zero Telemetria</h2>
+            <p>O <strong>Cromak Forensics Security</strong> oferece <strong>40 dias de avaliação gratuita</strong> com os 20 motores desbloqueados. Para uso pericial, judicial e corporativo contínuo, a ativação PRO utiliza um identificador criptográfico exclusivo da máquina com prefixo <code>CMKFSS-</code> (compatível com Windows 10 e Windows 11, incluindo 24H2+), validado 100% localmente via assinatura SHA-512 sem servidores de nuvem e sem qualquer coleta de telemetria.</p>
         </section>
 
         <footer style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 13px; text-align: center;">

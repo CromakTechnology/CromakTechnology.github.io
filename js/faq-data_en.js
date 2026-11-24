@@ -675,5 +675,37 @@ const FAQ_DATABASE = [
         pergunta: "Is Photo Viewer paid or does it have official ties to Microsoft?",
         resposta: "The software is released under a <strong>Freeware (100% free)</strong> license. It is an independent fan project developed under <em>Fair Use</em> guidelines for nostalgic and educational preservation, having no affiliation, sponsorship, or endorsement from Microsoft Corporation.",
         tags: ["freeware", "free", "license", "disclaimer", "microsoft", "fair use"]
+    },
+
+    // ==========================================
+    // SECURITY & FORENSICS: CROMAK FORENSICS SECURITY (v1.3.4)
+    // ==========================================
+    {
+        categoria: "Security & Network",
+        produto: "Forensics Security",
+        pergunta: "What are the 20 integrated engines in Cromak Forensics Security?",
+        resposta: "The suite unifies <strong>20 standalone modular engines</strong> across 5 operational pillars: <strong>Cryptography & Custody</strong> (Cromak File Encryptor <code>.cfe</code>, LSB Steganography, and 7-algorithm Hash Verifier), <strong>Digital Forensics</strong> (Browser Forensics, Windows Artifacts, Data Recovery, Metadata Extractor, and Clipboard History), <strong>Network Surveillance</strong> (Port Monitor, LAN Scanner, Wi-Fi Key Recovery, and Vulnerability Scanner), <strong>OSINT Intelligence</strong> (OSINT Pro, Dork Engine, Username Recon, People Finder BR, Email Header Analyzer, and File Finder), and <strong>Military Sanitization</strong> (Disk Wiper and File Shredder).",
+        tags: ["forensics security", "digital forensics", "20 engines", "modules", "osint", "artifacts", "triage"]
+    },
+    {
+        categoria: "Security & Network",
+        produto: "Forensics Security",
+        pergunta: "How do the .CFE encrypted container format and Pepper Shield work?",
+        resposta: "<strong>Cromak File Encryptor (.cfe)</strong> pairs <code>PBKDF2-HMAC-SHA256</code> key derivation (600,000 iterations) and authenticated <code>AES-256-GCM</code> encryption with an internal <strong>Pepper</strong> secret compiled into the suite's binary kernel. Even if an attacker captures the <code>.cfe</code> container and inspects its public header salt, external offline brute-force and dictionary attacks remain mathematically infeasible without the internal Pepper component.",
+        tags: ["cfe", "pepper shield", "encryption", "aes-256-gcm", "pbkdf2", "file encryptor", "brute force"]
+    },
+    {
+        categoria: "Security & Network",
+        produto: "Forensics Security",
+        pergunta: "Can Cromak Forensics Security run in isolated Air-Gapped forensic labs?",
+        resposta: "<strong>Yes.</strong> Built under a strict <strong>Zero Telemetry</strong> policy, all local digital forensics, Windows/browser artifact extraction, <code>.cfe</code> encryption, LSB steganography, multi-hash verification, and DoD/Gutmann sanitization engines execute <strong>100% offline</strong>, preserving evidentiary chain of custody for judicial and corporate investigations.",
+        tags: ["air-gapped", "offline", "zero telemetry", "chain of custody", "forensic report", "court"]
+    },
+    {
+        categoria: "Security & Network",
+        produto: "Forensics Security",
+        pergunta: "How do I activate my PRO license using the HWID code (CMKFSS)?",
+        resposta: "Upon launching the suite (or inside the <strong>About</strong> tab), copy your Machine Identification Code starting with the <code>CMKFSS-</code> prefix. After purchasing your lifetime PRO license, send this HWID code to Cromak Technology support to receive your permanent SHA-512 activation key bound to your hardware.",
+        tags: ["cmkfss", "hwid", "activate license", "pro key", "serial", "lifetime", "forensics"]
     }
 ];
