@@ -707,5 +707,23 @@ const FAQ_DATABASE = [
         pergunta: "Como ativar a licença PRO utilizando o código HWID (CMKFSS)?",
         resposta: "Ao abrir o programa (ou na aba <strong>Sobre</strong>), copie o seu Código de Identificação de Máquina iniciado pelo prefixo <code>CMKFSS-</code>. Após adquirir a licença vitalícia PRO, envie esse código ao suporte da Cromak Technology para receber a sua chave criptográfica permanente SHA-512 vinculada ao seu hardware.",
         tags: ["cmkfss", "hwid", "ativar licenca", "chave pro", "serial", "vitalicia", "forensics"]
+    },
+
+    // ==========================================
+    // UTILITÁRIOS: CROMAK FILE FINDER (v1.2.0)
+    // ==========================================
+    {
+        categoria: "Utilitários",
+        produto: "File Finder",
+        pergunta: "Quais recursos vêm integrados nas 8 abas do Cromak File Finder v1.2.0?",
+        resposta: "O <strong>Cromak File Finder v1.2.0</strong> reúne 8 módulos em PyQt6 (incluindo a aba Preferências com Área de Notificações): <strong>Busca Avançada</strong> (multi-pastas, curingas, Regex e Inspetor Lateral com miniaturas e hashes), <strong>Conteúdo & Docs</strong> (busca interna em texto, código, PDF, Word <code>.docx</code> e Excel <code>.xlsx</code>), <strong>Caçador de Duplicados</strong> (3 estágios SHA-256/MD5), <strong>Espaço & Maiores</strong> (radiografia de discos, categorias e subpastas), <strong>Lote & Renomear</strong> (prévia Antes/Depois, organizador de pastas e Undo), <strong>Favoritos & Perfis</strong> e <strong>Ajuda & Sobre</strong> com 3 temas visuais.",
+        tags: ["file finder", "buscador", "7 abas", "pdf", "docx", "xlsx", "duplicados", "renomear em lote"]
+    },
+    {
+        categoria: "Utilitários",
+        produto: "File Finder",
+        pergunta: "Qual é o valor e o tipo de licença do Cromak File Finder?",
+        resposta: "O software oferece <strong>40 dias de avaliação gratuita</strong> com todas as 8 abas liberadas e licença <strong>Vitalícia PRO por apenas US$ 9,99</strong> (pagamento único, sem mensalidades, válido para uso pessoal e comercial).",
+        tags: ["file finder", "preco", "licenca", "9.99", "vitalicia", "comercial"]
     }
 ];

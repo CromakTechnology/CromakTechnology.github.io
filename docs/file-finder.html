@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO & INDEXAÇÃO GOOGLE -->
+    <title>Cromak File Finder — Manual Técnico Oficial &amp; Guia das 8 Abas (v1.2.0)</title>
+    <meta name="description" content="Manual técnico oficial do Cromak File Finder v1.2.0. Indexação multi-pastas via os.scandir, busca textual em PDF/Word/Excel, caçador de duplicados em 3 estágios SHA-256, análise de espaço e lote com Undo.">
+    <meta name="keywords" content="Cromak File Finder manual, buscador de arquivos windows manual, busca em pdf docx xlsx, duplicados sha256, renomear arquivos em lote regex">
+    <meta name="author" content="Cromak Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://cromaktechnology.github.io/docs/file-finder.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://cromaktechnology.github.io/docs/file-finder.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Cromak Technology">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://cromaktechnology.github.io/docs/file-finder.html">
+    <meta property="og:title" content="Cromak File Finder v1.2.0 — Manual Técnico Oficial">
+    <meta property="og:description" content="Guia completo das 7 abas do Cromak File Finder: indexador multi-pastas, busca em PDF/DOCX/XLSX, duplicados SHA-256, espaço em disco e renomeação em lote.">
+    <meta property="og:image" content="https://cromaktechnology.github.io/images/icons/file-finder.png">
+
+    <!-- BRANDING & FAVICONS -->
+    <meta name="theme-color" content="#0d0f12">
+    <link rel="icon" type="image/png" href="../images/cromak_technology_logo_small.png">
+    <link rel="apple-touch-icon" href="../images/cromak_technology_logo_small.png">
+
+    <!-- DADOS ESTRUTURADOS JSON-LD (SCHEMA.ORG TECHARTICLE) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Cromak File Finder v1.2.0 — Manual Técnico Oficial & Guia de Operação",
+      "description": "Manual técnico completo do Cromak File Finder v1.2.0: indexação assíncrona os.scandir, grep documental em PDF/Word/Excel, desduplicação em 3 estágios SHA-256, análise de espaço e renomeador em lote com Undo.",
+      "url": "https://cromaktechnology.github.io/docs/file-finder.html",
+      "image": "https://cromaktechnology.github.io/images/icons/file-finder.png",
+      "inLanguage": "pt-BR",
+      "author": {
+        "@type": "Organization",
+        "name": "Cromak Technology",
+        "url": "https://cromaktechnology.github.io/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cromak Technology",
+        "url": "https://cromaktechnology.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cromaktechnology.github.io/images/cromak_technology_logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://cromaktechnology.github.io/docs/file-finder.html"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --bg-body: #0d0f12;
+            --bg-sidebar: #13161c;
+            --bg-card: #181b22;
+            --bg-card-alt: #1e222b;
+            --border-color: #262b36;
+            --primary: #f43f5e;
+            --primary-light: #fb7185;
+            --primary-hover: #fda4af;
+            --success: #2ea043;
+            --warning: #d29922;
+            --danger: #ef4444;
+            --text-main: #e6edf3;
+            --text-muted: #8b949e;
+            --code-bg: #090b0e;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0; bottom: 0; left: 0;
+            overflow-y: auto;
+            padding: 25px 20px;
+            z-index: 100;
+        }
+        #sidebar::-webkit-scrollbar { width: 6px; }
+        #sidebar::-webkit-scrollbar-thumb { background-color: var(--border-color); border-radius: 3px; }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brand-logo-img {
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            flex-shrink: 0;
+            display: block;
+        }
+        .brand-text h1 { font-size: 15px; font-weight: 700; color: #fff; }
+        .brand-text p { font-size: 11px; color: var(--primary-light); text-transform: uppercase; font-weight: 600; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--primary-light); text-decoration: none; font-size: 13px; font-weight: 600;
+            margin-bottom: 10px; padding: 6px 10px; border-radius: 6px;
+            background: rgba(244, 63, 94, 0.09); border: 1px solid rgba(244, 63, 94, 0.25);
+            transition: 0.2s ease; width: 100%;
+        }
+        .back-link:hover { background: rgba(244, 63, 94, 0.18); }
+        .back-link svg { flex-shrink: 0; }
+
+        .sidebar-nav { list-style: none; }
+        .sidebar-section-title {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            color: var(--text-muted); margin: 20px 0 8px 10px; letter-spacing: 1px;
+        }
+        .sidebar-nav li a {
+            display: flex; align-items: center; gap: 10px; padding: 8px 12px;
+            color: #c9d1d9; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav li a svg { flex-shrink: 0; color: var(--primary-light); opacity: 0.85; }
+        .sidebar-nav li a:hover {
+            background-color: var(--bg-card); color: var(--primary-light); transform: translateX(3px);
+        }
+
+        #content {
+            margin-left: 320px;
+            flex: 1;
+            padding: 40px 60px 90px;
+            max-width: 1240px;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0.14) 0%, rgba(19, 22, 28, 0.85) 100%);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-light);
+            border-radius: 12px; padding: 30px; margin-bottom: 40px;
+        }
+        .doc-header h1 { font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .doc-header p { color: var(--text-muted); font-size: 15px; }
+
+        .badge-list { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+        .badge {
+            display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 600; background-color: var(--bg-card);
+            border: 1px solid var(--border-color); color: #c9d1d9;
+        }
+        .badge.primary { border-color: rgba(244, 63, 94, 0.45); color: var(--primary-light); }
+        .badge.success { border-color: rgba(46, 160, 67, 0.45); color: #3fb950; }
+        .badge.warning { border-color: rgba(210, 153, 34, 0.45); color: #e3b341; }
+
+        .chapter { margin-bottom: 50px; scroll-margin-top: 30px; }
+        .chapter h2 {
+            font-size: 22px; color: #fff; font-weight: 700; border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .chapter h2 span.ch-num {
+            background-color: rgba(244, 63, 94, 0.18); color: var(--primary-light);
+            font-size: 13px; padding: 2px 8px; border-radius: 6px; border: 1px solid rgba(244, 63, 94, 0.35);
+        }
+        .chapter h3 { font-size: 16px; color: var(--primary-light); margin: 20px 0 10px; }
+        .chapter p { margin-bottom: 15px; color: #c9d1d9; font-size: 14.5px; line-height: 1.7; }
+        .chapter ul, .chapter ol { margin-left: 20px; margin-bottom: 15px; color: #c9d1d9; font-size: 14px; line-height: 1.8; }
+        .chapter li { margin-bottom: 8px; }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0; }
+        .sub-card { background-color: var(--bg-card-alt); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; }
+        .sub-card h4 { color: var(--primary-light); margin-bottom: 8px; font-size: 14px; font-weight: 600; }
+        .sub-card p { font-size: 13.5px; color: var(--text-muted); margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background-color: var(--bg-card); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; border: 1px solid var(--border-color); text-align: left; font-size: 14px; }
+        th { background-color: var(--bg-card-alt); color: var(--primary-light); font-weight: 600; }
+
+        code { background-color: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--primary-light); border: 1px solid var(--border-color); }
+        .callout {
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0; font-size: 14px;
+            background: rgba(244, 63, 94, 0.08); border-left: 4px solid var(--primary-light); color: #e6edf3;
+        }
+        .callout.callout-success { background: rgba(46, 160, 67, 0.08); border-left-color: var(--success); }
+        .callout.callout-warning { background: rgba(210, 153, 34, 0.08); border-left-color: var(--warning); }
+
+        .btn-print {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            width: 100%; margin-top: 22px;
+            background: linear-gradient(135deg, var(--primary) 0%, #181b22 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s ease;
+        }
+        .btn-print:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(244, 63, 94, 0.35); }
+
+        /* Botão Voltar ao Topo compatível com main.js sem conflitar com o Chat Tawk.to */
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 26px;
+            left: 345px;
+            z-index: 999;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            background-color: var(--primary);
+            color: #fff;
+            cursor: pointer;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 16px rgba(244, 63, 94, 0.45);
+        }
+        #backToTopBtn:hover {
+            background-color: #e11d48;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 22px rgba(244, 63, 94, 0.7);
+        }
+
+        @media (max-width: 850px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; position: relative; height: auto; }
+            #content { margin-left: 0; padding: 20px 20px 80px; }
+            #backToTopBtn { left: 18px; bottom: 20px; width: 40px; height: 40px; font-size: 17px; }
+        }
+
+        @media print {
+            body { background: #fff; color: #000; }
+            #sidebar, #backToTopBtn { display: none !important; }
+            #content { margin: 0; padding: 0; max-width: 100%; }
+            table, .sub-card { border-color: #ccc; background: #fafafa; color: #000; }
+            .doc-header h1, .chapter h2 { color: #000; }
+            code { background: #eee; color: #000; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <a href="../pt/documentacao.html" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Central de Documentação
+        </a>
+        <a href="../pt/file-finder.html" class="back-link" style="margin-bottom: 18px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Página do Produto
+        </a>
+        <div class="brand-container">
+            <img src="../images/icons/file-finder.png" alt="Cromak File Finder" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>Cromak File Finder</h1>
+                <p>Manual Oficial v1.2.0</p>
+            </div>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li class="sidebar-section-title">Capítulos Técnicos</li>
+            <li><a href="#visao-geral"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> <span>01. Visão Geral &amp; Arquitetura</span></a></li>
+            <li><a href="#busca-avancada"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg> <span>02. Busca Avançada &amp; Inspetor</span></a></li>
+            <li><a href="#conteudo-docs"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> <span>03. Conteúdo &amp; PDF/Word/Excel</span></a></li>
+            <li><a href="#duplicados"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> <span>04. Duplicados em 3 Estágios</span></a></li>
+            <li><a href="#espaco-disco"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg> <span>05. Radiografia de Espaço</span></a></li>
+            <li><a href="#lote-renomear"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> <span>06. Lote, Renomear &amp; Undo</span></a></li>
+            <li><a href="#perfis-atalhos"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg> <span>07. Favoritos, Temas &amp; Atalhos</span></a></li>
+            <li><a href="#paths-licenca"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span>08. Diretórios &amp; Licenciamento</span></a></li>
+        </ul>
+
+        <button class="btn-print" onclick="window.print()" title="Imprimir ou Salvar Manual em PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Imprimir / Salvar PDF
+        </button>
+    </aside>
+
+    <main id="content">
+        <div class="doc-header">
+            <h1>Cromak File Finder v1.2.0 — Manual Técnico Oficial</h1>
+            <p>Documentação completa de engenharia e operação para indexação multi-pastas, busca documental interna, desduplicação criptográfica, análise de armazenamento e operações em lote.</p>
+            <div class="badge-list">
+                <span class="badge primary">Versão 1.2.0 (Build 2026.11)</span>
+                <span class="badge success">PyQt6 Multi-Thread x64</span>
+                <span class="badge">PDF · DOCX · XLSX Nativo</span>
+                <span class="badge warning">100% Offline · Zero Telemetria</span>
+            </div>
+        </div>
+
+        <!-- 01 -->
+        <section id="visao-geral" class="chapter">
+            <h2><span class="ch-num">01</span> Visão Geral &amp; Arquitetura de Motores</h2>
+            <p>O <strong>Cromak File Finder v1.2.0</strong> consolida 8 módulos especializados de auditoria, busca e organização em uma estação única em <code>PyQt6</code>. Todas as operações de disco rodam em workers assíncronos (<code>QThread</code>) desacoplados da thread gráfica, mantendo a interface responsiva mesmo sobre diretórios com centenas de milhares de arquivos.</p>
+            <div class="grid-2">
+                <div class="sub-card">
+                    <h4>Enumeração Direta via os.scandir</h4>
+                    <p>Aproveita os metadados retornados pelo kernel Win32 (<code>FindFirstFileW</code>) para capturar tamanho, datas e atributos ocultos sem chamadas extras de <code>stat()</code> por arquivo.</p>
+                </div>
+                <div class="sub-card">
+                    <h4>Lixeira Nativa Shell32</h4>
+                    <p>Exclusões acionam diretamente <code>SHFileOperationW</code> com flag <code>FOF_ALLOWUNDO</code>, garantindo restauração integral pela Lixeira do Windows sem depender de bibliotecas terceiras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 -->
+        <section id="busca-avancada" class="chapter">
+            <h2><span class="ch-num">02</span> Aba 1 — Busca Avançada &amp; Inspetor Lateral</h2>
+            <p>Permite varrer um ou mais diretórios ao mesmo tempo separando os caminhos por ponto e vírgula (<code>;</code>) ou clicando em <strong>+ Pasta</strong>.</p>
+            <ul>
+                <li><strong>Curingas Múltiplos &amp; Regex:</strong> Informe padrões combinados como <code>*.pdf; *.xlsx; contrato_2026</code> ou marque <strong>Regex</strong> para expressões regulares completas.</li>
+                <li><strong>Filtros de Tamanho e Data Customizáveis:</strong> Selecione faixas prontas ou escolha <em>Personalizado...</em> para definir limites exatos em MB e intervalos de calendário.</li>
+                <li><strong>Inspetor Lateral ao Vivo:</strong> Exibe miniatura imediata para imagens (<code>PNG, JPG, WEBP, ICO, BMP, GIF, SVG</code>), texto extraído para documentos/código e botão dedicado para calcular hashes <code>CRC32</code>, <code>MD5</code> e <code>SHA-256</code>.</li>
+                <li><strong>Exportação Profissional:</strong> Gere inventários completos filtrados nos formatos <code>.CSV</code> (compatível com Excel PT-BR), <code>.HTML</code> estilizado ou <code>.JSON</code> estruturado.</li>
+            </ul>
+        </section>
+
+        <!-- 03 -->
+        <section id="conteudo-docs" class="chapter">
+            <h2><span class="ch-num">03</span> Aba 2 — Busca Profunda no Conteúdo (PDF, Word e Excel)</h2>
+            <p>Localiza palavras, frases, identificadores fiscais ou padrões Regex dentro do conteúdo dos arquivos sem exigir o Microsoft Office ou leitores externos instalados:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Família de Formato</th>
+                        <th>Extensões Suportadas Nativamente</th>
+                        <th>Método de Extração</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Documentos PDF</strong></td>
+                        <td><code>.pdf</code></td>
+                        <td>Extração direta página a página via motor <code>PyMuPDF (fitz)</code> / fallback <code>pypdf</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Microsoft Office</strong></td>
+                        <td><code>.docx</code>, <code>.xlsx</code></td>
+                        <td>Leitura estrutural de parágrafos e células de planilhas em modo <em>read-only</em> rápido.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Código, Config &amp; Logs</strong></td>
+                        <td><code>.py, .js, .ts, .html, .css, .json, .xml, .sql, .ini, .log, .txt, .md, .csv...</code></td>
+                        <td>Detecção automática de binários e decodificação resiliente (<code>UTF-8</code>, <code>UTF-16 BOM</code>, <code>CP1252</code>).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 04 -->
+        <section id="duplicados" class="chapter">
+            <h2><span class="ch-num">04</span> Aba 3 — Caçador Inteligente de Duplicados (3 Estágios)</h2>
+            <p>Para evitar leitura desnecessária de gigabytes em arquivos que não possuem cópias, o <code>DuplicateFinderWorker</code> opera em funil de três etapas:</p>
+            <ol>
+                <li><strong>Estágio 1 (Agrupamento por Tamanho Exato):</strong> Descarta imediatamente todos os arquivos cujo tamanho em bytes é único no escopo pesquisado.</li>
+                <li><strong>Estágio 2 (Pré-Assinatura Rápida de Bordas):</strong> Lê apenas os primeiros <code>4 KB</code> e últimos <code>4 KB</code> de candidatos de mesmo tamanho aplicando digest <code>BLAKE2b</code>.</li>
+                <li><strong>Estágio 3 (Prova Criptográfica Integral):</strong> Calcula o hash completo <code>SHA-256</code> ou <code>MD5</code> somente nos arquivos que coincidiram nos dois estágios anteriores.</li>
+            </ol>
+            <div class="callout callout-success">
+                <strong>Seleção Inteligente em 1 Clique:</strong> Utilize os botões <em>Manter Mais Recente</em>, <em>Manter Mais Antigo</em> ou <em>Manter Caminho Mais Curto</em> para preservar automaticamente uma cópia segura em cada grupo antes de enviar o restante à Lixeira.
+            </div>
+        </section>
+
+        <!-- 05 -->
+        <section id="espaco-disco" class="chapter">
+            <h2><span class="ch-num">05</span> Aba 4 — Radiografia de Espaço &amp; Maiores Arquivos</h2>
+            <p>Exibe cartões em tempo real para todas as unidades lógicas montadas no Windows, seguidos por três visões sincronizadas:</p>
+            <ul>
+                <li><strong>Ranking dos Maiores Arquivos:</strong> Lista os arquivos mais pesados com tamanho absoluto e percentual de participação sobre a pasta analisada.</li>
+                <li><strong>Distribuição por Categoria:</strong> Agrupa automaticamente em Documentos, Vídeos, Imagens, Compactados, Executáveis, Bancos de Dados, Design e Código com barra visual de ocupação.</li>
+                <li><strong>Maiores Subpastas (Drill-Down):</strong> Dê duplo clique em qualquer subpasta da tabela para aprofundar a análise nela ou clique em <em>Subir Nível</em> para retornar.</li>
+            </ul>
+        </section>
+
+        <!-- 06 -->
+        <section id="lote-renomear" class="chapter">
+            <h2><span class="ch-num">06</span> Aba 5 — Renomeação Avançada &amp; Organização em Lote</h2>
+            <p>Você pode enviar resultados diretamente das abas de busca clicando em <strong>Enviar p/ Lote</strong> ou carregar arquivos e pastas avulsas.</p>
+            <ul>
+                <li><strong>Regras Combináveis em Tempo Real:</strong> Localizar e Substituir (texto ou Regex), Prefixo, Sufixo, conversão de caixa (<code>minúsculas</code>, <code>MAIÚSCULAS</code>, <code>Título</code>, <code>snake_case</code>), remoção de acentos, prefixo de data (<code>AAAA-MM-DD</code>), numeração sequencial com zeros à esquerda e troca de extensão.</li>
+                <li><strong>Proteção contra Colisões &amp; Undo:</strong> A tabela alerta conflitos em vermelho antes da execução e armazena pilha de reversão no botão <strong>Desfazer (Undo)</strong>.</li>
+                <li><strong>Organizador Automático de Subpastas:</strong> Copie ou mova a fila inteira separando automaticamente em subpastas por <em>Categoria</em>, <em>Ano-Mês (AAAA-MM)</em> ou <em>Extensão</em>.</li>
+            </ul>
+        </section>
+
+        <!-- 07 -->
+        <section id="perfis-atalhos" class="chapter">
+            <h2><span class="ch-num">07</span> Favoritos, 3 Temas Visuais &amp; Atalhos de Teclado</h2>
+            <p>Na nova aba <strong>Preferências</strong> (ou pelo atalho no topo), você alterna entre os temas <strong>Rosa Coral (Ícone Oficial)</strong>, <strong>Esmeralda Premium</strong> e <strong>Azul Ciano Tech</strong>.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Atalho</th>
+                        <th>Ação Executada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>F5</code></td><td>Inicia ou interrompe a indexação e busca na aba principal</td></tr>
+                    <tr><td><code>Ctrl + F</code></td><td>Foca imediatamente no campo de filtro por nome/curinga</td></tr>
+                    <tr><td><code>Ctrl + E</code></td><td>Abre o diálogo de exportação de relatórios (CSV, HTML ou JSON)</td></tr>
+                    <tr><td><code>Delete</code></td><td>Envia os arquivos selecionados na tabela para a Lixeira do Windows</td></tr>
+                    <tr><td><code>Ctrl + 1</code> a <code>Ctrl + 8</code></td><td>Navega diretamente entre as 8 abas principais da estação</td></tr>
+                    <tr><td><code>F1</code></td><td>Abre a aba de Documentação Rápida, Temas &amp; Sobre</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 08 -->
+        <section id="paths-licenca" class="chapter">
+            <h2><span class="ch-num">08</span> Diretórios, Privacidade &amp; Licenciamento Vitalício</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Caminho / Política</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Configurações, Perfis &amp; Histórico</strong></td>
+                        <td><code>%APPDATA%\Cromak Technology\File Finder\settings.json</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instalação Padrão (x64)</strong></td>
+                        <td><code>C:\Program Files\Cromak Technology\File Finder</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pastas Ignoradas por Padrão</strong></td>
+                        <td><code>$RECYCLE.BIN, System Volume Information, Windows, Recovery, MSOCache, WinSxS, Temp</code> (totalmente editável em Preferências)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Privacidade &amp; Rede</strong></td>
+                        <td>Processamento 100% local e offline; compatível com estações isoladas (Air-Gapped).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Modelo de Licenciamento</strong></td>
+                        <td>Avaliação gratuita de 40 dias + Licença Vitalícia Perpétua PRO por <strong>US$ 9,99</strong> (pagamento único, uso pessoal e comercial).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Botão Voltar ao Topo + Script Global (Voltar ao Topo & Chat Ao Vivo Tawk.to) -->
+    <button id="backToTopBtn" title="Voltar ao topo">↑</button>
+    <script src="../js/main.js"></script>
+</body>
+</html>

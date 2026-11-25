@@ -707,5 +707,23 @@ const FAQ_DATABASE = [
         pergunta: "How do I activate my PRO license using the HWID code (CMKFSS)?",
         resposta: "Upon launching the suite (or inside the <strong>About</strong> tab), copy your Machine Identification Code starting with the <code>CMKFSS-</code> prefix. After purchasing your lifetime PRO license, send this HWID code to Cromak Technology support to receive your permanent SHA-512 activation key bound to your hardware.",
         tags: ["cmkfss", "hwid", "activate license", "pro key", "serial", "lifetime", "forensics"]
+    },
+
+    // ==========================================
+    // UTILITIES: CROMAK FILE FINDER (v1.2.0)
+    // ==========================================
+    {
+        categoria: "Utilities",
+        produto: "File Finder",
+        pergunta: "What modules are included across the 8 tabs of Cromak File Finder v1.2.0?",
+        resposta: "<strong>Cromak File Finder v1.2.0</strong> integrates 8 PyQt6 modules (including Preferences & System Tray): <strong>Advanced Search</strong> (multi-folder scan, wildcards, Regex, and Live Side Inspector with thumbnails and hashes), <strong>Content & Docs</strong> (native search inside PDF, Word <code>.docx</code>, Excel <code>.xlsx</code>, and code), <strong>Duplicate Hunter</strong> (3-stage SHA-256/MD5), <strong>Space & Largest</strong> (drive health, categories, and drill-down subfolders), <strong>Batch & Rename</strong> (live Before/After preview, folder organizer, and Undo), <strong>Favorites & Profiles</strong>, and <strong>Help & About</strong> with 3 Dark Premium themes.",
+        tags: ["file finder", "file search", "7 tabs", "pdf", "docx", "xlsx", "duplicates", "batch rename"]
+    },
+    {
+        categoria: "Utilities",
+        produto: "File Finder",
+        pergunta: "How much does the Cromak File Finder PRO license cost?",
+        resposta: "It includes a <strong>40-day free trial</strong> with all 8 tabs unlocked, and the <strong>Perpetual Lifetime PRO license is just $9.99 USD</strong> (one-time payment, zero subscriptions, personal and commercial use included).",
+        tags: ["file finder", "price", "license", "9.99", "lifetime", "commercial"]
     }
 ];

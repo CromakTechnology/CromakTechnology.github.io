@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                     <a href="clock.html">Clock & Alarm</a>
                                     <a href="converter.html">Universal Converter</a>
                                     <a href="dock.html">Dock</a>
+                                    <a href="file-finder.html">File Finder</a>
                                     <a href="new-tab-service.html">NewTab</a>
                                     <a href="png_to_ico_converter.html">PNG To ICO Converter</a>
                                     <a href="photoviewer.html">Photo Viewer</a>
@@ -490,6 +491,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 ? "Gravador de tela e capturas profissional até 60 FPS, aceleração por GPU, áudio simultâneo e 11 idiomas. 100% gratuito para uso pessoal e comercial."
                 : "Professional screen recorder & snipping tool up to 60 FPS, GPU hardware encoding, dual audio, and 11 languages. 100% free for personal & commercial use.",
             keywords: "screen recorder gravador de tela capturar tela print 60fps nvenc ffmpeg gratis comercial"
+        },
+        {
+            file: "file-finder.html",
+            category: "utils",
+            categoryName: t.cat_utils,
+            badgeClass: "cromak-badge-utils",
+            badge: lang === "pt" ? "8 Abas / PDF & Hash" : "8 Tabs / PDF & Hash",
+            name: "Cromak File Finder",
+            desc: lang === "pt"
+                ? "Buscador desktop multi-abas com indexação instantânea, pesquisa em PDF/Word/Excel, caçador de duplicados SHA-256, análise de espaço e lote com Undo."
+                : "Multi-tab desktop file search with instant indexing, PDF/Word/Excel content grep, 3-stage SHA-256 duplicate hunter, space analyzer, and batch renamer.",
+            keywords: "file finder buscador localizar arquivos pdf docx xlsx duplicados sha256 renomear lote espaco disco regex"
         },
         {
             file: "dock.html",
